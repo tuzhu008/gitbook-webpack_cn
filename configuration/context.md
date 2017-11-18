@@ -1,4 +1,4 @@
-# 上下文（context）
+# context（上下文）
 
 context是入口文件所处的目录的绝对路径的字符串。
 
