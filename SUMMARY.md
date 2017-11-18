@@ -11,8 +11,8 @@
 * [配置](/configuration/README.md)
 
   * [context](configuration/context.md)
+  * [entry\(入口）](configuration/entry.md)
 
-* * [entry\(入口）](configuration/entry.md)
 * [注意](Note.md)
 
 * [其他概念](/OtherConcepts/README.md)
