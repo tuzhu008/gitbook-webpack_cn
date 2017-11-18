@@ -36,5 +36,23 @@ filename: "[name].bundle.js"
 filename: "[id].bundle.js"
 ```
 
+**使用构建：**
+
+```js
+filename: "[id].bundle.js"
+```
+
+**使用内部chunk id：**
+
+```js
+filename: "[id].bundle.js"
+```
+
+**使用内部chunk id：**
+
+```js
+filename: "[id].bundle.js"
+```
+
 
 
