@@ -72,5 +72,5 @@ filename: "[chunkhash].bundle.js"
 
 类型：string
 
-此选项决定了非入口\(non-entry\) chunk 文件的名称。可取值与[filename](#outputfilename)
+此选项决定了非入口\(non-entry\) chunk 文件的名称。可取值与[output.filename](#outputfilename) 相同。
 
