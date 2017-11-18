@@ -40,7 +40,7 @@ module.exports = {
 }
 ```
 
-entry使用对象时代表的是多入口文件，最后会打包生成和对象中的每一个入口文件相对应的bundle。entry对象的每个键（key）entry对象的每一个键值（如上的app、index）在webpack中都会保留下来，可以用来配置输出文件的名字，使用字段`[name]`
+entry使用对象时代表的是多入口文件，最后会打包生成和对象中的每一个入口文件相对应的bundle。entry对象的每个键（key）是每个chunk的名称。entry对象的每一个键值（如上的app、index）在webpack中都会保留下来，可以用来配置输出文件的名字，使用字段`[name]`
 
 > **\[info\] 注: **
 >
