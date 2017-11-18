@@ -44,7 +44,7 @@ entry使用对象时代表的是多入口文件，最后会打包生成和对象
 
 > **\[info\] 注: **
 >
-> 当entry为一个对象时，bundle会被命名为`main`
+> 当entry为一个对象时，entry对象的每个key
 
 **function**:
 
