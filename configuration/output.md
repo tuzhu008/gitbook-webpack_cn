@@ -66,7 +66,9 @@ filename: "[chunkhash].bundle.js"
 | \[id\] | chun id |
 | \[query\] | 模块的查询字符串，\`?\`后的部分 |
 
+`[hash]`和`[chunkhash]`的长度可以使用`[hash:16]`（默认为20）来指定。
+
 ## output.chunkFilename
 
-`[hash]`和`[chunkhash]`的长度可以使用`[hash:16]`（默认为20）来指定。
+
 
