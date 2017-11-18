@@ -25,11 +25,11 @@ module.exports = {
 
 entry使用字符串数组时，会将数组内的所有的依赖文件都打包到一个bundle中。
 
-     **[info] 注：**
+**\[info\] 注: **
 
-    >
-    >
-     当entry为一个字符串或者数组的时候，bundle会被命名为`main`
+&gt;
+
+&gt;当entry为一个字符串或者数组的时候，bundle会被命名为`main`
 
 **object**:
 
