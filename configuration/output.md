@@ -16,5 +16,5 @@ path: path.resolve(__dirname, 'dist/assets')
 
 类型：`string`
 
-这个选项决定了每个输出bundle的名称。
+这个选项决定了每个输出bundle的名称。这些bundle会被写入output.path选项指定的目录下。
 
