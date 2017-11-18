@@ -24,6 +24,8 @@ filename: 'main.bundle.js'
 
 在多入口起点、代码分隔等会生成多个bundle的情况下，可以使用下面的占位符来命名：
 
+使用入口名称：
+
 ```js
 filename: "[name].bundle.js"
 ```
