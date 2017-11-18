@@ -6,5 +6,5 @@ context取值：`string`
 context: path.resolve(__dirname, "app")
 ```
 
-context表示
+context表示webpack
 
