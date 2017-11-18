@@ -54,7 +54,7 @@ filename: "[chunkhash].bundle.js"
 >
 > chunkhash 在使用开发服务时无法使用。
 >
-> 此选项不会影响那些按需加载的chunk，控制这些文件的输出，请使用[output.chunFilename](#outputchunkfilename)
+> 此选项不会影响那些按需加载的chunk，控制这些文件的输出，请使用[output.chunFilename](#outputchunkfilename)。
 
 ## output.chunkFilename
 
