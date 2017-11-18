@@ -1,0 +1,314 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>配置 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../Plugins/WebpackManifestPlugin.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../loaders/">
+            
+                <a href="../loaders/">
+            
+                    
+                    loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Plugins/">
+            
+                <a href="../Plugins/">
+            
+                    
+                    插件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Plugins/WebpackManifestPlugin.html">
+            
+                <a href="../Plugins/WebpackManifestPlugin.html">
+            
+                    
+                    WebpackManifestPlugin.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >配置</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x914D;&#x7F6E;">&#x914D;&#x7F6E;</h1>
+<p>&#x6574;&#x4F53;&#x914D;&#x7F6E;&#x7ED3;&#x6784;</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = {
+    entry: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// &#x5165;&#x53E3;</span>
+    output: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// &#x51FA;&#x53E3;</span>
+    <span class="hljs-built_in">module</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// &#x6A21;&#x5757;&#xFF0C;&#x914D;&#x7F6E;&#x5904;&#x7406;&#x9879;&#x76EE;&#x4E2D;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x6A21;&#x5757;&#x7684;&#x65B9;&#x5F0F;</span>
+    resolve: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// &#x89E3;&#x6790;&#xFF0C;&#x914D;&#x7F6E;&#x5904;&#x7406;&#x6A21;&#x5757;&#x7684;&#x89E3;&#x6790;&#x65B9;&#x5F0F;</span>
+    performance: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// &#x6027;&#x80FD;&#xFF0C;&#x63A7;&#x5236; webpack &#x5982;&#x4F55;&#x901A;&#x77E5;&#x300C;&#x8D44;&#x6E90;(asset)&#x548C;&#x5165;&#x53E3;&#x8D77;&#x70B9;&#x8D85;&#x8FC7;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x9650;&#x5236;&#x300D;</span>
+    devtool: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// &#x901A;&#x8FC7;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x8C03;&#x8BD5;&#x5DE5;&#x5177;(browser devtools)&#x4E2D;&#x6DFB;&#x52A0;&#x5143;&#x4FE1;&#x606F;(meta info)&#x589E;&#x5F3A;&#x8C03;&#x8BD5;</span>
+    context: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// &#x57FA;&#x7840;&#x76EE;&#x5F55;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#xFF0C;&#x7528;&#x4E8E;&#x4ECE;&#x914D;&#x7F6E;&#x4E2D;&#x89E3;&#x6790;&#x5165;&#x53E3;&#x8D77;&#x70B9;(entry point)&#x548C; loader</span>
+    target: <span class="hljs-string">&apos;&apos;</span>,  <span class="hljs-comment">// &#x6784;&#x5EFA;&#x76EE;&#x6807;&#xFF0C;webpack&#x53EF;&#x4EE5;&#x4E3A;&#x591A;&#x4E2A;&#x73AF;&#x5883;&#x6784;&#x5EFA;&#x7F16;&#x8BD1;</span>
+    externals: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// &#x5916;&#x90E8;&#x6269;&#x5C55;&#xFF0C;&#x63D0;&#x4F9B;&#x300C;&#x4ECE;&#x8F93;&#x51FA;&#x7684; bundle &#x4E2D;&#x6392;&#x9664;&#x4F9D;&#x8D56;&#x300D;&#x7684;&#x65B9;&#x6CD5;</span>
+    stats: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// &#x7EDF;&#x8BA1;&#xFF0C; &#x51C6;&#x786E;&#x5730;&#x63A7;&#x5236;&#x663E;&#x793A;&#x54EA;&#x4E9B;&#x5305;&#x7684;&#x4FE1;&#x606F;</span>
+    devServer: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// &#x5F00;&#x53D1;&#x670D;&#x52A1;</span>
+    plugins: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// &#x63D2;&#x4EF6;&#xFF0C;&#x5B9A;&#x5236;webpack&#x6784;&#x5EFA;&#x8FC7;&#x7A0B;</span>
+
+    <span class="hljs-comment">// &#x66F4;&#x591A;&#x9AD8;&#x7EA7;&#x914D;&#x7F6E;</span>
+    loader: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// &#x5728; loader &#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x66B4;&#x9732;&#x81EA;&#x5B9A;&#x4E49;&#x503C;</span>
+    resolveLoader: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// &#x72EC;&#x7ACB;&#x89E3;&#x6790;&#x9009;&#x9879;&#x7684; loader</span>
+    parallelism: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// &#x9650;&#x5236;&#x5E76;&#x884C;&#x5904;&#x7406;&#x6A21;&#x5757;&#x7684;&#x6570;&#x91CF;</span>
+    profile: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// &#x6355;&#x83B7;&#x65F6;&#x673A;&#x4FE1;&#x606F;</span>
+    bail: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// &#x5728;&#x7B2C;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x51FA;&#x73B0;&#x65F6;&#x629B;&#x51FA;&#x5931;&#x8D25;&#x7ED3;&#x679C;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5BB9;&#x5FCD;&#x5B83;&#x3002;</span>
+    cache: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// &#x7981;&#x7528;/&#x542F;&#x7528;&#x7F13;&#x5B58;</span>
+    watch: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// &#x542F;&#x7528;&#x89C2;&#x5BDF;</span>
+    watchOptions: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// &#x5B9A;&#x5236;watch</span>
+    node: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// &#x914D;&#x7F6E;&#x662F;&#x5426; polyfill &#x6216; mock &#x67D0;&#x4E9B; Node.js &#x5168;&#x5C40;&#x53D8;&#x91CF;&#x548C;&#x6A21;&#x5757;</span>
+    amd: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// &#x8BBE;&#x7F6E; require.amd &#x6216; define.amd &#x7684;&#x503C;&#xFF1A;</span>
+    recordsPath: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// &#x6253;&#x5F00;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x751F;&#x6210;&#x5305;&#x542B; webpack &#x8BB0;&#x5F55;&#x7684; JSON &#x6587;&#x4EF6;</span>
+    recordsInputPath: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// &#x8BBE;&#x5B9A;&#x8BFB;&#x53D6;&#x6700;&#x540E;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#x7684;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x79F0;&#x3002;</span>
+    recordsOutputPath: <span class="hljs-string">&apos;&apos;</span> <span class="hljs-comment">// &#x8BBE;&#x5B9A;&#x8BB0;&#x5F55;&#x8981;&#x5199;&#x5165;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</span>
+
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../Plugins/WebpackManifestPlugin.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: WebpackManifestPlugin.md">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"配置","level":"1.4","depth":1,"previous":{"title":"WebpackManifestPlugin.md","level":"1.3.1","depth":2,"path":"Plugins/WebpackManifestPlugin.md","ref":"Plugins/WebpackManifestPlugin.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"configuration/README.md","mtime":"2017-11-18T08:36:36.723Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-18T09:03:27.562Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
