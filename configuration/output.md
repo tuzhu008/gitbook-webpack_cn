@@ -12,7 +12,7 @@ output 目录对应一个**绝对路径**。
 path: path.resolve(__dirname, 'dist/assets')
 ```
 
-## filename
+## output.filename
 
 类型：`string`
 
