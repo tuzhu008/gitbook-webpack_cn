@@ -1,0 +1,63 @@
+{
+  "title" : "webpack中文",
+  "author" : "tuzhu008",
+  "description" : "webpack学习资料和过程记录",
+  "language" : "zh-hans",
+  "root": ".",
+  "plugins": [
+    "expandable-chapters-small",
+    "anchors",
+    "anchor-navigation-ex",
+    "favicon",
+    "copy-code-button",
+    "alerts",
+    "splitter",
+    "book-summary-scroll-position-saver",
+    "include-codeblock",
+    "ace",
+    "prism",
+    "-highlight",
+    "tbfed-pagefooter"
+  ],
+  "pluginsConfig": {
+      "anchor-navigation-ex": {
+        "showLevel": true,
+        "associatedWithSummary": true,
+        "printLog": false,
+        "multipleH1": true,
+        "mode": "float",
+        "float": {
+            "showLevelIcon": false,
+            "level1Icon": "fa fa-hand-o-right",
+            "level2Icon": "fa fa-hand-o-right",
+            "level3Icon": "fa fa-hand-o-right"
+        }
+      },
+      "include-codeblock": {
+        "template": "ace",
+        "unindent": true,
+        "theme": "monokai"
+      },
+      "favicon": {
+          "shortcut": "assets/images/favicon.ico",
+          "bookmark": "assets/images/favicon.ico",
+          "appleTouch": "assets/images/apple-touch-icon.png",
+          "appleTouchMore": {
+              "120x120": "assets/images/apple-touch-icon-120x120.png",
+              "180x180": "assets/images/apple-touch-icon-180x180.png"
+          }
+      },
+      "prism": {
+        "css": [
+          "prismjs/themes/prism-duotone-light.css"
+        ]
+      },
+      "tbfed-pagefooter": {
+        "copyright":"Copyright &copy tuzhu008 2017",
+        "modify_label": "该文件修订时间：",
+        "modify_format": "YYYY-MM-DD HH:mm:ss"
+      }
+  }
+}
+
+
