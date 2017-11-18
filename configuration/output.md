@@ -42,7 +42,7 @@ filename: "[id].bundle.js"
 filename: "[name].[hash].bundle.js"
 ```
 
-**使用内部chunk id：**
+**使用为每一个chunk生成的hash：**
 
 ```js
 filename: "[id].bundle.js"
