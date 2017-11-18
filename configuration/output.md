@@ -50,9 +50,9 @@ filename: "[chunkhash].bundle.js"
 
 > ** \[info\] 注 **
 >
-> 当文件不发生改变时，chunkhash不发生变化。由此可以利用来进行缓存，加快加载速度。
+> 当文件不发生改变时，chunkhash 不发生变化。由此可以利用来进行缓存，加快加载速度。
 >
-> chunkhash在使用开发服务时无法使用。
+> chunkhash 在使用开发服务时无法使用。
 
 
 
