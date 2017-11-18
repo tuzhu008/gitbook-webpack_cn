@@ -53,6 +53,10 @@ filename: "[chunkhash].bundle.js"
 > 当文件不发生改变时，chunkhash 不发生变化。由此可以利用来进行缓存，加快加载速度。
 >
 > chunkhash 在使用开发服务时无法使用。
+>
+> 此选项不会影响那些按需加载的chunk，控制这些文件的输出，请使用output.chunFilename
+
+## output.chunkFilename
 
 
 
