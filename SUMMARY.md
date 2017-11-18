@@ -12,7 +12,7 @@
 
   * [context（上下文）](configuration/context.md)
   * [entry（入口）](configuration/entry.md)
-  * [configuration/output（输出）.md](configuration/output.md)
+  * [output（输出）](configuration/output.md)
 
 * [注意](Note.md)
 
