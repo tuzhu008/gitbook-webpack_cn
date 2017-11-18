@@ -25,8 +25,6 @@ module.exports = {
 
 entry使用字符串数组时，会将数组内的所有的依赖文件都打包到一个bundle中。
 
-
-
 ```
  **[info] **
 
