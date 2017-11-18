@@ -39,7 +39,7 @@ filename: "[id].bundle.js"
 **使用为每一次构建（build）生成的hash：**
 
 ```js
-filename: "[hash].bundle.js"
+filename: "[hash].bundle.js" //
 ```
 
 **使用内部chunk id：**
