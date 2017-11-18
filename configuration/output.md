@@ -58,7 +58,7 @@ filename: "[chunkhash].bundle.js"
 
 可用模板字符串：
 
-| 模板 |  |
+| 模板 | 描述 |
 | :--- | :--- |
 |  |  |
 
