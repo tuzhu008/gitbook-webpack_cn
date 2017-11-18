@@ -45,8 +45,12 @@ filename: "[name].[hash].bundle.js"
 **使用为每一个chunk生成的hash：**
 
 ```js
-filename: "[hashchunk].bundle.js"
+filename: "[chunkhash].bundle.js"
 ```
+
+> ** \[info\] 注 **
+>
+> chun
 
 
 
