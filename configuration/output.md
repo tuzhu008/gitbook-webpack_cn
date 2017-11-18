@@ -48,11 +48,5 @@ filename: "[name].[hash].bundle.js"
 filename: "[hashchunk].bundle.js"
 ```
 
-**使用内部chunk id：**
-
-```js
-filename: "[id].bundle.js"
-```
-
 
 
