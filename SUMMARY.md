@@ -10,7 +10,7 @@
 
 * [配置](/configuration/README.md)
 
-  * [context](configuration/context.md)
+  * [contex（上下文）t](configuration/context.md)（上下文）
   * [entry\(入口）](configuration/entry.md)
 
 * [注意](Note.md)
