@@ -64,7 +64,7 @@ filename: "[chunkhash].bundle.js"
 | \[chunkhash\] | chunk内容相关的hash |
 | \[name\] | 模块名称 |
 | \[id\] | chun id |
-| \[query\] | 模块的查询字符串，\`?\`的部分 |
+| \[query\] | 模块的查询字符串，\`?\`后的部分 |
 
 ## output.chunkFilename
 
