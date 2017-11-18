@@ -43,8 +43,8 @@ module.exports = {
 entry使用对象时代表的是多入口文件，最后会打包生成和对象中的每一个入口文件相对应的bundle。entry对象的每一个键值（如上的app、index）在webpack中都会保留下来，可以用来配置输出文件的名字，使用字段`[name]`
 
 > **\[info\] 注: **
-
-> 当entry为一个字符串或者数组的时候，bundle会被命名为`main`
+>
+> 当entry为一个对象时候，bundle会被命名为`main`
 
 **function**:
 
