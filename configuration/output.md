@@ -30,5 +30,5 @@ filename: 'main.bundle.js'
 filename: "[name].bundle.js"
 ```
 
-
+**使用内部chunk id：**
 
