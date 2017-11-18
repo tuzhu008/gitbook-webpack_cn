@@ -22,5 +22,5 @@ path: path.resolve(__dirname, 'dist/assets')
 filename: 'main.bundle.js'
 ```
 
-在多入口起点、代码分隔等会生成多个bundle的情况下，可以使用下面的
+在多入口起点、代码分隔等会生成多个bundle的情况下，可以使用下面的占位符来
 
