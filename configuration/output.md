@@ -60,7 +60,9 @@ filename: "[chunkhash].bundle.js"
 
 | 模板 | 描述 |
 | :--- | :--- |
-|  |  |
+| \[hash\] |  |
+| \[chunkhash\] |  |
+| \[name\] |  |
 
 ## output.chunkFilename
 
