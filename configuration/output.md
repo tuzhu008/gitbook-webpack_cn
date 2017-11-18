@@ -51,8 +51,8 @@ filename: "[chunkhash].bundle.js"
 > ** \[info\] 注 **
 >
 > 当文件不发生改变时，chunkhash不发生变化。由此可以利用来进行缓存，加快加载速度。
-
-
+>
+> chunkhash在
 
 
 
