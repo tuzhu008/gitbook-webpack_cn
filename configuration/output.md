@@ -52,7 +52,7 @@ filename: "[chunkhash].bundle.js"
 >
 > 当文件不发生改变时，chunkhash不发生变化。由此可以利用来进行缓存，加快加载速度。
 >
-> chunkhash在
+> chunkhash在使用开发服务时无法使用。
 
 
 
