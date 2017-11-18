@@ -68,5 +68,5 @@ filename: "[chunkhash].bundle.js"
 
 ## output.chunkFilename
 
-
+`[hash]`和`[chunkhash]`的长度可以使用`[hash:16]`，默认为20）来指定。
 
