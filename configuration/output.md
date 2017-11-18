@@ -36,7 +36,7 @@ filename: "[name].bundle.js"
 filename: "[id].bundle.js"
 ```
 
-**使用构建：**
+**使用为每一次构建（build）生成的hash：**
 
 ```js
 filename: "[id].bundle.js"
