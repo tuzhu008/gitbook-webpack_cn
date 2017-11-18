@@ -5,6 +5,7 @@
 * [插件](/Plugins/README.md)
   * [WebpackManifestPlugin.md](Plugins/WebpackManifestPlugin.md)
 * [配置](configuration/README.md)
+* [致谢](/thanks.md)
 
 
 
