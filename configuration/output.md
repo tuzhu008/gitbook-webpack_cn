@@ -56,6 +56,12 @@ filename: "[chunkhash].bundle.js"
 >
 > 此选项不会影响那些按需加载的chunk，控制这些文件的输出，请使用[output.chunFilename](#outputchunkfilename)。
 
+可用模板字符串：
+
+| 模板 |  |
+| :--- | :--- |
+|  |  |
+
 ## output.chunkFilename
 
 
