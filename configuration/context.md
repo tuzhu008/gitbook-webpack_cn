@@ -6,5 +6,5 @@ context取值：`string`
 context: path.resolve(__dirname, "app")
 ```
 
-context表示webpack的基础目录，
+context表示webpack的基础目录，它是一个绝对路径。
 
