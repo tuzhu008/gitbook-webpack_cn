@@ -10,6 +10,8 @@
 
 * [配置](/configuration/README.md)
 
+* 注意
+
 * [其他概念](/OtherConcepts/README.md)
 
 * [致谢](/thanks.md)
