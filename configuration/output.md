@@ -61,10 +61,10 @@ filename: "[chunkhash].bundle.js"
 | 模板 | 描述 |
 | :--- | :--- |
 | \[hash\] | 构建相关的hash |
-| \[chunkhash\] |  |
-| \[name\] |  |
-| \[id\] |  |
-| \[query\] |  |
+| \[chunkhash\] | chunk内容相关的hash |
+| \[name\] | 模块名称 |
+| \[id\] | chun id |
+| \[query\] | 模块的查询字符串，\`?\`的部分 |
 
 ## output.chunkFilename
 
