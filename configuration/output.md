@@ -8,7 +8,9 @@ output用于配置一些关于webpack打包输出的信息。比如，输出的�
 
 output 目录对应一个**绝对路径**。
 
-
+```js
+path: path.resolve(__dirname, 'dist/assets')
+```
 
 ## filename
 
