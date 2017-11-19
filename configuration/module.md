@@ -55,7 +55,7 @@ module.exports = {
 
 **例如:**从`app.js导入 './style.css'`，resource 是`/path/to/style.css`  `. issuer` 是`/path/to/app.js`。
 
-在规则中，属性[`test`](#ruletest),[`include`](#ruleinclude),[`exclude`](#ruleexclude)和[`resource`](https://doc.webpack-china.org/configuration/module/#rule-resource)对 resource 匹配，并且属性[`issuer`](#ruleissuer)对 issuer 匹配。
+在规则中，属性[`test`](#ruletest),[`include`](#ruleinclude),[`exclude`](#ruleexclude)和[`resource`](#ruleresource)对 resource 匹配，并且属性[`issuer`](#ruleissuer)对 issuer 匹配。
 
 当使用多个条件时，所有条件都匹配。
 
