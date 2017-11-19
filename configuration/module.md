@@ -15,13 +15,14 @@ module.exports = {
 
 类型：array
 
-创建模块时，匹配请求的[规则](https://doc.webpack-china.org/configuration/module/#rule)数组。
+创建模块时，匹配请求的[规则](#rule)数组。
 
 ```js
 module.exports = {
     module: {
         rules: [
             {
+                rules: [],
                 resource: '',
                 test: '',
                 include: '',
@@ -54,7 +55,7 @@ module.exports = {
 
 **例如:**从`app.js导入 './style.css'`，resource 是`/path/to/style.css`  `. issuer` 是`/path/to/app.js`。
 
-在规则中，属性[`test`](https://doc.webpack-china.org/configuration/module/#rule-test),[`include`](https://doc.webpack-china.org/configuration/module/#rule-include),[`exclude`](https://doc.webpack-china.org/configuration/module/#rule-exclude)和[`resource`](https://doc.webpack-china.org/configuration/module/#rule-resource)对 resource 匹配，并且属性[`issuer`](https://doc.webpack-china.org/configuration/module/#rule-issuer)对 issuer 匹配。
+在规则中，属性[`test`](#ruletest),[`include`](#ruleinclude),[`exclude`](#ruleexclude)和[`resource`](https://doc.webpack-china.org/configuration/module/#rule-resource)对 resource 匹配，并且属性[`issuer`](#ruleissuer)对 issuer 匹配。
 
 当使用多个条件时，所有条件都匹配。
 
@@ -71,19 +72,35 @@ module.exports = {
 1. 应用的 loader：应用在 resource 上的 loader 数组。
 2. Parser 选项：用于为模块创建解析器的选项对象。
 
-这些属性会影响 loader：[`loader`](https://doc.webpack-china.org/configuration/module/#rule-loader)，[`options`](https://doc.webpack-china.org/configuration/module/#rule-options-rule-query)，[`use`](https://doc.webpack-china.org/configuration/module/#rule-use)。
+这些属性会影响 loader：[`options`](https://doc.webpack-china.org/configuration/module/#rule-options-rule-query)，[`use`](https://doc.webpack-china.org/configuration/module/#rule-use)。
 
-也兼容这些属性：[`query`](https://doc.webpack-china.org/configuration/module/#rule-options-rule-query)，[`loaders`](https://doc.webpack-china.org/configuration/module/#rule-loaders)。
+也兼容这些属性：[`query`](#ruleoptions--rulequery)。
 
-[`enforce`](https://doc.webpack-china.org/configuration/module/#rule-enforce)属性会影响 loader 种类。不论是普通的，前置的，后置的 loader。
+[`enforce`](#ruleenforce)属性会影响 loader 种类。不论是普通的，前置的，后置的 loader。
 
-[`parser`](https://doc.webpack-china.org/configuration/module/#rule-parser)属性会影响 parser 选项。
+[`parser`](#ruleparser)属性会影响 parser 选项。
 
 ### 嵌套规则
 
-可以使用属性[`rules`](https://doc.webpack-china.org/configuration/module/#rule-rules)和[`oneOf`](https://doc.webpack-china.org/configuration/module/#rule-oneof)指定嵌套规则。
+可以使用属性[`rules`](#rulerules)和[`oneOf`](#ruleoneof)指定嵌套规则。
 
 这些规则用于在规则条件\(rule condition\)匹配时进行取值。
+
+### `Rule.rules`
+
+[`规则`](#rule)数组，当规则匹配时使用。
+
+```js
+module.exports = {
+    module: {
+        rules: [
+            {
+                rules: []
+            }
+        ]
+    }
+}
+```
 
 ### `Rule.resource`
 
@@ -259,7 +276,7 @@ parser: {
 
 类型：object
 
-必须有一个`loader`属性是字符串。它使用 loader 解析选项（[resolveLoader](//configuration/resolve#resolveloader)），相对于配置中的[`context`](//configuration/context.md)来解析。
+必须有一个`loader`属性是字符串。它使用 loader 解析选项（[resolveLoader](/configuration/resolve#resolveloader)），相对于配置中的[`context`](/configuration/context.md)来解析。
 
 可以有一个`options`属性为字符串或对象。值可以传递到 loader 中，将其理解为 loader 选项。
 
