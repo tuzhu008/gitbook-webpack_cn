@@ -79,15 +79,15 @@ module.exports = {
 
 这些规则用于在规则条件\(rule condition\)匹配时进行取值。
 
-### Rule.resource
+### `Rule.resource`
 
 [`条件`](#条件)会匹配 resource。既可以提供`Rule.resource`选项，也可以使用快捷选项`Rule.test`，`Rule.exclude`和`Rule.include`。在[Rule`条件`](#rule条件)中查看详细。
 
-### Rule.test
+### `Rule.test`
 
 Rule.test 是 Rule.resource.test的简写。如果你提供了一个`Rule.test`选项，就不能再提供`Rule.resource`。
 
-### Rule.use
+### `Rule.use`
 
 应用于模块的[UseEntries](https://doc.webpack-china.org/configuration/module/#useentry)列表。每个入口\(entry\)指定使用一个 loader。
 
@@ -120,9 +120,20 @@ module.exports = {
 >
 > 对同一条件使用多个loader时，解析顺序为从**右**到**左，**从上到下，最后一个loader返回经过最终转换的模块。
 
-
-
 ### `Rule.options / Rule.query`
+
+`Rule.options` 和` Rule.query`是`Rule.use: [ { options } ]`的简写。是用来对loader进行配置的。
+
+```js
+use: [
+    {
+        loader: 'css-loader',
+        options: {
+            importLoaders: 1
+        }
+    },
+]
+```
 
 ## Rule条件
 
