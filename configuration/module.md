@@ -48,6 +48,10 @@
 
 这些规则用于在规则条件\(rule condition\)匹配时进行取值。
 
+### Rule.test
+
+Rule.test 是 Rule.resource.test的简写。如果你提供了一个`Rule.test`选项，就不能再提供`Rule.resource`。
+
 ## module.rules
 
 类型：array
@@ -57,6 +61,7 @@
 ```js
 module.exports = {
     rules: [
+        
     ]
 }
 ```
