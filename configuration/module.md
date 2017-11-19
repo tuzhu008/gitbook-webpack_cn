@@ -25,7 +25,16 @@
 >
 > 小心！resource 是文件的_解析_路径，这意味着符号链接的资源是真正的路径，_而不是_符号链接位置。在使用工具来符号链接包的时候（如`npm link`）比较好记，像`/node_modules/`等常见条件可能会不小心错过符号链接的文件。
 
+### 结果
 
+规则结果只在规则条件匹配时使用。
+
+规则有两种输入值：
+
+1. 应用的 loader：应用在 resource 上的 loader 数组。
+2. Parser 选项：用于为模块创建解析器的选项对象。
+
+这些属性会影响 loader：[`loader`](https://doc.webpack-china.org/configuration/module/#rule-loader)，[`options`](https://doc.webpack-china.org/configuration/module/#rule-options-rule-query)，[`use`](https://doc.webpack-china.org/configuration/module/#rule-use)。
 
 ## module.rules
 
