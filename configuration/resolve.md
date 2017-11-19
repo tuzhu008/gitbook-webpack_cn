@@ -293,8 +293,6 @@ cachePredicate: function() { return true }
 
 ### `resolveLoader.moduleExtensions`
 
-
-
 ### 
 
 
