@@ -1,15 +1,14 @@
 # module （模块）
 
-该选项用来配置如何处理各种模块。配置的方式是对模块应用一系列的规则。
-
-
+该选项用来配置如何处理各种模块。配置的方式是对模块应用一系列的规则（Rule）。
 
 ```js
 module.exports = {
         module: {
         rules: [
             {
-                use:
+                test: '',   
+                use: []
             }
         ]
     }
@@ -81,7 +80,7 @@ Rule.test 是 Rule.resource.test的简写。如果你提供了一个`Rule.test`�
 ```js
 module.exports = {
     module: {
-        
+
     }
 }
 ```
