@@ -1,6 +1,20 @@
 # module （模块）
 
-该选项用来配置如何处理各种模块。
+该选项用来配置如何处理各种模块。配置的方式是对模块应用一系列的规则。
+
+
+
+```js
+module.exports = {
+        module: {
+        rules: [
+            {
+                use:
+            }
+        ]
+    }
+}
+```
 
 # Rule
 
@@ -60,16 +74,17 @@ Rule.test 是 Rule.resource.test的简写。如果你提供了一个`Rule.test`�
 
 应用于模块的[UseEntries](https://doc.webpack-china.org/configuration/module/#useentry)列表。每个入口\(entry\)指定使用一个 loader。
 
-  
-传递字符串（如：
+传递字符串（如：`use: [ "style-loader" ]`）是 loader 属性的简写方式（如：`use: [ { loader: "style-loader "} ]`）。
 
-`use: [ "style-loader" ]`
+当然也可以为同一模块使用多个loader：
 
-）是 loader 属性的简写方式（如：
-
-`use: [ { loader: "style-loader "} ]`
-
-）。
+```js
+module.exports = {
+    module: {
+        
+    }
+}
+```
 
 ## module.rules
 
@@ -79,9 +94,13 @@ Rule.test 是 Rule.resource.test的简写。如果你提供了一个`Rule.test`�
 
 ```js
 module.exports = {
-    rules: [
-
-    ]
+    module: {
+        rules: [
+            {
+                use:
+            }
+        ]
+    }
 }
 ```
 
