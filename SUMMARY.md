@@ -14,6 +14,7 @@
   * [Entry（入口）](configuration/entry.md)
   * [Output（输出）](configuration/output.md)
   * [Module（模块）](/configuration/module.md)
+  * [Resolve（解析）](/configuration/resolve.md)
 
 * [注意](Note.md)
 
