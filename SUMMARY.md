@@ -16,6 +16,18 @@
   * [Module（模块）](/configuration/module.md)
   * [Resolve（解析）](/configuration/resolve.md)
 
+  * [Plugins（插件）](configuration/plugins.md)
+  * [DevServer（开发服务）](configuration/devServer.md)
+  * [Devtools（开发工具）](/configuration/devtools.md)
+  * [Target（构建目标）](configuration/target.md)
+  * [Watch（观察模式）](configuration/watch.md)
+  * [WatchOptions（观察模式选项）](configuration/watchOptions.md)
+  * [Externals（外部扩展）](configuration/externals.md)
+  * [Performance（性能）](configuration/performance.md)
+  * [Node](configuration/node.md)
+  * [State（统计）](configuration/state.md)
+  * [OtherOptions（其他选项）](configuration/otherOptions.md)
+
 * [注意](Note.md)
 
 * [其他概念](/OtherConcepts/README.md)
