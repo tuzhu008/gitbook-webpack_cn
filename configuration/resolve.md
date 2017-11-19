@@ -293,7 +293,17 @@ cachePredicate: function() { return true }
 
 ### `resolveLoader.moduleExtensions`
 
-### 
+类型：array
+
+在解析loader使用的扩展/后缀。从版本2开始，我们强烈建议使用完整的名称，例如example-loader,，尽可能清晰地使用。但是，如果您真的想要排除\`-loader\`位，例如使用example，您可以使用该选项来执行以下操作:
+
+```js
+moduleExtensions: [ '-loader' ]
+```
+
+> **\[warning\] 注：**
+>
+> 尽管可以这样做，但是我们还是强烈建议使用完整的名称。
 
 
 
