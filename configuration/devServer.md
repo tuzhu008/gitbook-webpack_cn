@@ -47,7 +47,7 @@ Content not from webpack is served from /path/to/dist/
 >
 > 在导出[多个配置](https://doc.webpack-china.org/configuration/configuration-types/#exporting-multiple-configurations)时，只考虑第一个配置的devServer选项，并将其用于数组中的所有配置。
 
-
+  
 
 > **\[info\]** 注：
 >
