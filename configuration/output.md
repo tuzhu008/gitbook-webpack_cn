@@ -145,7 +145,8 @@ publicPath: "", // 相对于 HTML 页面（目录相同）
 
 | 模板 | 描述 |
 | :--- | :--- |
-|  |  |
+| \[file\] | 模块文件名称 |
+| \[filebase\] | 模板[basename](https://nodejs.org/api/path.html#path_path_basename_path_ext) |
 
 
 
