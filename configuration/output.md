@@ -74,11 +74,9 @@ filename: "[chunkhash].bundle.js"
 
 此选项决定了非入口\(non-entry\) chunk 文件的名称。可取值与[output.filename](#outputfilename) 相同。
 
-注意，这些文件名需要在 runtime 根据 chunk 发送的请求去生成。因此，需要在 webpack runtime 输出 bundle 值时，将 chunk id 的值对应映射到占位符(如 [name] 和 [chunkhash])。这会增加文件大小，并且在任何 chunk 的占位符值修改后，都会使 bundle 失效。
+注意，这些文件名需要在 runtime 根据 chunk 发送的请求去生成。因此，需要在 webpack runtime 输出 bundle 值时，将 chunk id 的值对应映射到占位符\(如 \[name\] 和 \[chunkhash\]\)。这会增加文件大小，并且在任何 chunk 的占位符值修改后，都会使 bundle 失效。
 
-默认使用 `[id].js` 或从 output.filename 中推断出的值（[name] 会被预先替换为 [id] 或 [id].）。
-
-
+默认使用 `[id].js` 或从 output.filename 中推断出的值（\[name\] 会被预先替换为 \[id\] 或 \[id\].）。
 
 ## output.publicPath
 
@@ -88,7 +86,7 @@ filename: "[chunkhash].bundle.js"
 
 此配置选项用于指定在浏览器中所引用的此输出目录对应的URL。相对URL会被相对于HTML页面进行解析。相对于服务器的URL、相对于协议的URL、绝对URL也可能会用到。当资源托管到CDN时，必须要设置此选项。
 
-该选项的值是以 runtime(运行时) 或 loader(载入时) 所创建的每个 URL 为前缀。因此，在多数情况下，此选项的值都会以/结束。
+该选项的值是以 runtime\(运行时\) 或 loader\(载入时\) 所创建的每个 URL 为前缀。因此，在多数情况下，此选项的值都会以/结束。
 
 以HTML页面为基准：
 
@@ -96,6 +94,7 @@ filename: "[chunkhash].bundle.js"
 path: path.resolve(__dirname, "public/assets");
 publicPath: "https://cdn.example.com/assets/";
 ```
+
 项目所有的地址，都会加上publicPath的前缀。
 
 ```js
@@ -126,13 +125,13 @@ publicPath: "../assets/", // 相对于 HTML 页面
 publicPath: "", // 相对于 HTML 页面（目录相同）
 ```
 
-在编译时(compile time)无法知道输出文件的 publicPath 的情况下，可以留空，然后在入口文件(entry file)处使用自由变量(free variable) webpack_public_path，以便在运行时(runtime)进行动态设置。
+在编译时\(compile time\)无法知道输出文件的 publicPath 的情况下，可以留空，然后在入口文件\(entry file\)处使用自由变量\(free variable\) webpack\_public\_path，以便在运行时\(runtime\)进行动态设置。
+
 ```js
  __webpack_public_path__ = myRuntimePublicPath
 
 // 应用程序入口的其他部分
 ```
-
 
 # output.sourceMapFillename
 
@@ -140,6 +139,7 @@ publicPath: "", // 相对于 HTML 页面（目录相同）
 
 此选项会向硬盘写入一个输出文件，只在 `devtool` 启用了 SourceMap 选项时才使用。
 
-配置 source map 的命名方式。默认使用` "[file].map"`。
+配置 source map 的命名方式。默认使用`"[file].map"`。
 
-可以使用 #output-filename 中的 `[name]`, `[id]`, `[hash]` 和 `[chunkhash]` 替换符号。除此之外，还可以使用以下替换符号。`[file]` 占位符会被替换为原始文件的文件名。我们建议只使用 `[file]` 占位符，因为其他占位符在非 chunk 文件生成的 SourceMap 时不起作用。
+可以使用 [\#output-filename ](#outputfilename)中的 `[name]`, `[id]`, `[hash]` 和 `[chunkhash]` 替换符号。除此之外，还可以使用以下替换符号。`[file]` 占位符会被替换为原始文件的文件名。我们建议只使用 `[file]` 占位符，因为其他占位符在非 chunk 文件生成的 SourceMap 时不起作用。
+
