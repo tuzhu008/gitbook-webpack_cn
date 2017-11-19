@@ -143,3 +143,9 @@ publicPath: "", // 相对于 HTML 页面（目录相同）
 
 可以使用 [\#output-filename ](#outputfilename)中的 `[name]`, `[id]`, `[hash]` 和 `[chunkhash]` 替换符号。除此之外，还可以使用以下替换符号。`[file]` 占位符会被替换为原始文件的文件名。我们建议只使用 `[file]` 占位符，因为其他占位符在非 chunk 文件生成的 SourceMap 时不起作用。
 
+| 模板 | 描述 |
+| :--- | :--- |
+|  |  |
+
+
+
