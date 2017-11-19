@@ -45,7 +45,34 @@ alias: {
 }
 ```
 
+使用相对路径：
 
+```js
+import Utility from '../../utilities/utility';
+```
+
+采用别名：
+
+```js
+import Utility from 'Utilities/utility';
+```
+
+也可以在给定对象的键后的末尾添加`$`，以表示精准匹配：
+
+```js
+alias: {
+  xyz$: path.resolve(__dirname, 'path/to/file.js')
+}
+```
+
+这将产生以下结果：
+
+```js
+import Test1 from 'xyz'; // 精确匹配，所以 path/to/file.js 被解析和导入
+import Test2 from 'xyz/file.js'; // 精确匹配，触发普通解析
+```
+
+下面的表格展示了一些其他情况：
 
 
 
