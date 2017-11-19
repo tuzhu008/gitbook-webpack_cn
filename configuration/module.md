@@ -46,6 +46,10 @@
 
 可以使用属性[`rules`](https://doc.webpack-china.org/configuration/module/#rule-rules)和[`oneOf`](https://doc.webpack-china.org/configuration/module/#rule-oneof)指定嵌套规则。
 
+这些规则用于在规则条件\(rule condition\)匹配时进行取值。
+
+
+
 ## module.rules
 
 类型：array
