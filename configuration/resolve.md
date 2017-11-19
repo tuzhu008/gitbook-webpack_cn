@@ -74,9 +74,8 @@ import Test2 from 'xyz/file.js'; // 精确匹配，触发普通解析
 
 下面的表格展示了一些其他情况：
 
-
-| `别名：` | `import "xyz"` | `import "xyz/file.js"` |
-| -------- | ---------------- | -------------------------|
+| **`别名：`** | **`import "xyz"`** | **`import "xyz/file.js"`** |
+| :--- | :--- | :--- |
 | `{}` | `/abc/node_modules/xyz/index.js` | `/abc/node_modules/xyz/file.js` |
 | `{ xyz: "/abs/path/to/file.js" }` | `/abs/path/to/file.js` | error |
 | `{ xyz$: "/abs/path/to/file.js" }` | `/abs/path/to/file.js` | `/abc/node_modules/xyz/file.js` |
@@ -91,4 +90,54 @@ import Test2 from 'xyz/file.js'; // 精确匹配，触发普通解析
 | `{ xyz: "modu/dir" }` | `/abc/node_modules/modu/dir/index.js` | `/abc/node_modules/dir/file.js` |
 | `{ xyz: "xyz/dir" }` | `/abc/node_modules/xyz/dir/index.js` | `/abc/node_modules/xyz/dir/file.js` |
 | `{ xyz$: "xyz/dir" }` | `/abc/node_modules/xyz/dir/index.js` | `/abc/node_modules/xyz/file.js` |
+
+如果在`package.json`中定义，`index.js`可能会被解析为另一个文件。
+
+`/abc/node_modules`也可能在`/node_modules`中解析。
+
+### `resolve.aliasFields`
+
+类型：string
+
+指定一个字段，例如`browser`，根据[此规范](https://github.com/defunctzombie/package-browser-field-spec)进行解析。默认：
+
+```js
+aliasFields: ["browser"]
+```
+
+### `resolve.cacheWithContext`
+
+类型：boolean
+
+如果启用了不安全的缓存，则在缓存的键中包括`request.context`。这个选项是由[`enhanced-resolve`](https://github.com/webpack/enhanced-resolve/)模块考虑的。由于在解析或resolveLoader插件时，webpack 3.1.0上下文就会被忽略。这解决了性能倒退的问题。
+
+### `resolve.descriptionFiles`
+
+### `resolve.enforceExtension`
+
+### `resolve.enforceModuleExtension`
+
+### `resolve.extensions`
+
+### `resolve.mainFields`
+
+### `resolve.mainFiles`
+
+### `resolve.modules`
+
+### `resolve.unsafeCache`
+
+### `resolve.plugins`
+
+### `resolve.symlinks`
+
+### `resolve.cachePredicate`
+
+### `resolveLoader`
+
+### `resolveLoader.moduleExtensions`
+
+### 
+
+
 
