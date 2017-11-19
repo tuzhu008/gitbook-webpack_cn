@@ -15,6 +15,26 @@ module.exports = {
 }
 ```
 
+## module.rules
+
+类型：array
+
+创建模块时，匹配请求的[规则](https://doc.webpack-china.org/configuration/module/#rule)数组。
+
+```js
+module.exports = {
+    module: {
+        rules: [
+            {
+                use:
+            }
+        ]
+    }
+}
+```
+
+
+
 # Rule
 
 规则，能够修改模块的创建方式。能够对模块应用 loader，或者修改解析器\(parser\)。
@@ -80,28 +100,20 @@ Rule.test 是 Rule.resource.test的简写。如果你提供了一个`Rule.test`�
 ```js
 module.exports = {
     module: {
-
-    }
-}
-```
-
-## module.rules
-
-类型：array
-
-创建模块时，匹配请求的[规则](https://doc.webpack-china.org/configuration/module/#rule)数组。
-
-```js
-module.exports = {
-    module: {
         rules: [
             {
-                use:
+                test: /\.css/,
+                use: [
+                    'css-loader',
+                    'style-loader'
+                ]
             }
         ]
     }
 }
 ```
+
+## 
 
 ## Rule条件
 
