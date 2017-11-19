@@ -33,8 +33,6 @@ module.exports = {
 }
 ```
 
-
-
 # Rule
 
 规则，能够修改模块的创建方式。能够对模块应用 loader，或者修改解析器\(parser\)。
@@ -95,7 +93,7 @@ Rule.test 是 Rule.resource.test的简写。如果你提供了一个`Rule.test`�
 
 传递字符串（如：`use: [ "style-loader" ]`）是 loader 属性的简写方式（如：`use: [ { loader: "style-loader "} ]`）。
 
-当然也可以为同一模块使用多个loader：
+当然也可以为同一模块使用多个loader，并且我们还可以对每个loader进行设置：
 
 ```js
 module.exports = {
