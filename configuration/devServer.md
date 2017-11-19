@@ -729,15 +729,73 @@ staticOptions: {
 stats: "errors-only"
 ```
 
-For more information, see the**stats documentation**.
+想要获取更多信息, 查看 [**stats 文档**.](/configuration/state.md)
 
-### `devServer.stdin - CLI only`
+> **\[info\]** 注：
+>
+> 此选项在使用`quiet `或` noInfo`时无效
+
+### `devServer.stdin `
+
+**只能通过CLI设置**
+
+类型：boolean
+
+当 stdin 结束时，该选项关闭服务器。
+
+```bash
+webpack-dev-server --stdin
+```
 
 ### `devServer.useLocalIp`
 
+类型：boolean
+
+该选项让浏览器使用你的本地IP打开。
+
+```js
+useLocalIp: true
+```
+
+通过CLI使用：
+
+```bash
+webpack-dev-server --useLocalIp
+```
+
 ### `devServer.watchContentBase`
+
+类型：boolean
+
+告诉服务器观察被`devServer.contentBase`选项提供的文件。文件变化将触发全页面重载。
+
+```js
+watchContentBase: true
+```
+
+默认是禁用的。
+
+通过CLI使用：
+
+```bash
+webpack-dev-server --watch-content-base
+```
 
 ### `devServer.watchOptions 🔑`
 
+类型：boolean
 
+与监视文件相关的控制选项。
+
+webpack 使用文件系统\(file system\)获取文件改动的通知。在某些情况下，不会正常工作。例如，当使用网络文件系统 Network File System \(NFS\) 时。[Vagrant](https://www.vagrantup.com/)也有很多问题。在这些情况下，请使用轮询：
+
+```js
+watchOptions: {
+  poll: true
+}
+```
+
+如果这对文件系统来说太重了的话，你可以修改间隔时间（以毫秒为单位），将其设置为一个整数。
+
+查看 [WatchOptions](/configuration/watchOptions.md) 更多选项。
 
