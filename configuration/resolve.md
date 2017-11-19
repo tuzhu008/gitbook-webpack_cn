@@ -237,17 +237,63 @@ modules: [path.resolve(__dirname, "src"), "node_modules"]
 unsafeCache: true
 ```
 
+正则表达式，或正则表达式数组，可以用于匹配文件路径或只缓存某些模块。例如，只缓存 utilities 模块：
 
+```js
+unsafeCache: /src\/utilities/
+```
 
 ### `resolve.plugins`
 
+应该使用的额外的解析插件列表。它允许插件，如[`DirectoryNamedWebpackPlugin`](https://www.npmjs.com/package/directory-named-webpack-plugin)
+
+```js
+plugins: [
+  new DirectoryNamedWebpackPlugin()
+]
+```
+
 ### `resolve.symlinks`
+
+类型：boolean
+
+是否将符号链接\(symlink\)解析到它们的符号链接位置\(symlink location\)。默认：
+
+```js
+symlinks: true
+```
 
 ### `resolve.cachePredicate`
 
+类型：function
+
+决定请求是否应该被缓存的函数。函数传入一个带有`path`和`request`属性的对象。默认：
+
+```js
+cachePredicate: function() { return true }
+```
+
 ### `resolveLoader`
 
+类型：object
+
+这组选项与上面的`resolve`对象的属性集合相同，但仅用于解析 webpack 的[loader](https://doc.webpack-china.org/concepts/loaders)包。默认：
+
+```js
+{
+  modules: [ 'node_modules' ],
+  extensions: [ '.js', '.json' ],
+  mainFields: [ 'loader', 'main' ]
+}
+```
+
+> \*\*\[info\] 注：\*\*
+>
+> 注意，这里你可以使用别名，并且其他特性类似于 resolve 对象。例如，`{ txt: 'raw-loader' }`会使用`raw-loader`去 shim\(填充\)`txt!templates/demo.txt`。
+
 ### `resolveLoader.moduleExtensions`
+
+
 
 ### 
 
