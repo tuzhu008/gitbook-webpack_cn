@@ -18,7 +18,7 @@
 
 > **\[info\]** 注：
 >
->  替代使用devtool选项，你还可以使用`SourceMapDevToolPlugin` / `EvalSourceMapDevToolPlugin`直接拥有更多的选择。永远不要同时使用`devtool`选项和插件。`devtool`选项在内部添加了插件，这样你就会使用两次插件。
+> 替代使用devtool选项，你还可以使用`SourceMapDevToolPlugin` / `EvalSourceMapDevToolPlugin`直接拥有更多的选择。永远不要同时使用`devtool`选项和插件。`devtool`选项在内部添加了插件，这样你就会使用两次插件。
 
 | devtool | build（构建） | rebuild（重新构建） | production（生产） | quality（品质） |
 | --- | --- | --- | --- | --- |
@@ -38,7 +38,7 @@
 
 > **\[info\]** 注：
 >
->   `+++` 非常快, `++` 快, `+`  一般快, `o` 中等, `-` 一般慢 , `--` 慢
+> `+++` 非常快, `++` 快, `+`  一般快, `o` 中等, `-` 一般慢 , `--` 慢
 
 其中一些值适合于开发，一些用于生产。对于开发，您通常需要以包大小为代价的快速源映射（Source Maps ），但是对于生产，您需要独立的源映射（Source Maps），这些映射是准确的和支持最小化的。
 
@@ -62,9 +62,9 @@
 
 `original source` - 您可以看到每个模块彼此分离，并带有模块名的注释。当你在编写代码的时候，你可以在反编译之前看到这些代码，在您编写它之前，您可以看到代码之前的代码。这取决于Loader的支持。
 
-`without source content` - Contents for the sources are not included in the Source Maps. Browsers usually try to load the source from the webserver or filesystem. You have to make sure to set [`output.devtoolModuleFilenameTemplate`](/configuration/output/#output-devtoolmodulefilenametemplate) correctly to match source urls.源中的内容不包含在源映射（Source Maps）中。浏览器通常尝试从web服务器或文件系统加载源。你必须确保正确地设置[`devtoolModuleFilenameTemplate`](/configuration/output#output.devtoolModuleFilenameTemplate)匹配源url。
+`without source content` - 源中的内容不包含在源映射（Source Maps）中。浏览器通常尝试从web服务器或文件系统加载源。你必须确保正确地设置[`devtoolModuleFilenameTemplate`](/configuration/output#output.devtoolModuleFilenameTemplate)来匹配源url。
 
-`(lines only)` - Source Maps are simplified to a single mapping per line. This usually means a single mapping per statement \(assuming you author is this way\). This prevents you from debugging execution on statement level and from settings breakpoints on columns of a line. Combining with minimizing is not possible as minimizers usually only emit a single line.
+`(lines only)` - Source Maps are simplified to a single mapping per line. This usually means a single mapping per statement \(assuming you author is this way\). This prevents you from debugging execution on statement level and from settings breakpoints on columns of a line. Combining with minimizing is not possible as minimizers usually only emit a single line.源映射（Source Maps）被简化为每行一个映射。这通常意味着每个语句都有一个映射\(假设您是这样做的\)。这可以防止您在语句级别上调试执行，以及在一行的列上设置断点。将最小值与最小值结合起来是不可能的，因为最小化通常只会发出一条直线。
 
 ### 开发
 
