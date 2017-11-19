@@ -208,8 +208,6 @@ contentBase: false
 webpack-dev-server --content-base /path/to/content/dir
 ```
 
-### 
-
 ### `devServer.disableHostCheck`
 
 类型：boolean
@@ -225,8 +223,6 @@ disableHostCheck: true
 ```js
 webpack-dev-server --disable-host-check
 ```
-
-### 
 
 ### `devServer.filename 🔑`
 
@@ -295,8 +291,6 @@ historyApiFallback: {
 webpack-dev-server --history-api-fallback
 ```
 
-### 
-
 ### `devServer.host`
 
 类型：string
@@ -312,10 +306,6 @@ host: "0.0.0.0"
 ```js
 webpack-dev-server --host 0.0.0.0
 ```
-
-### 
-
-### 
 
 ### `devServer.hot`
 
@@ -346,8 +336,6 @@ hotOnly: true
 ```bash
 webpack-dev-server --hot-only
 ```
-
-### 
 
 ### `devServer.https`
 
@@ -382,8 +370,6 @@ webpack-dev-server --https
 ```bash
 webpack-dev-server --https --key /path/to/server.key --cert /path/to/server.crt --cacert /path/to/ca.pem
 ```
-
-### 
 
 ### `devServer.index`
 
@@ -481,8 +467,6 @@ open: true
 webpack-dev-server --open
 ```
 
-### 
-
 ### `devServer.openPage`
 
 类型：string
@@ -492,10 +476,6 @@ webpack-dev-server --open
 ```js
 openPage: '/different/page'
 ```
-
-### 
-
-### 
 
 ### `devServer.overlay`
 
