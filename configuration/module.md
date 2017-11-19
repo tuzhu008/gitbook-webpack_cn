@@ -32,7 +32,7 @@ module.exports = {
                 oneOf: '',
                 options: '',
                 parser: '',
-                
+
             }
         ]
     }
@@ -91,7 +91,7 @@ module.exports = {
 
 ### `Rule.test`
 
-`Rule.test `是` Rule.resource.test`的简写。如果你提供了一个`Rule.test`选项，就不能再提供`Rule.resource`。
+`Rule.test`是`Rule.resource.test`的简写。如果你提供了一个`Rule.test`选项，就不能再提供`Rule.resource`。
 
 ### `Rule.include`
 
@@ -113,11 +113,9 @@ module.exports = {
 }
 ```
 
-
-
 ### `Rule.use`
 
-应用于模块的[UseEntries](https://doc.webpack-china.org/configuration/module/#useentry)列表。每个入口\(entry\)指定使用一个 loader。
+应用于模块的[UseEntries](#use-entries)列表。每个入口\(entry\)指定使用一个 loader。
 
 传递字符串（如：`use: [ "style-loader" ]`）是 loader 属性的简写方式（如：`use: [ { loader: "style-loader "} ]`）。
 
@@ -257,7 +255,7 @@ parser: {
 }
 ```
 
-### `UseEntry`
+### `UseEntry` {#use-entries}
 
 类型：object
 
