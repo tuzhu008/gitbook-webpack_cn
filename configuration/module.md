@@ -5,13 +5,8 @@
 ```js
 module.exports = {
         module: {
-        rules: [
-            {
-                test: '',   
-                use: []
-            }
-        ],
-        noparser: ''
+        rules: '', // 规则
+        noparse: '' // 排除匹配的文件，不进行解析
     }
 }
 ```
@@ -27,7 +22,17 @@ module.exports = {
     module: {
         rules: [
             {
-                use:
+                resource: '',
+                test: '',
+                include: '',
+                exclude: '',
+                resourceQuery: '',
+                use: '',
+                issuer: '',
+                oneOf: '',
+                options: '',
+                parser: '',
+                
             }
         ]
     }
@@ -86,7 +91,29 @@ module.exports = {
 
 ### `Rule.test`
 
-Rule.test 是 Rule.resource.test的简写。如果你提供了一个`Rule.test`选项，就不能再提供`Rule.resource`。
+`Rule.test `是` Rule.resource.test`的简写。如果你提供了一个`Rule.test`选项，就不能再提供`Rule.resource`。
+
+### `Rule.include`
+
+`Rule.include`是`Rule.resource.include`的简写。如果你提供了`Rule.include`选项，就不能再提供`Rule.resource`。
+
+### `Rule.exclude`
+
+`Rule.exclude`是`Rule.resource.exclude`的简写。如果你提供了`Rule.exclude`选项，就不能再提供`Rule.resource`。
+
+### `Rule.resourceQuery`
+
+与资源查询相匹配的[条件](#条件)。这个选项用于`test`对应的请求字符串的查询部分\(也就是从问号开始\)。如果你要从`import Foo from './foo.css?inline'`，以下条件将匹配:
+
+```js
+{
+  test: /.css$/,
+  resourceQuery: /inline/,
+  use: 'url-loader'
+}
+```
+
+
 
 ### `Rule.use`
 
@@ -136,25 +163,7 @@ use: [
 ]
 ```
 
-### `Rule.include`
-
-`Rule.include`是`Rule.resource.include`的简写。如果你提供了`Rule.include`选项，就不能再提供`Rule.resource`。
-
-### `Rule.exclude`
-
-`Rule.exclude`是`Rule.resource.exclude`的简写。如果你提供了`Rule.exclude`选项，就不能再提供`Rule.resource`。
-
-### `Rule.resourceQuery`
-
-与资源查询相匹配的[条件](#条件)。这个选项用于`test`对应的请求字符串的查询部分\(也就是从问号开始\)。如果你要从`import Foo from './foo.css?inline'`，以下条件将匹配:
-
-```js
-{
-  test: /.css$/,
-  resourceQuery: /inline/,
-  use: 'url-loader'
-}
-```
+### 
 
 ### `Rule.oneOf`
 
@@ -187,8 +196,6 @@ import A from './a.js'
 ```
 
 该选项可用于将loader应用于特定模块或模块集的依赖项。
-
-
 
 ### `Rule.enforce`
 
