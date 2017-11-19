@@ -48,6 +48,10 @@
 
 这些规则用于在规则条件\(rule condition\)匹配时进行取值。
 
+### Rule.resource
+
+[`条件`](#条件)会匹配 resource。既可以提供`Rule.resource`选项，也可以使用快捷选项`Rule.test`，`Rule.exclude`和`Rule.include`。在[Rule`条件`](#rule条件)中查看详细。
+
 ### Rule.test
 
 Rule.test 是 Rule.resource.test的简写。如果你提供了一个`Rule.test`选项，就不能再提供`Rule.resource`。
@@ -61,8 +65,44 @@ Rule.test 是 Rule.resource.test的简写。如果你提供了一个`Rule.test`�
 ```js
 module.exports = {
     rules: [
-        
+
     ]
+}
+```
+
+
+
+## Rule条件
+
+条件可以是这些之一：
+
+* 字符串：匹配输入必须以提供的字符串开始。是的。目录绝对路径或文件绝对路径。
+* 正则表达式：test 输入值。
+* 函数：调用输入的函数，必须返回一个真值\(truthy value\)以匹配。
+* 条件数组：**至少**一个匹配条件。
+* 对象：匹配所有属性。每个属性都有一个定义行为。
+
+`{ test: Condition }`：匹配特定条件。一般是提供一个正则表达式或正则表达式的数组，但这不是强制的。
+
+`{ include: Condition }`：匹配特定条件。一般是提供一个字符串或者字符串数组，但这不是强制的。
+
+`{ exclude: Condition }`：排除特定条件。一般是提供一个字符串或字符串数组，但这不是强制的。
+
+`{ and: [Condition] }`：必须匹配数组中的所有条件
+
+`{ or: [Condition] }`：匹配数组中任何一个条件
+
+`{ not: [Condition] }`：必须排除这个条件
+
+**示例:**
+
+```js
+{
+  test: /\.css$/,
+  include: [
+    path.resolve(__dirname, "app/styles"),
+    path.resolve(__dirname, "vendor/styles")
+  ]
 }
 ```
 
