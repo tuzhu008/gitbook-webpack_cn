@@ -157,6 +157,10 @@ extensions: [".js", ".json"]
 import File from '../path/to/file'
 ```
 
+> ** \[warning\]注：**
+>
+> 使用此选项，会**覆盖默认数组**，这就意味着 webpack 将不再尝试使用默认扩展来解析模块。对于使用其扩展导入的模块，例如，`import SomeFile from "./somefile.ext"`，要想正确的解析，一个包含“\*”的字符串必须包含在数组中。
+
 ### `resolve.mainFields`
 
 ### `resolve.mainFiles`
