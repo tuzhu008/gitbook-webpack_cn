@@ -122,7 +122,7 @@ module.exports = {
 
 ### `Rule.options / Rule.query`
 
-`Rule.options` 和` Rule.query`是`Rule.use: [ { options } ]`的简写。是用来对loader进行配置的。
+`Rule.options` 和`Rule.query`是`Rule.use: [ { options } ]`的简写。是用来对loader进行配置的。
 
 ```js
 use: [
@@ -134,6 +134,75 @@ use: [
     },
 ]
 ```
+
+### `Rule.resourceQuery`
+
+与资源查询相匹配的[条件](#条件)。这个选项用于`test`对应的请求字符串的查询部分\(也就是从问号开始\)。如果你要从`import Foo from './foo.css?inline'`，以下条件将匹配:
+
+```js
+{
+  test: /.css$/,
+  resourceQuery: /inline/,
+  use: 'url-loader'
+}
+```
+
+### `Rule.oneOf`
+
+规则数组，当匹配规则时，只会使用匹配到的第一个规则。
+
+```js
+{
+  test: /.css$/,
+  oneOf: [
+    {
+      resourceQuery: /inline/, // foo.css?inline
+      use: 'url-loader'
+    },
+    {
+      resourceQuery: /external/, // foo.css?external
+      use: 'file-loader'
+    }
+  ]
+}
+```
+
+### `Rule.issuer`
+
+与发出请求的模块相匹配的条件。在下面的例子中，`a.js`的`issuer`，请求将是`index.js`文件的路径。
+
+### `Rule.include`
+
+### `Rule.exclude`
+
+### `Rule.enforce`
+
+### `Rule.parser`
+
+
+
+### `UseEntry`
+
+类型：object
+
+必须有一个`loader`属性是字符串。它使用 loader 解析选项（[resolveLoader](//configuration/resolve#resolveloader)），相对于配置中的[`context`](//configuration/context.md)来解析。
+
+可以有一个`options`属性为字符串或对象。值可以传递到 loader 中，将其理解为 loader 选项。
+
+由于兼容性原因，也可能有`query`属性，它是`options`属性的别名。使用`options`属性替代。
+
+**示例：**
+
+```js
+{
+  loader: "css-loader",
+  options: {
+    modules: true
+  }
+}
+```
+
+
 
 ## Rule条件
 
@@ -166,6 +235,19 @@ use: [
     path.resolve(__dirname, "app/styles"),
     path.resolve(__dirname, "vendor/styles")
   ]
+}
+```
+
+## `module.noParse`
+
+类型：RegExp \| \[RegExp\] \| function
+
+防止 webpack 解析那些任何与给定正则表达式相匹配的文件。忽略的文件中**不应该含有**`import`，`require`，`define`的调用，或任何其他导入机制。忽略大型的 library 可以提高构建性能。
+
+```js
+// 从 webpack 3.0.0 开始
+noParse: function(content) {
+  return /jquery|lodash/.test(content); //返回值为布尔值
 }
 ```
 
