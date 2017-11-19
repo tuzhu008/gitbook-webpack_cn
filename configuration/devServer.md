@@ -479,25 +479,229 @@ openPage: '/different/page'
 
 ### `devServer.overlay`
 
+类型：boolean \| object
+
+当出现编译错误或警告时，在浏览器中显示一个全屏覆盖。默认情况下禁用。如果您只想显示编译器错误:
+
+```js
+overlay: true
+```
+
+如果您想要显示警告和错误:
+
+```js
+overlay: {
+  warnings: true,
+  errors: true
+}
+```
+
 ### `devServer.pfx`
+
+类型：string
+
+当通过CLI使用时，是一条到SSL`.pfx `文件的路径。如果在选项中使用，它应该是`.pfx `文件的字节流
+
+```js
+pfx: '/path/to/file.pfx'
+```
+
+通过CLI使用：
+
+```bash
+webpack-dev-server --pfx /path/to/file.pfx
+```
 
 ### `devServer.pfxPassphrase`
 
+类型：string
+
+The passphrase to a SSL PFX file.
+
+pfxPassphrase: 'passphrase'
+
+通过CLI使用：
+
+```bash
+webpack-dev-server --pfx-passphrase passphrase
+```
+
 ### `devServer.port`
+
+类型：number
+
+```js
+port: 8080
+```
+
+通过CLI使用：
+
+```bash
+webpack-dev-server --port 8080
+```
 
 ### `devServer.proxy`
 
-### `devServer.progress - 只用于命令行工具(CLI)`
+类型：object
+
+如果你有单独的后端开发服务器 API，并且希望在同域名下发送 API 请求 ，那么代理某些 URL 会很有用。
+
+dev-server 使用了非常强大的[http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware)包。更多高级用法，请查阅其[文档](https://github.com/chimurai/http-proxy-middleware#options)。
+
+在`localhost:3000`上有后端服务的话，你可以这样启用代理：
+
+```js
+proxy: {
+  "/api": "http://localhost:3000"
+}
+```
+
+请求到`/api/users`现在会被代理到请求`http://localhost:3000/api/users`。
+
+如果你不想始终传递`/api`，则需要重写路径：
+
+```js
+proxy: {
+  "/api": {
+    target: "http://localhost:3000",
+    pathRewrite: {"^/api" : ""}
+  }
+}
+```
+
+默认情况下，不接受运行在 HTTPS 上，且使用了无效证书的后端服务器。如果你想要接受，修改配置如下：
+
+```js
+proxy: {
+  "/api": {
+    target: "https://other-server.example.com",
+    secure: false
+  }
+}
+```
+
+有时你不想代理所有的请求。可以基于一个函数的返回值绕过代理。
+
+在函数中你可以访问请求体、响应体和代理选项。必须返回`false`或路径，来跳过代理请求。
+
+例如：对于浏览器请求，你想要提供一个 HTML 页面，但是对于 API 请求则保持代理。你可以这样做：
+
+```js
+proxy: {
+  "/api": {
+    target: "http://localhost:3000",
+    bypass: function(req, res, proxyOptions) {
+      if (req.headers.accept.indexOf("html") !== -1) {
+        console.log("Skipping proxy for browser request.");
+        return "/index.html";
+      }
+    }
+  }
+}
+```
+
+如果您想要代理多个特定路径到同一个目标，您可以使用一个或多个具有上下文属性的对象的数组:
+
+```js
+proxy: [{
+  context: ["/auth", "/api"],
+  target: "http://localhost:3000",
+}]
+```
+
+### `devServer.progress `
+
+**只能使用CLI配置**
+
+类型：boolean
+
+将运行进度输出到控制台。
+
+```bash
+webpack-dev-server --progress
+```
 
 ### `devServer.public`
 
+类型：string
+
+当使用_内联模式\(inline mode\)_并代理 dev-server 时，内联的客户端脚本并不总是知道要连接到什么地方。它会尝试根据`window.location`来猜测服务器的 URL，但是如果失败，你需要这样。
+
+例如，dev-server 被代理到 nginx，并且在`myapp.test`上可用：
+
+```js
+public: "myapp.test:80"
+```
+
+通过CLI使用：
+
+```bash
+webpack-dev-server --public myapp.test:80
+```
+
 ### `devServer.publicPath 🔑`
+
+类型：string
+
+此路径下的打包文件可在浏览器中访问。
+
+假设服务器运行在`http://localhost:8080`并且`output.filename`被设置为`bundle.js`。默认`publicPath`是`"/"`，所以你的包\(bundle\)可以通过`http://localhost:8080/bundle.js`访问。
+
+可以修改`publicPath`，将 bundle 放在一个目录：
+
+```js
+publicPath: "/assets/"
+```
+
+你的包现在可以通过`http://localhost:8080/assets/bundle.js`访问。
+
+> **\[info\]** 注：
+>
+> 确保`publicPath`总是以斜杠\(/\)开头和结尾。
+
+也可以使用一个完整的 URL。这是模块热替换所必需的。
+
+```js
+publicPath: "http://localhost:8080/assets/"
+```
+
+bundle 可以通过`http://localhost:8080/assets/bundle.js`访问。
+
+> **\[info\]** 注：
+>
+> 推荐使用`devServer.publicPath`和`output.publicPath`
 
 ### `devServer.quiet 🔑`
 
-### `devServer.setup`
+类型：boolean
+
+启用`quiet`后，除了初始启动信息之外的任何内容都不会被打印到控制台。这也意味着来自 webpack 的错误或警告在控制台不可见。
+
+```js
+quiet: true
+```
+
+通过CLI使用
+
+```bash
+webpack-dev-server --quiet
+```
 
 ### `devServer.socket`
+
+类型：string
+
+The Unix socket to listen to \(instead of a host\).
+
+```
+socket:'socket'
+```
+
+通过 CLI使用：
+
+```
+webpack-dev-server --socket socket
+```
 
 ### `devServer.staticOptions`
 
