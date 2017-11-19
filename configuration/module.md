@@ -116,7 +116,13 @@ module.exports = {
 }
 ```
 
-## 
+> **\[info\] 注：**
+>
+> 对同一条件使用多个loader时，解析顺序为从**右**到**左，**从上到下，最后一个loader返回经过最终转换的模块。
+
+
+
+### `Rule.options / Rule.query`
 
 ## Rule条件
 
