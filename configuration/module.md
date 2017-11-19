@@ -10,7 +10,8 @@ module.exports = {
                 test: '',   
                 use: []
             }
-        ]
+        ],
+        noparser: ''
     }
 }
 ```
@@ -135,6 +136,14 @@ use: [
 ]
 ```
 
+### `Rule.include`
+
+`Rule.include`是`Rule.resource.include`的简写。如果你提供了`Rule.include`选项，就不能再提供`Rule.resource`。
+
+### `Rule.exclude`
+
+`Rule.exclude`是`Rule.resource.exclude`的简写。如果你提供了`Rule.exclude`选项，就不能再提供`Rule.resource`。
+
 ### `Rule.resourceQuery`
 
 与资源查询相匹配的[条件](#条件)。这个选项用于`test`对应的请求字符串的查询部分\(也就是从问号开始\)。如果你要从`import Foo from './foo.css?inline'`，以下条件将匹配:
@@ -171,15 +180,75 @@ use: [
 
 与发出请求的模块相匹配的条件。在下面的例子中，`a.js`的`issuer`，请求将是`index.js`文件的路径。
 
-### `Rule.include`
+**index.js**
 
-### `Rule.exclude`
+```js
+import A from './a.js'
+```
+
+该选项可用于将loader应用于特定模块或模块集的依赖项。
+
+
 
 ### `Rule.enforce`
 
+用于指定 loader 种类。没有值表示是普通 loader。
+
+可能值：
+
+| 取值 | 描述 |
+| :--- | :--- |
+| pre | 前置loader |
+| post | 后置loader |
+| 缺省 | 普通loader |
+
+loader的类型有四种：`前置, 行内, 普通, 后置`。所有 loader 都按这个顺序排序，并按此顺序使用。
+
+"行内 loader"，loader 被应用在 import/require 行内。
+
+```js
+import Styles from 'style-loader!css-loader?modules!./styles.css';
+```
+
+所有普通 loader 可以通过在请求中加上`!`前缀来忽略（覆盖）。
+
+所有普通和前置 loader 可以通过在请求中加上`-!`前缀来忽略（覆盖）。
+
+所有普通，后置和前置 loader 可以通过在请求中加上`!!`前缀来忽略（覆盖）。
+
+不应该使用行内 loader 和`!`前缀，因为它们是非标准的。它们可在由 loader 生成的代码中使用。
+
 ### `Rule.parser`
 
+解析选项对象。所有应用的解析选项都将合并。
 
+解析器\(parser\)可以查阅这些选项，并相应地禁用或重新配置。大多数默认插件，会如下解释值：
+
+* 将选项设置为`false`，将禁用解析器。
+
+* 将选项设置为`true`，或不修改将其保留为`undefined`，可以启用解析器。
+
+然而，一些解析器\(parser\)插件可能不光只接收一个布尔值。例如，内部的`NodeStuffPlugin`，可以接收一个对象，而不是`true`
+
+，来为特定的规则添加额外的选项。
+
+**示例（默认插件的解析器选项）**：
+
+```js
+parser: {
+  amd: false, // 禁用 AMD
+  commonjs: false, // 禁用 CommonJS
+  system: false, // 禁用 SystemJS
+  harmony: false, // 禁用 ES2015 Harmony import/export
+  requireInclude: false, // 禁用 require.include
+  requireEnsure: false, // 禁用 require.ensure
+  requireContext: false, // 禁用 require.context
+  browserify: false, // 禁用特殊处理的 browserify bundle
+  requireJs: false, // 禁用 requirejs.*
+  node: false, // 禁用 __dirname, __filename, module, require.extensions, require.main 等。
+  node: {...} // 在模块级别(module level)上重新配置 node 层(layer)
+}
+```
 
 ### `UseEntry`
 
@@ -201,8 +270,6 @@ use: [
   }
 }
 ```
-
-
 
 ## Rule条件
 
