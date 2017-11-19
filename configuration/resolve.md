@@ -287,7 +287,7 @@ cachePredicate: function() { return true }
 }
 ```
 
-> \*\*\[info\] 注：\*\*
+> **\[info\] 注：**
 >
 > 注意，这里你可以使用别名，并且其他特性类似于 resolve 对象。例如，`{ txt: 'raw-loader' }`会使用`raw-loader`去 shim\(填充\)`txt!templates/demo.txt`。
 
