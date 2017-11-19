@@ -46,7 +46,9 @@ Content not from webpack is served from /path/to/dist/
 > **\[warning\]** 注：
 >
 > 在导出[多个配置](https://doc.webpack-china.org/configuration/configuration-types/#exporting-multiple-configurations)时，只考虑第一个配置的devServer选项，并将其用于数组中的所有配置。
->
+
+
+
 > **\[info\]** 注：
 >
 > 如果您遇到麻烦，导航到`/webpack-dev-server`路由将显示被服务的文件的位置。例如,`http://localhost:9000/webpack-dev-server`
@@ -144,7 +146,7 @@ webpack-dev-server --client-log-level none
 
 可能的值有`none`,`error`,`warning`或者`info`（默认值）。
 
-### `devServer.color `
+### `devServer.color`
 
 **通过CLI设置。**
 
@@ -329,8 +331,6 @@ hot: true
 >
 > 注意,`webpack.HotModuleReplacementPlugin`对于完全启用HMR是必须的。如果`webpack`或`webpack-devserver`是用`--hot`选项启动的，这个插件将会自动添加，因此您可能不需要将它添加到您的`webpack.config.js`中。请参阅[HMR概念页面](https://doc.webpack-china.org/concepts/hot-module-replacement)获得更多信息。
 
-
-
 ### `devServer.hotOnly`
 
 类型：boolean
@@ -395,7 +395,7 @@ webpack-dev-server --https --key /path/to/server.key --cert /path/to/server.crt 
 index: 'index.htm'
 ```
 
-### `devServer.info `
+### `devServer.info`
 
 **只能通过CLI配置**
 
@@ -448,7 +448,7 @@ webpack-dev-server --lazy
 > **\[info\]** 注：
 >
 > `watchOptions`在使用**惰性模式**时无效。
-
+>
 > **\[info\]** 注：
 >
 > 如果使用命令行工具\(CLI\)，请确保**内联模式\(inline mode\)**被禁用。
