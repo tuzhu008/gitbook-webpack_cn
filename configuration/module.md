@@ -36,6 +36,8 @@
 
 这些属性会影响 loader：[`loader`](https://doc.webpack-china.org/configuration/module/#rule-loader)，[`options`](https://doc.webpack-china.org/configuration/module/#rule-options-rule-query)，[`use`](https://doc.webpack-china.org/configuration/module/#rule-use)。
 
+也兼容这些属性：[`query`](https://doc.webpack-china.org/configuration/module/#rule-options-rule-query)，[`loaders`](https://doc.webpack-china.org/configuration/module/#rule-loaders)。
+
 ## module.rules
 
 类型：array
