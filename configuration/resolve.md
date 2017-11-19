@@ -141,9 +141,21 @@ enforceExtension: false
 enforceModuleExtension: false
 ```
 
-
-
 ### `resolve.extensions`
+
+类型：array
+
+自动解析确定的扩展。默认值为：
+
+```js
+extensions: [".js", ".json"]
+```
+
+能够使用户在引入模块时不带扩展：
+
+```js
+import File from '../path/to/file'
+```
 
 ### `resolve.mainFields`
 
