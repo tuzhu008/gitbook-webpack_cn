@@ -16,6 +16,7 @@
     "include-codeblock",
     "ace",
     "prism",
+    "prism-themes",
     "-highlight",
     "tbfed-pagefooter"
   ],
@@ -49,7 +50,7 @@
       },
       "prism": {
         "css": [
-          "prismjs/themes/prism-duotone-light.css"
+          "prism-themes/themes/prism-atom-dark.css"
         ]
       },
       "tbfed-pagefooter": {
