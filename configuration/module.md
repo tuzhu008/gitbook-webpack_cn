@@ -56,6 +56,21 @@
 
 Rule.test 是 Rule.resource.test的简写。如果你提供了一个`Rule.test`选项，就不能再提供`Rule.resource`。
 
+### Rule.use
+
+应用于模块的[UseEntries](https://doc.webpack-china.org/configuration/module/#useentry)列表。每个入口\(entry\)指定使用一个 loader。
+
+  
+传递字符串（如：
+
+`use: [ "style-loader" ]`
+
+）是 loader 属性的简写方式（如：
+
+`use: [ { loader: "style-loader "} ]`
+
+）。
+
 ## module.rules
 
 类型：array
@@ -69,8 +84,6 @@ module.exports = {
     ]
 }
 ```
-
-
 
 ## Rule条件
 
