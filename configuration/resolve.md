@@ -74,7 +74,7 @@ import Test2 from 'xyz/file.js'; // 精确匹配，触发普通解析
 
 下面的表格展示了一些其他情况：
 
-| **`别名：`** | **`import "xyz"`** | **`import "xyz/file.js"`** |
+| `别名：` | `import "xyz"` | `import "xyz/file.js"` |
 | :--- | :--- | :--- |
 | `{}` | `/abc/node_modules/xyz/index.js` | `/abc/node_modules/xyz/file.js` |
 | `{ xyz: "/abs/path/to/file.js" }` | `/abs/path/to/file.js` | error |
@@ -109,13 +109,39 @@ aliasFields: ["browser"]
 
 类型：boolean
 
-如果启用了不安全的缓存，则在缓存的键中包括`request.context`。这个选项是由[`enhanced-resolve`](https://github.com/webpack/enhanced-resolve/)模块考虑的。由于在解析或resolveLoader插件时，webpack 3.1.0上下文就会被忽略。这解决了性能倒退的问题。
+如果启用了不安全的缓存，则在缓存的键中包括`request.context`。这个选项是由[`enhanced-resolve`](https://github.com/webpack/enhanced-resolve/)模块考虑的。从webpack 3.1.0开始，在解析或提供了resolveLoader插件时，解析缓存中的上下文会被忽略。这解决了性能倒退的问题。
 
 ### `resolve.descriptionFiles`
 
+类型：array
+
+用于描述的 JSON 文件。默认：
+
+```js
+descriptionFiles: ["package.json"]
+```
+
 ### `resolve.enforceExtension`
 
+类型：boolean
+
+如果是`true`，将不允许无扩展名\(extension-less\)文件。默认如果`./foo`有`.js`扩展，`require('./foo')`可以正常运行。但如果启用此选项，只有`require('./foo.js')`能够正常工作。默认：
+
+```js
+enforceExtension: false
+```
+
 ### `resolve.enforceModuleExtension`
+
+类型：boolean
+
+对模块是否需要使用的扩展（例如 loader）。默认：
+
+```js
+enforceModuleExtension: false
+```
+
+
 
 ### `resolve.extensions`
 
