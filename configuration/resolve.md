@@ -163,11 +163,81 @@ import File from '../path/to/file'
 
 ### `resolve.mainFields`
 
+类型：array
+
+当从 npm 包中导入模块时（例如，`import * as D3 from "d3"`），此选项将决定在`package.json`中使用哪个字段导入模块。根据 webpack 配置中指定的[`target`](https://doc.webpack-china.org/concepts/targets)不同，默认值也会有所不同。
+
+当`target`属性设置为`webworker`,`web`或者没有指定，默认值为：
+
+```js
+mainFields: ["browser", "module", "main"]
+```
+
+对于其他任意的 target（包括`node`），默认值为：
+
+```js
+mainFields: ["module", "main"]
+```
+
+例如，[D3](https://d3js.org/)的`package.json`含有这些字段：
+
+```js
+{
+  ...
+  main: 'build/d3.Node.js',
+  browser: 'build/d3.js',
+  module: 'index',
+  ...
+}
+```
+
+这意味着当我们`import * as D3 from "d3"`，实际从`browser`属性解析文件。在这里`browser`属性是最优先选择的，因为它是`mainFields`的第一项。同时，由 webpack 打包的 Node.js 应用程序默认会从`module`字段中解析文件。
+
 ### `resolve.mainFiles`
+
+类型：array
+
+解析目录时要使用的文件名。默认：
+
+```js
+mainFiles: ["index"]
+```
 
 ### `resolve.modules`
 
+类型：array
+
+告诉 webpack 解析**模块**时应该搜索的目录。
+
+绝对路径和相对路径都能使用，但是要知道它们之间有一点差异。
+
+通过查看当前目录以及祖先路径（即`./node_modules`,`../node_modules`等等），相对路径将类似于 Node 查找 'node\_modules' 的方式进行查找。
+
+使用绝对路径，将只在给定目录中搜索。
+
+默认值：
+
+```js
+modules: ["node_modules"]
+```
+
+如果你想要添加一个目录到模块搜索目录，此目录优先于`node_modules/`搜索，把它放到`node_modules/`前面：
+
+```js
+modules: [path.resolve(__dirname, "src"), "node_modules"]
+```
+
 ### `resolve.unsafeCache`
+
+类型：Regexp \| array \| boolean
+
+启用，会主动缓存模块，但并**不安全**。传递`true`将缓存一切。默认：
+
+```js
+unsafeCache: true
+```
+
+
 
 ### `resolve.plugins`
 
