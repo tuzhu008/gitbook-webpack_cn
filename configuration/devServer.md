@@ -500,7 +500,7 @@ overlay: {
 
 类型：string
 
-当通过CLI使用时，是一条到SSL`.pfx `文件的路径。如果在选项中使用，它应该是`.pfx `文件的字节流
+当通过CLI使用时，是一条到SSL`.pfx`文件的路径。如果在选项中使用，它应该是`.pfx`文件的字节流
 
 ```js
 pfx: '/path/to/file.pfx'
@@ -609,7 +609,7 @@ proxy: [{
 }]
 ```
 
-### `devServer.progress `
+### `devServer.progress`
 
 **只能使用CLI配置**
 
@@ -705,7 +705,31 @@ webpack-dev-server --socket socket
 
 ### `devServer.staticOptions`
 
+可以配置来自`contentBase`的提供静态文件的高级选项。关于可能的选项，请参阅[Express 文档](http://expressjs.com/en/4x/api.html#express.static)。一个例子:
+
+```
+staticOptions: {
+  redirect: false
+}
+```
+
+> **\[info\]** 注：
+>
+> 仅当使用`contentBase`作为一个`string`有效。
+
 ### `devServer.stats 🔑`
+
+类型：string \| object
+
+这个选项允许您精确控制哪些bundle信息被显示。如果你想要一些bundle信息，但不是全部，这可能是一个很好的中间地带。
+
+这样只会显示包中的错误:
+
+```js
+stats: "errors-only"
+```
+
+For more information, see the**stats documentation**.
 
 ### `devServer.stdin - CLI only`
 
