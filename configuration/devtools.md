@@ -64,11 +64,11 @@
 
 `without source content` - 源中的内容不包含在源映射（Source Maps）中。浏览器通常尝试从web服务器或文件系统加载源。你必须确保正确地设置[`devtoolModuleFilenameTemplate`](/configuration/output#output.devtoolModuleFilenameTemplate)来匹配源url。
 
-`(lines only)` - Source Maps are simplified to a single mapping per line. This usually means a single mapping per statement \(assuming you author is this way\). This prevents you from debugging execution on statement level and from settings breakpoints on columns of a line. Combining with minimizing is not possible as minimizers usually only emit a single line.源映射（Source Maps）被简化为每行一个映射。这通常意味着每个语句都有一个映射\(假设您是这样做的\)。这可以防止您在语句级别上调试执行，以及在一行的列上设置断点。将最小值与最小值结合起来是不可能的，因为最小化通常只会发出一条直线。
+`(lines only)` - 源映射（Source Maps）被简化为每行一个映射。这通常意味着每个语句都有一个映射\(假设您是这样做的\)。这可以防止您在语句级别上调试执行，以及在一行的列上设置断点。结合最小化是不可能的，因为最小值通常只会发出（emit）一条单一直线。
 
 ### 开发
 
-The following options are ideal for development:
+下面的选项是开发的理想选择:
 
 `eval` - Each module is executed with `eval()` and `//@ sourceURL`. This is pretty fast. The main disadvantage is that it doesn't display line numbers correctly since it gets mapped to transpiled code instead of the original code \(No Source Maps from Loaders\).
 
