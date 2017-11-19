@@ -48,11 +48,18 @@
 
 这些规则用于在规则条件\(rule condition\)匹配时进行取值。
 
-
-
 ## module.rules
 
 类型：array
 
 创建模块时，匹配请求的[规则](https://doc.webpack-china.org/configuration/module/#rule)数组。
+
+```js
+module.exports = {
+    rules: [
+    ]
+}
+```
+
+
 
