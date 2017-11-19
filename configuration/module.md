@@ -38,6 +38,14 @@
 
 也兼容这些属性：[`query`](https://doc.webpack-china.org/configuration/module/#rule-options-rule-query)，[`loaders`](https://doc.webpack-china.org/configuration/module/#rule-loaders)。
 
+[`enforce`](https://doc.webpack-china.org/configuration/module/#rule-enforce)属性会影响 loader 种类。不论是普通的，前置的，后置的 loader。
+
+[`parser`](https://doc.webpack-china.org/configuration/module/#rule-parser)属性会影响 parser 选项。
+
+### 嵌套规则
+
+可以使用属性[`rules`](https://doc.webpack-china.org/configuration/module/#rule-rules)和[`oneOf`](https://doc.webpack-china.org/configuration/module/#rule-oneof)指定嵌套规则。
+
 ## module.rules
 
 类型：array
