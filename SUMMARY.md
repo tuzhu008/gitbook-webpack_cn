@@ -13,6 +13,7 @@
   * [context（上下文）](configuration/context.md)
   * [entry（入口）](configuration/entry.md)
   * [output（输出）](configuration/output.md)
+  * [模块（模块）](/configuration/module.md)
 
 * [注意](Note.md)
 
