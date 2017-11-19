@@ -133,7 +133,7 @@ publicPath: "", // 相对于 HTML 页面（目录相同）
 // 应用程序入口的其他部分
 ```
 
-# output.sourceMapFillename
+## output.sourceMapFillename
 
 类型：string
 
@@ -147,6 +147,10 @@ publicPath: "", // 相对于 HTML 页面（目录相同）
 | :--- | :--- |
 | \[file\] | 模块文件名称 |
 | \[filebase\] | 模板[basename](https://nodejs.org/api/path.html#path_path_basename_path_ext) |
+
+
+
+## `output.devtoolModuleFilenameTemplate`
 
 
 
