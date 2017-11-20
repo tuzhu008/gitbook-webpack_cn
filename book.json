@@ -18,7 +18,8 @@
     "prism",
     "prism-themes",
     "-highlight",
-    "tbfed-pagefooter"
+    "tbfed-pagefooter",
+    "github"
   ],
   "pluginsConfig": {
       "anchor-navigation-ex": {
@@ -57,7 +58,10 @@
         "copyright":"Copyright &copy tuzhu008 2017",
         "modify_label": "该文件修订时间：",
         "modify_format": "YYYY-MM-DD HH:mm:ss"
-      }
+      },
+      "github": {
+        "url": "https://github.com/tuzhu008"
+    }
   }
 }
 
