@@ -36,6 +36,7 @@ stats: "errors-only"
 ```js
 stats: {
   // fallback value for stats options when an option is not defined (has precedence over local webpack defaults)
+  
   all: undefined,
   // Add asset Information
   assets: true,
@@ -70,7 +71,7 @@ stats: {
   // Add errors
   errors: true,
   // Add details to errors (like resolving log)
-  errorDetails: true,
+  errorxuaDetails: true,
   // Exclude assets from being displayed in stats
   // This can be done with a String, a RegExp, a Function getting the assets name
   // and returning a boolean or an Array of the above.
