@@ -19,6 +19,7 @@
   * [Plugins（插件）](configuration/plugins.md)
 
   * [DevServer（开发服务）](configuration/devServer.md)
+
   * [Devtools（开发工具）](/configuration/devtools.md)
   * [Target（构建目标）](configuration/target.md)
   * [Watch（观察模式）](configuration/watch.md)
@@ -31,7 +32,7 @@
 
 * [注意](Note.md)
 
-* [其他概念](/OtherConcepts/README.md)
+* [其他](/Others/README.md)
 
 * [致谢](/thanks.md)
 
