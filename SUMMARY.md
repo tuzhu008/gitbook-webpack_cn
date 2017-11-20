@@ -29,6 +29,7 @@
   * [Performance（性能）](configuration/performance.md)
 
   * [Node](configuration/node.md)
+
   * [Stats（统计）](//configuration/stats.md)
   * [OtherOptions（其他选项）](configuration/otherOptions.md)
 
@@ -36,12 +37,14 @@
 
   * [CLI（命令行接口）](//API/CLI.md)
   * [Stats Data（同级数据）](/API/StatsData.md)
+  * [HMR（热模块替换）](/API/HMR.md)
   * Node.js API
   * Loader API
   * HMR
   * 模块方法
 
   * 模块变量
+
   * Plugins API
   * Tapable
   * Compiler
