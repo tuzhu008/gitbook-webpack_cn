@@ -15,9 +15,11 @@
 * `"empty"`: 提供一个空对象。
 * `false`: 不提供任何东西。预期该对象的代码可能会产生`ReferenceError而`崩溃。试图使用`require('modulename')`导入模块的代码可能触发一个`Cannot find module "modulename"`错误。
 
-W&gt; Not every Node global supports all four options. The compiler will throw an error for property-value combinations that aren't supported \(e.g. `process: 'empty'`\). See the sections below for more details.并不是所有的Node 全局变量都支持这四个选项。编译器将为不受支持的属性值组合抛出一个错误\(例如:`process: 'empty'`\)。更多细节请参见下面的部分。
+> **\[warning\]** 注：
+>
+> 并不是所有的Node 全局变量都支持这四个选项。编译器将为不受支持的属性值组合抛出一个错误\(例如:`process: 'empty'`\)。更多细节请参见下面的部分。
 
-These are the defaults:这些是默认值:
+这些是默认值:
 
 ```js
 node: {
@@ -29,81 +31,81 @@ node: {
   Buffer: true,
   setImmediate: true
 
-  // See "Other node core libraries" for additional options.
+  // 请参阅“其他 node 核心库”以获得更多选项。
 }
 ```
 
-Since webpack 3.0.0, the `node` option may be set to `false` to completely turn off the `NodeStuffPlugin` and `NodeSourcePlugin` plugins.由于webpack 3.0.0，节点选项可能被设置为false，以完全关闭NodeStuffPlugin和NodeSourcePlugin插件。
+由于webpack 3.0.0，`node`选项可能被设置为false，以完全关闭`NodeStuffPlugin`和`NodeSourcePlugin`插件。
 
-## `node.console`
+### `node.console`
 
-`boolean | "mock"`
+类型：boolean \| "mock"
 
-Default: `false`
+默认值: `false`
 
-The browser provides a `console` object with a very similar interface to the Node.js `console`, so a polyfill is generally not needed.浏览器提供了一个与节点非常相似的控制台对象。js控制台，所以通常不需要多填充。
+浏览器提供了一个与Node.js `console`非常相似的`console`对象，所以通常不需要 polyfill。
 
-## `node.process`
+### `node.process`
 
-`boolean | "mock"`
+类型：boolean \| "mock"
 
-Default: `true`
+默认值: `true`
 
-## `node.global`
+### `node.global`
 
-`boolean`
+类型：boolean
 
-Default: `true`
+默认: `true`
 
-See [the source](https://github.com/webpack/webpack/blob/master/buildin/global.js) for the exact behavior of this object.查看该对象的确切行为的源。
+查看该对象的确切行为的[源码](https://github.com/webpack/webpack/blob/master/buildin/global.js)。
 
-## `node.__filename`
+### `node.__filename`
 
-`boolean | "mock"`
+类型：boolean \| "mock"
 
-Default: `"mock"`
-
-Options:
-
-* `true`: The filename of the **input** file relative to the [`context` option](https://webpack.js.org/configuration/entry-context/#context).相对于上下文选项的输入文件的文件名。
-* `false`: The regular Node.js `__filename` behavior. The filename of the **output** file when run in a Node.js environment.普通节点。js \_\_filename行为。在节点中运行时输出文件的文件名。js的环境。
-* `"mock"`: The fixed value `"index.js"`.固定值“index.js”。
-
-## `node.__dirname`
-
-`boolean | "mock"`
-
-Default: `"mock"`
+默认值: `"mock"`
 
 Options:
 
-* `true`: The dirname of the **input** file relative to the [`context` option](https://webpack.js.org/configuration/entry-context/#context).相对于上下文选项的输入文件的dirname。
-* `false`: The regular Node.js `__dirname` behavior. The dirname of the **output** file when run in a Node.js environment.普通节点。js \_\_dirname行为。在节点中运行时输出文件的dirname。js的环境。
-* `"mock"`: The fixed value `"/"`.固定值" / "。
+* `true`: 相对于[`context` 选项](https://webpack.js.org/configuration/entry-context/#context) 的输入文件的文件名。
+* `false`: The regular Node.js `__filename` behavior. The filename of the **output** file when run in a Node.js environment.普通的Node.js ` __filename`行为。在 Node.js 环境中运行时输出文件的文件名。
+* `"mock"`: 固定值`“index.js”`。
 
-## `node.Buffer`
+### `node.__dirname`
 
-`boolean | "mock"`
+类型：boolean \| "mock"
 
-Default: `true`
+默认: `"mock"`
 
-## `node.setImmediate`
+Options:
 
-`boolean | "mock" | "empty"`
+* `true`: 相对于[`context` 选项](https://webpack.js.org/configuration/entry-context/#context) 的输入文件的目录名称 （dirname）。
+* `false`: 普通的Node.js ` __dirname`行为。在 Node.js 环境中运行时输出文件的dirname。
+* `"mock"`: 固定值" / "。
 
-Default: `true`
+### `node.Buffer`
 
-## Other node core libraries
+类型：boolean \| "mock"
 
-`boolean | "mock" | "empty"`
+默认: `true`
 
-W
+### `node.setImmediate`
 
-这个选项只有在目标未指明的情况下才会被激活\(通过NodeSourcePlugin\)，“web”或“webworker”。
+类型：boolean \| "mock" \| "empty"
 
-Polyfills节点。当NodeSourcePlugin插件启用时，可以使用node-libs浏览器的js核心库。查看节点列表。js的核心库和它们的多填充。
+默认: `true`
 
-在默认情况下，webpack将会在每个库中进行多填充，如果有一个已知的多填充，或者什么都不做的话。在后一种情况下，webpack会表现得好像模块名配置了假值。
+## 其他 node 核心库
+
+类型：boolean \| "mock" \| "empty"
+
+> **\[warning\]** 注：
+>
+> 这个选项只有在目标未指明的情况下才会被激活\(通过`NodeSourcePlugin`\)，“web”或“webworker”。
+
+当`NodeSourcePlugin`插件启用时，如果可以，来自[`node-libs-browser`](https://github.com/webpack/node-libs-browser)的 Node.js 核心库的Polyfills被使用。查看[Node.js 核心库和他们的polyfills](https://github.com/webpack/node-libs-browser#readme)。
+
+在默认情况下，webpack 将会在每个库中进行polyfills，如果有一个已知的polyfill，或者什么都不做的话。在后一种情况下，webpack会表现得好像模块名配置了`false`值。
 
 为了导入一个内置模块，使用非webpack请求，即非webpack请求\(“模块化”\)而不是要求\(“模块化”\)。
 
