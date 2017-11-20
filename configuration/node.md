@@ -13,7 +13,7 @@
 * `true`:  提供一个polyfill。
 * `"mock"`: 提供一个实现预期接口的mock，但它几乎没有或没有功能。
 * `"empty"`: 提供一个空对象。
-* `false`: Provide nothing. Code that expects this object may crash with a `ReferenceError`. Code that attempts to import the module using `require('modulename')` may trigger a `Cannot find module "modulename"` error.不提供任何东西。预期该对象的代码可能会与一个`ReferenceError`一起崩溃。试图使用`require('modulename')`导入模块的代码可能触发一个`Cannot find module "modulename"`错误。
+* `false`: 不提供任何东西。预期该对象的代码可能会产生`ReferenceError而`崩溃。试图使用`require('modulename')`导入模块的代码可能触发一个`Cannot find module "modulename"`错误。
 
 W&gt; Not every Node global supports all four options. The compiler will throw an error for property-value combinations that aren't supported \(e.g. `process: 'empty'`\). See the sections below for more details.并不是所有的节点都支持这四个选项。编译器将为不受支持的属性值组合抛出一个错误\(例如:进程:“pty”\)。更多细节请参见下面的部分。
 
