@@ -24,5 +24,30 @@ performance: {
 }
 ```
 
+上面的设置为false，不会展示警告或错误提示。
+
+```js
+performance: {
+  hints: "warning"
+}
+```
+
+将展示一条警告，通知你这是体积大的资源。在开发环境，我们推荐这样。
+
+```js
+performance: {
+  hints: "error"
+}
+```
+
+将展示一条错误，通知你这是体积大的资源。在生产环境构建时，我们推荐使用`hints: "error"`，有助于防止把体积巨大的 bundle 部署到生产环境，从而影响网页的性能。
+
+### `performance.maxEntryPointSize`
+
+### 
+
+类型  
+
+
 
 
