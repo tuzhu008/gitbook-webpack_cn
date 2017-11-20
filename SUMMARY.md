@@ -42,7 +42,7 @@
   * [Node.js API](/API/API-Node.md)
   * [Loader API](/API/API-Loader.md)
 
-  * Module API
+  * [Module API](##)
 
     * [Module Methods（模块方法）](/API/ModuleMethods.md)
 
@@ -57,6 +57,7 @@
   * Compilation
 
   * Module Factories
+
   * Resolve
   * Parser
   * Templates
