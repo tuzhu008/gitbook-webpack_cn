@@ -16,8 +16,6 @@ if (module.hot) {
 
 ## `module.hot`
 
-
-
 ### `accept`
 
 接受\(accept\)给定`依赖模块`的更新，并触发一个`回调函数`来对这些更新做出响应。
@@ -65,6 +63,17 @@ module.hot.removeDisposeHandler(callback)
 module.hot.status() // 返回以下字符串之一……
 ```
 
+| Status（状态） | 描述 |
+| :--- | :--- |
+| idle | 该进程正在等待调用check函数 |
+| check | 该进程正在检查以更新 |
+| prepare | 该进程正在准备更新 |
+| ready | 更新已准备好并可用 |
+| dispose | 该进程正在调用被替换模块的dispose处理函数 |
+| apply | 该进程正在调用accept处理函数，并重新执行自我接受（self-accept）的模块 |
+| abort | 更新已中止，但系统仍处于之前的状态 |
+| fail | 更新已抛出异常，系统状态已破坏 |
+
 ### `check`
 
 测试所有加载的模块以进行更新，如果有更新，则应用它们。
@@ -89,7 +98,6 @@ module.hot.apply(options).then(outdatedModules => {
 }).catch(error => {
   // 捕获错误
 });
-
 ```
 
 可选的`options`对象可以包含以下属性：
