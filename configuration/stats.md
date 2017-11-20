@@ -1,33 +1,39 @@
 # Stats（统计）
 
-The `stats` option lets you precisely control what bundle information gets displayed. This can be a nice middle ground if you don't want to use `quiet` or `noInfo` because you want some bundle information, but not all of it.
+stats选项允许您精确控制哪些bundle信息被显示。如果你不想使用`quiet`或`noInfo`，这可能是一个很好的中间地带，因为你想要一些bundle信息，但不是全部。
 
-T> For webpack-dev-server, this property needs to be in the `devServer` object.
+> **\[info\]**注：
+>
+> 对于webpack-dev-server，该属性需要在`devServer`对象中。
 
-W> This option does not have any effect when using the Node.js API.
+-
+
+> **\[warning\]** 注：
+>
+> 这个选项在使用Node.js API 时没有任何效果。
 
 ## `stats`
 
-`object` `string`
+类型：object \| string
 
-There are some presets available to use as a shortcut. Use them like this:
+有一些预设可用作快捷方式。使用方法：
 
 ```js
 stats: "errors-only"
 ```
 
-| Preset | Alternative | Description |
-|--------|-------------|-------------|
-| `"errors-only"` | *none*  | Only output when errors happen |
-| `"minimal"`     | *none*  | Only output when errors or new compilation happen |
-| `"none"`        | `false` | Output nothing |
-| `"normal"`      | `true`  | Standard output |
-| `"detailed"`    | *none*  | Detailed output (since webpack 3.0.0) |
-| `"verbose"`     | *none*  | Output everything |
+| Preset（预设） | Alternative（替代） | Description （描述） |
+| --- | --- | --- |
+| `"errors-only"` | _none_ | 只有当错误发生时才输出 |
+| `"minimal"` | _none_ | 只有当错误或新的编译发生时才输出 |
+| `"none"` | `false` | 不输出 |
+| `"normal"` | `true` | 标准输出 |
+| `"detailed"` | _none_ | 详细的输出 \(从 webpack 3.0.0起\) |
+| `"verbose"` | _none_ | 输出所有的 |
 
-For more granular control, it is possible to specify exactly what information you want. Please note that all of the options in this object are optional.
+为了获得更细粒度的控制，可以指定您想要的信息。请注意，此对象中的所有选项都是可选的。
 
-``` js
+```js
 stats: {
   // fallback value for stats options when an option is not defined (has precedence over local webpack defaults)
   all: undefined,
@@ -113,5 +119,6 @@ stats: {
   warningsFilter: "filter" | /filter/ | ["filter", /filter/] | (warning) => ... return true|false
 };
 ```
+
 
 
