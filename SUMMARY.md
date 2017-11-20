@@ -21,6 +21,7 @@
   * [DevServer（开发服务）](configuration/devServer.md)
 
   * [Devtools（开发工具）](/configuration/devtools.md)
+
   * [Target（构建目标）](configuration/target.md)
   * [Watch（观察模式）](configuration/watch.md)
   * [WatchOptions（观察模式选项）](configuration/watchOptions.md)
@@ -33,6 +34,10 @@
 * [注意](Note.md)
 
 * [其他](/Others/README.md)
+
+  * [模块化编程](/Others/Modular-programming.md)
+
+  * [anymatch](/Others/anymatch.md)
 
 * [致谢](/thanks.md)
 
