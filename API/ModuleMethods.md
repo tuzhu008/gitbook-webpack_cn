@@ -83,29 +83,27 @@ import(
 * `"eager"`:  不生成额外的chunk。所有的模块都包含在当前的块中，不需要额外的网络请求。`Promise`仍会被返回，但已得到解决。与静态导入不同的是，在调用`import()`之前，模块不会被执行。
 * `"weak"`: 如果模块函数已经以其他方式加载，则尝试装入模块\(例如，导入它的另一个chunk或包含加载了模块的脚本\)。仍然会返回一个`Promise`，但是，只有当chunk已经在客户端上才能成功地解析。如果模块不可用，则`Promise`被拒绝。网络请求永远不会被执行。当需要的chunk总是在初始请求\(嵌入在页面内\)中手动提供时，这对于通用的渲染是很有用的，但是在应用程序导航将触发导入而不是初始请求的情况下，这是很有用的。
 
-T&gt; Note that both options can be combined like so `/* webpackMode: "lazy-once", webpackChunkName: "all-i18n-data" */`. This is parsed as a JSON5 object without curly brackets
-
 > **\[info\]** 注：
+>
+> 这两个选项都可以像`/* webpackMode: "lazy-once", webpackChunkName: "all-i18n-data" */`那样组合在一起。它被解析为一个没有花括号（`{}`）的JSON5对象
 
-
-
-> **\[warning\]**注：
-
-&lt;br&gt;
+-
 
 > **\[warning\]**注：
+>
+> 完全动态的语句**将会失败**，例如`import(foo)`，因为webpack至少需要一些文件位置信息。这是因为`foo`可能是您的系统或项目中的任何文件的任何路径。`import()`必须至少包含关于模块所在位置的一些信息，因此bundling可以被限制为特定的目录或文件集。
 
-&lt;br&gt;
+-
 
 > **\[warning\]**注：
+>
+> 包含在`import()`调用中可能被请求的每个模块都包括在内。例如，``import(`./locale/${language}.json`)``将导致`./locale`目录中的每个`.json`文件被打包到到新chunk中。在运行时，当变量`language`被计算时，任何文件如`english.json` 或 `german.json`将可以用于打包。
 
-&lt;br&gt;
+-
 
-W&gt; Fully dynamic statements, such as `import(foo)`, **will fail** because webpack requires at least some file location information. This is because `foo` could potentially be any path to any file in your system or project. The `import()` must contain at least some information about where the module is located, so bundling can be limited to a specific directory or set of files.
-
-W&gt; Every module that could potentially be requested on an `import()` call is included. For example, ``import(`./locale/${language}.json`)`` will cause every `.json` file in the `./locale` directory to be bundled into the new chunk. At run time, when the variable `language` has been computed, any file like `english.json` or `german.json` will be available for consumption.
-
-W&gt; The use of `System.import` in webpack [did not fit the proposed spec](https://github.com/webpack/webpack/issues/2163), so it was deprecated in webpack [2.1.0-beta.28](https://github.com/webpack/webpack/releases/tag/v2.1.0-beta.28) in favor of `import()`.
+> **\[warning\]**注：
+>
+> 在webpack中使用`System.import`[不符合推荐的规范](https://github.com/webpack/webpack/issues/2163)，因此在webpack 2.1.0测试版中被弃用，转而支持`import()`。
 
 ## CommonJS
 
