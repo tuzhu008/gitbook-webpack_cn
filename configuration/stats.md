@@ -2,6 +2,12 @@
 
 stats选项允许您精确控制哪些bundle信息被显示。如果你不想使用`quiet`或`noInfo`，这可能是一个很好的中间地带，因为你想要一些bundle信息，但不是全部。
 
+```js
+module.exports = {
+    stats: string | Object
+}
+```
+
 > **\[info\]**注：
 >
 > 对于webpack-dev-server，该属性需要在`devServer`对象中。
@@ -35,88 +41,84 @@ stats: "errors-only"
 
 ```js
 stats: {
-  // fallback value for stats options when an option is not defined (has precedence over local webpack defaults)
-  
+  //stats选项的回退值，当一个选项没有被定义时（优先于本地webpack默认值）
   all: undefined,
-  // Add asset Information
+  // 添加资源信息
   assets: true,
-  // Sort assets by a field
-  // You can reverse the sort with `!field`.
+  // 按一个字段对资源进行排序
+  // 你可以用'！字段'来反转排序。
   assetsSort: "field",
-  // Add information about cached (not built) modules
+  // 添加关于cached(不是构建缓存) 模块的信息
   cached: true,
-  // Show cached assets (setting this to `false` only shows emitted files)
+  // 展示 cached 资源 (将此设置为`false`，只显示发出（emitted）的文件)
   cachedAssets: true,
-  // Add children information
+  // 添加子（children）信息
   children: true,
-  // Add chunk information (setting this to `false` allows for a less verbose output)
+  // 添加 chunk 信息 (将此设置为false，可以使输出更少)
   chunks: true,
-  // Add built modules information to chunk information
+  // 添加构建模块信息到chunk信息
   chunkModules: true,
-  // Add the origins of chunks and chunk merging info
+  // 添加chunk的源和chunk合并信息
   chunkOrigins: true,
-  // Sort the chunks by a field
-  // You can reverse the sort with `!field`. Default is `id`.
+  // 使用字段对chunk进行排序
+  // 你可以使用`!field`来反转排序。默认为：`id`
   chunksSort: "field",
-  // Context directory for request shortening
+  // request shortening的上下文目录
   context: "../src/",
-  // `webpack --colors` equivalent
+  // 与`webpack --colors` 等效
   colors: true,
-  // Display the distance from the entry point for each module
+  // 显示每个模块的入口点的距离
   depth: false,
-  // Display the entry points with the corresponding bundles
+  // 用相应的bundle显示入口点
   entrypoints: false,
-  // Add --env information
+  // 添加 --env 信息
   env: false,
-  // Add errors
+  // 添加 errors
   errors: true,
-  // Add details to errors (like resolving log)
+  // 为 errors 增加细节 (像 resolving log)
   errorxuaDetails: true,
-  // Exclude assets from being displayed in stats
-  // This can be done with a String, a RegExp, a Function getting the assets name
-  // and returning a boolean or an Array of the above.
+  // 排除在stats中显示的资产
+  // 可以使用String、RegExp和获取资产名并返回一个布尔值或以上的这些的数组的函数来完成
   excludeAssets: "filter" | /filter/ | (assetName) => ... return true|false |
     ["filter"] | [/filter/] | [(assetName) => ... return true|false],
-  // Exclude modules from being displayed in stats
-  // This can be done with a String, a RegExp, a Function getting the modules source
-  // and returning a boolean or an Array of the above.
+  // 排除在stats中显示的模块
+  // 可以使用String、RegExp和获取资产名并返回一个布尔值或以上的这些的数组的函数来完成
   excludeModules: "filter" | /filter/ | (moduleSource) => ... return true|false |
     ["filter"] | [/filter/] | [(moduleSource) => ... return true|false],
-  // See excludeModules
+  // 看到 excludeModules
   exclude: "filter" | /filter/ | (moduleSource) => ... return true|false |
     ["filter"] | [/filter/] | [(moduleSource) => ... return true|false],
-  // Add the hash of the compilation
+  // 添加编译的hash
   hash: true,
-  // Set the maximum number of modules to be shown
+  // 设置要显示的模块的最大数量
   maxModules: 15,
-  // Add built modules information
+  // Add built modules information添加构建模块信息
   modules: true,
-  // Sort the modules by a field
-  // You can reverse the sort with `!field`. Default is `id`.
+  // 使用字段对模块进行排序
+  // 你可以使用 `!field`翻转排序结果，默认为 `id`.
   modulesSort: "field",
-  // Show dependencies and origin of warnings/errors (since webpack 2.5.0)
+  // 显示相关性和错误的来源(自webpack 2.5.0)
   moduleTrace: true,
-  // Show performance hint when file size exceeds `performance.maxAssetSize`
+  // 当文件大小超过`performance.maxAssetSize`，显示性能提示。
   performance: true,
-  // Show the exports of the modules
+  // 显示模块的导出
   providedExports: false,
-  // Add public path information
+  // 添加公共路径信息
   publicPath: true,
-  // Add information about the reasons why modules are included
+  // 添加关于模块被包含的原因的信息
   reasons: true,
-  // Add the source code of modules
+  // 添加模块的源代码
   source: true,
-  // Add timing information
+  // 添加时间信息
   timings: true,
-  // Show which exports of a module are used
+  // 显示被使用的模块的导出
   usedExports: false,
-  // Add webpack version information
+  // 添加webpack版本信息
   version: true,
-  // Add warnings
+  // 添加警告
   warnings: true,
-  // Filter warnings to be shown (since webpack 2.4.0),
-  // can be a String, Regexp, a function getting the warning and returning a boolean
-  // or an Array of a combination of the above. First match wins.
+  // 过滤想要显示的警告(从 webpack 2.4.0),
+  // 可以是 String, Regexp, 一个获取警告并返回一个布尔值或者以上组合的数组。都一个匹配的（First match wins.）。
   warningsFilter: "filter" | /filter/ | ["filter", /filter/] | (warning) => ... return true|false
 };
 ```
