@@ -44,10 +44,53 @@ performance: {
 
 ### `performance.maxEntryPointSize`
 
-### 
+类型：int
 
-类型  
+默认值是：`250000`\(bytes\)
 
+入口起点表示针对指定的入口，对于所有资源，要充分利用初始加载时\(initial load time\)期间。此选项根据入口起点的最大体积，控制 webpack 何时生成性能提示。
 
+```js
+performance: {
+  maxEntrypointSize: 400000
+}
+```
 
+### `performance.maxAssetSize`
+
+类型：int
+
+默认值是：`250000`\(bytes\)
+
+资源\(asset\)是从 webpack 生成的任何文件。此选项根据**单个**资源体积，控制 webpack 何时生成性能提示。
+
+```js
+performance: {
+  maxAssetSize: 100000
+}
+```
+
+### `performance.assetFilter`
+
+类型：function
+
+该属性允许webpack控制使用哪些文件来计算性能提示。也就是过滤资源。默认的函数如下:
+
+```js
+function(assetFilename) {
+    return !(/\.map$/.test(assetFilename))
+};
+```
+
+你可以通过传递自己的函数来覆盖此属性：
+
+```js
+performance: {
+  assetFilter: function(assetFilename) {
+    return assetFilename.endsWith('.js');
+  }
+}
+```
+
+以上示例将只给出`.js`文件的性能提示。
 
