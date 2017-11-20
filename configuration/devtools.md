@@ -94,21 +94,33 @@
 
 ### 生产
 
-These options are typically used in production:
+这些选项通常用于生产:
 
-`(none)` \(Omit the `devtool` option\) - No SourceMap is emitted. This is a good option to start with.
+`(none)` \(省略`devtool` 选项\) -没有SourceMap发出。这是一个不错的选择。
 
-`source-map` - A full SourceMap is emitted as a separate file. It adds a reference comment to the bundle so development tools know where to find it.
+`source-map` - 完整的SourceMap是作为一个单独的文件发出的。它为bundle添加了一个引用注释，因此开发工具知道在哪里找到它。
 
-W&gt; You should configure your server to disallow access to the Source Map file for normal users!
+> **\[warning\]** 注：
+>
+>  您应该配置您的服务器，使其不允许对普通用户访问源映射文件。
 
-`hidden-source-map` - Same as `source-map`, but doesn't add a reference comment to the bundle. Useful if you only want SourceMaps to map error stack traces from error reports, but don't want to expose your SourceMap for the browser development tools.
+`hidden-source-map` - 与`source-map`一样，但是，不要在bundle中添加引用注释。如果您只希望SourceMaps从错误报告中映射错误堆栈跟踪，但是不想为浏览器开发工具公开您的SourceMap，它是很有用的。
 
-W&gt; You should not deploy the Source Map file to the webserver. Instead only use it for error report tooling.
+> **\[warning\]** 注：
+>
+>  您应该配置您的服务器，使其不允许对普通用户访问源映射文件。您不应该将Source Map文件部署到web服务器。相反，只使用它作为错误报告工具。
 
-`nosources-source-map` - A SourceMap is created without the `sourcesContent` in it. It can be used to map stack traces on the client without exposing all of the source code. You can deploy the Source Map file to the webserver.
+`nosources-source-map` - 一个SourceMap是在没有`sourcesContent`的情况下被创建的。它可以用于在客户机上映射堆栈跟踪，而不会暴露所有的源代码。您可以将源映射文件部署到web服务器。
 
-W&gt; It still exposes filenames and structure for decompiling, but it doesn't expose the original code.
+> **\[warning\]** 注：
+>
+>  它仍然公开了用于反编译的文件名和结构，但是它没有公开原始代码。
 
-T&gt; When using the `uglifyjs-webpack-plugin` you must provide the `sourceMap: true` option to enable SourceMap support.
+-
+
+> **\[info\]** 注：
+>
+> 当使用`uglifyjs-webpack-plugin` 时，你必须提供`sourceMap: true` 选项来使SourceMap支持。
+
+
 
