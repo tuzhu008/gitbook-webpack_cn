@@ -25,11 +25,12 @@
   * [Target（构建目标）](configuration/target.md)
 
   * [Watch（观察模式）](configuration/watch.md)
+
   * [WatchOptions（观察模式选项）](configuration/watchOptions.md)
   * [Externals（外部扩展）](configuration/externals.md)
   * [Performance（性能）](configuration/performance.md)
   * [Node](configuration/node.md)
-  * [Stats（统计）](/configuration/state.md)
+  * [Stats（统计）](//configuration/stats.md)
   * [OtherOptions（其他选项）](configuration/otherOptions.md)
 
 * [注意](Note.md)
