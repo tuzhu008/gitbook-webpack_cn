@@ -4,10 +4,6 @@
 
 * [loader](loaders/README.md)
 
-* [插件](/Plugins/README.md)
-
-  * [WebpackManifestPlugin](/Plugins/WebpackManifestPlugin.md)
-
 * [配置](/configuration/README.md)
 
   * [Context（上下文）](configuration/context.md)
@@ -27,11 +23,30 @@
   * [Watch（观察模式）](configuration/watch.md)
 
   * [WatchOptions（观察模式选项）](configuration/watchOptions.md)
+
   * [Externals（外部扩展）](configuration/externals.md)
   * [Performance（性能）](configuration/performance.md)
   * [Node](configuration/node.md)
   * [Stats（统计）](//configuration/stats.md)
   * [OtherOptions（其他选项）](configuration/otherOptions.md)
+
+* [API](/API/README.md)
+  * [命令行接口](/API/CLI.md)
+  * Node.js API
+  * Loader API
+  * HMR
+  * Stats
+
+  ### 模块
+
+  * 模块方法
+  * 模块变量
+
+  ### Plugins
+
+* [插件](/Plugins/README.md)
+
+  * [WebpackManifestPlugin](/Plugins/WebpackManifestPlugin.md)
 
 * [注意](Note.md)
 
