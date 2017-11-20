@@ -39,9 +39,9 @@
   * [CLI（命令行接口）](//API/CLI.md)
   * [Stats Data（同级数据）](/API/StatsData.md)
   * [HMR（模块热替换）](/API/HMR.md)
-  * Node.js API
-  * Loader API
-  * HMR
+  * [Node.js API](/API/API-Node.md)
+  * [Loader API](/API/API-Loader.md)
+
   * 模块方法
 
   * 模块变量
@@ -49,6 +49,7 @@
   * Plugins API
 
   * Tapable
+
   * Compiler
   * Compilation
   * Module Factories
