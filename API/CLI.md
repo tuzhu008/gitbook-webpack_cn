@@ -183,8 +183,8 @@ webpack.js index=./src/index.js index2=./src/index2.js --output-path='./dist' --
 参数 | 说明 | 用法
 -------------------- | ---------------------------------- | ----------------
 `--module-bind`      | 为 loader 绑定一个扩展 | `--module-bind js=babel-loader`
-`--module-bind-post` | 为 post loader 绑定一个扩展 |
-`--module-bind-pre`  | 为 pre loader 绑定一个扩展 |
+`--module-bind-post` | 为 post loader 绑定一个扩展 |-
+`--module-bind-pre`  | 为 pre loader 绑定一个扩展 |-
 
 ## Watch 配置
 
@@ -216,7 +216,7 @@ webpack.js index=./src/index.js index2=./src/index2.js --output-path='./dist' --
 ---------------------- | ------------------------------------------------------- | -------------
 --resolve-alias        | 指定模块的别名 | --resolve-alias jquery-plugin=jquery.plugin
 --resolve-extensions   | 指定需要被处理的文件的扩展名 | --resolve-extensions .es6 .js .ts
---resolve-loader-alias | Minimize javascript and switches loaders to minimizing  |
+--resolve-loader-alias | Minimize javascript and switches loaders to minimizing  |-
 
 ## 统计数据配置
 
@@ -250,17 +250,17 @@ webpack.js index=./src/index.js index2=./src/index2.js --output-path='./dist' --
 
 参数 | 说明 | 用法
 ----------------- | ---------------------------------------- | -----
-`--bail` | 一旦发生错误，立即终止 |
+`--bail` | 一旦发生错误，立即终止 |-
 `--cache` | 开启缓存 [watch 时会默认打开] | `--cache=false`
 `--define` | 定义 bundle 中的任意自由变量，查看 [shimming](/guides/shimming) | `--define process.env.NODE_ENV='development'`
 `--hot`           | 开启[模块热替换](/concepts/hot-module-replacement) | `--hot=true`
-`--labeled-modules` | 开启模块标签 [使用 LabeledModulesPlugin] |
-`--plugin`        | 加载某个[插件](/configuration/plugins/) |
+`--labeled-modules` | 开启模块标签 [使用 LabeledModulesPlugin] |-
+`--plugin`        | 加载某个[插件](/configuration/plugins/) |-
 `--prefetch`      | 预加载某个文件 | `--prefetch=./files.js`
 `--provide`       | 在所有模块中将这些模块提供为自由变量，查看 [shimming](/guides/shimming) | `--provide jQuery=jquery`
-`--records-input-path` | 记录文件的路径（读取） |
-`--records-output-path` | 记录文件的路径（写入） |
-`--records-path`  | 记录文件的路径 |
+`--records-input-path` | 记录文件的路径（读取） |-
+`--records-output-path` | 记录文件的路径（写入） |-
+`--records-path`  | 记录文件的路径 |-
 `--target`        | [目标](/configuration/target/)的执行环境 | `--target='node'`
 
 ## 简写
