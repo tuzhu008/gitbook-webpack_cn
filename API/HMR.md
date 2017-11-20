@@ -1,4 +1,4 @@
-# Hot Module Replacement（热模块替换）
+# Hot Module Replacement（模块热替换）
 
 如果已经通过[`HotModuleReplacementPlugin`](/Plugins/HotModuleReplacementPlugin.md)启用了[模块热替换\(Hot Module Replacement\)](https://doc.webpack-china.org/concepts/hot-module-replacement)，则它的接口将被暴露在[`module.hot`属性](https://doc.webpack-china.org/api/module-variables#module-hot-webpack-specific-)
 
