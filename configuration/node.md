@@ -11,9 +11,9 @@
 这是一个对象，其中每个属性都是一个Node全局变量或模块的名称，每个值可能是下面的一个。
 
 * `true`:  提供一个polyfill。
-* `"mock"`: Provide a mock that implements the expected interface but has little or no functionality.提供一个实现预期接口的mock，但它几乎没有或没有功能。
-* `"empty"`: Provide an empty object.提供一个空对象。
-* `false`: Provide nothing. Code that expects this object may crash with a `ReferenceError`. Code that attempts to import the module using `require('modulename')` may trigger a `Cannot find module "modulename"` error.提供什么。预期该对象的代码可能会与一个ReferenceError一起崩溃。试图使用需求导入模块的代码\(“模块化”\)可能触发一个无法找到模块的“模块化”错误。
+* `"mock"`: 提供一个实现预期接口的mock，但它几乎没有或没有功能。
+* `"empty"`: 提供一个空对象。
+* `false`: Provide nothing. Code that expects this object may crash with a `ReferenceError`. Code that attempts to import the module using `require('modulename')` may trigger a `Cannot find module "modulename"` error.不提供任何东西。预期该对象的代码可能会与一个`ReferenceError`一起崩溃。试图使用`require('modulename')`导入模块的代码可能触发一个`Cannot find module "modulename"`错误。
 
 W&gt; Not every Node global supports all four options. The compiler will throw an error for property-value combinations that aren't supported \(e.g. `process: 'empty'`\). See the sections below for more details.并不是所有的节点都支持这四个选项。编译器将为不受支持的属性值组合抛出一个错误\(例如:进程:“pty”\)。更多细节请参见下面的部分。
 
@@ -101,15 +101,9 @@ W
 
 这个选项只有在目标未指明的情况下才会被激活\(通过NodeSourcePlugin\)，“web”或“webworker”。
 
-
-
 Polyfills节点。当NodeSourcePlugin插件启用时，可以使用node-libs浏览器的js核心库。查看节点列表。js的核心库和它们的多填充。
 
-
-
 在默认情况下，webpack将会在每个库中进行多填充，如果有一个已知的多填充，或者什么都不做的话。在后一种情况下，webpack会表现得好像模块名配置了假值。
-
-
 
 为了导入一个内置模块，使用非webpack请求，即非webpack请求\(“模块化”\)而不是要求\(“模块化”\)。
 
