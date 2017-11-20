@@ -1,0 +1,721 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Performance（性能） · webpack中文</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="tuzhu008">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="node.html" />
+    
+    
+    <link rel="prev" href="externals.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Guide/">
+            
+                <a href="../Guide/">
+            
+                    
+                    教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../loaders/">
+            
+                <a href="../loaders/">
+            
+                    
+                    loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Plugins/">
+            
+                <a href="../Plugins/">
+            
+                    
+                    插件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Plugins/WebpackManifestPlugin.html">
+            
+                <a href="../Plugins/WebpackManifestPlugin.html">
+            
+                    
+                    WebpackManifestPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="context.html">
+            
+                <a href="context.html">
+            
+                    
+                    Context（上下文）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="entry.html">
+            
+                <a href="entry.html">
+            
+                    
+                    Entry（入口）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="output.html">
+            
+                <a href="output.html">
+            
+                    
+                    Output（输出）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="module.html">
+            
+                <a href="module.html">
+            
+                    
+                    Module（模块）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="resolve.html">
+            
+                <a href="resolve.html">
+            
+                    
+                    Resolve（解析）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="plugins.html">
+            
+                <a href="plugins.html">
+            
+                    
+                    Plugins（插件）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="devServer.html">
+            
+                <a href="devServer.html">
+            
+                    
+                    DevServer（开发服务）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="devtools.html">
+            
+                <a href="devtools.html">
+            
+                    
+                    Devtools（开发工具）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="target.html">
+            
+                <a href="target.html">
+            
+                    
+                    Target（构建目标）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="watch.html">
+            
+                <a href="watch.html">
+            
+                    
+                    Watch（观察模式）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="watchOptions.html">
+            
+                <a href="watchOptions.html">
+            
+                    
+                    WatchOptions（观察模式选项）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="externals.html">
+            
+                <a href="externals.html">
+            
+                    
+                    Externals（外部扩展）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.13" data-path="performance.html">
+            
+                <a href="performance.html">
+            
+                    
+                    Performance（性能）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" data-path="node.html">
+            
+                <a href="node.html">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15" data-path="stats.html">
+            
+                <a href="stats.html">
+            
+                    
+                    Stats（统计）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16" data-path="otherOptions.html">
+            
+                <a href="otherOptions.html">
+            
+                    
+                    OtherOptions（其他选项）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Note.html">
+            
+                <a href="../Note.html">
+            
+                    
+                    注意
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Others/">
+            
+                <a href="../Others/">
+            
+                    
+                    其他
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Others/Modular-programming.html">
+            
+                <a href="../Others/Modular-programming.html">
+            
+                    
+                    模块化编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../Others/anymatch.html">
+            
+                <a href="../Others/anymatch.html">
+            
+                    
+                    anymatch
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../thanks.html">
+            
+                <a href="../thanks.html">
+            
+                    
+                    致谢
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Performance（性能）</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#performance&#xFF08;&#x6027;&#x80FD;&#xFF09;"><b>1. </b>Performance&#xFF08;&#x6027;&#x80FD;&#xFF09;</a></li><ul><li><span class="title-icon "></span><a href="#performance"><b>1.1. </b>performance</a></li><ul><li><span class="title-icon "></span><a href="#performancehints"><b>1.1.1. </b>performance.hints</a></li><li><span class="title-icon "></span><a href="#performancemaxentrypointsize"><b>1.1.2. </b>performance.maxEntryPointSize</a></li><li><span class="title-icon "></span><a href="#performancemaxassetsize"><b>1.1.3. </b>performance.maxAssetSize</a></li><li><span class="title-icon "></span><a href="#performanceassetfilter"><b>1.1.4. </b>performance.assetFilter</a></li></ul></ul></ul></div><a href="#performance&#xFF08;&#x6027;&#x80FD;&#xFF09;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="performance&#xFF08;&#x6027;&#x80FD;&#xFF09;"><a name="performance&#xFF08;&#x6027;&#x80FD;&#xFF09;" class="anchor-navigation-ex-anchor" href="#performance&#xFF08;&#x6027;&#x80FD;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>1. Performance&#xFF08;&#x6027;&#x80FD;&#xFF09;</h1>
+<p>&#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x63A7;&#x5236; webpack &#x5982;&#x4F55;&#x901A;&#x77E5;&#x300C;&#x8D44;&#x6E90;(asset)&#x548C;&#x5165;&#x53E3;&#x8D77;&#x70B9;&#x8D85;&#x8FC7;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x9650;&#x5236;&#x300D;&#x3002; &#x6B64;&#x529F;&#x80FD;&#x53D7;&#x5230;<a href="https://github.com/webpack/webpack/issues/3216" target="_blank">webpack &#x6027;&#x80FD;&#x8BC4;&#x4F30;</a>&#x7684;&#x542F;&#x53D1;&#x3002;</p>
+<h2 id="performance"><a name="performance" class="anchor-navigation-ex-anchor" href="#performance"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. performance</h2>
+<p>&#x7C7B;&#x578B;&#xFF1A;object</p>
+<p>&#x914D;&#x7F6E;&#x5982;&#x4F55;&#x5C55;&#x793A;&#x6027;&#x80FD;&#x63D0;&#x793A;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x8D44;&#x6E90;&#x8D85;&#x8FC7; 250kb&#xFF0C;webpack &#x4F1A;&#x5BF9;&#x6B64;&#x8F93;&#x51FA;&#x4E00;&#x4E2A;&#x8B66;&#x544A;&#x6765;&#x901A;&#x77E5;&#x4F60;&#x3002;</p>
+<h3 id="performancehints"><a name="performancehints" class="anchor-navigation-ex-anchor" href="#performancehints"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. performance.hints</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;false | &quot;error&quot; | &quot;warning&quot;</p>
+<p>&#x9ED8;&#x8BA4;&#x503C;&#xFF1A; &quot;warning&quot;</p>
+<p>&#x6253;&#x5F00;/&#x5173;&#x95ED;&#x63D0;&#x793A;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x5F53;&#x627E;&#x5230;&#x63D0;&#x793A;&#x65F6;&#xFF0C;&#x544A;&#x8BC9; webpack &#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x6216;&#x8B66;&#x544A;&#x3002;&#x6B64;&#x5C5E;&#x6027;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#x4E3A;<code>&quot;warning&quot;</code>&#x3002;</p>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x521B;&#x5EFA;&#x540E;&#x8D85;&#x8FC7; 250kb &#x7684;&#x8D44;&#x6E90;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">performance<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  hints<span class="token punctuation">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x8BBE;&#x7F6E;&#x4E3A;false&#xFF0C;&#x4E0D;&#x4F1A;&#x5C55;&#x793A;&#x8B66;&#x544A;&#x6216;&#x9519;&#x8BEF;&#x63D0;&#x793A;&#x3002;</p>
+<pre class="language-"><code class="lang-js">performance<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  hints<span class="token punctuation">:</span> <span class="token string">&quot;warning&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5C06;&#x5C55;&#x793A;&#x4E00;&#x6761;&#x8B66;&#x544A;&#xFF0C;&#x901A;&#x77E5;&#x4F60;&#x8FD9;&#x662F;&#x4F53;&#x79EF;&#x5927;&#x7684;&#x8D44;&#x6E90;&#x3002;&#x5728;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF0C;&#x6211;&#x4EEC;&#x63A8;&#x8350;&#x8FD9;&#x6837;&#x3002;</p>
+<pre class="language-"><code class="lang-js">performance<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  hints<span class="token punctuation">:</span> <span class="token string">&quot;error&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5C06;&#x5C55;&#x793A;&#x4E00;&#x6761;&#x9519;&#x8BEF;&#xFF0C;&#x901A;&#x77E5;&#x4F60;&#x8FD9;&#x662F;&#x4F53;&#x79EF;&#x5927;&#x7684;&#x8D44;&#x6E90;&#x3002;&#x5728;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x6784;&#x5EFA;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x63A8;&#x8350;&#x4F7F;&#x7528;<code>hints: &quot;error&quot;</code>&#xFF0C;&#x6709;&#x52A9;&#x4E8E;&#x9632;&#x6B62;&#x628A;&#x4F53;&#x79EF;&#x5DE8;&#x5927;&#x7684; bundle &#x90E8;&#x7F72;&#x5230;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#xFF0C;&#x4ECE;&#x800C;&#x5F71;&#x54CD;&#x7F51;&#x9875;&#x7684;&#x6027;&#x80FD;&#x3002;</p>
+<h3 id="performancemaxentrypointsize"><a name="performancemaxentrypointsize" class="anchor-navigation-ex-anchor" href="#performancemaxentrypointsize"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.2. performance.maxEntryPointSize</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;int</p>
+<p>&#x9ED8;&#x8BA4;&#x503C;&#x662F;&#xFF1A;<code>250000</code>(bytes)</p>
+<p>&#x5165;&#x53E3;&#x8D77;&#x70B9;&#x8868;&#x793A;&#x9488;&#x5BF9;&#x6307;&#x5B9A;&#x7684;&#x5165;&#x53E3;&#xFF0C;&#x5BF9;&#x4E8E;&#x6240;&#x6709;&#x8D44;&#x6E90;&#xFF0C;&#x8981;&#x5145;&#x5206;&#x5229;&#x7528;&#x521D;&#x59CB;&#x52A0;&#x8F7D;&#x65F6;(initial load time)&#x671F;&#x95F4;&#x3002;&#x6B64;&#x9009;&#x9879;&#x6839;&#x636E;&#x5165;&#x53E3;&#x8D77;&#x70B9;&#x7684;&#x6700;&#x5927;&#x4F53;&#x79EF;&#xFF0C;&#x63A7;&#x5236; webpack &#x4F55;&#x65F6;&#x751F;&#x6210;&#x6027;&#x80FD;&#x63D0;&#x793A;&#x3002;</p>
+<pre class="language-"><code class="lang-js">performance<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  maxEntrypointSize<span class="token punctuation">:</span> <span class="token number">400000</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="performancemaxassetsize"><a name="performancemaxassetsize" class="anchor-navigation-ex-anchor" href="#performancemaxassetsize"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.3. performance.maxAssetSize</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;int</p>
+<p>&#x9ED8;&#x8BA4;&#x503C;&#x662F;&#xFF1A;<code>250000</code>(bytes)</p>
+<p>&#x8D44;&#x6E90;(asset)&#x662F;&#x4ECE; webpack &#x751F;&#x6210;&#x7684;&#x4EFB;&#x4F55;&#x6587;&#x4EF6;&#x3002;&#x6B64;&#x9009;&#x9879;&#x6839;&#x636E;<strong>&#x5355;&#x4E2A;</strong>&#x8D44;&#x6E90;&#x4F53;&#x79EF;&#xFF0C;&#x63A7;&#x5236; webpack &#x4F55;&#x65F6;&#x751F;&#x6210;&#x6027;&#x80FD;&#x63D0;&#x793A;&#x3002;</p>
+<pre class="language-"><code class="lang-js">performance<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  maxAssetSize<span class="token punctuation">:</span> <span class="token number">100000</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="performanceassetfilter"><a name="performanceassetfilter" class="anchor-navigation-ex-anchor" href="#performanceassetfilter"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.4. performance.assetFilter</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;function</p>
+<p>&#x8BE5;&#x5C5E;&#x6027;&#x5141;&#x8BB8;webpack&#x63A7;&#x5236;&#x4F7F;&#x7528;&#x54EA;&#x4E9B;&#x6587;&#x4EF6;&#x6765;&#x8BA1;&#x7B97;&#x6027;&#x80FD;&#x63D0;&#x793A;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8FC7;&#x6EE4;&#x8D44;&#x6E90;&#x3002;&#x9ED8;&#x8BA4;&#x7684;&#x51FD;&#x6570;&#x5982;&#x4E0B;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span><span class="token punctuation">(</span>assetFilename<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token operator">!</span><span class="token punctuation">(</span><span class="token regex">/\.map$/</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>assetFilename<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F20;&#x9012;&#x81EA;&#x5DF1;&#x7684;&#x51FD;&#x6570;&#x6765;&#x8986;&#x76D6;&#x6B64;&#x5C5E;&#x6027;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">performance<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  assetFilter<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>assetFilename<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> assetFilename<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">&apos;.js&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x793A;&#x4F8B;&#x5C06;&#x53EA;&#x7ED9;&#x51FA;<code>.js</code>&#x6587;&#x4EF6;&#x7684;&#x6027;&#x80FD;&#x63D0;&#x793A;&#x3002;</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; tuzhu008 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-11-20 10:59:52
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="externals.html" class="navigation navigation-prev " aria-label="Previous page: Externals（外部扩展）">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="node.html" class="navigation navigation-next " aria-label="Next page: Node">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Performance（性能）","level":"1.5.13","depth":2,"next":{"title":"Node","level":"1.5.14","depth":2,"path":"configuration/node.md","ref":"configuration/node.md","articles":[]},"previous":{"title":"Externals（外部扩展）","level":"1.5.12","depth":2,"path":"configuration/externals.md","ref":"configuration/externals.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","anchor-navigation-ex","favicon","copy-code-button","alerts","splitter","book-summary-scroll-position-saver","include-codeblock","ace","prism","prism-themes","-highlight","tbfed-pagefooter","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tuzhu008 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"ace":{},"livereload":{},"book-summary-scroll-position-saver":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"favicon":{"shortcut":"assets/images/favicon.ico","bookmark":"assets/images/favicon.ico","appleTouch":"assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"assets/images/apple-touch-icon-120x120.png","180x180":"assets/images/apple-touch-icon-180x180.png"}},"prism-themes":{},"alerts":{},"expandable-chapters-small":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"ace","theme":"monokai","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"tuzhu008","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"webpack中文","language":"zh-hans","gitbook":"*","description":"webpack学习资料和过程记录"},"file":{"path":"configuration/performance.md","mtime":"2017-11-20T02:59:52.723Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-19T10:06:42.089Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

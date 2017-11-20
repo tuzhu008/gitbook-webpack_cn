@@ -1,0 +1,789 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Output（输出） · webpack中文</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="tuzhu008">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="module.html" />
+    
+    
+    <link rel="prev" href="entry.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Guide/">
+            
+                <a href="../Guide/">
+            
+                    
+                    教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../loaders/">
+            
+                <a href="../loaders/">
+            
+                    
+                    loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Plugins/">
+            
+                <a href="../Plugins/">
+            
+                    
+                    插件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Plugins/WebpackManifestPlugin.html">
+            
+                <a href="../Plugins/WebpackManifestPlugin.html">
+            
+                    
+                    WebpackManifestPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="context.html">
+            
+                <a href="context.html">
+            
+                    
+                    Context（上下文）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="entry.html">
+            
+                <a href="entry.html">
+            
+                    
+                    Entry（入口）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.3" data-path="output.html">
+            
+                <a href="output.html">
+            
+                    
+                    Output（输出）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="module.html">
+            
+                <a href="module.html">
+            
+                    
+                    Module（模块）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="resolve.html">
+            
+                <a href="resolve.html">
+            
+                    
+                    Resolve（解析）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="plugins.html">
+            
+                <a href="plugins.html">
+            
+                    
+                    Plugins（插件）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="devServer.html">
+            
+                <a href="devServer.html">
+            
+                    
+                    DevServer（开发服务）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="devtools.html">
+            
+                <a href="devtools.html">
+            
+                    
+                    Devtools（开发工具）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="target.html">
+            
+                <a href="target.html">
+            
+                    
+                    Target（构建目标）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="watch.html">
+            
+                <a href="watch.html">
+            
+                    
+                    Watch（观察模式）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="watchOptions.html">
+            
+                <a href="watchOptions.html">
+            
+                    
+                    WatchOptions（观察模式选项）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="externals.html">
+            
+                <a href="externals.html">
+            
+                    
+                    Externals（外部扩展）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="performance.html">
+            
+                <a href="performance.html">
+            
+                    
+                    Performance（性能）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" data-path="node.html">
+            
+                <a href="node.html">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15" data-path="stats.html">
+            
+                <a href="stats.html">
+            
+                    
+                    Stats（统计）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16" data-path="otherOptions.html">
+            
+                <a href="otherOptions.html">
+            
+                    
+                    OtherOptions（其他选项）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Note.html">
+            
+                <a href="../Note.html">
+            
+                    
+                    注意
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Others/">
+            
+                <a href="../Others/">
+            
+                    
+                    其他
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Others/Modular-programming.html">
+            
+                <a href="../Others/Modular-programming.html">
+            
+                    
+                    模块化编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../Others/anymatch.html">
+            
+                <a href="../Others/anymatch.html">
+            
+                    
+                    anymatch
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../thanks.html">
+            
+                <a href="../thanks.html">
+            
+                    
+                    致谢
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Output（输出）</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#output&#xFF08;&#x8F93;&#x51FA;&#xFF09;"><b>1. </b>output&#xFF08;&#x8F93;&#x51FA;&#xFF09;</a></li><ul><li><span class="title-icon "></span><a href="#outputpath"><b>1.1. </b>output.path</a></li><li><span class="title-icon "></span><a href="#outputfilename"><b>1.2. </b>output.filename</a></li><li><span class="title-icon "></span><a href="#outputchunkfilename"><b>1.3. </b>output.chunkFilename</a></li><li><span class="title-icon "></span><a href="#outputpublicpath"><b>1.4. </b>output.publicPath</a></li><li><span class="title-icon "></span><a href="#outputsourcemapfillename"><b>1.5. </b>output.sourceMapFillename</a></li><li><span class="title-icon "></span><a href="#outputdevtoolmodulefilenametemplate"><b>1.6. </b>output.devtoolModuleFilenameTemplate</a></li></ul></ul></div><a href="#output&#xFF08;&#x8F93;&#x51FA;&#xFF09;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="output&#xFF08;&#x8F93;&#x51FA;&#xFF09;"><a name="output&#xFF08;&#x8F93;&#x51FA;&#xFF09;" class="anchor-navigation-ex-anchor" href="#output&#xFF08;&#x8F93;&#x51FA;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>1. output&#xFF08;&#x8F93;&#x51FA;&#xFF09;</h1>
+<p>output&#x7528;&#x4E8E;&#x914D;&#x7F6E;&#x4E00;&#x4E9B;&#x5173;&#x4E8E;webpack&#x6253;&#x5305;&#x8F93;&#x51FA;&#x7684;&#x4FE1;&#x606F;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x8F93;&#x51FA;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x3001;&#x8F93;&#x51FA;&#x8DEF;&#x5F84;&#x7B49;&#x7B49;&#x3002;</p>
+<h2 id="outputpath"><a name="outputpath" class="anchor-navigation-ex-anchor" href="#outputpath"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. output.path</h2>
+<p>&#x7C7B;&#x578B;&#xFF1A;<code>string</code></p>
+<p>output &#x76EE;&#x5F55;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;<strong>&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;</strong>&#x3002;</p>
+<pre class="language-"><code class="lang-js">path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;dist/assets&apos;</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="outputfilename"><a name="outputfilename" class="anchor-navigation-ex-anchor" href="#outputfilename"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. output.filename</h2>
+<p>&#x7C7B;&#x578B;&#xFF1A;<code>string</code></p>
+<p>&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x51B3;&#x5B9A;&#x4E86;&#x6BCF;&#x4E2A;&#x8F93;&#x51FA;bundle&#x7684;&#x540D;&#x79F0;&#x3002;&#x8FD9;&#x4E9B;bundle&#x4F1A;&#x88AB;&#x5199;&#x5165;output.path&#x9009;&#x9879;&#x6307;&#x5B9A;&#x7684;&#x76EE;&#x5F55;&#x4E0B;&#x3002;</p>
+<pre class="language-"><code class="lang-js">filename<span class="token punctuation">:</span> <span class="token string">&apos;main.bundle.js&apos;</span>
+</code></pre>
+<p>&#x5728;&#x591A;&#x5165;&#x53E3;&#x8D77;&#x70B9;&#x3001;&#x4EE3;&#x7801;&#x5206;&#x9694;&#x7B49;&#x4F1A;&#x751F;&#x6210;&#x591A;&#x4E2A;bundle&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x5360;&#x4F4D;&#x7B26;&#x6765;&#x547D;&#x540D;&#xFF1A;</p>
+<p><strong>&#x4F7F;&#x7528;&#x5165;&#x53E3;&#x540D;&#x79F0;</strong>&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">filename<span class="token punctuation">:</span> <span class="token string">&quot;[name].bundle.js&quot;</span>
+</code></pre>
+<p><strong>&#x4F7F;&#x7528;&#x5185;&#x90E8;chunk id&#xFF1A;</strong></p>
+<pre class="language-"><code class="lang-js">filename<span class="token punctuation">:</span> <span class="token string">&quot;[id].bundle.js&quot;</span>
+</code></pre>
+<p><strong>&#x4F7F;&#x7528;&#x4E3A;&#x6BCF;&#x4E00;&#x6B21;&#x6784;&#x5EFA;&#xFF08;build&#xFF09;&#x751F;&#x6210;&#x7684;hash&#xFF1A;</strong></p>
+<pre class="language-"><code class="lang-js">filename<span class="token punctuation">:</span> <span class="token string">&quot;[name].[hash].bundle.js&quot;</span>
+</code></pre>
+<p><strong>&#x4F7F;&#x7528;&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;chunk&#x751F;&#x6210;&#x7684;hash&#xFF1A;</strong></p>
+<pre class="language-"><code class="lang-js">filename<span class="token punctuation">:</span> <span class="token string">&quot;[chunkhash].bundle.js&quot;</span>
+</code></pre>
+<blockquote>
+<p><strong> [info] &#x6CE8; </strong></p>
+<p>&#x5F53;&#x6587;&#x4EF6;&#x4E0D;&#x53D1;&#x751F;&#x6539;&#x53D8;&#x65F6;&#xFF0C;chunkhash &#x4E0D;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x3002;&#x7531;&#x6B64;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x6765;&#x8FDB;&#x884C;&#x7F13;&#x5B58;&#xFF0C;&#x52A0;&#x5FEB;&#x52A0;&#x8F7D;&#x901F;&#x5EA6;&#x3002;</p>
+<p>chunkhash &#x5728;&#x4F7F;&#x7528;&#x5F00;&#x53D1;&#x670D;&#x52A1;&#x65F6;&#x65E0;&#x6CD5;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x6B64;&#x9009;&#x9879;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x90A3;&#x4E9B;&#x6309;&#x9700;&#x52A0;&#x8F7D;&#x7684;chunk&#xFF0C;&#x63A7;&#x5236;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x7684;&#x8F93;&#x51FA;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;<a href="#outputchunkfilename">output.chunFilename</a>&#x3002;</p>
+</blockquote>
+<p>&#x53EF;&#x7528;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x6A21;&#x677F;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">[hash]</td>
+<td style="text-align:left">&#x6784;&#x5EFA;&#x76F8;&#x5173;&#x7684;hash</td>
+</tr>
+<tr>
+<td style="text-align:left">[chunkhash]</td>
+<td style="text-align:left">chunk&#x5185;&#x5BB9;&#x76F8;&#x5173;&#x7684;hash</td>
+</tr>
+<tr>
+<td style="text-align:left">[name]</td>
+<td style="text-align:left">&#x6A21;&#x5757;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td style="text-align:left">[id]</td>
+<td style="text-align:left">chun id</td>
+</tr>
+<tr>
+<td style="text-align:left">[query]</td>
+<td style="text-align:left">&#x6A21;&#x5757;&#x7684;&#x67E5;&#x8BE2;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;`?`&#x540E;&#x7684;&#x90E8;&#x5206;</td>
+</tr>
+</tbody>
+</table>
+<p><code>[hash]</code>&#x548C;<code>[chunkhash]</code>&#x7684;&#x957F;&#x5EA6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>[hash:16]</code>&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A;20&#xFF09;&#x6765;&#x6307;&#x5B9A;&#x3002;</p>
+<h2 id="outputchunkfilename"><a name="outputchunkfilename" class="anchor-navigation-ex-anchor" href="#outputchunkfilename"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. output.chunkFilename</h2>
+<p>&#x7C7B;&#x578B;&#xFF1A;string</p>
+<p>&#x6B64;&#x9009;&#x9879;&#x51B3;&#x5B9A;&#x4E86;&#x975E;&#x5165;&#x53E3;(non-entry) chunk &#x6587;&#x4EF6;&#x7684;&#x540D;&#x79F0;&#x3002;&#x53EF;&#x53D6;&#x503C;&#x4E0E;<a href="#outputfilename">output.filename</a> &#x76F8;&#x540C;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x540D;&#x9700;&#x8981;&#x5728; runtime &#x6839;&#x636E; chunk &#x53D1;&#x9001;&#x7684;&#x8BF7;&#x6C42;&#x53BB;&#x751F;&#x6210;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x9700;&#x8981;&#x5728; webpack runtime &#x8F93;&#x51FA; bundle &#x503C;&#x65F6;&#xFF0C;&#x5C06; chunk id &#x7684;&#x503C;&#x5BF9;&#x5E94;&#x6620;&#x5C04;&#x5230;&#x5360;&#x4F4D;&#x7B26;(&#x5982; [name] &#x548C; [chunkhash])&#x3002;&#x8FD9;&#x4F1A;&#x589E;&#x52A0;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x4EFB;&#x4F55; chunk &#x7684;&#x5360;&#x4F4D;&#x7B26;&#x503C;&#x4FEE;&#x6539;&#x540E;&#xFF0C;&#x90FD;&#x4F1A;&#x4F7F; bundle &#x5931;&#x6548;&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x4F7F;&#x7528; <code>[id].js</code> &#x6216;&#x4ECE; output.filename &#x4E2D;&#x63A8;&#x65AD;&#x51FA;&#x7684;&#x503C;&#xFF08;[name] &#x4F1A;&#x88AB;&#x9884;&#x5148;&#x66FF;&#x6362;&#x4E3A; [id] &#x6216; [id].&#xFF09;&#x3002;</p>
+<h2 id="outputpublicpath"><a name="outputpublicpath" class="anchor-navigation-ex-anchor" href="#outputpublicpath"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. output.publicPath</h2>
+<p>&#x7C7B;&#x578B;&#xFF1A;string</p>
+<p>&#x9ED8;&#x8BA4;&#x503C;&#xFF1A;&#x201C;&#x201D;&#xFF0C;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;</p>
+<p>&#x6B64;&#x914D;&#x7F6E;&#x9009;&#x9879;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x6240;&#x5F15;&#x7528;&#x7684;&#x6B64;&#x8F93;&#x51FA;&#x76EE;&#x5F55;&#x5BF9;&#x5E94;&#x7684;URL&#x3002;&#x76F8;&#x5BF9;URL&#x4F1A;&#x88AB;&#x76F8;&#x5BF9;&#x4E8E;HTML&#x9875;&#x9762;&#x8FDB;&#x884C;&#x89E3;&#x6790;&#x3002;&#x76F8;&#x5BF9;&#x4E8E;&#x670D;&#x52A1;&#x5668;&#x7684;URL&#x3001;&#x76F8;&#x5BF9;&#x4E8E;&#x534F;&#x8BAE;&#x7684;URL&#x3001;&#x7EDD;&#x5BF9;URL&#x4E5F;&#x53EF;&#x80FD;&#x4F1A;&#x7528;&#x5230;&#x3002;&#x5F53;&#x8D44;&#x6E90;&#x6258;&#x7BA1;&#x5230;CDN&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x8981;&#x8BBE;&#x7F6E;&#x6B64;&#x9009;&#x9879;&#x3002;</p>
+<p>&#x8BE5;&#x9009;&#x9879;&#x7684;&#x503C;&#x662F;&#x4EE5; runtime(&#x8FD0;&#x884C;&#x65F6;) &#x6216; loader(&#x8F7D;&#x5165;&#x65F6;) &#x6240;&#x521B;&#x5EFA;&#x7684;&#x6BCF;&#x4E2A; URL &#x4E3A;&#x524D;&#x7F00;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5728;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6B64;&#x9009;&#x9879;&#x7684;&#x503C;&#x90FD;&#x4F1A;&#x4EE5;/&#x7ED3;&#x675F;&#x3002;</p>
+<p>&#x4EE5;HTML&#x9875;&#x9762;&#x4E3A;&#x57FA;&#x51C6;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&quot;public/assets&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+publicPath<span class="token punctuation">:</span> <span class="token string">&quot;https://cdn.example.com/assets/&quot;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x9879;&#x76EE;&#x6240;&#x6709;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x90FD;&#x4F1A;&#x52A0;&#x4E0A;publicPath&#x7684;&#x524D;&#x7F00;&#x3002;</p>
+<pre class="language-"><code class="lang-js">publicPath<span class="token punctuation">:</span> <span class="token string">&quot;/assets/&quot;</span><span class="token punctuation">;</span>
+chunkFilename<span class="token punctuation">:</span> <span class="token string">&quot;[id].chunk.js&quot;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x8FD9;&#x4E2A;chunk&#x8BF7;&#x6C42;&#x7684;&#x5730;&#x5740;&#x5927;&#x6982;&#x4E3A;<code>/assets/[id].chunk.js</code></p>
+<pre class="language-"><code class="lang-js"><span class="token operator">&lt;</span>link href<span class="token operator">=</span><span class="token string">&quot;/assets/spinner.gif&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+</code></pre>
+<pre class="language-"><code class="lang-js">background<span class="token operator">-</span>image<span class="token punctuation">:</span> <span class="token function">url</span><span class="token punctuation">(</span><span class="token operator">/</span>assets<span class="token operator">/</span>spinner<span class="token punctuation">.</span>gif<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>webpack-dev-server&#x4E5F;&#x4F1A;&#x4EE5;publicPath&#x4E3A;&#x57FA;&#x7840;&#xFF0C;&#x4EE5;&#x51B3;&#x5B9A;&#x5728;&#x54EA;&#x4E2A;&#x76EE;&#x5F55;&#x4E0B;&#x542F;&#x52A8;&#x670D;&#x52A1;&#xFF0C;&#x6765;&#x8BBF;&#x95EE;&#x8F93;&#x51FA;&#x7684;&#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">publicPath<span class="token punctuation">:</span> <span class="token string">&quot;https://cdn.example.com/assets/&quot;</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// CDN&#xFF08;&#x603B;&#x662F; HTTPS &#x534F;&#x8BAE;&#xFF09;</span>
+publicPath<span class="token punctuation">:</span> <span class="token string">&quot;//cdn.example.com/assets/&quot;</span><span class="token punctuation">,</span> <span class="token operator">/</span><span class="token operator">/</span> CDN <span class="token punctuation">(</span>&#x534F;&#x8BAE;&#x76F8;&#x540C;<span class="token punctuation">)</span>
+publicPath<span class="token punctuation">:</span> <span class="token string">&quot;/assets/&quot;</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x76F8;&#x5BF9;&#x4E8E;&#x670D;&#x52A1;(server-relative)</span>
+publicPath<span class="token punctuation">:</span> <span class="token string">&quot;assets/&quot;</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x76F8;&#x5BF9;&#x4E8E; HTML &#x9875;&#x9762;</span>
+publicPath<span class="token punctuation">:</span> <span class="token string">&quot;../assets/&quot;</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x76F8;&#x5BF9;&#x4E8E; HTML &#x9875;&#x9762;</span>
+publicPath<span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x76F8;&#x5BF9;&#x4E8E; HTML &#x9875;&#x9762;&#xFF08;&#x76EE;&#x5F55;&#x76F8;&#x540C;&#xFF09;</span>
+</code></pre>
+<p>&#x5728;&#x7F16;&#x8BD1;&#x65F6;(compile time)&#x65E0;&#x6CD5;&#x77E5;&#x9053;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x7684; publicPath &#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x7559;&#x7A7A;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x5165;&#x53E3;&#x6587;&#x4EF6;(entry file)&#x5904;&#x4F7F;&#x7528;&#x81EA;&#x7531;&#x53D8;&#x91CF;(free variable) webpack_public_path&#xFF0C;&#x4EE5;&#x4FBF;&#x5728;&#x8FD0;&#x884C;&#x65F6;(runtime)&#x8FDB;&#x884C;&#x52A8;&#x6001;&#x8BBE;&#x7F6E;&#x3002;</p>
+<pre class="language-"><code class="lang-js"> __webpack_public_path__ <span class="token operator">=</span> myRuntimePublicPath
+
+<span class="token comment" spellcheck="true">// &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5165;&#x53E3;&#x7684;&#x5176;&#x4ED6;&#x90E8;&#x5206;</span>
+</code></pre>
+<h2 id="outputsourcemapfillename"><a name="outputsourcemapfillename" class="anchor-navigation-ex-anchor" href="#outputsourcemapfillename"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. output.sourceMapFillename</h2>
+<p>&#x7C7B;&#x578B;&#xFF1A;string</p>
+<p>&#x6B64;&#x9009;&#x9879;&#x4F1A;&#x5411;&#x786C;&#x76D8;&#x5199;&#x5165;&#x4E00;&#x4E2A;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#xFF0C;&#x53EA;&#x5728; <code>devtool</code> &#x542F;&#x7528;&#x4E86; SourceMap &#x9009;&#x9879;&#x65F6;&#x624D;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x914D;&#x7F6E; source map &#x7684;&#x547D;&#x540D;&#x65B9;&#x5F0F;&#x3002;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;<code>&quot;[file].map&quot;</code>&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <a href="#outputfilename">#output-filename </a>&#x4E2D;&#x7684; <code>[name]</code>, <code>[id]</code>, <code>[hash]</code> &#x548C; <code>[chunkhash]</code> &#x66FF;&#x6362;&#x7B26;&#x53F7;&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x66FF;&#x6362;&#x7B26;&#x53F7;&#x3002;<code>[file]</code> &#x5360;&#x4F4D;&#x7B26;&#x4F1A;&#x88AB;&#x66FF;&#x6362;&#x4E3A;&#x539F;&#x59CB;&#x6587;&#x4EF6;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x3002;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x53EA;&#x4F7F;&#x7528; <code>[file]</code> &#x5360;&#x4F4D;&#x7B26;&#xFF0C;&#x56E0;&#x4E3A;&#x5176;&#x4ED6;&#x5360;&#x4F4D;&#x7B26;&#x5728;&#x975E; chunk &#x6587;&#x4EF6;&#x751F;&#x6210;&#x7684; SourceMap &#x65F6;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x6A21;&#x677F;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">[file]</td>
+<td style="text-align:left">&#x6A21;&#x5757;&#x6587;&#x4EF6;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td style="text-align:left">[filebase]</td>
+<td style="text-align:left">&#x6A21;&#x677F;<a href="https://nodejs.org/api/path.html#path_path_basename_path_ext" target="_blank">basename</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="outputdevtoolmodulefilenametemplate"><a name="outputdevtoolmodulefilenametemplate" class="anchor-navigation-ex-anchor" href="#outputdevtoolmodulefilenametemplate"><i class="fa fa-link" aria-hidden="true"></i></a>1.6. output.devtoolModuleFilenameTemplate</h2>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; tuzhu008 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-11-20 09:07:29
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="entry.html" class="navigation navigation-prev " aria-label="Previous page: Entry（入口）">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="module.html" class="navigation navigation-next " aria-label="Next page: Module（模块）">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Output（输出）","level":"1.5.3","depth":2,"next":{"title":"Module（模块）","level":"1.5.4","depth":2,"path":"configuration/module.md","ref":"configuration/module.md","articles":[]},"previous":{"title":"Entry（入口）","level":"1.5.2","depth":2,"path":"configuration/entry.md","ref":"configuration/entry.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","anchor-navigation-ex","favicon","copy-code-button","alerts","splitter","book-summary-scroll-position-saver","include-codeblock","ace","prism","prism-themes","-highlight","tbfed-pagefooter","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tuzhu008 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"ace":{},"livereload":{},"book-summary-scroll-position-saver":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"favicon":{"shortcut":"assets/images/favicon.ico","bookmark":"assets/images/favicon.ico","appleTouch":"assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"assets/images/apple-touch-icon-120x120.png","180x180":"assets/images/apple-touch-icon-180x180.png"}},"prism-themes":{},"alerts":{},"expandable-chapters-small":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"ace","theme":"monokai","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"tuzhu008","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"webpack中文","language":"zh-hans","gitbook":"*","description":"webpack学习资料和过程记录"},"file":{"path":"configuration/output.md","mtime":"2017-11-20T01:07:29.284Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-19T10:06:42.089Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

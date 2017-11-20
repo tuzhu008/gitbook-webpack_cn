@@ -1,0 +1,1126 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>DevServer（开发服务） · webpack中文</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="tuzhu008">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="devtools.html" />
+    
+    
+    <link rel="prev" href="plugins.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Guide/">
+            
+                <a href="../Guide/">
+            
+                    
+                    教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../loaders/">
+            
+                <a href="../loaders/">
+            
+                    
+                    loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Plugins/">
+            
+                <a href="../Plugins/">
+            
+                    
+                    插件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Plugins/WebpackManifestPlugin.html">
+            
+                <a href="../Plugins/WebpackManifestPlugin.html">
+            
+                    
+                    WebpackManifestPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="context.html">
+            
+                <a href="context.html">
+            
+                    
+                    Context（上下文）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="entry.html">
+            
+                <a href="entry.html">
+            
+                    
+                    Entry（入口）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="output.html">
+            
+                <a href="output.html">
+            
+                    
+                    Output（输出）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="module.html">
+            
+                <a href="module.html">
+            
+                    
+                    Module（模块）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="resolve.html">
+            
+                <a href="resolve.html">
+            
+                    
+                    Resolve（解析）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="plugins.html">
+            
+                <a href="plugins.html">
+            
+                    
+                    Plugins（插件）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.7" data-path="devServer.html">
+            
+                <a href="devServer.html">
+            
+                    
+                    DevServer（开发服务）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="devtools.html">
+            
+                <a href="devtools.html">
+            
+                    
+                    Devtools（开发工具）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="target.html">
+            
+                <a href="target.html">
+            
+                    
+                    Target（构建目标）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="watch.html">
+            
+                <a href="watch.html">
+            
+                    
+                    Watch（观察模式）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="watchOptions.html">
+            
+                <a href="watchOptions.html">
+            
+                    
+                    WatchOptions（观察模式选项）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="externals.html">
+            
+                <a href="externals.html">
+            
+                    
+                    Externals（外部扩展）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="performance.html">
+            
+                <a href="performance.html">
+            
+                    
+                    Performance（性能）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" data-path="node.html">
+            
+                <a href="node.html">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15" data-path="stats.html">
+            
+                <a href="stats.html">
+            
+                    
+                    Stats（统计）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16" data-path="otherOptions.html">
+            
+                <a href="otherOptions.html">
+            
+                    
+                    OtherOptions（其他选项）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Note.html">
+            
+                <a href="../Note.html">
+            
+                    
+                    注意
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Others/">
+            
+                <a href="../Others/">
+            
+                    
+                    其他
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Others/Modular-programming.html">
+            
+                <a href="../Others/Modular-programming.html">
+            
+                    
+                    模块化编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../Others/anymatch.html">
+            
+                <a href="../Others/anymatch.html">
+            
+                    
+                    anymatch
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../thanks.html">
+            
+                <a href="../thanks.html">
+            
+                    
+                    致谢
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >DevServer（开发服务）</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#devserver&#xFF08;&#x5F00;&#x53D1;&#x670D;&#x52A1;&#xFF09;"><b>1. </b>DevServer&#xFF08;&#x5F00;&#x53D1;&#x670D;&#x52A1;&#xFF09;</a></li><ul><li><span class="title-icon "></span><a href="#devserver"><b>1.1. </b>devServer</a></li><ul><li><span class="title-icon "></span><a href="#devserverafter"><b>1.1.1. </b>devServer.after</a></li><li><span class="title-icon "></span><a href="#devserverallowedhosts"><b>1.1.2. </b>devServer.allowedHosts</a></li><li><span class="title-icon "></span><a href="#devserverbefore"><b>1.1.3. </b>devServer.before</a></li><li><span class="title-icon "></span><a href="#devserverbonjour"><b>1.1.4. </b>devServer.bonjour</a></li><li><span class="title-icon "></span><a href="#devserverclientloglevel"><b>1.1.5. </b>devServer.clientLogLevel</a></li><li><span class="title-icon "></span><a href="#devservercolor"><b>1.1.6. </b>devServer.color</a></li><li><span class="title-icon "></span><a href="#devservercompress"><b>1.1.7. </b>devServer.compress</a></li><li><span class="title-icon "></span><a href="#devservercontentbase"><b>1.1.8. </b>devServer.contentBase</a></li><li><span class="title-icon "></span><a href="#devserverdisablehostcheck"><b>1.1.9. </b>devServer.disableHostCheck</a></li><li><span class="title-icon "></span><a href="#devserverfilename-&#x1F511;"><b>1.1.10. </b>devServer.filename &#x1F511;</a></li><li><span class="title-icon "></span><a href="#devserverheaders-&#x1F511;"><b>1.1.11. </b>devServer.headers &#x1F511;</a></li><li><span class="title-icon "></span><a href="#devserverhistoryapifallback"><b>1.1.12. </b>devServer.historyApiFallback</a></li><li><span class="title-icon "></span><a href="#devserverhost"><b>1.1.13. </b>devServer.host</a></li><li><span class="title-icon "></span><a href="#devserverhot"><b>1.1.14. </b>devServer.hot</a></li><li><span class="title-icon "></span><a href="#devserverhotonly"><b>1.1.15. </b>devServer.hotOnly</a></li><li><span class="title-icon "></span><a href="#devserverhttps"><b>1.1.16. </b>devServer.https</a></li><li><span class="title-icon "></span><a href="#devserverindex"><b>1.1.17. </b>devServer.index</a></li><li><span class="title-icon "></span><a href="#devserverinfo"><b>1.1.18. </b>devServer.info</a></li><li><span class="title-icon "></span><a href="#devserverinline"><b>1.1.19. </b>devServer.inline</a></li><li><span class="title-icon "></span><a href="#devserverlazy-&#x1F511;"><b>1.1.20. </b>devServer.lazy &#x1F511;</a></li><li><span class="title-icon "></span><a href="#devservernoinfo-&#x1F511;"><b>1.1.21. </b>devServer.noInfo &#x1F511;</a></li><li><span class="title-icon "></span><a href="#devserveropen"><b>1.1.22. </b>devServer.open</a></li><li><span class="title-icon "></span><a href="#devserveropenpage"><b>1.1.23. </b>devServer.openPage</a></li><li><span class="title-icon "></span><a href="#devserveroverlay"><b>1.1.24. </b>devServer.overlay</a></li><li><span class="title-icon "></span><a href="#devserverpfx"><b>1.1.25. </b>devServer.pfx</a></li><li><span class="title-icon "></span><a href="#devserverpfxpassphrase"><b>1.1.26. </b>devServer.pfxPassphrase</a></li><li><span class="title-icon "></span><a href="#devserverport"><b>1.1.27. </b>devServer.port</a></li><li><span class="title-icon "></span><a href="#devserverproxy"><b>1.1.28. </b>devServer.proxy</a></li><li><span class="title-icon "></span><a href="#devserverprogress"><b>1.1.29. </b>devServer.progress</a></li><li><span class="title-icon "></span><a href="#devserverpublic"><b>1.1.30. </b>devServer.public</a></li><li><span class="title-icon "></span><a href="#devserverpublicpath-&#x1F511;"><b>1.1.31. </b>devServer.publicPath &#x1F511;</a></li><li><span class="title-icon "></span><a href="#devserverquiet-&#x1F511;"><b>1.1.32. </b>devServer.quiet &#x1F511;</a></li><li><span class="title-icon "></span><a href="#devserversocket"><b>1.1.33. </b>devServer.socket</a></li><li><span class="title-icon "></span><a href="#devserverstaticoptions"><b>1.1.34. </b>devServer.staticOptions</a></li><li><span class="title-icon "></span><a href="#devserverstats-&#x1F511;"><b>1.1.35. </b>devServer.stats &#x1F511;</a></li><li><span class="title-icon "></span><a href="#devserverstdin"><b>1.1.36. </b>devServer.stdin</a></li><li><span class="title-icon "></span><a href="#devserveruselocalip"><b>1.1.37. </b>devServer.useLocalIp</a></li><li><span class="title-icon "></span><a href="#devserverwatchcontentbase"><b>1.1.38. </b>devServer.watchContentBase</a></li><li><span class="title-icon "></span><a href="#devserverwatchoptions-&#x1F511;"><b>1.1.39. </b>devServer.watchOptions &#x1F511;</a></li></ul></ul></ul></div><a href="#devserver&#xFF08;&#x5F00;&#x53D1;&#x670D;&#x52A1;&#xFF09;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="devserver&#xFF08;&#x5F00;&#x53D1;&#x670D;&#x52A1;&#xFF09;"><a name="devserver&#xFF08;&#x5F00;&#x53D1;&#x670D;&#x52A1;&#xFF09;" class="anchor-navigation-ex-anchor" href="#devserver&#xFF08;&#x5F00;&#x53D1;&#x670D;&#x52A1;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>1. DevServer&#xFF08;&#x5F00;&#x53D1;&#x670D;&#x52A1;&#xFF09;</h1>
+<p>webpack-dev-server &#x80FD;&#x591F;&#x7528;&#x4E8E;&#x5FEB;&#x901F;&#x5F00;&#x53D1;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;</p>
+<p>&#x6B64;&#x9875;&#x9762;&#x63CF;&#x8FF0;&#x5F71;&#x54CD; webpack-dev-server(&#x7B80;&#x5199;&#x4E3A;&#xFF1A;dev-server) &#x884C;&#x4E3A;&#x7684;&#x9009;&#x9879;&#x3002;</p>
+<blockquote>
+<p><strong>[info] &#x6CE8;&#xFF1A;</strong></p>
+<p>&#x4E0E;<a href="https://github.com/webpack/webpack-dev-middleware" target="_blank">webpack-dev-middleware</a>&#x517C;&#x5BB9;&#x7684;&#x9009;&#x9879;&#x65C1;&#x8FB9;&#x6709; &#x1F511;</p>
+</blockquote>
+<pre class="language-"><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    devServer<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        after<span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="devserver"><a name="devserver" class="anchor-navigation-ex-anchor" href="#devserver"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. devServer</h2>
+<p>&#x7C7B;&#x578B;&#xFF1A;object</p>
+<p>&#x901A;&#x8FC7;&#x6765;&#x81EA;<a href="https://github.com/webpack/webpack-dev-server" target="_blank">webpack-dev-server</a>&#x7684;&#x8FD9;&#x4E9B;&#x9009;&#x9879;&#xFF0C;&#x80FD;&#x591F;&#x7528;&#x591A;&#x79CD;&#x65B9;&#x5F0F;&#x6539;&#x53D8;&#x5176;&#x884C;&#x4E3A;&#x3002;&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x6240;&#x6709;&#x6765;&#x81EA;<code>dist/</code>&#x76EE;&#x5F55;&#x7684;&#x6587;&#x4EF6;&#x90FD;&#x505A; gzip &#x538B;&#x7F29;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;&#x4E3A;&#x670D;&#x52A1;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">devServer<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  contentBase<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&quot;dist&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  compress<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  port<span class="token punctuation">:</span> <span class="token number">9000</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5F53;&#x670D;&#x52A1;&#x5668;&#x542F;&#x52A8;&#x65F6;&#xFF0C;&#x5728;&#x89E3;&#x6790;&#x6A21;&#x5757;&#x5217;&#x8868;&#x4E4B;&#x524D;&#x4F1A;&#x6709;&#x4E00;&#x6761;&#x6D88;&#x606F;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash">http://localhost:9000/
+webpack output is served from /build/
+Content not from webpack is served from /path/to/dist/
+</code></pre>
+<p>&#x8FD9;&#x5C06;&#x7ED9;&#x51FA;&#x4E00;&#x4E9B;&#x5173;&#x4E8E;&#x670D;&#x52A1;&#x5668;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x4EE5;&#x53CA;&#x670D;&#x52A1;&#x672C;&#x8EAB;&#x7684;&#x80CC;&#x666F;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x901A;&#x8FC7; Node.js API &#x6765;&#x4F7F;&#x7528; dev-server&#xFF0C;<code>devServer</code>&#x4E2D;&#x7684;&#x9009;&#x9879;&#x5C06;&#x88AB;&#x5FFD;&#x7565;&#x3002;&#x5C06;&#x9009;&#x9879;&#x4F5C;&#x4E3A;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4F20;&#x5165;&#xFF1A;<code>new WebpackDevServer(compiler, {...})</code>&#x3002;&#x5173;&#x4E8E;&#x5982;&#x4F55;&#x901A;&#x8FC7; Node.js API &#x4F7F;&#x7528; webpack-dev-server &#x7684;&#x793A;&#x4F8B;&#xFF0C;&#x8BF7;<a href="https://github.com/webpack/webpack-dev-server/blob/master/examples/node-api-simple/server.js" target="_blank">&#x67E5;&#x770B;&#x6B64;&#x5904;</a>&#x3002;</p>
+<blockquote>
+<p><strong>[warning]</strong> &#x6CE8;&#xFF1A;</p>
+<p>&#x5728;&#x5BFC;&#x51FA;<a href="https://doc.webpack-china.org/configuration/configuration-types/#exporting-multiple-configurations" target="_blank">&#x591A;&#x4E2A;&#x914D;&#x7F6E;</a>&#x65F6;&#xFF0C;&#x53EA;&#x8003;&#x8651;&#x7B2C;&#x4E00;&#x4E2A;&#x914D;&#x7F6E;&#x7684;devServer&#x9009;&#x9879;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x7528;&#x4E8E;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x914D;&#x7F6E;&#x3002;-</p>
+</blockquote>
+<p>-</p>
+<blockquote>
+<p><strong>[info]</strong> &#x6CE8;&#xFF1A;</p>
+<p>&#x5982;&#x679C;&#x60A8;&#x9047;&#x5230;&#x9EBB;&#x70E6;&#xFF0C;&#x5BFC;&#x822A;&#x5230;<code>/webpack-dev-server</code>&#x8DEF;&#x7531;&#x5C06;&#x663E;&#x793A;&#x88AB;&#x670D;&#x52A1;&#x7684;&#x6587;&#x4EF6;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x4F8B;&#x5982;,<code>http://localhost:9000/webpack-dev-server</code></p>
+</blockquote>
+<h3 id="devserverafter"><a name="devserverafter" class="anchor-navigation-ex-anchor" href="#devserverafter"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. devServer.after</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;function</p>
+<p>&#x63D0;&#x4F9B;&#x4E86;&#x5728;&#x670D;&#x52A1;&#x5668;&#x5185;&#x90E8;&#x6267;&#x884C;&#x6240;&#x6709;&#x5176;&#x4ED6;&#x4E2D;&#x95F4;&#x4EF6;&#x4E4B;&#x540E;&#x6267;&#x884C;&#x5B9A;&#x5236;&#x4E2D;&#x95F4;&#x4EF6;&#x7684;&#x80FD;&#x529B;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token function">after</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// &#x6267;&#x884C;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="devserverallowedhosts"><a name="devserverallowedhosts" class="anchor-navigation-ex-anchor" href="#devserverallowedhosts"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.2. devServer.allowedHosts</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;&#x6570;&#x7EC4;</p>
+<p>&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x5141;&#x8BB8;&#x4F60;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x767D;&#x540D;&#x5355;&#xFF0C;&#x8FD9;&#x4E2A;&#x767D;&#x540D;&#x5355;&#x8BB0;&#x5F55;&#x4E86;&#x88AB;&#x5141;&#x8BB8;&#x8BBF;&#x95EE;&#x7684;&#x5F00;&#x53D1;&#x670D;&#x52A1;&#x5668;&#x3002;</p>
+<pre class="language-"><code class="lang-js">allowedHosts<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+  <span class="token string">&apos;host.com&apos;</span><span class="token punctuation">,</span>
+  <span class="token string">&apos;subdomain.host.com&apos;</span><span class="token punctuation">,</span>
+  <span class="token string">&apos;subdomain2.host.com&apos;</span><span class="token punctuation">,</span>
+  <span class="token string">&apos;host2.com&apos;</span>
+<span class="token punctuation">]</span>
+</code></pre>
+<p>&#x6A21;&#x4EFF;django&#x7684;<code>ALLOWED_HOSTS</code>&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x4EE5;<code>.</code>&#x5F00;&#x59CB;&#x7684;&#x503C;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4F5C;&#x5B50;&#x57DF;&#x540D;&#x901A;&#x914D;&#x7B26;&#x3002;<code>.host.com</code>&#x5C06;&#x5339;&#x914D;<code>host.com</code>&#x3001;<code>www.host.com</code>&#x548C;<code>host.com</code>&#x7684;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x5B50;&#x57DF;&#x540D;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token comment" spellcheck="true">// &#x8FD9;&#x4E0E;&#x7B2C;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x7684;&#x6548;&#x679C;&#x76F8;&#x540C;</span>
+<span class="token comment" spellcheck="true">// &#x65E0;&#x9700;&#x66F4;&#x65B0;&#x914D;&#x7F6E;&#x5C31;&#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#x989D;&#x5916;&#x7684;&#x597D;&#x5904;</span>
+<span class="token comment" spellcheck="true">// &#x5982;&#x679C;&#x65B0;&#x5B50;&#x57DF;&#x9700;&#x8981;&#x8BBF;&#x95EE;&#x5F00;&#x53D1;&#x670D;&#x52A1;&#x5668;</span>
+allowedHosts<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&apos;.host.com&apos;</span><span class="token punctuation">,</span>
+    <span class="token string">&apos;host2.com&apos;</span>
+<span class="token punctuation">]</span>
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x884C;&#x63A5;&#x53E3;CLI&#x65F6;&#xFF0C;&#x901A;&#x8FC7;<code>--allowed-hosts</code>&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x7528;&#x9017;&#x53F7;&#x5206;&#x9694;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+<pre class="language-"><code class="lang-bash">webpack-dev-server --entry /entry/file --output-path /output/path --allowed-hosts .host.com,host2.com
+</code></pre>
+<h3 id="devserverbefore"><a name="devserverbefore" class="anchor-navigation-ex-anchor" href="#devserverbefore"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.3. devServer.before</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;function</p>
+<p>&#x63D0;&#x4F9B;&#x4E86;&#x5728;&#x670D;&#x52A1;&#x5668;&#x5185;&#x90E8;&#x6240;&#x6709;&#x5176;&#x4ED6;&#x4E2D;&#x95F4;&#x4EF6;&#x4E4B;&#x524D;&#x6267;&#x884C;&#x5B9A;&#x5236;&#x4E2D;&#x95F4;&#x4EF6;&#x7684;&#x80FD;&#x529B;&#x3002;&#x8FD9;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5B9A;&#x4E49;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#xFF08;handler&#xFF09;&#xFF0C;&#x4F8B;&#x5982;:</p>
+<pre class="language-"><code class="lang-js"><span class="token function">before</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">&apos;/some/path&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> custom<span class="token punctuation">:</span> <span class="token string">&apos;response&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="devserverbonjour"><a name="devserverbonjour" class="anchor-navigation-ex-anchor" href="#devserverbonjour"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.4. devServer.bonjour</h3>
+<p>&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x914D;&#x7F6E;&#x5728;&#x542F;&#x52A8;&#x65F6;&#x901A;&#x8FC7;ZeroConf&#x7F51;&#x7EDC;&#x5E7F;&#x64AD;&#x670D;&#x52A1;&#x5668;</p>
+<pre class="language-"><code class="lang-js">bonjour<span class="token punctuation">:</span> <span class="token boolean">true</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;CLI&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">webpack<span class="token operator">-</span>dev<span class="token operator">-</span>server <span class="token operator">--</span>bonjour
+</code></pre>
+<h3 id="devserverclientloglevel"><a name="devserverclientloglevel" class="anchor-navigation-ex-anchor" href="#devserverclientloglevel"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.5. devServer.clientLogLevel</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;string</p>
+<p>&#x5F53;&#x4F7F;&#x7528;<em>&#x5185;&#x8054;&#x6A21;&#x5F0F;(inline mode)</em>&#x65F6;&#xFF0C;&#x5728;&#x5F00;&#x53D1;&#x5DE5;&#x5177;(DevTools)&#x7684;&#x63A7;&#x5236;&#x53F0;(console)&#x5C06;&#x663E;&#x793A;&#x6D88;&#x606F;&#xFF0C;&#x5982;&#xFF1A;&#x5728;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x4E4B;&#x524D;&#xFF0C;&#x5728;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x4E4B;&#x524D;&#xFF0C;&#x6216;&#x8005;&#x6A21;&#x5757;&#x70ED;&#x66FF;&#x6362;(Hot Module Replacement)&#x542F;&#x7528;&#x65F6;&#x3002;&#x8FD9;&#x53EF;&#x80FD;&#x663E;&#x5F97;&#x5F88;&#x7E41;&#x7410;&#x3002;</p>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x963B;&#x6B62;&#x6240;&#x6709;&#x8FD9;&#x4E9B;&#x6D88;&#x606F;&#x663E;&#x793A;&#xFF0C;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">clientLogLevel<span class="token punctuation">:</span> <span class="token string">&quot;none&quot;</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;CLI&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash">webpack-dev-server --client-log-level none
+</code></pre>
+<p>&#x53EF;&#x80FD;&#x7684;&#x503C;&#x6709;<code>none</code>,<code>error</code>,<code>warning</code>&#x6216;&#x8005;<code>info</code>&#xFF08;&#x9ED8;&#x8BA4;&#x503C;&#xFF09;&#x3002;</p>
+<h3 id="devservercolor"><a name="devservercolor" class="anchor-navigation-ex-anchor" href="#devservercolor"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.6. devServer.color</h3>
+<p><strong>&#x901A;&#x8FC7;CLI&#x8BBE;&#x7F6E;&#x3002;</strong></p>
+<p>&#x7C7B;&#x578B;&#xFF1A;boolean</p>
+<p>&#x5728;&#x63A7;&#x5236;&#x53F0;&#x663E;&#x793A;/&#x7981;&#x7528;&#x989C;&#x8272;&#x3002;</p>
+<pre class="language-"><code class="lang-bash">webpack-dev-server --color
+</code></pre>
+<h3 id="devservercompress"><a name="devservercompress" class="anchor-navigation-ex-anchor" href="#devservercompress"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.7. devServer.compress</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;boolean</p>
+<p>&#x4E00;&#x5207;&#x670D;&#x52A1;&#x90FD;&#x542F;&#x7528;<a href="https://betterexplained.com/articles/how-to-optimize-your-site-with-gzip-compression/" target="_blank">gzip &#x538B;&#x7F29;</a>&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">compress<span class="token punctuation">:</span> <span class="token boolean">true</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;CLI&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">webpack<span class="token operator">-</span>dev<span class="token operator">-</span>server <span class="token operator">--</span>compress
+</code></pre>
+<h3 id="devservercontentbase"><a name="devservercontentbase" class="anchor-navigation-ex-anchor" href="#devservercontentbase"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.8. devServer.contentBase</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;boolean | string | array</p>
+<p>&#x544A;&#x8BC9;&#x670D;&#x52A1;&#x5668;&#x4ECE;&#x54EA;&#x91CC;&#x63D0;&#x4F9B;&#x5185;&#x5BB9;&#x3002;&#x53EA;&#x6709;&#x5728;&#x4F60;&#x60F3;&#x8981;&#x63D0;&#x4F9B;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x65F6;&#x624D;&#x9700;&#x8981;&#x3002;<a href="#devserverpublicpath-&#x1F511;"><code>devServer.publicPath</code></a>&#x5C06;&#x7528;&#x4E8E;&#x786E;&#x5B9A;&#x5E94;&#x8BE5;&#x4ECE;&#x54EA;&#x91CC;&#x63D0;&#x4F9B; bundle&#xFF0C;&#x5E76;&#x4E14;&#x6B64;&#x9009;&#x9879;&#x4F18;&#x5148;&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5C06;&#x4F7F;&#x7528;&#x5F53;&#x524D;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x4F5C;&#x4E3A;&#x63D0;&#x4F9B;&#x5185;&#x5BB9;&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x4F46;&#x662F;&#x4F60;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x4E3A;&#x5176;&#x4ED6;&#x76EE;&#x5F55;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">contentBase<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&quot;public&quot;</span><span class="token punctuation">)</span>
+</code></pre>
+<blockquote>
+<p><strong>[info]</strong> &#x6CE8;&#xFF1A;</p>
+<p>&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x3002;</p>
+</blockquote>
+<p>&#x4F46;&#x662F;&#x4E5F;&#x53EF;&#x4EE5;&#x4ECE;&#x591A;&#x4E2A;&#x76EE;&#x5F55;&#x63D0;&#x4F9B;&#x5185;&#x5BB9;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">contentBase<span class="token punctuation">:</span> <span class="token punctuation">[</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&quot;public&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&quot;assets&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+</code></pre>
+<p>&#x7981;&#x7528;<code>contentBase</code>&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">contentBase<span class="token punctuation">:</span> <span class="token boolean">false</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;CLI&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">webpack<span class="token operator">-</span>dev<span class="token operator">-</span>server <span class="token operator">--</span>content<span class="token operator">-</span>base <span class="token operator">/</span>path<span class="token operator">/</span>to<span class="token operator">/</span>content<span class="token operator">/</span>dir
+</code></pre>
+<h3 id="devserverdisablehostcheck"><a name="devserverdisablehostcheck" class="anchor-navigation-ex-anchor" href="#devserverdisablehostcheck"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.9. devServer.disableHostCheck</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;boolean</p>
+<p>&#x5F53;&#x8BE5;&#x9009;&#x9879;&#x8BBE;&#x7F6E;&#x4E3A;true&#x65F6;&#xFF0C;&#x5C06;&#x7ED5;&#x8FC7;&#x4E3B;&#x673A;&#x68C0;&#x67E5;&#x3002;<strong>&#x8FD9;&#x662F;&#x4E0D;&#x63A8;&#x8350;&#x7684;</strong>&#xFF0C;&#x56E0;&#x4E3A;&#x4E0D;&#x68C0;&#x67E5;&#x4E3B;&#x673A;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5F88;&#x5BB9;&#x6613;&#x53D7;&#x5230;DNS&#x91CD;&#x65B0;&#x7ED1;&#x5B9A;&#x653B;&#x51FB;&#x3002;</p>
+<pre class="language-"><code class="lang-js">disableHostCheck<span class="token punctuation">:</span> <span class="token boolean">true</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;CLI&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">webpack<span class="token operator">-</span>dev<span class="token operator">-</span>server <span class="token operator">--</span>disable<span class="token operator">-</span>host<span class="token operator">-</span>check
+</code></pre>
+<h3 id="devserverfilename-&#x1F511;"><a name="devserverfilename-&#x1F511;" class="anchor-navigation-ex-anchor" href="#devserverfilename-&#x1F511;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.10. devServer.filename &#x1F511;</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;string</p>
+<p>&#x5728;<strong>&#x60F0;&#x6027;&#x6A21;&#x5F0F;</strong>&#x4E2D;&#xFF0C;&#x6B64;&#x9009;&#x9879;&#x53EF;&#x51CF;&#x5C11;&#x7F16;&#x8BD1;&#x3002; &#x9ED8;&#x8BA4;&#x5728;<strong>&#x60F0;&#x6027;&#x6A21;&#x5F0F;</strong>&#xFF0C;&#x6BCF;&#x4E2A;&#x8BF7;&#x6C42;&#x7ED3;&#x679C;&#x90FD;&#x4F1A;&#x4EA7;&#x751F;&#x5168;&#x65B0;&#x7684;&#x7F16;&#x8BD1;&#x3002;&#x4F7F;&#x7528;<code>filename</code>&#xFF0C;&#x53EF;&#x4EE5;&#x53EA;&#x5728;&#x67D0;&#x4E2A;&#x6587;&#x4EF6;&#x88AB;&#x8BF7;&#x6C42;&#x65F6;&#x7F16;&#x8BD1;&#x3002;</p>
+<p>&#x5982;&#x679C;<code>output.filename</code>&#x8BBE;&#x7F6E;&#x4E3A;<code>bundle.js</code>&#xFF0C;<code>filename</code>&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">lazy<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+filename<span class="token punctuation">:</span> <span class="token string">&quot;bundle.js&quot;</span>
+</code></pre>
+<p>&#x73B0;&#x5728;&#x53EA;&#x6709;&#x5728;&#x8BF7;&#x6C42;<code>/bundle.js</code>&#x65F6;&#x5019;&#xFF0C;&#x624D;&#x4F1A;&#x7F16;&#x8BD1; bundle&#x3002;</p>
+<blockquote>
+<p><strong>[info]</strong> &#x6CE8;&#xFF1A;</p>
+<p><code>filename</code>&#x5728;&#x4E0D;&#x4F7F;&#x7528;<strong>&#x61D2;&#x52A0;&#x8F7D;</strong>&#x65F6;&#x6CA1;&#x6709;&#x6548;&#x679C;</p>
+</blockquote>
+<h3 id="devserverheaders-&#x1F511;"><a name="devserverheaders-&#x1F511;" class="anchor-navigation-ex-anchor" href="#devserverheaders-&#x1F511;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.11. devServer.headers &#x1F511;</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;object</p>
+<p>&#x5728;&#x6240;&#x6709;&#x54CD;&#x5E94;&#x4E2D;&#x6DFB;&#x52A0;&#x9996;&#x90E8;&#x5185;&#x5BB9;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">headers<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token string">&quot;X-Custom-Foo&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;bar&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="devserverhistoryapifallback"><a name="devserverhistoryapifallback" class="anchor-navigation-ex-anchor" href="#devserverhistoryapifallback"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.12. devServer.historyApiFallback</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;boolean | object</p>
+<p>&#x5F53;&#x4F7F;&#x7528;<a href="https://developer.mozilla.org/en-US/docs/Web/API/History" target="_blank">HTML5 History API</a>&#x65F6;&#xFF0C;&#x4EFB;&#x610F;&#x7684;<code>404</code>&#x54CD;&#x5E94;&#x90FD;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x88AB;&#x66FF;&#x4EE3;&#x4E3A;<code>index.html</code>&#x3002;&#x901A;&#x8FC7;&#x4F20;&#x5165;&#x4EE5;&#x4E0B;&#x542F;&#x7528;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">historyApiFallback<span class="token punctuation">:</span> <span class="token boolean">true</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x6BD4;&#x5982;&#x4F7F;&#x7528;<code>rewrites</code>&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#xFF0C;&#x6B64;&#x884C;&#x4E3A;&#x53EF;&#x8FDB;&#x4E00;&#x6B65;&#x5730;&#x63A7;&#x5236;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">historyApiFallback<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  rewrites<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> <span class="token keyword">from</span><span class="token punctuation">:</span> <span class="token regex">/^\/$/</span><span class="token punctuation">,</span> to<span class="token punctuation">:</span> <span class="token string">&apos;/views/landing.html&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token keyword">from</span><span class="token punctuation">:</span> <span class="token regex">/^\/subpage/</span><span class="token punctuation">,</span> to<span class="token punctuation">:</span> <span class="token string">&apos;/views/subpage.html&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token keyword">from</span><span class="token punctuation">:</span> <span class="token regex">/./</span><span class="token punctuation">,</span> to<span class="token punctuation">:</span> <span class="token string">&apos;/views/404.html&apos;</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5F53;&#x8DEF;&#x5F84;&#x4E2D;&#x4F7F;&#x7528;&#x70B9;(dot)&#xFF08;&#x5E38;&#x89C1;&#x4E8E; Angular&#xFF09;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x4F7F;&#x7528;<code>disableDotRule</code>&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">historyApiFallback<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  disableDotRule<span class="token punctuation">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;CLI&#x4F7F;&#x7528;</p>
+<pre class="language-"><code class="lang-bash">webpack-dev-server --history-api-fallback
+</code></pre>
+<h3 id="devserverhost"><a name="devserverhost" class="anchor-navigation-ex-anchor" href="#devserverhost"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.13. devServer.host</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;string</p>
+<p>&#x6307;&#x5B9A;&#x4F7F;&#x7528;&#x4E00;&#x4E2A; host&#x3002;&#x9ED8;&#x8BA4;&#x662F;<code>localhost</code>&#x3002;&#x5982;&#x679C;&#x4F60;&#x5E0C;&#x671B;&#x670D;&#x52A1;&#x5668;&#x5916;&#x90E8;&#x53EF;&#x8BBF;&#x95EE;&#xFF0C;&#x6307;&#x5B9A;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">host<span class="token punctuation">:</span> <span class="token string">&quot;0.0.0.0&quot;</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;CLI&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">webpack<span class="token operator">-</span>dev<span class="token operator">-</span>server <span class="token operator">--</span>host <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span>
+</code></pre>
+<h3 id="devserverhot"><a name="devserverhot" class="anchor-navigation-ex-anchor" href="#devserverhot"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.14. devServer.hot</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;boolean</p>
+<p>&#x542F;&#x7528; webpack &#x7684;&#x6A21;&#x5757;&#x70ED;&#x66FF;&#x6362;&#x7279;&#x6027;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">hot<span class="token punctuation">:</span> <span class="token boolean">true</span>
+</code></pre>
+<blockquote>
+<p><strong>[info]</strong> &#x6CE8;&#xFF1A;</p>
+<p><code>webpack.HotModuleReplacementPlugin</code>&#x5BF9;&#x4E8E;&#x5B8C;&#x5168;&#x542F;&#x7528;HMR&#x662F;&#x5FC5;&#x987B;&#x7684;&#x3002;&#x5982;&#x679C;<code>webpack</code>&#x6216;<code>webpack-devserver</code>&#x662F;&#x7528;<code>--hot</code>&#x9009;&#x9879;&#x542F;&#x52A8;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x63D2;&#x4EF6;&#x5C06;&#x4F1A;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;&#xFF0C;&#x56E0;&#x6B64;&#x60A8;&#x53EF;&#x80FD;&#x4E0D;&#x9700;&#x8981;&#x5C06;&#x5B83;&#x6DFB;&#x52A0;&#x5230;&#x60A8;&#x7684;<code>webpack.config.js</code>&#x4E2D;&#x3002;&#x8BF7;&#x53C2;&#x9605;<a href="https://doc.webpack-china.org/concepts/hot-module-replacement" target="_blank">HMR&#x6982;&#x5FF5;&#x9875;&#x9762;</a>&#x83B7;&#x5F97;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x3002;</p>
+</blockquote>
+<h3 id="devserverhotonly"><a name="devserverhotonly" class="anchor-navigation-ex-anchor" href="#devserverhotonly"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.15. devServer.hotOnly</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;boolean</p>
+<p>&#x542F;&#x7528;&#x70ED;&#x6A21;&#x5757;&#x66FF;&#x6362;(&#x89C1;<a href="#devserverhot"><code>devServer.hot</code></a>)&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x9875;&#x9762;&#x5237;&#x65B0;&#xFF0C;&#x4EE5;&#x9632;&#x51FA;&#x73B0;&#x6784;&#x5EFA;&#x5931;&#x8D25;&#x3002;</p>
+<pre class="language-"><code class="lang-js">hotOnly<span class="token punctuation">:</span> <span class="token boolean">true</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;CLI&#x4F7F;&#x7528;</p>
+<pre class="language-"><code class="lang-bash">webpack-dev-server --hot-only
+</code></pre>
+<h3 id="devserverhttps"><a name="devserverhttps" class="anchor-navigation-ex-anchor" href="#devserverhttps"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.16. devServer.https</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;boolean | object</p>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;dev-server &#x901A;&#x8FC7; HTTP &#x63D0;&#x4F9B;&#x670D;&#x52A1;&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x5E26;&#x6709; HTTPS &#x7684; HTTP/2 &#x63D0;&#x4F9B;&#x670D;&#x52A1;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">https<span class="token punctuation">:</span> <span class="token boolean">true</span>
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x8BBE;&#x7F6E;&#x81EA;&#x7B7E;&#x540D;&#x8BC1;&#x4E66;&#xFF0C;&#x4F46;&#x662F;&#x4F60;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x81EA;&#x5DF1;&#x7684;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">https<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  key<span class="token punctuation">:</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span><span class="token string">&quot;/path/to/server.key&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  cert<span class="token punctuation">:</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span><span class="token string">&quot;/path/to/server.crt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  ca<span class="token punctuation">:</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span><span class="token string">&quot;/path/to/ca.pem&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x6B64;&#x5BF9;&#x8C61;&#x76F4;&#x63A5;&#x4F20;&#x9012;&#x5230; Node.js HTTPS &#x6A21;&#x5757;&#xFF0C;&#x6240;&#x4EE5;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x8BF7;&#x67E5;&#x770B;<a href="https://nodejs.org/api/https.html" target="_blank">HTTPS &#x6587;&#x6863;</a>&#x3002;</p>
+<p>&#x901A;&#x8FC7;CLI&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash">webpack-dev-server --https
+</code></pre>
+<p>&#x8981;&#x901A;&#x8FC7;CLI&#x4F7F;&#x7528;&#x60A8;&#x81EA;&#x5DF1;&#x7684;&#x8BC1;&#x4E66;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x9009;&#x9879;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash">webpack-dev-server --https --key /path/to/server.key --cert /path/to/server.crt --cacert /path/to/ca.pem
+</code></pre>
+<h3 id="devserverindex"><a name="devserverindex" class="anchor-navigation-ex-anchor" href="#devserverindex"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.17. devServer.index</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;string</p>
+<p>&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x7D22;&#x5F15;&#x6587;&#x4EF6;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x3002;</p>
+<pre class="language-"><code class="lang-js">index<span class="token punctuation">:</span> <span class="token string">&apos;index.htm&apos;</span>
+</code></pre>
+<h3 id="devserverinfo"><a name="devserverinfo" class="anchor-navigation-ex-anchor" href="#devserverinfo"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.18. devServer.info</h3>
+<p><strong>&#x53EA;&#x80FD;&#x901A;&#x8FC7;CLI&#x914D;&#x7F6E;</strong></p>
+<p>&#x7C7B;&#x578B;&#xFF1A;boolean</p>
+<p>&#x8F93;&#x51FA;CLI&#x4FE1;&#x606F;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x542F;&#x7528;&#x7684;&#x3002;</p>
+<pre class="language-"><code class="lang-bash">webpack-dev-server --info<span class="token operator">=</span>false
+</code></pre>
+<h3 id="devserverinline"><a name="devserverinline" class="anchor-navigation-ex-anchor" href="#devserverinline"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.19. devServer.inline</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;boolean</p>
+<p>&#x5728; dev-server &#x7684;&#x4E24;&#x79CD;&#x4E0D;&#x540C;&#x6A21;&#x5F0F;&#x4E4B;&#x95F4;&#x5207;&#x6362;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x542F;&#x7528;<em>&#x5185;&#x8054;&#x6A21;&#x5F0F;(inline mode)</em>&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x4E00;&#x6BB5;&#x5904;&#x7406;&#x5B9E;&#x65F6;&#x91CD;&#x8F7D;&#x7684;&#x811A;&#x672C;&#x88AB;&#x63D2;&#x5165;&#x5230;&#x4F60;&#x7684;&#x5305;(bundle)&#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x6784;&#x5EFA;&#x6D88;&#x606F;&#x5C06;&#x4F1A;&#x51FA;&#x73B0;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x63A7;&#x5236;&#x53F0;&#x3002;</p>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<strong>iframe &#x6A21;&#x5F0F;</strong>&#xFF0C;&#x5B83;&#x5728;&#x901A;&#x77E5;&#x680F;&#x4E0B;&#x9762;&#x4F7F;&#x7528;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span><span class="token punctuation">&gt;</span></span></code>&#x6807;&#x7B7E;&#xFF0C;&#x5305;&#x542B;&#x4E86;&#x5173;&#x4E8E;&#x6784;&#x5EFA;&#x7684;&#x6D88;&#x606F;&#x3002;&#x5207;&#x6362;&#x5230;<strong>iframe &#x6A21;&#x5F0F;</strong>&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">inline<span class="token punctuation">:</span> <span class="token boolean">false</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash">webpack-dev-server --inline<span class="token operator">=</span>false
+</code></pre>
+<blockquote>
+<p><strong>[info]</strong> &#x6CE8;&#xFF1A;</p>
+<p>&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x6A21;&#x5757;&#x70ED;&#x66FF;&#x6362;&#x7684;&#x5185;&#x8054;&#x6A21;&#x5F0F;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x5305;&#x542B;&#x6765;&#x81EA; websocket &#x7684; HMR &#x89E6;&#x53D1;&#x5668;&#x3002;&#x8F6E;&#x8BE2;&#x6A21;&#x5F0F;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x66FF;&#x4EE3;&#x65B9;&#x6848;&#xFF0C;&#x4F46;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x989D;&#x5916;&#x7684;&#x5165;&#x53E3;&#x70B9;&#xFF1A;<code>&apos;webpack/hot/poll?1000&apos;</code>&#x3002;</p>
+</blockquote>
+<h3 id="devserverlazy-&#x1F511;"><a name="devserverlazy-&#x1F511;" class="anchor-navigation-ex-anchor" href="#devserverlazy-&#x1F511;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.20. devServer.lazy &#x1F511;</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;boolean</p>
+<p>&#x5F53;&#x542F;&#x7528;<code>lazy</code>&#x65F6;&#xFF0C;dev-server &#x53EA;&#x6709;&#x5728;&#x8BF7;&#x6C42;&#x65F6;&#x624D;&#x7F16;&#x8BD1;&#x5305;(bundle)&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740; webpack &#x4E0D;&#x4F1A;&#x76D1;&#x89C6;&#x4EFB;&#x4F55;&#x6587;&#x4EF6;&#x6539;&#x52A8;&#x3002;&#x6211;&#x4EEC;&#x79F0;&#x4E4B;&#x4E3A;&#x201C;<strong>&#x60F0;&#x6027;&#x6A21;&#x5F0F;</strong>&#x201D;&#x3002;</p>
+<pre class="language-"><code class="lang-js">lazy<span class="token punctuation">:</span> <span class="token boolean">true</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">webpack<span class="token operator">-</span>dev<span class="token operator">-</span>server <span class="token operator">--</span>lazy
+</code></pre>
+<blockquote>
+<p><strong>[info]</strong> &#x6CE8;&#xFF1A;</p>
+<p><code>watchOptions</code>&#x5728;&#x4F7F;&#x7528;<strong>&#x60F0;&#x6027;&#x6A21;&#x5F0F;</strong>&#x65F6;&#x65E0;&#x6548;&#x3002;</p>
+</blockquote>
+<p>-</p>
+<blockquote>
+<p><strong>[info]</strong> &#x6CE8;&#xFF1A;</p>
+<p>&#x5982;&#x679C;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;(CLI)&#xFF0C;&#x8BF7;&#x786E;&#x4FDD;<strong>&#x5185;&#x8054;&#x6A21;&#x5F0F;(inline mode)</strong>&#x88AB;&#x7981;&#x7528;&#x3002;</p>
+</blockquote>
+<h3 id="devservernoinfo-&#x1F511;"><a name="devservernoinfo-&#x1F511;" class="anchor-navigation-ex-anchor" href="#devservernoinfo-&#x1F511;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.21. devServer.noInfo &#x1F511;</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;boolean</p>
+<p>&#x542F;&#x7528;<code>noInfo</code>&#x540E;&#xFF0C;&#x8BF8;&#x5982;&#x300C;&#x542F;&#x52A8;&#x65F6;&#x548C;&#x6BCF;&#x6B21;&#x4FDD;&#x5B58;&#x4E4B;&#x540E;&#xFF0C;&#x90A3;&#x4E9B;&#x663E;&#x793A;&#x7684; webpack &#x5305;(bundle)&#x4FE1;&#x606F;&#x300D;&#x7684;&#x6D88;&#x606F;&#x5C06;&#x88AB;&#x9690;&#x85CF;&#x3002;&#x9519;&#x8BEF;&#x548C;&#x8B66;&#x544A;&#x4ECD;&#x7136;&#x4F1A;&#x663E;&#x793A;&#x3002;</p>
+<pre class="language-"><code class="lang-js">noInfo<span class="token punctuation">:</span> <span class="token boolean">true</span>
+</code></pre>
+<h3 id="devserveropen"><a name="devserveropen" class="anchor-navigation-ex-anchor" href="#devserveropen"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.22. devServer.open</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;boolean</p>
+<p>&#x5F53;<code>open</code>&#x88AB;&#x542F;&#x7528;&#xFF0C;dev server&#x5C06;&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668;</p>
+<pre class="language-"><code class="lang-js">open<span class="token punctuation">:</span> <span class="token boolean">true</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;CLI&#x4F7F;&#x7528;:</p>
+<pre class="language-"><code class="lang-bash">webpack-dev-server --open
+</code></pre>
+<h3 id="devserveropenpage"><a name="devserveropenpage" class="anchor-navigation-ex-anchor" href="#devserveropenpage"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.23. devServer.openPage</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;string</p>
+<p>&#x6307;&#x5B9A;&#x5728;&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668;&#x65F6;&#x5BFC;&#x822A;&#x5230;&#x7684;&#x9875;&#x9762;&#x3002;</p>
+<pre class="language-"><code class="lang-js">openPage<span class="token punctuation">:</span> <span class="token string">&apos;/different/page&apos;</span>
+</code></pre>
+<h3 id="devserveroverlay"><a name="devserveroverlay" class="anchor-navigation-ex-anchor" href="#devserveroverlay"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.24. devServer.overlay</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;boolean | object</p>
+<p>&#x5F53;&#x51FA;&#x73B0;&#x7F16;&#x8BD1;&#x9519;&#x8BEF;&#x6216;&#x8B66;&#x544A;&#x65F6;&#xFF0C;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x5168;&#x5C4F;&#x8986;&#x76D6;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x7981;&#x7528;&#x3002;&#x5982;&#x679C;&#x60A8;&#x53EA;&#x60F3;&#x663E;&#x793A;&#x7F16;&#x8BD1;&#x5668;&#x9519;&#x8BEF;:</p>
+<pre class="language-"><code class="lang-js">overlay<span class="token punctuation">:</span> <span class="token boolean">true</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x60A8;&#x60F3;&#x8981;&#x663E;&#x793A;&#x8B66;&#x544A;&#x548C;&#x9519;&#x8BEF;:</p>
+<pre class="language-"><code class="lang-js">overlay<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  warnings<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  errors<span class="token punctuation">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="devserverpfx"><a name="devserverpfx" class="anchor-navigation-ex-anchor" href="#devserverpfx"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.25. devServer.pfx</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;string</p>
+<p>&#x5F53;&#x901A;&#x8FC7;CLI&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x662F;&#x4E00;&#x6761;&#x5230;SSL<code>.pfx</code>&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x3002;&#x5982;&#x679C;&#x5728;&#x9009;&#x9879;&#x4E2D;&#x4F7F;&#x7528;&#xFF0C;&#x5B83;&#x5E94;&#x8BE5;&#x662F;<code>.pfx</code>&#x6587;&#x4EF6;&#x7684;&#x5B57;&#x8282;&#x6D41;</p>
+<pre class="language-"><code class="lang-js">pfx<span class="token punctuation">:</span> <span class="token string">&apos;/path/to/file.pfx&apos;</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;CLI&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash">webpack-dev-server --pfx /path/to/file.pfx
+</code></pre>
+<h3 id="devserverpfxpassphrase"><a name="devserverpfxpassphrase" class="anchor-navigation-ex-anchor" href="#devserverpfxpassphrase"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.26. devServer.pfxPassphrase</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;string</p>
+<p>The passphrase to a SSL PFX file.</p>
+<p>pfxPassphrase: &apos;passphrase&apos;</p>
+<p>&#x901A;&#x8FC7;CLI&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash">webpack-dev-server --pfx-passphrase passphrase
+</code></pre>
+<h3 id="devserverport"><a name="devserverport" class="anchor-navigation-ex-anchor" href="#devserverport"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.27. devServer.port</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;number</p>
+<pre class="language-"><code class="lang-js">port<span class="token punctuation">:</span> <span class="token number">8080</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;CLI&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash">webpack-dev-server --port 8080
+</code></pre>
+<h3 id="devserverproxy"><a name="devserverproxy" class="anchor-navigation-ex-anchor" href="#devserverproxy"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.28. devServer.proxy</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;object</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x6709;&#x5355;&#x72EC;&#x7684;&#x540E;&#x7AEF;&#x5F00;&#x53D1;&#x670D;&#x52A1;&#x5668; API&#xFF0C;&#x5E76;&#x4E14;&#x5E0C;&#x671B;&#x5728;&#x540C;&#x57DF;&#x540D;&#x4E0B;&#x53D1;&#x9001; API &#x8BF7;&#x6C42; &#xFF0C;&#x90A3;&#x4E48;&#x4EE3;&#x7406;&#x67D0;&#x4E9B; URL &#x4F1A;&#x5F88;&#x6709;&#x7528;&#x3002;</p>
+<p>dev-server &#x4F7F;&#x7528;&#x4E86;&#x975E;&#x5E38;&#x5F3A;&#x5927;&#x7684;<a href="https://github.com/chimurai/http-proxy-middleware" target="_blank">http-proxy-middleware</a>&#x5305;&#x3002;&#x66F4;&#x591A;&#x9AD8;&#x7EA7;&#x7528;&#x6CD5;&#xFF0C;&#x8BF7;&#x67E5;&#x9605;&#x5176;<a href="https://github.com/chimurai/http-proxy-middleware#options" target="_blank">&#x6587;&#x6863;</a>&#x3002;</p>
+<p>&#x5728;<code>localhost:3000</code>&#x4E0A;&#x6709;&#x540E;&#x7AEF;&#x670D;&#x52A1;&#x7684;&#x8BDD;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x542F;&#x7528;&#x4EE3;&#x7406;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">proxy<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token string">&quot;/api&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;http://localhost:3000&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x8BF7;&#x6C42;&#x5230;<code>/api/users</code>&#x73B0;&#x5728;&#x4F1A;&#x88AB;&#x4EE3;&#x7406;&#x5230;&#x8BF7;&#x6C42;<code>http://localhost:3000/api/users</code>&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x60F3;&#x59CB;&#x7EC8;&#x4F20;&#x9012;<code>/api</code>&#xFF0C;&#x5219;&#x9700;&#x8981;&#x91CD;&#x5199;&#x8DEF;&#x5F84;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">proxy<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token string">&quot;/api&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    target<span class="token punctuation">:</span> <span class="token string">&quot;http://localhost:3000&quot;</span><span class="token punctuation">,</span>
+    pathRewrite<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token string">&quot;^/api&quot;</span> <span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E0D;&#x63A5;&#x53D7;&#x8FD0;&#x884C;&#x5728; HTTPS &#x4E0A;&#xFF0C;&#x4E14;&#x4F7F;&#x7528;&#x4E86;&#x65E0;&#x6548;&#x8BC1;&#x4E66;&#x7684;&#x540E;&#x7AEF;&#x670D;&#x52A1;&#x5668;&#x3002;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x8981;&#x63A5;&#x53D7;&#xFF0C;&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">proxy<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token string">&quot;/api&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    target<span class="token punctuation">:</span> <span class="token string">&quot;https://other-server.example.com&quot;</span><span class="token punctuation">,</span>
+    secure<span class="token punctuation">:</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x6709;&#x65F6;&#x4F60;&#x4E0D;&#x60F3;&#x4EE3;&#x7406;&#x6240;&#x6709;&#x7684;&#x8BF7;&#x6C42;&#x3002;&#x53EF;&#x4EE5;&#x57FA;&#x4E8E;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x7ED5;&#x8FC7;&#x4EE3;&#x7406;&#x3002;</p>
+<p>&#x5728;&#x51FD;&#x6570;&#x4E2D;&#x4F60;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x8BF7;&#x6C42;&#x4F53;&#x3001;&#x54CD;&#x5E94;&#x4F53;&#x548C;&#x4EE3;&#x7406;&#x9009;&#x9879;&#x3002;&#x5FC5;&#x987B;&#x8FD4;&#x56DE;<code>false</code>&#x6216;&#x8DEF;&#x5F84;&#xFF0C;&#x6765;&#x8DF3;&#x8FC7;&#x4EE3;&#x7406;&#x8BF7;&#x6C42;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF1A;&#x5BF9;&#x4E8E;&#x6D4F;&#x89C8;&#x5668;&#x8BF7;&#x6C42;&#xFF0C;&#x4F60;&#x60F3;&#x8981;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A; HTML &#x9875;&#x9762;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x4E8E; API &#x8BF7;&#x6C42;&#x5219;&#x4FDD;&#x6301;&#x4EE3;&#x7406;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x505A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">proxy<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token string">&quot;/api&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    target<span class="token punctuation">:</span> <span class="token string">&quot;http://localhost:3000&quot;</span><span class="token punctuation">,</span>
+    bypass<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> proxyOptions<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>accept<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">&quot;html&quot;</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Skipping proxy for browser request.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;/index.html&quot;</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x60A8;&#x60F3;&#x8981;&#x4EE3;&#x7406;&#x591A;&#x4E2A;&#x7279;&#x5B9A;&#x8DEF;&#x5F84;&#x5230;&#x540C;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x5177;&#x6709;&#x4E0A;&#x4E0B;&#x6587;&#x5C5E;&#x6027;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x6570;&#x7EC4;:</p>
+<pre class="language-"><code class="lang-js">proxy<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+  context<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;/auth&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;/api&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  target<span class="token punctuation">:</span> <span class="token string">&quot;http://localhost:3000&quot;</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">]</span>
+</code></pre>
+<h3 id="devserverprogress"><a name="devserverprogress" class="anchor-navigation-ex-anchor" href="#devserverprogress"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.29. devServer.progress</h3>
+<p><strong>&#x53EA;&#x80FD;&#x4F7F;&#x7528;CLI&#x914D;&#x7F6E;</strong></p>
+<p>&#x7C7B;&#x578B;&#xFF1A;boolean</p>
+<p>&#x5C06;&#x8FD0;&#x884C;&#x8FDB;&#x5EA6;&#x8F93;&#x51FA;&#x5230;&#x63A7;&#x5236;&#x53F0;&#x3002;</p>
+<pre class="language-"><code class="lang-bash">webpack-dev-server --progress
+</code></pre>
+<h3 id="devserverpublic"><a name="devserverpublic" class="anchor-navigation-ex-anchor" href="#devserverpublic"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.30. devServer.public</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;string</p>
+<p>&#x5F53;&#x4F7F;&#x7528;<em>&#x5185;&#x8054;&#x6A21;&#x5F0F;(inline mode)</em>&#x5E76;&#x4EE3;&#x7406; dev-server &#x65F6;&#xFF0C;&#x5185;&#x8054;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x811A;&#x672C;&#x5E76;&#x4E0D;&#x603B;&#x662F;&#x77E5;&#x9053;&#x8981;&#x8FDE;&#x63A5;&#x5230;&#x4EC0;&#x4E48;&#x5730;&#x65B9;&#x3002;&#x5B83;&#x4F1A;&#x5C1D;&#x8BD5;&#x6839;&#x636E;<code>window.location</code>&#x6765;&#x731C;&#x6D4B;&#x670D;&#x52A1;&#x5668;&#x7684; URL&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x5931;&#x8D25;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x8FD9;&#x6837;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;dev-server &#x88AB;&#x4EE3;&#x7406;&#x5230; nginx&#xFF0C;&#x5E76;&#x4E14;&#x5728;<code>myapp.test</code>&#x4E0A;&#x53EF;&#x7528;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">public</span><span class="token punctuation">:</span> <span class="token string">&quot;myapp.test:80&quot;</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;CLI&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash">webpack-dev-server --public myapp.test:80
+</code></pre>
+<h3 id="devserverpublicpath-&#x1F511;"><a name="devserverpublicpath-&#x1F511;" class="anchor-navigation-ex-anchor" href="#devserverpublicpath-&#x1F511;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.31. devServer.publicPath &#x1F511;</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;string</p>
+<p>&#x6B64;&#x8DEF;&#x5F84;&#x4E0B;&#x7684;&#x6253;&#x5305;&#x6587;&#x4EF6;&#x53EF;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8BBF;&#x95EE;&#x3002;</p>
+<p>&#x5047;&#x8BBE;&#x670D;&#x52A1;&#x5668;&#x8FD0;&#x884C;&#x5728;<code>http://localhost:8080</code>&#x5E76;&#x4E14;<code>output.filename</code>&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A;<code>bundle.js</code>&#x3002;&#x9ED8;&#x8BA4;<code>publicPath</code>&#x662F;<code>&quot;/&quot;</code>&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x7684;&#x5305;(bundle)&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>http://localhost:8080/bundle.js</code>&#x8BBF;&#x95EE;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x4FEE;&#x6539;<code>publicPath</code>&#xFF0C;&#x5C06; bundle &#x653E;&#x5728;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">publicPath<span class="token punctuation">:</span> <span class="token string">&quot;/assets/&quot;</span>
+</code></pre>
+<p>&#x4F60;&#x7684;&#x5305;&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>http://localhost:8080/assets/bundle.js</code>&#x8BBF;&#x95EE;&#x3002;</p>
+<blockquote>
+<p><strong>[info]</strong> &#x6CE8;&#xFF1A;</p>
+<p>&#x786E;&#x4FDD;<code>publicPath</code>&#x603B;&#x662F;&#x4EE5;&#x659C;&#x6760;(/)&#x5F00;&#x5934;&#x548C;&#x7ED3;&#x5C3E;&#x3002;</p>
+</blockquote>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684; URL&#x3002;&#x8FD9;&#x662F;&#x6A21;&#x5757;&#x70ED;&#x66FF;&#x6362;&#x6240;&#x5FC5;&#x9700;&#x7684;&#x3002;</p>
+<pre class="language-"><code class="lang-js">publicPath<span class="token punctuation">:</span> <span class="token string">&quot;http://localhost:8080/assets/&quot;</span>
+</code></pre>
+<p>bundle &#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>http://localhost:8080/assets/bundle.js</code>&#x8BBF;&#x95EE;&#x3002;</p>
+<blockquote>
+<p><strong>[info]</strong> &#x6CE8;&#xFF1A;</p>
+<p>&#x63A8;&#x8350;&#x4F7F;&#x7528;<code>devServer.publicPath</code>&#x548C;<code>output.publicPath</code></p>
+</blockquote>
+<h3 id="devserverquiet-&#x1F511;"><a name="devserverquiet-&#x1F511;" class="anchor-navigation-ex-anchor" href="#devserverquiet-&#x1F511;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.32. devServer.quiet &#x1F511;</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;boolean</p>
+<p>&#x542F;&#x7528;<code>quiet</code>&#x540E;&#xFF0C;&#x9664;&#x4E86;&#x521D;&#x59CB;&#x542F;&#x52A8;&#x4FE1;&#x606F;&#x4E4B;&#x5916;&#x7684;&#x4EFB;&#x4F55;&#x5185;&#x5BB9;&#x90FD;&#x4E0D;&#x4F1A;&#x88AB;&#x6253;&#x5370;&#x5230;&#x63A7;&#x5236;&#x53F0;&#x3002;&#x8FD9;&#x4E5F;&#x610F;&#x5473;&#x7740;&#x6765;&#x81EA; webpack &#x7684;&#x9519;&#x8BEF;&#x6216;&#x8B66;&#x544A;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x4E0D;&#x53EF;&#x89C1;&#x3002;</p>
+<pre class="language-"><code class="lang-js">quiet<span class="token punctuation">:</span> <span class="token boolean">true</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;CLI&#x4F7F;&#x7528;</p>
+<pre class="language-"><code class="lang-bash">webpack-dev-server --quiet
+</code></pre>
+<h3 id="devserversocket"><a name="devserversocket" class="anchor-navigation-ex-anchor" href="#devserversocket"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.33. devServer.socket</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;string</p>
+<p>The Unix socket to listen to (instead of a host).</p>
+<pre class="language-"><code>socket:&apos;socket&apos;
+</code></pre><p>&#x901A;&#x8FC7; CLI&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre class="language-"><code>webpack-dev-server --socket socket
+</code></pre><h3 id="devserverstaticoptions"><a name="devserverstaticoptions" class="anchor-navigation-ex-anchor" href="#devserverstaticoptions"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.34. devServer.staticOptions</h3>
+<p>&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x6765;&#x81EA;<code>contentBase</code>&#x7684;&#x63D0;&#x4F9B;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x7684;&#x9AD8;&#x7EA7;&#x9009;&#x9879;&#x3002;&#x5173;&#x4E8E;&#x53EF;&#x80FD;&#x7684;&#x9009;&#x9879;&#xFF0C;&#x8BF7;&#x53C2;&#x9605;<a href="http://expressjs.com/en/4x/api.html#express.static" target="_blank">Express &#x6587;&#x6863;</a>&#x3002;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;:</p>
+<pre class="language-"><code>staticOptions: {
+  redirect: false
+}
+</code></pre><blockquote>
+<p><strong>[info]</strong> &#x6CE8;&#xFF1A;</p>
+<p>&#x4EC5;&#x5F53;&#x4F7F;&#x7528;<code>contentBase</code>&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;<code>string</code>&#x6709;&#x6548;&#x3002;</p>
+</blockquote>
+<h3 id="devserverstats-&#x1F511;"><a name="devserverstats-&#x1F511;" class="anchor-navigation-ex-anchor" href="#devserverstats-&#x1F511;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.35. devServer.stats &#x1F511;</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;string | object</p>
+<p>&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x5141;&#x8BB8;&#x60A8;&#x7CBE;&#x786E;&#x63A7;&#x5236;&#x54EA;&#x4E9B;bundle&#x4FE1;&#x606F;&#x88AB;&#x663E;&#x793A;&#x3002;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x8981;&#x4E00;&#x4E9B;bundle&#x4FE1;&#x606F;&#xFF0C;&#x4F46;&#x4E0D;&#x662F;&#x5168;&#x90E8;&#xFF0C;&#x8FD9;&#x53EF;&#x80FD;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x597D;&#x7684;&#x4E2D;&#x95F4;&#x5730;&#x5E26;&#x3002;</p>
+<p>&#x8FD9;&#x6837;&#x53EA;&#x4F1A;&#x663E;&#x793A;&#x5305;&#x4E2D;&#x7684;&#x9519;&#x8BEF;:</p>
+<pre class="language-"><code class="lang-js">stats<span class="token punctuation">:</span> <span class="token string">&quot;errors-only&quot;</span>
+</code></pre>
+<p>&#x60F3;&#x8981;&#x83B7;&#x53D6;&#x66F4;&#x591A;&#x4FE1;&#x606F;, &#x67E5;&#x770B; <a href="state.md"><strong>stats &#x6587;&#x6863;</strong>.</a></p>
+<blockquote>
+<p><strong>[info]</strong> &#x6CE8;&#xFF1A;</p>
+<p>&#x6B64;&#x9009;&#x9879;&#x5728;&#x4F7F;&#x7528;<code>quiet</code>&#x6216;<code>noInfo</code>&#x65F6;&#x65E0;&#x6548;</p>
+</blockquote>
+<h3 id="devserverstdin"><a name="devserverstdin" class="anchor-navigation-ex-anchor" href="#devserverstdin"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.36. devServer.stdin</h3>
+<p><strong>&#x53EA;&#x80FD;&#x901A;&#x8FC7;CLI&#x8BBE;&#x7F6E;</strong></p>
+<p>&#x7C7B;&#x578B;&#xFF1A;boolean</p>
+<p>&#x5F53; stdin &#x7ED3;&#x675F;&#x65F6;&#xFF0C;&#x8BE5;&#x9009;&#x9879;&#x5173;&#x95ED;&#x670D;&#x52A1;&#x5668;&#x3002;</p>
+<pre class="language-"><code class="lang-bash">webpack-dev-server --stdin
+</code></pre>
+<h3 id="devserveruselocalip"><a name="devserveruselocalip" class="anchor-navigation-ex-anchor" href="#devserveruselocalip"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.37. devServer.useLocalIp</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;boolean</p>
+<p>&#x8BE5;&#x9009;&#x9879;&#x8BA9;&#x6D4F;&#x89C8;&#x5668;&#x4F7F;&#x7528;&#x4F60;&#x7684;&#x672C;&#x5730;IP&#x6253;&#x5F00;&#x3002;</p>
+<pre class="language-"><code class="lang-js">useLocalIp<span class="token punctuation">:</span> <span class="token boolean">true</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;CLI&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash">webpack-dev-server --useLocalIp
+</code></pre>
+<h3 id="devserverwatchcontentbase"><a name="devserverwatchcontentbase" class="anchor-navigation-ex-anchor" href="#devserverwatchcontentbase"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.38. devServer.watchContentBase</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;boolean</p>
+<p>&#x544A;&#x8BC9;&#x670D;&#x52A1;&#x5668;&#x89C2;&#x5BDF;&#x88AB;<code>devServer.contentBase</code>&#x9009;&#x9879;&#x63D0;&#x4F9B;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x6587;&#x4EF6;&#x53D8;&#x5316;&#x5C06;&#x89E6;&#x53D1;&#x5168;&#x9875;&#x9762;&#x91CD;&#x8F7D;&#x3002;</p>
+<pre class="language-"><code class="lang-js">watchContentBase<span class="token punctuation">:</span> <span class="token boolean">true</span>
+</code></pre>
+<p>&#x9ED8;&#x8BA4;&#x662F;&#x7981;&#x7528;&#x7684;&#x3002;</p>
+<p>&#x901A;&#x8FC7;CLI&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash">webpack-dev-server --watch-content-base
+</code></pre>
+<h3 id="devserverwatchoptions-&#x1F511;"><a name="devserverwatchoptions-&#x1F511;" class="anchor-navigation-ex-anchor" href="#devserverwatchoptions-&#x1F511;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.39. devServer.watchOptions &#x1F511;</h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;boolean</p>
+<p>&#x4E0E;&#x76D1;&#x89C6;&#x6587;&#x4EF6;&#x76F8;&#x5173;&#x7684;&#x63A7;&#x5236;&#x9009;&#x9879;&#x3002;</p>
+<p>webpack &#x4F7F;&#x7528;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;(file system)&#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x6539;&#x52A8;&#x7684;&#x901A;&#x77E5;&#x3002;&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E0D;&#x4F1A;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5F53;&#x4F7F;&#x7528;&#x7F51;&#x7EDC;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF; Network File System (NFS) &#x65F6;&#x3002;<a href="https://www.vagrantup.com/" target="_blank">Vagrant</a>&#x4E5F;&#x6709;&#x5F88;&#x591A;&#x95EE;&#x9898;&#x3002;&#x5728;&#x8FD9;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;&#x8F6E;&#x8BE2;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">watchOptions<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  poll<span class="token punctuation">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x8FD9;&#x5BF9;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x6765;&#x8BF4;&#x592A;&#x91CD;&#x4E86;&#x7684;&#x8BDD;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x95F4;&#x9694;&#x65F6;&#x95F4;&#xFF08;&#x4EE5;&#x6BEB;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;&#xFF09;&#xFF0C;&#x5C06;&#x5176;&#x8BBE;&#x7F6E;&#x4E3A;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#x3002;</p>
+<p>&#x67E5;&#x770B; <a href="watchOptions.html">WatchOptions</a> &#x66F4;&#x591A;&#x9009;&#x9879;&#x3002;</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; tuzhu008 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-11-19 20:54:01
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="plugins.html" class="navigation navigation-prev " aria-label="Previous page: Plugins（插件）">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="devtools.html" class="navigation navigation-next " aria-label="Next page: Devtools（开发工具）">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"DevServer（开发服务）","level":"1.5.7","depth":2,"next":{"title":"Devtools（开发工具）","level":"1.5.8","depth":2,"path":"configuration/devtools.md","ref":"configuration/devtools.md","articles":[]},"previous":{"title":"Plugins（插件）","level":"1.5.6","depth":2,"path":"configuration/plugins.md","ref":"configuration/plugins.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","anchor-navigation-ex","favicon","copy-code-button","alerts","splitter","book-summary-scroll-position-saver","include-codeblock","ace","prism","prism-themes","-highlight","tbfed-pagefooter","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tuzhu008 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"ace":{},"livereload":{},"book-summary-scroll-position-saver":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"favicon":{"shortcut":"assets/images/favicon.ico","bookmark":"assets/images/favicon.ico","appleTouch":"assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"assets/images/apple-touch-icon-120x120.png","180x180":"assets/images/apple-touch-icon-180x180.png"}},"prism-themes":{},"alerts":{},"expandable-chapters-small":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"ace","theme":"monokai","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"tuzhu008","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"webpack中文","language":"zh-hans","gitbook":"*","description":"webpack学习资料和过程记录"},"file":{"path":"configuration/devServer.md","mtime":"2017-11-19T12:54:01.543Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-19T10:06:42.089Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

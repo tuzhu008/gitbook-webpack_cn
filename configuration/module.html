@@ -1,0 +1,921 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Module（模块） · webpack中文</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="tuzhu008">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="resolve.html" />
+    
+    
+    <link rel="prev" href="output.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Guide/">
+            
+                <a href="../Guide/">
+            
+                    
+                    教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../loaders/">
+            
+                <a href="../loaders/">
+            
+                    
+                    loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Plugins/">
+            
+                <a href="../Plugins/">
+            
+                    
+                    插件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Plugins/WebpackManifestPlugin.html">
+            
+                <a href="../Plugins/WebpackManifestPlugin.html">
+            
+                    
+                    WebpackManifestPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="context.html">
+            
+                <a href="context.html">
+            
+                    
+                    Context（上下文）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="entry.html">
+            
+                <a href="entry.html">
+            
+                    
+                    Entry（入口）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="output.html">
+            
+                <a href="output.html">
+            
+                    
+                    Output（输出）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.4" data-path="module.html">
+            
+                <a href="module.html">
+            
+                    
+                    Module（模块）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="resolve.html">
+            
+                <a href="resolve.html">
+            
+                    
+                    Resolve（解析）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="plugins.html">
+            
+                <a href="plugins.html">
+            
+                    
+                    Plugins（插件）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="devServer.html">
+            
+                <a href="devServer.html">
+            
+                    
+                    DevServer（开发服务）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="devtools.html">
+            
+                <a href="devtools.html">
+            
+                    
+                    Devtools（开发工具）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="target.html">
+            
+                <a href="target.html">
+            
+                    
+                    Target（构建目标）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="watch.html">
+            
+                <a href="watch.html">
+            
+                    
+                    Watch（观察模式）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="watchOptions.html">
+            
+                <a href="watchOptions.html">
+            
+                    
+                    WatchOptions（观察模式选项）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="externals.html">
+            
+                <a href="externals.html">
+            
+                    
+                    Externals（外部扩展）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="performance.html">
+            
+                <a href="performance.html">
+            
+                    
+                    Performance（性能）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" data-path="node.html">
+            
+                <a href="node.html">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15" data-path="stats.html">
+            
+                <a href="stats.html">
+            
+                    
+                    Stats（统计）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16" data-path="otherOptions.html">
+            
+                <a href="otherOptions.html">
+            
+                    
+                    OtherOptions（其他选项）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Note.html">
+            
+                <a href="../Note.html">
+            
+                    
+                    注意
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Others/">
+            
+                <a href="../Others/">
+            
+                    
+                    其他
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Others/Modular-programming.html">
+            
+                <a href="../Others/Modular-programming.html">
+            
+                    
+                    模块化编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../Others/anymatch.html">
+            
+                <a href="../Others/anymatch.html">
+            
+                    
+                    anymatch
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../thanks.html">
+            
+                <a href="../thanks.html">
+            
+                    
+                    致谢
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Module（模块）</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#module-&#xFF08;&#x6A21;&#x5757;&#xFF09;"><b>1. </b>Module &#xFF08;&#x6A21;&#x5757;&#xFF09;</a></li><ul><li><span class="title-icon "></span><a href="#modulerules"><b>1.1. </b>module.rules</a></li><li><span class="title-icon "></span><a href="#rule"><b>1.2. </b>Rule</a></li><ul><li><span class="title-icon "></span><a href="#&#x6761;&#x4EF6;"><b>1.2.1. </b>&#x6761;&#x4EF6;</a></li><li><span class="title-icon "></span><a href="#&#x7ED3;&#x679C;"><b>1.2.2. </b>&#x7ED3;&#x679C;</a></li><li><span class="title-icon "></span><a href="#&#x5D4C;&#x5957;&#x89C4;&#x5219;"><b>1.2.3. </b>&#x5D4C;&#x5957;&#x89C4;&#x5219;</a></li><li><span class="title-icon "></span><a href="#rulerules"><b>1.2.4. </b>Rule.rules</a></li><li><span class="title-icon "></span><a href="#ruleresource"><b>1.2.5. </b>Rule.resource</a></li><li><span class="title-icon "></span><a href="#ruletest"><b>1.2.6. </b>Rule.test</a></li><li><span class="title-icon "></span><a href="#ruleinclude"><b>1.2.7. </b>Rule.include</a></li><li><span class="title-icon "></span><a href="#ruleexclude"><b>1.2.8. </b>Rule.exclude</a></li><li><span class="title-icon "></span><a href="#ruleresourcequery"><b>1.2.9. </b>Rule.resourceQuery</a></li><li><span class="title-icon "></span><a href="#ruleuse"><b>1.2.10. </b>Rule.use</a></li><li><span class="title-icon "></span><a href="#ruleoptions--rulequery"><b>1.2.11. </b>Rule.options / Rule.query</a></li><li><span class="title-icon "></span><a href="#ruleoneof"><b>1.2.12. </b>Rule.oneOf</a></li><li><span class="title-icon "></span><a href="#ruleissuer"><b>1.2.13. </b>Rule.issuer</a></li><li><span class="title-icon "></span><a href="#ruleenforce"><b>1.2.14. </b>Rule.enforce</a></li><li><span class="title-icon "></span><a href="#ruleparser"><b>1.2.15. </b>Rule.parser</a></li><li><span class="title-icon "></span><a href="#use-entries"><b>1.2.16. </b>UseEntry </a></li></ul><li><span class="title-icon "></span><a href="#rule&#x6761;&#x4EF6;"><b>1.3. </b>Rule&#x6761;&#x4EF6;</a></li><li><span class="title-icon "></span><a href="#modulenoparse"><b>1.4. </b>module.noParse</a></li></ul></ul></div><a href="#module-&#xFF08;&#x6A21;&#x5757;&#xFF09;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="module-&#xFF08;&#x6A21;&#x5757;&#xFF09;"><a name="module-&#xFF08;&#x6A21;&#x5757;&#xFF09;" class="anchor-navigation-ex-anchor" href="#module-&#xFF08;&#x6A21;&#x5757;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>1. Module &#xFF08;&#x6A21;&#x5757;&#xFF09;</h1>
+<p>&#x8BE5;&#x9009;&#x9879;&#x7528;&#x6765;&#x914D;&#x7F6E;&#x5982;&#x4F55;&#x5904;&#x7406;&#x5404;&#x79CD;&#x6A21;&#x5757;&#x3002;&#x914D;&#x7F6E;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x5BF9;&#x6A21;&#x5757;&#x5E94;&#x7528;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x89C4;&#x5219;&#xFF08;Rule&#xFF09;&#x3002;</p>
+<pre class="language-"><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+        module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        rules<span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x89C4;&#x5219;</span>
+        noparse<span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span> <span class="token comment" spellcheck="true">// &#x6392;&#x9664;&#x5339;&#x914D;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x4E0D;&#x8FDB;&#x884C;&#x89E3;&#x6790;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="modulerules"><a name="modulerules" class="anchor-navigation-ex-anchor" href="#modulerules"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. module.rules</h2>
+<p>&#x7C7B;&#x578B;&#xFF1A;array</p>
+<p>&#x521B;&#x5EFA;&#x6A21;&#x5757;&#x65F6;&#xFF0C;&#x5339;&#x914D;&#x8BF7;&#x6C42;&#x7684;<a href="#rule">&#x89C4;&#x5219;</a>&#x6570;&#x7EC4;&#x3002;</p>
+<pre class="language-"><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                rules<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                resource<span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span>
+                test<span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span>
+                include<span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span>
+                exclude<span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span>
+                resourceQuery<span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span>
+                use<span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span>
+                issuer<span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span>
+                oneOf<span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span>
+                options<span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span>
+                parser<span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span>
+
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="rule"><a name="rule" class="anchor-navigation-ex-anchor" href="#rule"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. Rule</h2>
+<p>&#x89C4;&#x5219;&#xFF0C;&#x80FD;&#x591F;&#x4FEE;&#x6539;&#x6A21;&#x5757;&#x7684;&#x521B;&#x5EFA;&#x65B9;&#x5F0F;&#x3002;&#x80FD;&#x591F;&#x5BF9;&#x6A21;&#x5757;&#x5E94;&#x7528; loader&#xFF0C;&#x6216;&#x8005;&#x4FEE;&#x6539;&#x89E3;&#x6790;&#x5668;(parser)&#x3002;</p>
+<p>&#x6BCF;&#x4E2A;&#x89C4;&#x5219;&#x5206;&#x4E3A;&#x4E09;&#x4E2A;&#x90E8;&#x5206;&#xFF1A;&#x6761;&#x4EF6;(condition)&#xFF0C;&#x7ED3;&#x679C;(result)&#x548C;&#x5D4C;&#x5957;&#x89C4;&#x5219;(nested rule)&#x3002;</p>
+<h3 id="&#x6761;&#x4EF6;"><a name="&#x6761;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x6761;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.1. &#x6761;&#x4EF6;</h3>
+<p>&#x6761;&#x4EF6;&#x6709;&#x4E24;&#x79CD;&#x8F93;&#x5165;&#x503C;&#xFF1A;</p>
+<ol>
+<li>resource: &#x8BF7;&#x6C42;&#x6587;&#x4EF6;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x3002;&#x5B83;&#x6839;&#x636E;<a href="resolve.html">resolve</a>&#x89C4;&#x5219;&#x8FDB;&#x884C;&#x89E3;&#x6790;&#x3002;</li>
+<li>issuer: &#x88AB;&#x8BF7;&#x6C42;&#x8D44;&#x6E90;(requested the resource)&#x7684;&#x6A21;&#x5757;&#x6587;&#x4EF6;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x3002;&#x662F;&#x5BFC;&#x5165;&#x65F6;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</li>
+</ol>
+<p><strong>&#x4F8B;&#x5982;:</strong>&#x4ECE;<code>app.js&#x5BFC;&#x5165; &apos;./style.css&apos;</code>&#xFF0C;resource &#x662F;<code>/path/to/style.css</code>  <code>. issuer</code> &#x662F;<code>/path/to/app.js</code>&#x3002;</p>
+<p>&#x5728;&#x89C4;&#x5219;&#x4E2D;&#xFF0C;&#x5C5E;&#x6027;<a href="#ruletest"><code>test</code></a>,<a href="#ruleinclude"><code>include</code></a>,<a href="#ruleexclude"><code>exclude</code></a>&#x548C;<a href="#ruleresource"><code>resource</code></a>&#x5BF9; resource &#x5339;&#x914D;&#xFF0C;&#x5E76;&#x4E14;&#x5C5E;&#x6027;<a href="#ruleissuer"><code>issuer</code></a>&#x5BF9; issuer &#x5339;&#x914D;&#x3002;</p>
+<p>&#x5F53;&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x6761;&#x4EF6;&#x65F6;&#xFF0C;&#x6240;&#x6709;&#x6761;&#x4EF6;&#x90FD;&#x5339;&#x914D;&#x3002;</p>
+<blockquote>
+<p>**[warning]**</p>
+<p>&#x5C0F;&#x5FC3;&#xFF01;resource &#x662F;&#x6587;&#x4EF6;&#x7684;<em>&#x89E3;&#x6790;</em>&#x8DEF;&#x5F84;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x7684;&#x8D44;&#x6E90;&#x662F;&#x771F;&#x6B63;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;<em>&#x800C;&#x4E0D;&#x662F;</em>&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x4F4D;&#x7F6E;&#x3002;&#x5728;&#x4F7F;&#x7528;&#x5DE5;&#x5177;&#x6765;&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x5305;&#x7684;&#x65F6;&#x5019;&#xFF08;&#x5982;<code>npm link</code>&#xFF09;&#x6BD4;&#x8F83;&#x597D;&#x8BB0;&#xFF0C;&#x50CF;<code>/node_modules/</code>&#x7B49;&#x5E38;&#x89C1;&#x6761;&#x4EF6;&#x53EF;&#x80FD;&#x4F1A;&#x4E0D;&#x5C0F;&#x5FC3;&#x9519;&#x8FC7;&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x7684;&#x6587;&#x4EF6;&#x3002;</p>
+</blockquote>
+<h3 id="&#x7ED3;&#x679C;"><a name="&#x7ED3;&#x679C;" class="anchor-navigation-ex-anchor" href="#&#x7ED3;&#x679C;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.2. &#x7ED3;&#x679C;</h3>
+<p>&#x89C4;&#x5219;&#x7ED3;&#x679C;&#x53EA;&#x5728;&#x89C4;&#x5219;&#x6761;&#x4EF6;&#x5339;&#x914D;&#x65F6;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x89C4;&#x5219;&#x6709;&#x4E24;&#x79CD;&#x8F93;&#x5165;&#x503C;&#xFF1A;</p>
+<ol>
+<li>&#x5E94;&#x7528;&#x7684; loader&#xFF1A;&#x5E94;&#x7528;&#x5728; resource &#x4E0A;&#x7684; loader &#x6570;&#x7EC4;&#x3002;</li>
+<li>Parser &#x9009;&#x9879;&#xFF1A;&#x7528;&#x4E8E;&#x4E3A;&#x6A21;&#x5757;&#x521B;&#x5EFA;&#x89E3;&#x6790;&#x5668;&#x7684;&#x9009;&#x9879;&#x5BF9;&#x8C61;&#x3002;</li>
+</ol>
+<p>&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x4F1A;&#x5F71;&#x54CD; loader&#xFF1A;<a href="https://doc.webpack-china.org/configuration/module/#rule-options-rule-query" target="_blank"><code>options</code></a>&#xFF0C;<a href="https://doc.webpack-china.org/configuration/module/#rule-use" target="_blank"><code>use</code></a>&#x3002;</p>
+<p>&#x4E5F;&#x517C;&#x5BB9;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#xFF1A;<a href="#ruleoptions--rulequery"><code>query</code></a>&#x3002;</p>
+<p><a href="#ruleenforce"><code>enforce</code></a>&#x5C5E;&#x6027;&#x4F1A;&#x5F71;&#x54CD; loader &#x79CD;&#x7C7B;&#x3002;&#x4E0D;&#x8BBA;&#x662F;&#x666E;&#x901A;&#x7684;&#xFF0C;&#x524D;&#x7F6E;&#x7684;&#xFF0C;&#x540E;&#x7F6E;&#x7684; loader&#x3002;</p>
+<p><a href="#ruleparser"><code>parser</code></a>&#x5C5E;&#x6027;&#x4F1A;&#x5F71;&#x54CD; parser &#x9009;&#x9879;&#x3002;</p>
+<h3 id="&#x5D4C;&#x5957;&#x89C4;&#x5219;"><a name="&#x5D4C;&#x5957;&#x89C4;&#x5219;" class="anchor-navigation-ex-anchor" href="#&#x5D4C;&#x5957;&#x89C4;&#x5219;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.3. &#x5D4C;&#x5957;&#x89C4;&#x5219;</h3>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5C5E;&#x6027;<a href="#rulerules"><code>rules</code></a>&#x548C;<a href="#ruleoneof"><code>oneOf</code></a>&#x6307;&#x5B9A;&#x5D4C;&#x5957;&#x89C4;&#x5219;&#x3002;</p>
+<p>&#x8FD9;&#x4E9B;&#x89C4;&#x5219;&#x7528;&#x4E8E;&#x5728;&#x89C4;&#x5219;&#x6761;&#x4EF6;(rule condition)&#x5339;&#x914D;&#x65F6;&#x8FDB;&#x884C;&#x53D6;&#x503C;&#x3002;</p>
+<h3 id="rulerules"><a name="rulerules" class="anchor-navigation-ex-anchor" href="#rulerules"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.4. Rule.rules</h3>
+<p><a href="#rule"><code>&#x89C4;&#x5219;</code></a>&#x6570;&#x7EC4;&#xFF0C;&#x5F53;&#x89C4;&#x5219;&#x5339;&#x914D;&#x65F6;&#x4F7F;&#x7528;&#x3002;</p>
+<pre class="language-"><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                rules<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="ruleresource"><a name="ruleresource" class="anchor-navigation-ex-anchor" href="#ruleresource"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.5. Rule.resource</h3>
+<p><a href="#&#x6761;&#x4EF6;"><code>&#x6761;&#x4EF6;</code></a>&#x4F1A;&#x5339;&#x914D; resource&#x3002;&#x65E2;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;<code>Rule.resource</code>&#x9009;&#x9879;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5FEB;&#x6377;&#x9009;&#x9879;<code>Rule.test</code>&#xFF0C;<code>Rule.exclude</code>&#x548C;<code>Rule.include</code>&#x3002;&#x5728;<a href="#rule&#x6761;&#x4EF6;">Rule<code>&#x6761;&#x4EF6;</code></a>&#x4E2D;&#x67E5;&#x770B;&#x8BE6;&#x7EC6;&#x3002;</p>
+<h3 id="ruletest"><a name="ruletest" class="anchor-navigation-ex-anchor" href="#ruletest"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.6. Rule.test</h3>
+<p><code>Rule.test</code>&#x662F;<code>Rule.resource.test</code>&#x7684;&#x7B80;&#x5199;&#x3002;&#x5982;&#x679C;&#x4F60;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;<code>Rule.test</code>&#x9009;&#x9879;&#xFF0C;&#x5C31;&#x4E0D;&#x80FD;&#x518D;&#x63D0;&#x4F9B;<code>Rule.resource</code>&#x3002;</p>
+<h3 id="ruleinclude"><a name="ruleinclude" class="anchor-navigation-ex-anchor" href="#ruleinclude"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.7. Rule.include</h3>
+<p><code>Rule.include</code>&#x662F;<code>Rule.resource.include</code>&#x7684;&#x7B80;&#x5199;&#x3002;&#x5982;&#x679C;&#x4F60;&#x63D0;&#x4F9B;&#x4E86;<code>Rule.include</code>&#x9009;&#x9879;&#xFF0C;&#x5C31;&#x4E0D;&#x80FD;&#x518D;&#x63D0;&#x4F9B;<code>Rule.resource</code>&#x3002;</p>
+<h3 id="ruleexclude"><a name="ruleexclude" class="anchor-navigation-ex-anchor" href="#ruleexclude"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.8. Rule.exclude</h3>
+<p><code>Rule.exclude</code>&#x662F;<code>Rule.resource.exclude</code>&#x7684;&#x7B80;&#x5199;&#x3002;&#x5982;&#x679C;&#x4F60;&#x63D0;&#x4F9B;&#x4E86;<code>Rule.exclude</code>&#x9009;&#x9879;&#xFF0C;&#x5C31;&#x4E0D;&#x80FD;&#x518D;&#x63D0;&#x4F9B;<code>Rule.resource</code>&#x3002;</p>
+<h3 id="ruleresourcequery"><a name="ruleresourcequery" class="anchor-navigation-ex-anchor" href="#ruleresourcequery"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.9. Rule.resourceQuery</h3>
+<p>&#x4E0E;&#x8D44;&#x6E90;&#x67E5;&#x8BE2;&#x76F8;&#x5339;&#x914D;&#x7684;<a href="#&#x6761;&#x4EF6;">&#x6761;&#x4EF6;</a>&#x3002;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x7528;&#x4E8E;<code>test</code>&#x5BF9;&#x5E94;&#x7684;&#x8BF7;&#x6C42;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x67E5;&#x8BE2;&#x90E8;&#x5206;(&#x4E5F;&#x5C31;&#x662F;&#x4ECE;&#x95EE;&#x53F7;&#x5F00;&#x59CB;)&#x3002;&#x5982;&#x679C;&#x4F60;&#x8981;&#x4ECE;<code>import Foo from &apos;./foo.css?inline&apos;</code>&#xFF0C;&#x4EE5;&#x4E0B;&#x6761;&#x4EF6;&#x5C06;&#x5339;&#x914D;:</p>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">{</span>
+  test<span class="token punctuation">:</span> <span class="token regex">/.css$/</span><span class="token punctuation">,</span>
+  resourceQuery<span class="token punctuation">:</span> <span class="token regex">/inline/</span><span class="token punctuation">,</span>
+  use<span class="token punctuation">:</span> <span class="token string">&apos;url-loader&apos;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="ruleuse"><a name="ruleuse" class="anchor-navigation-ex-anchor" href="#ruleuse"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.10. Rule.use</h3>
+<p>&#x5E94;&#x7528;&#x4E8E;&#x6A21;&#x5757;&#x7684;<a href="#use-entries">UseEntries</a>&#x5217;&#x8868;&#x3002;&#x6BCF;&#x4E2A;&#x5165;&#x53E3;(entry)&#x6307;&#x5B9A;&#x4F7F;&#x7528;&#x4E00;&#x4E2A; loader&#x3002;</p>
+<p>&#x4F20;&#x9012;&#x5B57;&#x7B26;&#x4E32;&#xFF08;&#x5982;&#xFF1A;<code>use: [ &quot;style-loader&quot; ]</code>&#xFF09;&#x662F; loader &#x5C5E;&#x6027;&#x7684;&#x7B80;&#x5199;&#x65B9;&#x5F0F;&#xFF08;&#x5982;&#xFF1A;<code>use: [ { loader: &quot;style-loader &quot;} ]</code>&#xFF09;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x4E3A;&#x540C;&#x4E00;&#x6A21;&#x5757;&#x4F7F;&#x7528;&#x591A;&#x4E2A;loader&#xFF0C;&#x5E76;&#x4E14;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x5BF9;&#x6BCF;&#x4E2A;loader&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                test<span class="token punctuation">:</span> <span class="token regex">/\.css/</span><span class="token punctuation">,</span>
+                use<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+                    <span class="token string">&apos;style-loader&apos;</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">{</span>
+                        loader<span class="token punctuation">:</span> <span class="token string">&apos;css-loader&apos;</span><span class="token punctuation">,</span>
+                        options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                          importLoaders<span class="token punctuation">:</span> <span class="token number">1</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">]</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><strong>[info] &#x6CE8;&#xFF1A;</strong></p>
+<p>&#x5BF9;&#x540C;&#x4E00;&#x6761;&#x4EF6;&#x4F7F;&#x7528;&#x591A;&#x4E2A;loader&#x65F6;&#xFF0C;&#x89E3;&#x6790;&#x987A;&#x5E8F;&#x4E3A;&#x4ECE;<strong>&#x53F3;</strong>&#x5230;<strong>&#x5DE6;&#xFF0C;</strong>&#x4ECE;&#x4E0A;&#x5230;&#x4E0B;&#xFF0C;&#x6700;&#x540E;&#x4E00;&#x4E2A;loader&#x8FD4;&#x56DE;&#x7ECF;&#x8FC7;&#x6700;&#x7EC8;&#x8F6C;&#x6362;&#x7684;&#x6A21;&#x5757;&#x3002;</p>
+</blockquote>
+<h3 id="ruleoptions--rulequery"><a name="ruleoptions--rulequery" class="anchor-navigation-ex-anchor" href="#ruleoptions--rulequery"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.11. Rule.options / Rule.query</h3>
+<p><code>Rule.options</code> &#x548C;<code>Rule.query</code>&#x662F;<code>Rule.use: [ { options } ]</code>&#x7684;&#x7B80;&#x5199;&#x3002;&#x662F;&#x7528;&#x6765;&#x5BF9;loader&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x7684;&#x3002;</p>
+<pre class="language-"><code class="lang-js">use<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        loader<span class="token punctuation">:</span> <span class="token string">&apos;css-loader&apos;</span><span class="token punctuation">,</span>
+        options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            importLoaders<span class="token punctuation">:</span> <span class="token number">1</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+</code></pre>
+<h3 id=""><a name="" class="plugin-anchor" href="#"><i class="fa fa-link" aria-hidden="true"></i></a> </h3>
+<h3 id="ruleoneof"><a name="ruleoneof" class="anchor-navigation-ex-anchor" href="#ruleoneof"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.12. Rule.oneOf</h3>
+<p>&#x89C4;&#x5219;&#x6570;&#x7EC4;&#xFF0C;&#x5F53;&#x5339;&#x914D;&#x89C4;&#x5219;&#x65F6;&#xFF0C;&#x53EA;&#x4F1A;&#x4F7F;&#x7528;&#x5339;&#x914D;&#x5230;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x89C4;&#x5219;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">{</span>
+  test<span class="token punctuation">:</span> <span class="token regex">/.css$/</span><span class="token punctuation">,</span>
+  oneOf<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      resourceQuery<span class="token punctuation">:</span> <span class="token regex">/inline/</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// foo.css?inline</span>
+      use<span class="token punctuation">:</span> <span class="token string">&apos;url-loader&apos;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      resourceQuery<span class="token punctuation">:</span> <span class="token regex">/external/</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// foo.css?external</span>
+      use<span class="token punctuation">:</span> <span class="token string">&apos;file-loader&apos;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="ruleissuer"><a name="ruleissuer" class="anchor-navigation-ex-anchor" href="#ruleissuer"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.13. Rule.issuer</h3>
+<p>&#x4E0E;&#x53D1;&#x51FA;&#x8BF7;&#x6C42;&#x7684;&#x6A21;&#x5757;&#x76F8;&#x5339;&#x914D;&#x7684;&#x6761;&#x4EF6;&#x3002;&#x5728;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;<code>a.js</code>&#x7684;<code>issuer</code>&#xFF0C;&#x8BF7;&#x6C42;&#x5C06;&#x662F;<code>index.js</code>&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x3002;</p>
+<p><strong>index.js</strong></p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> A <span class="token keyword">from</span> <span class="token string">&apos;./a.js&apos;</span>
+</code></pre>
+<p>&#x8BE5;&#x9009;&#x9879;&#x53EF;&#x7528;&#x4E8E;&#x5C06;loader&#x5E94;&#x7528;&#x4E8E;&#x7279;&#x5B9A;&#x6A21;&#x5757;&#x6216;&#x6A21;&#x5757;&#x96C6;&#x7684;&#x4F9D;&#x8D56;&#x9879;&#x3002;</p>
+<h3 id="ruleenforce"><a name="ruleenforce" class="anchor-navigation-ex-anchor" href="#ruleenforce"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.14. Rule.enforce</h3>
+<p>&#x7528;&#x4E8E;&#x6307;&#x5B9A; loader &#x79CD;&#x7C7B;&#x3002;&#x6CA1;&#x6709;&#x503C;&#x8868;&#x793A;&#x662F;&#x666E;&#x901A; loader&#x3002;</p>
+<p>&#x53EF;&#x80FD;&#x503C;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53D6;&#x503C;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">pre</td>
+<td style="text-align:left">&#x524D;&#x7F6E;loader</td>
+</tr>
+<tr>
+<td style="text-align:left">post</td>
+<td style="text-align:left">&#x540E;&#x7F6E;loader</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x7F3A;&#x7701;</td>
+<td style="text-align:left">&#x666E;&#x901A;loader</td>
+</tr>
+</tbody>
+</table>
+<p>loader&#x7684;&#x7C7B;&#x578B;&#x6709;&#x56DB;&#x79CD;&#xFF1A;<code>&#x524D;&#x7F6E;, &#x884C;&#x5185;, &#x666E;&#x901A;, &#x540E;&#x7F6E;</code>&#x3002;&#x6240;&#x6709; loader &#x90FD;&#x6309;&#x8FD9;&#x4E2A;&#x987A;&#x5E8F;&#x6392;&#x5E8F;&#xFF0C;&#x5E76;&#x6309;&#x6B64;&#x987A;&#x5E8F;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&quot;&#x884C;&#x5185; loader&quot;&#xFF0C;loader &#x88AB;&#x5E94;&#x7528;&#x5728; import/require &#x884C;&#x5185;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> Styles <span class="token keyword">from</span> <span class="token string">&apos;style-loader!css-loader?modules!./styles.css&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x6240;&#x6709;&#x666E;&#x901A; loader &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5728;&#x8BF7;&#x6C42;&#x4E2D;&#x52A0;&#x4E0A;<code>!</code>&#x524D;&#x7F00;&#x6765;&#x5FFD;&#x7565;&#xFF08;&#x8986;&#x76D6;&#xFF09;&#x3002;</p>
+<p>&#x6240;&#x6709;&#x666E;&#x901A;&#x548C;&#x524D;&#x7F6E; loader &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5728;&#x8BF7;&#x6C42;&#x4E2D;&#x52A0;&#x4E0A;<code>-!</code>&#x524D;&#x7F00;&#x6765;&#x5FFD;&#x7565;&#xFF08;&#x8986;&#x76D6;&#xFF09;&#x3002;</p>
+<p>&#x6240;&#x6709;&#x666E;&#x901A;&#xFF0C;&#x540E;&#x7F6E;&#x548C;&#x524D;&#x7F6E; loader &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5728;&#x8BF7;&#x6C42;&#x4E2D;&#x52A0;&#x4E0A;<code>!!</code>&#x524D;&#x7F00;&#x6765;&#x5FFD;&#x7565;&#xFF08;&#x8986;&#x76D6;&#xFF09;&#x3002;</p>
+<p>&#x4E0D;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x884C;&#x5185; loader &#x548C;<code>!</code>&#x524D;&#x7F00;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x662F;&#x975E;&#x6807;&#x51C6;&#x7684;&#x3002;&#x5B83;&#x4EEC;&#x53EF;&#x5728;&#x7531; loader &#x751F;&#x6210;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#x4F7F;&#x7528;&#x3002;</p>
+<h3 id="ruleparser"><a name="ruleparser" class="anchor-navigation-ex-anchor" href="#ruleparser"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.15. Rule.parser</h3>
+<p>&#x89E3;&#x6790;&#x9009;&#x9879;&#x5BF9;&#x8C61;&#x3002;&#x6240;&#x6709;&#x5E94;&#x7528;&#x7684;&#x89E3;&#x6790;&#x9009;&#x9879;&#x90FD;&#x5C06;&#x5408;&#x5E76;&#x3002;</p>
+<p>&#x89E3;&#x6790;&#x5668;(parser)&#x53EF;&#x4EE5;&#x67E5;&#x9605;&#x8FD9;&#x4E9B;&#x9009;&#x9879;&#xFF0C;&#x5E76;&#x76F8;&#x5E94;&#x5730;&#x7981;&#x7528;&#x6216;&#x91CD;&#x65B0;&#x914D;&#x7F6E;&#x3002;&#x5927;&#x591A;&#x6570;&#x9ED8;&#x8BA4;&#x63D2;&#x4EF6;&#xFF0C;&#x4F1A;&#x5982;&#x4E0B;&#x89E3;&#x91CA;&#x503C;&#xFF1A;</p>
+<ul>
+<li><p>&#x5C06;&#x9009;&#x9879;&#x8BBE;&#x7F6E;&#x4E3A;<code>false</code>&#xFF0C;&#x5C06;&#x7981;&#x7528;&#x89E3;&#x6790;&#x5668;&#x3002;</p>
+</li>
+<li><p>&#x5C06;&#x9009;&#x9879;&#x8BBE;&#x7F6E;&#x4E3A;<code>true</code>&#xFF0C;&#x6216;&#x4E0D;&#x4FEE;&#x6539;&#x5C06;&#x5176;&#x4FDD;&#x7559;&#x4E3A;<code>undefined</code>&#xFF0C;&#x53EF;&#x4EE5;&#x542F;&#x7528;&#x89E3;&#x6790;&#x5668;&#x3002;</p>
+</li>
+</ul>
+<p>&#x7136;&#x800C;&#xFF0C;&#x4E00;&#x4E9B;&#x89E3;&#x6790;&#x5668;(parser)&#x63D2;&#x4EF6;&#x53EF;&#x80FD;&#x4E0D;&#x5149;&#x53EA;&#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5185;&#x90E8;&#x7684;<code>NodeStuffPlugin</code>&#xFF0C;&#x53EF;&#x4EE5;&#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x4E0D;&#x662F;<code>true</code></p>
+<p>&#xFF0C;&#x6765;&#x4E3A;&#x7279;&#x5B9A;&#x7684;&#x89C4;&#x5219;&#x6DFB;&#x52A0;&#x989D;&#x5916;&#x7684;&#x9009;&#x9879;&#x3002;</p>
+<p><strong>&#x793A;&#x4F8B;&#xFF08;&#x9ED8;&#x8BA4;&#x63D2;&#x4EF6;&#x7684;&#x89E3;&#x6790;&#x5668;&#x9009;&#x9879;&#xFF09;</strong>&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">parser<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  amd<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x7981;&#x7528; AMD</span>
+  commonjs<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x7981;&#x7528; CommonJS</span>
+  system<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x7981;&#x7528; SystemJS</span>
+  harmony<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x7981;&#x7528; ES2015 Harmony import/export</span>
+  requireInclude<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x7981;&#x7528; require.include</span>
+  requireEnsure<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x7981;&#x7528; require.ensure</span>
+  requireContext<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x7981;&#x7528; require.context</span>
+  browserify<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x7981;&#x7528;&#x7279;&#x6B8A;&#x5904;&#x7406;&#x7684; browserify bundle</span>
+  requireJs<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x7981;&#x7528; requirejs.*</span>
+  node<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x7981;&#x7528; __dirname, __filename, module, require.extensions, require.main &#x7B49;&#x3002;</span>
+  node<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span> <span class="token comment" spellcheck="true">// &#x5728;&#x6A21;&#x5757;&#x7EA7;&#x522B;(module level)&#x4E0A;&#x91CD;&#x65B0;&#x914D;&#x7F6E; node &#x5C42;(layer)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="use-entries"><a name="use-entries" class="anchor-navigation-ex-anchor" href="#use-entries"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.16. UseEntry </h3>
+<p>&#x7C7B;&#x578B;&#xFF1A;object</p>
+<p>&#x5FC5;&#x987B;&#x6709;&#x4E00;&#x4E2A;<code>loader</code>&#x5C5E;&#x6027;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x5B83;&#x4F7F;&#x7528; loader &#x89E3;&#x6790;&#x9009;&#x9879;&#xFF08;<a href="resolve#resolveloader">resolveLoader</a>&#xFF09;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;&#x914D;&#x7F6E;&#x4E2D;&#x7684;<a href="context.html"><code>context</code></a>&#x6765;&#x89E3;&#x6790;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x6709;&#x4E00;&#x4E2A;<code>options</code>&#x5C5E;&#x6027;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x5BF9;&#x8C61;&#x3002;&#x503C;&#x53EF;&#x4EE5;&#x4F20;&#x9012;&#x5230; loader &#x4E2D;&#xFF0C;&#x5C06;&#x5176;&#x7406;&#x89E3;&#x4E3A; loader &#x9009;&#x9879;&#x3002;</p>
+<p>&#x7531;&#x4E8E;&#x517C;&#x5BB9;&#x6027;&#x539F;&#x56E0;&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x6709;<code>query</code>&#x5C5E;&#x6027;&#xFF0C;&#x5B83;&#x662F;<code>options</code>&#x5C5E;&#x6027;&#x7684;&#x522B;&#x540D;&#x3002;&#x4F7F;&#x7528;<code>options</code>&#x5C5E;&#x6027;&#x66FF;&#x4EE3;&#x3002;</p>
+<p><strong>&#x793A;&#x4F8B;&#xFF1A;</strong></p>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">{</span>
+  loader<span class="token punctuation">:</span> <span class="token string">&quot;css-loader&quot;</span><span class="token punctuation">,</span>
+  options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    modules<span class="token punctuation">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="rule&#x6761;&#x4EF6;"><a name="rule&#x6761;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#rule&#x6761;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. Rule&#x6761;&#x4EF6;</h2>
+<p>&#x6761;&#x4EF6;&#x53EF;&#x4EE5;&#x662F;&#x8FD9;&#x4E9B;&#x4E4B;&#x4E00;&#xFF1A;</p>
+<ul>
+<li>&#x5B57;&#x7B26;&#x4E32;&#xFF1A;&#x5339;&#x914D;&#x8F93;&#x5165;&#x5FC5;&#x987B;&#x4EE5;&#x63D0;&#x4F9B;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5F00;&#x59CB;&#x3002;&#x662F;&#x7684;&#x3002;&#x76EE;&#x5F55;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x6216;&#x6587;&#x4EF6;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x3002;</li>
+<li>&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#xFF1A;test &#x8F93;&#x5165;&#x503C;&#x3002;</li>
+<li>&#x51FD;&#x6570;&#xFF1A;&#x8C03;&#x7528;&#x8F93;&#x5165;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5FC5;&#x987B;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x771F;&#x503C;(truthy value)&#x4EE5;&#x5339;&#x914D;&#x3002;</li>
+<li>&#x6761;&#x4EF6;&#x6570;&#x7EC4;&#xFF1A;<strong>&#x81F3;&#x5C11;</strong>&#x4E00;&#x4E2A;&#x5339;&#x914D;&#x6761;&#x4EF6;&#x3002;</li>
+<li>&#x5BF9;&#x8C61;&#xFF1A;&#x5339;&#x914D;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x3002;&#x6BCF;&#x4E2A;&#x5C5E;&#x6027;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x5B9A;&#x4E49;&#x884C;&#x4E3A;&#x3002;</li>
+</ul>
+<p><code>{ test: Condition }</code>&#xFF1A;&#x5339;&#x914D;&#x7279;&#x5B9A;&#x6761;&#x4EF6;&#x3002;&#x4E00;&#x822C;&#x662F;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x6216;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x4F46;&#x8FD9;&#x4E0D;&#x662F;&#x5F3A;&#x5236;&#x7684;&#x3002;</p>
+<p><code>{ include: Condition }</code>&#xFF1A;&#x5339;&#x914D;&#x7279;&#x5B9A;&#x6761;&#x4EF6;&#x3002;&#x4E00;&#x822C;&#x662F;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x8005;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;&#xFF0C;&#x4F46;&#x8FD9;&#x4E0D;&#x662F;&#x5F3A;&#x5236;&#x7684;&#x3002;</p>
+<p><code>{ exclude: Condition }</code>&#xFF1A;&#x6392;&#x9664;&#x7279;&#x5B9A;&#x6761;&#x4EF6;&#x3002;&#x4E00;&#x822C;&#x662F;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;&#xFF0C;&#x4F46;&#x8FD9;&#x4E0D;&#x662F;&#x5F3A;&#x5236;&#x7684;&#x3002;</p>
+<p><code>{ and: [Condition] }</code>&#xFF1A;&#x5FC5;&#x987B;&#x5339;&#x914D;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x6761;&#x4EF6;</p>
+<p><code>{ or: [Condition] }</code>&#xFF1A;&#x5339;&#x914D;&#x6570;&#x7EC4;&#x4E2D;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x6761;&#x4EF6;</p>
+<p><code>{ not: [Condition] }</code>&#xFF1A;&#x5FC5;&#x987B;&#x6392;&#x9664;&#x8FD9;&#x4E2A;&#x6761;&#x4EF6;</p>
+<p><strong>&#x793A;&#x4F8B;:</strong></p>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">{</span>
+  test<span class="token punctuation">:</span> <span class="token regex">/\.css$/</span><span class="token punctuation">,</span>
+  include<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&quot;app/styles&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&quot;vendor/styles&quot;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="modulenoparse"><a name="modulenoparse" class="anchor-navigation-ex-anchor" href="#modulenoparse"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. module.noParse</h2>
+<p>&#x7C7B;&#x578B;&#xFF1A;RegExp | [RegExp] | function</p>
+<p>&#x9632;&#x6B62; webpack &#x89E3;&#x6790;&#x90A3;&#x4E9B;&#x4EFB;&#x4F55;&#x4E0E;&#x7ED9;&#x5B9A;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x76F8;&#x5339;&#x914D;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x5FFD;&#x7565;&#x7684;&#x6587;&#x4EF6;&#x4E2D;<strong>&#x4E0D;&#x5E94;&#x8BE5;&#x542B;&#x6709;</strong><code>import</code>&#xFF0C;<code>require</code>&#xFF0C;<code>define</code>&#x7684;&#x8C03;&#x7528;&#xFF0C;&#x6216;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x5BFC;&#x5165;&#x673A;&#x5236;&#x3002;&#x5FFD;&#x7565;&#x5927;&#x578B;&#x7684; library &#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x6784;&#x5EFA;&#x6027;&#x80FD;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token comment" spellcheck="true">// &#x4ECE; webpack 3.0.0 &#x5F00;&#x59CB;</span>
+noParse<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token regex">/jquery|lodash/</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//&#x8FD4;&#x56DE;&#x503C;&#x4E3A;&#x5E03;&#x5C14;&#x503C;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; tuzhu008 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-11-19 15:01:06
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="output.html" class="navigation navigation-prev " aria-label="Previous page: Output（输出）">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="resolve.html" class="navigation navigation-next " aria-label="Next page: Resolve（解析）">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Module（模块）","level":"1.5.4","depth":2,"next":{"title":"Resolve（解析）","level":"1.5.5","depth":2,"path":"configuration/resolve.md","ref":"configuration/resolve.md","articles":[]},"previous":{"title":"Output（输出）","level":"1.5.3","depth":2,"path":"configuration/output.md","ref":"configuration/output.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","anchor-navigation-ex","favicon","copy-code-button","alerts","splitter","book-summary-scroll-position-saver","include-codeblock","ace","prism","prism-themes","-highlight","tbfed-pagefooter","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tuzhu008 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"ace":{},"livereload":{},"book-summary-scroll-position-saver":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"favicon":{"shortcut":"assets/images/favicon.ico","bookmark":"assets/images/favicon.ico","appleTouch":"assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"assets/images/apple-touch-icon-120x120.png","180x180":"assets/images/apple-touch-icon-180x180.png"}},"prism-themes":{},"alerts":{},"expandable-chapters-small":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"ace","theme":"monokai","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"tuzhu008","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"webpack中文","language":"zh-hans","gitbook":"*","description":"webpack学习资料和过程记录"},"file":{"path":"configuration/module.md","mtime":"2017-11-19T07:01:06.623Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-19T10:06:42.089Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
