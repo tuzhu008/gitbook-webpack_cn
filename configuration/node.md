@@ -15,7 +15,7 @@
 * `"empty"`: 提供一个空对象。
 * `false`: 不提供任何东西。预期该对象的代码可能会产生`ReferenceError而`崩溃。试图使用`require('modulename')`导入模块的代码可能触发一个`Cannot find module "modulename"`错误。
 
-W&gt; Not every Node global supports all four options. The compiler will throw an error for property-value combinations that aren't supported \(e.g. `process: 'empty'`\). See the sections below for more details.并不是所有的节点都支持这四个选项。编译器将为不受支持的属性值组合抛出一个错误\(例如:进程:“pty”\)。更多细节请参见下面的部分。
+W&gt; Not every Node global supports all four options. The compiler will throw an error for property-value combinations that aren't supported \(e.g. `process: 'empty'`\). See the sections below for more details.并不是所有的Node 全局变量都支持这四个选项。编译器将为不受支持的属性值组合抛出一个错误\(例如:`process: 'empty'`\)。更多细节请参见下面的部分。
 
 These are the defaults:这些是默认值:
 
