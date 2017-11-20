@@ -38,7 +38,7 @@
 
 > **\[info\]** 注：
 >
-> `+++` 非常快, `++` 快, `+`  一般快, `o` 中等, `-` 一般慢 , `--` 慢
+> `+++` 特别快, `++` 非常快, `+`  一般快, `o` 中等, `-` 非常慢 , `--` 特别慢
 
 其中一些值适合于开发，一些用于生产。对于开发，您通常需要以包大小为代价的快速源映射（Source Maps ），但是对于生产，您需要独立的源映射（Source Maps），这些映射是准确的和支持最小化的。
 
@@ -70,27 +70,27 @@
 
 下面的选项是开发的理想选择:
 
-`eval` - Each module is executed with `eval()` and `//@ sourceURL`. This is pretty fast. The main disadvantage is that it doesn't display line numbers correctly since it gets mapped to transpiled code instead of the original code \(No Source Maps from Loaders\).
+`eval` - 每个模块都使用`eval()`和`//@ sourceURL`执行。这是非常快。主要的缺点是它没有正确地显示行号，因为它被映射到被转换的代码而不是原始代码\(没有来自Loader的源映射\)。
 
-`eval-source-map` - Each module is executed with `eval()` and a SourceMap is added as a DataUrl to the `eval()`. Initially it is slow, but it provides fast rebuild speed and yields real files. Line numbers are correctly mapped since it gets mapped to the original code. It yields the best quality SourceMaps for development.
+`eval-source-map` - 最初它是缓慢的，但是它提供了快速的重建速度并产生真实的文件。由于映射到原始代码，所以行号被正确映射。它为开发提供了最好的质量源映射。
 
-`cheap-eval-source-map` - Similar to `eval-source-map`, each module is executed with `eval()`. It is "cheap" because it doesn't have column mappings, it only maps line numbers. It ignores SourceMaps from Loaders and only display transpiled code similar to the `eval` devtool.
+`cheap-eval-source-map` - 与`eval-source-map`类似，每个模块都用`eval()`执行。它是“便宜”的，因为它没有列映射，它只映射行号。它忽略了来自Loader的源程序，只显示了与`eval` 开发工具类似的反编译代码。
 
-`cheap-module-eval-source-map` - Similar to `cheap-eval-source-map`, however, in this case Source Maps from Loaders are processed for better results. However Loader Source Maps are simplified to a single mapping per line.
+`cheap-module-eval-source-map` - 与`cheap-eval-source-map`类似，但是，在这种情况下，它会处理来自Loader的源映射以得到更好的借过。然而，Loader源映射\(Loader Source Maps\)被简化为每行一个映射。
 
 ### 特殊情况
 
-The following options are not ideal for development nor production. They are needed for some special cases, i. e. for some 3rd party tools.
+下面的选项不适合开发和生产。对于一些特殊的情况，需要一些特殊的选项，比如一些第三方工具。
 
-`inline-source-map` - A SourceMap is added as a DataUrl to the bundle.
+`inline-source-map` - 一个SourceMap作为一个DataUrl被添加到bundle中。
 
-`cheap-source-map` - A SourceMap without column-mappings ignoring loader Source Maps.
+`cheap-source-map` -一个没有列映射的SourceMap，忽略了loader源映射
 
-`inline-cheap-source-map` - Similar to `cheap-source-map` but SourceMap is added as a DataUrl to the bundle.
+`inline-cheap-source-map` -类似于`cheap-source-map` ，但是SourceMap作为一个DataUrl被添加到bundle中。
 
-`cheap-module-source-map` - A SourceMap without column-mappings that simplifies loader Source Maps to a single mapping per line.
+`cheap-module-source-map` - 一个没有列映射的SourceMap，它简化了loader源映射为每行一个映射。
 
-`inline-cheap-module-source-map` - Similar to `cheap-module-source-map` but SourceMap is added as a DataUrl to the bundle.
+`inline-cheap-module-source-map` -类似于 `cheap-module-source-map` ，但是SourceMap作为一个DataUrl被添加到bundle中。
 
 ### 生产
 
