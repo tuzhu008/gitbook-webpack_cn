@@ -87,7 +87,7 @@ T&gt; Note that both options can be combined like so `/* webpackMode: "lazy-once
 
 > **\[info\]** 注：
 
-&lt;br&gt;
+
 
 > **\[warning\]**注：
 
