@@ -68,7 +68,7 @@ node: {
 Options:
 
 * `true`: 相对于[`context` 选项](https://webpack.js.org/configuration/entry-context/#context) 的输入文件的文件名。
-* `false`: The regular Node.js `__filename` behavior. The filename of the **output** file when run in a Node.js environment.普通的Node.js ` __filename`行为。在 Node.js 环境中运行时输出文件的文件名。
+* `false`: The regular Node.js `__filename` behavior. The filename of the **output** file when run in a Node.js environment.普通的Node.js `__filename`行为。在 Node.js 环境中运行时输出文件的文件名。
 * `"mock"`: 固定值`“index.js”`。
 
 ### `node.__dirname`
@@ -80,7 +80,7 @@ Options:
 Options:
 
 * `true`: 相对于[`context` 选项](https://webpack.js.org/configuration/entry-context/#context) 的输入文件的目录名称 （dirname）。
-* `false`: 普通的Node.js ` __dirname`行为。在 Node.js 环境中运行时输出文件的dirname。
+* `false`: 普通的Node.js `__dirname`行为。在 Node.js 环境中运行时输出文件的dirname。
 * `"mock"`: 固定值" / "。
 
 ### `node.Buffer`
@@ -105,19 +105,15 @@ Options:
 
 当`NodeSourcePlugin`插件启用时，如果可以，来自[`node-libs-browser`](https://github.com/webpack/node-libs-browser)的 Node.js 核心库的Polyfills被使用。查看[Node.js 核心库和他们的polyfills](https://github.com/webpack/node-libs-browser#readme)。
 
-在默认情况下，webpack 将会在每个库中进行polyfills，如果有一个已知的polyfill，或者什么都不做的话。在后一种情况下，webpack会表现得好像模块名配置了`false`值。
+在默认情况下，如果有一个已知的polyfill，webpack 将会在每个库中进行polyfills，或者什么都不做。在后一种情况下，webpack会表现得好像模块名配置了`false`值。
 
-为了导入一个内置模块，使用非webpack请求，即非webpack请求\(“模块化”\)而不是要求\(“模块化”\)。
+> **\[info\]** 注：
+>
+> 为了导入一个内置模块，使用[`__non_webpack_require__`](https://webpack.js.org/api/module-variables/#__non_webpack_require__-webpack-specific-)，例如：`__non_webpack_require__('modulename')`而不是`require('modulename')`
 
-W&gt; This option is only activated \(via `NodeSourcePlugin`\) when the target is unspecified, "web" or "webworker".
 
-Polyfills for Node.js core libraries from [`node-libs-browser`](https://github.com/webpack/node-libs-browser) are used if available, when the `NodeSourcePlugin` plugin is enabled. See the list of [Node.js core libraries and their polyfills](https://github.com/webpack/node-libs-browser#readme).
 
-By default, webpack will polyfill each library if there is a known polyfill or do nothing if there is not one. In the latter case, webpack will behave as if the module name was configured with the `false` value.
-
-T&gt; To import a built-in module, use [`__non_webpack_require__`](/api/module-variables/#__non_webpack_require__-webpack-specific-), i.e. `__non_webpack_require__('modulename')` instead of `require('modulename')`.
-
-Example:
+示例:
 
 ```js
 node: {
