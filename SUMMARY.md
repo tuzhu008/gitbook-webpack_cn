@@ -25,24 +25,30 @@
   * [WatchOptions（观察模式选项）](configuration/watchOptions.md)
 
   * [Externals（外部扩展）](configuration/externals.md)
+
   * [Performance（性能）](configuration/performance.md)
   * [Node](configuration/node.md)
   * [Stats（统计）](//configuration/stats.md)
   * [OtherOptions（其他选项）](configuration/otherOptions.md)
 
 * [API](/API/README.md)
+
   * [命令行接口](/API/CLI.md)
   * Node.js API
   * Loader API
   * HMR
   * Stats
 
-  ### 模块
-
   * 模块方法
   * 模块变量
-
-  ### Plugins
+  * Plugins API
+  * Tapable
+  * Compiler
+  * Compilation
+  * Module Factories
+  * Resolve
+  * Parser
+  * Templates
 
 * [插件](/Plugins/README.md)
 
