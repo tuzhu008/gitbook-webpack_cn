@@ -1,8 +1,8 @@
 # OtherOptions（其他选项）
 
-These are the remaining configuration options supported by webpack.
+这些是webpack支持的其他配置选项。
 
-W> Help Wanted: This page is still a work in progress. If you are familiar with any of the options for which the description or examples are incomplete, please create an issue and submit a PR at the [docs repo](https://github.com/webpack/webpack.js.org)!
+> **[warning]** 注：Help Wanted: This page is still a work in progress. If you are familiar with any of the options for which the description or examples are incomplete, please create an issue and submit a PR at the [docs repo](https://github.com/webpack/webpack.js.org)!
 
 
 ## `amd`
