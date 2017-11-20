@@ -43,5 +43,21 @@ ignored: /node_modules/
 ignored: "files/**/*.js"
 ```
 
+### `watchOptions.poll`
+
+类型：boolean \| number
+
+通过传递`true`开启[polling](http://whatis.techtarget.com/definition/polling)，或者指定毫秒为单位进行轮询。
+
+```js
+poll: 1000 // 每秒检查一次变动
+```
+
+> **\[info\]** 注：
+>
+> 如果监听没生效，试试这个选项吧。Watch 在 NFS 和 VirtualBox 机器上不适用。
+
+
+
 
 
