@@ -107,7 +107,7 @@ import(
 
 ## CommonJS
 
-The goal of CommonJS is to specify an ecosystem for JavaScript outside the browser. The following CommonJS methods are supported by webpack:
+CommonJS的目标是在浏览器之外为JavaScript指定一个生态系统。下面的CommonJS方法是由webpack支持的:
 
 ### `require`
 
@@ -115,14 +115,16 @@ The goal of CommonJS is to specify an ecosystem for JavaScript outside the brows
 require(dependency: String)
 ```
 
-Synchronously retrieve the exports from another module. The compiler will ensure that the dependency is available in the output bundle.
+同步从另一个模块检索导出。编译器将确保依赖项在输出bundle中可用。
 
 ```javascript
 var $ = require("jquery");
 var myModule = require("my-module");
 ```
 
-W&gt; Using it asynchronously may not have the expected effect.
+> **\[warning\]**注：
+>
+> 异步地使用它可能没有预期的效果。
 
 ### `require.resolve`
 
@@ -130,15 +132,21 @@ W&gt; Using it asynchronously may not have the expected effect.
 require.resolve(dependency: String)
 ```
 
-Synchronously retrieve a module's ID. The compiler will ensure that the dependency is available in the output bundle. See [`module.id`](/api/module-variables#module-id-commonjs-) for more information.
+同步检索模块的ID。编译器将确保依赖项在输出bundle中可用。查看[`module.id`](/api/module-variables#module-id-commonjs-)以更多信息。
 
-W&gt; Module ID is a number in webpack \(in contrast to NodeJS where it is a string -- the filename\).
+> **\[warning\]**注：
+>
+> 模块ID是webpack中的一个数字\(与NodeJS相比，它是一个字符串——文件名\)。
 
 ### `require.cache`
 
-Multiple requires to the same module result in only one module execution and only one export. Therefore a cache in the runtime exists. Removing values from this cache cause new module execution and a new export.
+类型：数组
 
-W&gt; This is only needed in rare cases for compatibility!
+同一模块的多次require只会有一次模块执行和一次导出。因此在运行时存在一个缓存。从这个缓存中删除值会导致新的模块执行和新的导出。
+
+> **\[warning\]**注：
+>
+> 这种情况只需要在少数情况下进行兼容性！
 
 ```javascript
 var d1 = require("dependency");
