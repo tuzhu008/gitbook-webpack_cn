@@ -44,9 +44,9 @@
 
   * Module API
 
-    * 模块方法
+    * [Module Methods（模块方法）](/API/ModuleMethods.md)
 
-    * 模块变量
+    * [Medule Variables（模块变量）](/API/ModuleVariables.md)
 
   * Plugins API
 
@@ -55,6 +55,7 @@
   * Compiler
 
   * Compilation
+
   * Module Factories
   * Resolve
   * Parser
