@@ -178,13 +178,13 @@ webpack.js index=./src/index.js index2=./src/index2.js --output-path='./dist' --
 
 ## 模块配置
 
-这些配置可以用于绑定 Webpack 允许的[模块](/configuration/module/)。
+这些配置可以用于绑定 Webpack 允许的[模块](//configuration/module.md)。
 
-参数 | 说明 | 用法
--------------------- | ---------------------------------- | ----------------
-`--module-bind`      | 为 loader 绑定一个扩展 | `--module-bind js=babel-loader`
-`--module-bind-post` | 为 post loader 绑定一个扩展 |-
-`--module-bind-pre`  | 为 pre loader 绑定一个扩展 |-
+| 参数 | 说明 | 用法 |
+| --- | --- | --- |
+| `--module-bind` | 为 loader 绑定一个扩展 | `--module-bind js=babel-loader` |
+| `--module-bind-post` | 为 post loader 绑定一个扩展 | - |
+| `--module-bind-pre` | 为 pre loader 绑定一个扩展 | - |
 
 ## Watch 配置
 
@@ -212,11 +212,11 @@ webpack.js index=./src/index.js index2=./src/index2.js --output-path='./dist' --
 
 这些配置可以用于设置 webpack  [resolver](//configuration/resolve.md)时使用的别名\(alias\)和扩展名\(extension\)。
 
-参数   | 说明                      | 示例
----------------------- | ------------------------------------------------------- | -------------
---resolve-alias        | 指定模块的别名 | --resolve-alias jquery-plugin=jquery.plugin
---resolve-extensions   | 指定需要被处理的文件的扩展名 | --resolve-extensions .es6 .js .ts
---resolve-loader-alias | Minimize javascript and switches loaders to minimizing  |-
+| 参数 | 说明 | 示例 |
+| --- | --- | --- |
+| --resolve-alias | 指定模块的别名 | --resolve-alias jquery-plugin=jquery.plugin |
+| --resolve-extensions | 指定需要被处理的文件的扩展名 | --resolve-extensions .es6 .js .ts |
+| --resolve-loader-alias | Minimize javascript and switches loaders to minimizing | - |
 
 ## 统计数据配置
 
@@ -248,32 +248,79 @@ webpack.js index=./src/index.js index2=./src/index2.js --output-path='./dist' --
 
 ## 高级配置
 
-参数 | 说明 | 用法
------------------ | ---------------------------------------- | -----
-`--bail` | 一旦发生错误，立即终止 |-
-`--cache` | 开启缓存 [watch 时会默认打开] | `--cache=false`
-`--define` | 定义 bundle 中的任意自由变量，查看 [shimming](/guides/shimming) | `--define process.env.NODE_ENV='development'`
-`--hot`           | 开启[模块热替换](/concepts/hot-module-replacement) | `--hot=true`
-`--labeled-modules` | 开启模块标签 [使用 LabeledModulesPlugin] |-
-`--plugin`        | 加载某个[插件](/configuration/plugins/) |-
-`--prefetch`      | 预加载某个文件 | `--prefetch=./files.js`
-`--provide`       | 在所有模块中将这些模块提供为自由变量，查看 [shimming](/guides/shimming) | `--provide jQuery=jquery`
-`--records-input-path` | 记录文件的路径（读取） |-
-`--records-output-path` | 记录文件的路径（写入） |-
-`--records-path`  | 记录文件的路径 |-
-`--target`        | [目标](/configuration/target/)的执行环境 | `--target='node'`
+| 参数 | 说明 | 用法 |
+| --- | --- | --- |
+| `--bail` | 一旦发生错误，立即终止 | - |
+| `--cache` | 开启缓存 \[watch 时会默认打开\] | `--cache=false` |
+| `--define` | 定义 bundle 中的任意自由变量，查看 [shimming](/guides/shimming) | `--define process.env.NODE_ENV='development'` |
+| `--hot` | 开启[模块热替换](/concepts/hot-module-replacement) | `--hot=true` |
+| `--labeled-modules` | 开启模块标签 \[使用 LabeledModulesPlugin\] | - |
+| `--plugin` | 加载某个[插件](/configuration/plugins.md) | - |
+| `--prefetch` | 预加载某个文件 | `--prefetch=./files.js` |
+| `--provide` | 在所有模块中将这些模块提供为自由变量，查看 [shimming](/guides/shimming) | `--provide jQuery=jquery` |
+| `--records-input-path` | 记录文件的路径（读取） | - |
+| `--records-output-path` | 记录文件的路径（写入） | - |
+| `--records-path` | 记录文件的路径 | - |
+| `--target` | [目标](/configuration/target.md)的执行环境 | `--target='node'` |
 
 ## 简写
 
-简写 | 含义
----------|----------------------------
--d       | `--debug --devtool cheap-module-eval-source-map --output-pathinfo`
--p       | `--optimize-minimize --define process.env.NODE_ENV="production"`, see [building for production](/guides/production)
-
+| 简写 | 含义 |
+| --- | --- |
+| -d | `--debug --devtool cheap-module-eval-source-map --output-pathinfo` |
+| -p | `--optimize-minimize --define process.env.NODE_ENV="production"`, 参见 [生产构建 ](/guides/production) |
 
 ## Prolling
 
+`--profile`选项捕获编译时每个步骤的时间信息，并且将这些信息包含在输出中。
 
+```bash
+webpack --profile
+
+⋮
+[0] ./src/index.js 90 bytes {0} [built]
+    factory:22ms building:16ms = 38ms
+```
+
+对于每个模块，以下的详细信息都包含在输出中:
+
+* factory：收集模块元数据的时间\(例如，解析文件名\)
+
+* building：构建模块的时间\(例如加载器和解析\)
+* dependencies：识别和连接模块依赖关系的时间
+
+与`--progress`，`--profile`文件一起，让您深入了解编译过程中的哪一步需要花费多长时间。这可以帮助您以更有意识的方式优化您的构建。
+
+```bash
+webpack --progress --profile
+
+30ms building modules
+1ms sealing
+1ms optimizing
+0ms basic module optimization
+1ms module optimization
+1ms advanced module optimization
+0ms basic chunk optimization
+0ms chunk optimization
+1ms advanced chunk optimization
+0ms module and chunk tree optimization
+1ms module reviving
+0ms module order optimization
+1ms module id optimization
+1ms chunk reviving
+0ms chunk order optimization
+1ms chunk id optimization
+10ms hashing
+0ms module assets processing
+13ms chunk assets processing
+1ms additional chunk assets processing
+0ms recording
+0ms additional asset processing
+26ms chunk asset optimization
+1ms asset optimization
+6ms emitting
+⋮
+```
 
 
 
