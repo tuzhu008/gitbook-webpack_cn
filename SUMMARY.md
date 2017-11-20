@@ -42,15 +42,18 @@
   * [Node.js API](/API/API-Node.md)
   * [Loader API](/API/API-Loader.md)
 
-  * 模块方法
+  * Module API
 
-  * 模块变量
+    * 模块方法
+
+    * 模块变量
 
   * Plugins API
 
   * Tapable
 
   * Compiler
+
   * Compilation
   * Module Factories
   * Resolve
