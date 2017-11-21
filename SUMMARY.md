@@ -83,12 +83,13 @@
     * CopyWebpackPlugin
 
     * DefinePlugin
+
     * DllPlugin
+
     * EnvironmentPlugin
-    * ExtractTextWebpackPlugin
+
     * HashedModuleIdsPlugin
     * 模块热替换插件\(HotModuleReplacementPlugin\)
-    * HtmlWebpackPlugin
 
     * IgnorePlugin
 
@@ -101,7 +102,9 @@
     * ModuleConcatenationPlugin
 
     * NamedModulesPlugin
+
     * NoEmitOnErrorsPlugin
+
     * NormalModuleReplacementPlugin
     * NpmInstallWebpackPlugin
     * PrefetchPlugin
@@ -117,6 +120,8 @@
     * [BabelMinifyWebpackPlugin](Plugins/third-party/BabelMinifyWebpackPlugin.md)
     * [ChunkManifestWebpackPlugin](Plugins/third-party/ChunkManifestWebpackPlugin.md)
     * [ExtractTextWebpackPlugin](Plugins/third-party/ExtractTextWebpackPlugin.md)
+    * [HtmlWebpackPlugin](Plugins/third-party/HtmlWebpackPlugin.md)
+    * [WebpackManifestPlugin](Plugins/third-party/WebpackManifestPlugin.md)
 
 * [注意](Note.md)
 
