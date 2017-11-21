@@ -9,7 +9,7 @@
 * `applyPlugins*(name:string, …)`：Tapable实例可以使用这些函数将所有插件应用到特定的hash中。这组方法就像`EventEmitter`的`emit()`方法一样，通过各种策略精心地控制事件发射。
 * `mixin(pt: Object)`：一种简单的方法来扩展（extend）`Tapable`的原型（prototype），它将作为一个混合而不是继承被扩展。
 
-The different `applyPlugins*` methods cover the following use cases:
+不同的`applyPlugins*`方法包括以下用例:
 
 * Plugins can run serially.
 * Plugins can run in parallel.
