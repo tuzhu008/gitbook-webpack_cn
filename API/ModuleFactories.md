@@ -4,7 +4,7 @@
 
 ## `NormalModuleFactory`
 
-`before-resolve(data)` 瀑布式异步（waterfall）
+`before-resolve(data)`异步瀑布（waterfall）
 
 在工厂开始解决（resolving）之前。 `data` 对象有这些属性：
 
@@ -13,7 +13,7 @@
 
 允许插件修改对象或将一个新的类似对象传递给回调。
 
-`after-resolve(data)` 瀑布式异步（waterfall）
+`after-resolve(data)` 异步瀑布（waterfall）
 
 在工厂已经解决请求之后。`data` 对象有这些属性：
 
