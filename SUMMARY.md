@@ -70,13 +70,12 @@
 
     * [AggressiveSplittingPlugin](/Plugins/internal/AggressiveSplittingPlugin.md)
 
-    * ZopfliWebpackPlugin
-
-    * BannerPlugin
+    * [BannerPlugin](Plugins/internal/BannerPlugin.md)
 
     * CommonsChunkPlugin
 
     * ComponentWebpackPlugin
+
     * CompressionWebpackPlugin
     * ContextReplacementPlugin
     * CopyWebpackPlugin
@@ -91,6 +90,7 @@
     * IgnorePlugin
 
     * LimitChunkCountPlugin
+
     * LoaderOptionsPlugin
     * MinChunkSizePlugin
     * ModuleConcatenationPlugin
@@ -104,6 +104,7 @@
     * UglifyjsWebpackPlugin
     * WatchIgnorePlugin
     * I18nWebpackPlugin
+    * ZopfliWebpackPlugin
 
   * [三方插件](/Plugins/third-party/README.md)
 
