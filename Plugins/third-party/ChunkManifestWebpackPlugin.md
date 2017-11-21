@@ -1,29 +1,29 @@
 # chunk-manifest-webpack-plugin
 
-Allows exporting a JSON file that maps chunk ids to their resulting asset files. Webpack can then read this mapping, assuming it is provided somehow on the client, instead of storing a mapping (with chunk asset hashes) in the bootstrap script, which allows to actually leverage long-term caching.
+允许导出一个JSON文件，该文件将chunk id映射到其生成的资源文件。Webpack可以读取这个映射，假设它是在客户机上提供的，而不是在引导脚本中存储一个映射\(带有哈希化的chunk资产\)，这样就可以真正地利用长期缓存。
 
-## Usage
+## 用法
 
-Install via npm:
+通过npm安装：
 
 ```shell
 npm install --save-dev chunk-manifest-webpack-plugin
 ```
 
-Install via yarn:
+通过yarn安装：
 
 ```shell
 yarn add --dev chunk-manifest-webpack-plugin
 ```
 
-And then require and provide to webpack:
+然后require它，并提供到webpack:
 
-```javascript
-// in webpack.config.js or similar
+```js
+//  webpack.config.js 或类似的文件
 const ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
 
 module.exports = {
-  // your config values here
+  // 你的配置
   plugins: [
     new ChunkManifestPlugin({
       filename: 'manifest.json',
@@ -55,3 +55,6 @@ Whether or not to write the manifest output into the [html-webpack-plugin](https
     <%= htmlWebpackPlugin.files.webpackManifest %>
 </body>
 ```
+
+
+

@@ -72,12 +72,14 @@
 
     * [BannerPlugin](Plugins/internal/BannerPlugin.md)
 
-    * CommonsChunkPlugin
+    * [CommonsChunkPlugin](Plugins/internal/CommonsChunkPlugin.md)
 
     * ComponentWebpackPlugin
 
     * CompressionWebpackPlugin
+
     * ContextReplacementPlugin
+
     * CopyWebpackPlugin
     * DefinePlugin
     * DllPlugin
@@ -92,7 +94,9 @@
     * LimitChunkCountPlugin
 
     * LoaderOptionsPlugin
+
     * MinChunkSizePlugin
+
     * ModuleConcatenationPlugin
     * NamedModulesPlugin
     * NoEmitOnErrorsPlugin
@@ -109,6 +113,7 @@
   * [三方插件](/Plugins/third-party/README.md)
 
     * [BabelMinifyWebpackPlugin](Plugins/third-party/BabelMinifyWebpackPlugin.md)
+    * [ChunkManifestWebpackPlugin](Plugins/third-party/ChunkManifestWebpackPlugin.md)
 
 * [注意](Note.md)
 

@@ -222,7 +222,7 @@ new webpack.optimize.CommonsChunkPlugin({
 
 ## 组合隐式的公共vender chunk 和清单文件
 
-由于`vender`和`mainfest `chunk对`minChunks`使用不同的定义，您需要两次调用这个插件:
+由于`vender`和`mainfest`chunk对`minChunks`使用不同的定义，您需要两次调用这个插件:
 
 ```js
 [
@@ -237,7 +237,6 @@ new webpack.optimize.CommonsChunkPlugin({
     minChunks: Infinity
   }),
 ]
-
 ```
 
 ## 更多示例
