@@ -2,6 +2,8 @@
 
 [Tapable](https://github.com/webpack/tapable) is a small library that allows you to add and apply plugins to a javascript module. It can be inherited or mixed in to other modules. It is similar to NodeJS's `EventEmitter` class, focusing on custom event emission and manipulation. However, in addition to this, `Tapable` allows you to have access to the "emittee" or "producer" of the event through callbacks arguments.
 
+[Tapable](#) 是一个小型的库，允许您在javascript模块中添加和应用插件。它可以被继承或混合到其他模块中。它类似于NodeJS的`EventEmitter`类，主要关注自定义事件发射和操作。然而，除了这一点，`Tapable`允许你通过回调参数来访问事件的"emitter\(发射器）" 或 "producer（生产者）"。
+
 `Tapable` has four groups of member functions:
 
 * `plugin(name:string, handler:function)`: This allows a custom plugin to register into a **Tapable instance**'s event. This acts similar to the `on()` method of the `EventEmitter`, which is used for registering a handler/listener to do something when the signal/event happens.
