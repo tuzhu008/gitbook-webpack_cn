@@ -1,6 +1,6 @@
 # chunk-manifest-webpack-plugin
 
-
+![](https://img.shields.io/badge/Github-%E6%9F%A5%E7%9C%8B%E6%9B%B4%E5%A4%9A-brightgreen.svg)
 
 允许导出一个JSON文件，该文件将chunk id映射到其生成的资源文件。Webpack可以读取这个映射，假设它是在客户机上提供的，而不是在引导脚本中存储一个映射\(带有哈希化的chunk资产\)，这样就可以真正地利用长期缓存。
 
@@ -42,7 +42,7 @@ module.exports = {
 
 #### `filename`
 
-清单将被导出到包编译的地方。这将相对于主webpack输出目录。默认=` " manifest.json "`
+清单将被导出到包编译的地方。这将相对于主webpack输出目录。默认=`" manifest.json "`
 
 #### `manifestVariable`
 
