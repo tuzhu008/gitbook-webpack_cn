@@ -259,33 +259,35 @@ define({
 
 ### `require` \(amd-version\)
 
-```javascript
+```js
 require(dependencies: String[], [callback: function(...)])
 ```
 
 类似于`require.ensure`，这将把给定的`dependencies`划分为一个单独的bundle，它将被**异步**加载。`callback`将在`dependencies`数组中对每个依赖项的导出进行调用。
 
-> **\[warning\]**注：
+> **\[warning\] **注：
 >
 > 这个特性在内部依赖于[`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)。如果你在老旧浏览器\(例如 Internet Explorer 11\)中使用AMD，记得添加polyfill。如[es6-promise](#)或者[promise-polyfill](#)
 
-```javascript
+```js
 require(['b'], function(b) {
   var c = require("c");
 });
 ```
 
-W&gt; There is no option to provide a chunk name.
+> **\[warning\] **注:
+>
+> 没有提供指定chunk名称的选项。
 
 ## Labeled Modules
 
-The internal `LabeledModulesPlugin` enables you to use the following methods for exporting and requiring within your modules:
+内部的`LabeledModulesPlugin`使您可以使用以下方法来导出和请求您的模块:
 
-### `export` label
+### `export` 标签
 
-Export the given `value`. The label can occur before a function declaration or a variable declaration. The function name or variable name is the identifier under which the value is exported.
+导出给定的`value`。这个标签可以在函数声明或变量声明之前出现。函数名或变量名是输出值的标识符。
 
-```javascript
+```js
 export: var answer = 42;
 export: function method(value) {
   // Do something...
@@ -294,38 +296,42 @@ export: function method(value) {
 
 W&gt; Using it in an async function may not have the expected effect.
 
-### `require` label
+> **\[warning\] **注:
+>
+> 在异步函数中使用它可能没有预期的效果。
 
-Make all exports from the dependency available in the current scope. The `require` label can occur before a string. The dependency must export values with the `export` label. CommonJS or AMD modules cannot be consumed.
+### `require` 标签
+
+使当前范围内的依赖项中所有导出可用。`require`标签可以出现在字符串之前。依赖项必须导出带有`export`标签的值。不能使用CommonJS或AMD模块。
 
 **some-dependency.js**
 
-```javascript
+```js
 export: var answer = 42;
 export: function method(value) {
   // Do something...
 };
 ```
 
-```javascript
-require: 'some-dependency';
+```js
+require: 'some-dependency';// 依赖文件名称
 console.log(answer);
 method(...);
 ```
 
 ## Webpack
 
-Aside from the module syntaxes described above, webpack also allows a few custom, webpack-specific methods:
+除了上面提到的模块语法之外，webpack还允许一些自定义的、webpack特有的方法:
 
 ### `require.context`
 
-```javascript
-require.context(directory:String, includeSubdirs:Boolean /* optional, default true */, filter:RegExp /* optional */)
+```js
+require.context(directory:String, includeSubdirs:Boolean /* 可选, 默认值 true */, filter:RegExp /* 可选 */)
 ```
 
-Specify a whole group of dependencies using a path to the `directory`, an option to `includeSubdirs`, and a `filter` for more fine grained control of the modules included. These can then be easily resolved later on:
+使用`directory`的路径指定一组依赖项，一个`includeSubdirs`选项，以及一个对包含的模块进行更细粒度控制的`filter（过滤器）`。之后，这些问题就可以轻松解决了:
 
-```javascript
+```js
 var context = require.context('components', true, /\.html$/);
 var componentA = context.resolve('componentA');
 ```
@@ -336,45 +342,42 @@ var componentA = context.resolve('componentA');
 require.include(dependency: String)
 ```
 
-Include a `dependency` without executing it. This can be used for optimizing the position of a module in the output chunks.
+包含一个`dependency`而不执行它。这可以用于在输出chunk中优化模块的位置。
 
-```javascript
+```js
 require.include('a');
 require.ensure(['a', 'b'], function(require) { /* ... */ });
 require.ensure(['a', 'c'], function(require) { /* ... */ });
 ```
 
-This will result in following output:
+这将导致以下输出:
 
 * entry chunk: `file.js` and `a`
-* anonymous chunk: `b`
-* anonymous chunk: `c`
+* 匿名（anonymous）chunk: `b`
+* 匿名（anonymous）chunk: `c`
 
-Without `require.include('a')` it would be duplicated in both anonymous chunks.
+如果没有`require.include('a')`，它将被复制进匿名chunk中。
 
 ### `require.resolveWeak`
 
-Similar to `require.resolve`, but this won't pull the `module` into the bundle. It's what is considered a "weak" dependency.
+类似于`require.resolve`，但这不会将`module`拉入bundle中。这就是所谓的“弱\(weak\)”依赖性。
 
 ```javascript
 if(__webpack_modules__[require.resolveWeak('module')]) {
-  // Do something when module is available...
+  // 当模块可用时做一些事情...
 }
 if(require.cache[require.resolveWeak('module')]) {
-  // Do something when module was loaded before...
+  // 在模块加载之前做一些事情...
 }
 
-// You can perform dynamic resolves ("context")
-// just as with other require/import methods.
+// 你可以执行动态 resolves ("context")，就像其他的require/import方法一样。
 const page = 'Foo';
 __webpack_modules__[require.resolveWeak(`./page/${page}`)]
 ```
 
-T&gt; `require.resolveWeak` is the foundation of _universal rendering_ \(SSR + Code Splitting\), as used in packages such as [react-universal-component](https://github.com/faceyspacey/react-universal-component). It allows code to render synchronously on both the server and initial page-loads on the client. It requires that chunks are manually served or somehow available. It's able to require modules without indicating they should be bundled into a chunk. It's used in conjunction with `import()` which takes over when user navigation triggers additional imports.
-
----
-
-> 原文：[https://webpack.js.org/api/module-methods/](https://webpack.js.org/api/module-methods/)
+> **\[info\]** 注：
+>
+> `require.resolveWeak`是通用渲染\(SSR + 代码分割\)的基础\(SSR+代码分裂\)，就像在诸如[react-通用组件](https://github.com/faceyspacey/react-universal-component)这样的包中使用。它允许代码在客户机上同步地渲染服务器和初始页面加载。它要求chunk是被手动提供，或者是某种可用的。它能够请求（require）模块，而不需要指出它们应该被打包到一个chunk中。它与`import()`结合使用，当用户导航触发其他导入时，它将接管该操作。
 
 
 
