@@ -111,13 +111,13 @@ CommonJS的目标是在浏览器之外为JavaScript指定一个生态系统。�
 
 ### `require`
 
-```javascript
+```js
 require(dependency: String)
 ```
 
 同步从另一个模块检索导出。编译器将确保依赖项在输出bundle中可用。
 
-```javascript
+```js
 var $ = require("jquery");
 var myModule = require("my-module");
 ```
@@ -128,7 +128,7 @@ var myModule = require("my-module");
 
 ### `require.resolve`
 
-```javascript
+```js
 require.resolve(dependency: String)
 ```
 
@@ -148,14 +148,14 @@ require.resolve(dependency: String)
 >
 > 这种情况只需要在少数情况下进行兼容性！
 
-```javascript
+```js
 var d1 = require("dependency");
 require("dependency") === d1
 delete require.cache[require.resolve("dependency")];
 require("dependency") !== d1
 ```
 
-```javascript
+```js
 // in file.js
 require.cache[module.id] === module
 require("./file.js") === module.exports
@@ -167,17 +167,25 @@ require.cache[module.id] !== module
 
 ### `require.ensure`
 
-W&gt; `require.ensure()` is specific to webpack and superseded by `import()`.
+W&gt; `require.ensure()` is specific to webpack and s by `import()`.
+
+> **\[warning\]**注：
+>
+> `require.ensure()`是特定于webpack的，并被`import()`取代
 
 ```javascript
 require.ensure(dependencies: String[], callback: function(require), errorCallback: function(error), chunkName: String)
 ```
 
-Split out the given `dependencies` to a separate bundle that that will be loaded asynchronously. When using CommonJS module syntax, this is the only way to dynamically load dependencies. Meaning, this code can be run within execution, only loading the `dependencies` if certain conditions are met.
+将给定的`dependencies`拆分为一个单独的bundle，该bundle将被异步加载。在使用CommonJS模块语法时，这是动态加载依赖项的唯一方法。也就是说，这段代码可以在**执行上下文（**execution**）**中运行，只有在满足特定条件时才加载`dependencies`。
 
 W&gt; This feature relies on [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) internally. If you use `require.ensure` with older browsers, remember to shim `Promise` using a polyfill such as [es6-promise](https://github.com/stefanpenner/es6-promise) or [promise-polyfill](https://github.com/taylorhakes/promise-polyfill).
 
-```javascript
+> **\[warning\]**注：
+>
+> 这个特性在内部依赖于[`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)。如果你在老旧浏览器中使用`require.ensure`，记得添加polyfill。如[es6-promise](#)或者[promise-polyfill](#)
+
+```js
 var a = require('normal-dep');
 
 if ( module.hot ) {
@@ -189,30 +197,34 @@ if ( module.hot ) {
 }
 ```
 
-The following parameters are supported in the order specified above:
+以下参数按照上面指定的顺序来阐述:
 
-* `dependencies`: An array of strings declaring all modules required for the code in the `callback` to execute.
-* `callback`: A function that webpack will execute once the dependencies are loaded. An implementation of the `require` function is sent as a parameter to this function. The function body can use this to further `require()` modules it needs for execution.
-* `errorCallback`: A function that is executed when webpack fails to load the dependencies.
-* `chunkName`: A name given to the chunk created by this particular `require.ensure()`. By passing the same `chunkName` to various `require.ensure()` calls, we can combine their code into a single chunk, resulting in only one bundle that the browser must load.
+* `dependencies`:  字符串数组，声明要执行的`callback`中的代码所需要的所有模块。
+* `callback`:  回调函数，一旦加载了依赖项，webpack将会执行它。`require`函数的实现被作为参数发送给这个函数。函数体可以使用它来进一步`require()`它需要执行的模块。
+* `errorCallback`:  当webpack无法加载依赖项时执行的函数。
+* `chunkName`:  这个特定的`require.ensure()`所创建的chunk的名称。通过将相同的`chunkName`传递给各种`require.ensure()`调用，我们可以将它们的代码合并到一个单独的chunk中，只产生一个浏览器必须加载的bundle。
 
-W&gt; Although the implementation of `require` is passed as an argument to the `callback` function, using an arbitrary name e.g. `require.ensure([], function(request) { request('someModule'); })` isn't handled by webpack's static parser. Use `require` instead, e.g. `require.ensure([], function(require) { require('someModule'); })`.
+> **\[warning\]**注：
+>
+> 尽管`require`的实现被作为一个参数传递给`callback`函数，在`callback`中可以使用一个任意的名称，不是由webpack的静态解析器处理的，例如`equire.ensure([], function(request) { request('someModule'); })。`所以请使用`require`代替，例如`require.ensure([], function(require) { require('someModule'); })`。
 
 ## AMD
 
-Asynchronous Module Definition \(AMD\) is a JavaScript specification that defines an interface for writing and loading modules. The following AMD methods are supported by webpack:
+异步模块定义\(AMD\)是一个JavaScript规范，它定义了一个用于编写和加载模块的接口。以下的AMD方法是被webpack支持的:
 
-### `define` \(with factory\)
+### `define` \(使用工厂函数\)
 
-```javascript
+```js
 define([name: String], [dependencies: String[]], factoryMethod: function(...))
 ```
 
-If `dependencies` are provided, `factoryMethod` will be called with the exports of each dependency \(in the same order\). If `dependencies` are not provided, `factoryMethod` is called with `require`, `exports` and `module` \(for compatibility!\). If this function returns a value, this value is exported by the module. The compiler ensures that each dependency is available.
+如果提供了`dependencies`，那么将使用每个依赖项的导出\(按照相同的顺序\)调用`factoryMethod`。如果不提供`dependencies`，则会使用`require`、`exports`和`module`\(为了兼容性！\)调用`factoryMethod`。如果该函数返回一个值，则该值将由模块导出。编译器确保每个依赖项都可用
 
-W&gt; Note that webpack ignores the `name` argument.
+> **\[warning\]**注：
+>
+> webpack忽略了`name`参数。
 
-```javascript
+```js
 define(['jquery', 'my-module'], function($, myModule) {
   // Do something with $ and myModule...
 
@@ -223,23 +235,27 @@ define(['jquery', 'my-module'], function($, myModule) {
 });
 ```
 
-W&gt; This CANNOT be used in an asynchronous function.
+> **\[warning\]**注：
+>
+> 这**不能**在异步函数中使用。
 
-### `define` \(with value\)
+### `define` \(使用 value\)
 
-```javascript
+```js
 define(value: !Function)
 ```
 
-This will simply export the provided `value`. The `value` here can be anything except a function.
+这将简单地导出所提供的`value`。这里的`value`可以是任何东西，只要**不是**一个函数。
 
-```javascript
+```js
 define({
   answer: 42
 });
 ```
 
-W&gt; This CANNOT be used in an async function.
+> **\[warning\]**注
+>
+> 这**不能**在异步函数中使用。
 
 ### `require` \(amd-version\)
 
@@ -247,9 +263,11 @@ W&gt; This CANNOT be used in an async function.
 require(dependencies: String[], [callback: function(...)])
 ```
 
-Similar to `require.ensure`, this will split the given `dependencies` into a separate bundle that will be loaded asynchronously. The `callback` will be called with the exports of each dependency in the `dependencies` array.
+类似于`require.ensure`，这将把给定的`dependencies`划分为一个单独的bundle，它将被**异步**加载。`callback`将在`dependencies`数组中对每个依赖项的导出进行调用。
 
-W&gt; This feature relies on [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) internally. If you use AMD with older browsers \(e.g. Internet Explorer 11\), remember to shim `Promise` using a polyfill such as [es6-promise](https://github.com/stefanpenner/es6-promise) or [promise-polyfill](https://github.com/taylorhakes/promise-polyfill).
+> **\[warning\]**注：
+>
+> 这个特性在内部依赖于[`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)。如果你在老旧浏览器\(例如 Internet Explorer 11\)中使用AMD，记得添加polyfill。如[es6-promise](#)或者[promise-polyfill](#)
 
 ```javascript
 require(['b'], function(b) {
