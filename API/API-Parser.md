@@ -76,9 +76,5 @@ compiler.parser.plugin("var rewire", function (expr) {
 
 对成功鉴定的表达式的成员函数的调用求值。
 
----
-
-> 原文：[https://webpack.js.org/api/plugins/parser/](https://webpack.js.org/api/plugins/parser/)
-
 
 
