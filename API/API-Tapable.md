@@ -11,17 +11,17 @@
 
 不同的`applyPlugins*`方法包括以下用例:
 
-* Plugins can run serially.
-* Plugins can run in parallel.
-* Plugins can run one after the other but taking input from the previous plugin \(waterfall\).
-* Plugins can run asynchronously.
-* Quit running plugins on bail: that is, once one plugin returns non-`undefined`, jump out of the run flow and return _the return of that plugin_. This sounds like `once()` of `EventEmitter` but is totally different.
+* 插件可以串联（serially）运行。
+* 插件可以并行运行。
+* 插件可以一个接一个地运行，但是从以前的插件\(瀑布waterfall\)中获取输入（将之前的插件结果作为参数）。
+* 插件可以异步运行。
+* 在bail上退出运行的插件：也就是说，一旦一个插件返回`非未定义`的状态，跳出运行流并返回那个插件的返回值。这听起来像是`EventEmitter`的`once()`，但却完全不同。
 
-## Example
+## 示例
 
-One of webpack's _Tapable_ instances, [Compiler](/api/compiler), is responsible for compiling the webpack configuration object and returning a [Compilation](/api/compilation) instance. When the Compilation instance runs, it creates the required bundles.
+webpack的可Tapable实例之一，[编译器](//API/API-Compiler.md)，负责编译webpack配置对象，并返回一个[编译](//API/API-Compilation.md)实例。当编译实例运行时，它会创建所需的bundle。
 
-See below for a simplified version of how this looks using `Tapable`:
+以下是如何使用`Tapable`的简化版本:
 
 **node\_modules/webpack/lib/Compiler.js**
 
@@ -35,7 +35,7 @@ function Compiler() {
 Compiler.prototype = Object.create(Tapable.prototype);
 ```
 
-Now to write a plugin on the compiler,
+现在在编译器上写一个插件
 
 **my-custom-plugin.js**
 
@@ -46,12 +46,12 @@ CustomPlugin.prototype.apply = function(compiler) {
 }
 ```
 
-The compiler executes the plugin at the appropriate point in its lifecycle by
+编译器在其生命周期的适当点上执行该插件：
 
 **node\_modules/webpack/lib/Compiler.js**
 
 ```js
-this.apply*("emit",options) // will fetch all plugins under 'emit' name and run them.
+this.apply*("emit",options) // 将会获取'emit'名字下的所有插件，并运行它们。
 ```
 
 
