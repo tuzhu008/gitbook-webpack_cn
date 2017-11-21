@@ -86,36 +86,36 @@ webpack([config1, config2], (err, stats) => {
 })
 ```
 
-## Event Hooks
+## 事件钩子（Event Hooks）
 
-This a reference guide to all the event hooks exposed by the `Compiler`.
+这是编译`Compiler`暴露的的所有事件钩子的参考指南。
 
 | Event name | Reason | Params | Type |
 | --- | --- | --- | --- |
 | `entry-option` | - | - | bailResult |
-| `after-plugins` | After setting up initial set of plugins | `compiler` | sync |
-| `after-resolvers` | After setting up the resolvers | `compiler` | sync |
+| `after-plugins` | 在设置了初始的插件集之后 | `compiler` | sync |
+| `after-resolvers` | 在设置了解析器（resolver）之后 | `compiler` | sync |
 | `environment` | - | - | sync |
-| `after-environment` | Environment setup complete | - | sync |
-| `before-run` | `compiler.run()` starts | `compiler` | async |
-| `run` | Before reading records | `compiler` | async |
-| `watch-run` | Before starting compilation after watch | `compiler` | async |
-| `normal-module-factory` | After creating a `NormalModuleFactory` | `normalModuleFactory` | sync |
-| `context-module-factory` | After creating a `ContextModuleFactory` | `contextModuleFactory` | sync |
-| `before-compile` | Compilation parameters created | `compilationParams` | async |
-| `compile` | Before creating new compilation | `compilationParams` | sync |
-| `this-compilation` | Before emitting `compilation` event | `compilation` | sync |
-| `compilation` | Compilation creation completed | `compilation` | sync |
+| `after-environment` | 环境设置完成 | - | sync |
+| `before-run` | `compiler.run() 开始` | `compiler` | async |
+| `run` | 在阅读记录之前 | `compiler` | async |
+| `watch-run` | 观察之后，编译之前 | `compiler` | async |
+| `normal-module-factory` | 创建`NormalModuleFactory之后` | `normalModuleFactory` | sync |
+| `context-module-factory` | 创建`ContextModuleFactory 之后` | `contextModuleFactory` | sync |
+| `before-compile` | 编译参数创建完成 | `compilationParams` | async |
+| `compile` | 创建一个新的编译之前 | `compilationParams` | sync |
+| `this-compilation` | 发送`compilation`事件之前 | `compilation` | sync |
+| `compilation` | 编译（Compilation）创建完成 | `compilation` | sync |
 | `make` | - | `compilation` | parallel |
 | `after-compile` | - | `compilation` | async |
-| `should-emit` | Can return true/false at this point | `compilation` | bailResult |
+| `should-emit` | 此时可以返回true/false | `compilation` | bailResult |
 | `need-additional-pass` | - | - | bailResult |
-| `emit` | Before emitting assets to output dir | `compilation` | async |
-| `after-emit` | After emitting assets to output dir | `compilation` | async |
-| `done` | Completion of compile | `stats` | sync |
-| `failed` | Failure of compile | `error` | sync |
-| `invalid` | After invalidating a watch compile | `fileName`, `changeTime` | sync |
-| `watch-close` | After stopping a watch compile | - | sync |
+| `emit` | 在将资产发送到输出目录之前 | `compilation` | async |
+| `after-emit` | 将资产发送到输出目录之后 | `compilation` | async |
+| `done` | 完成编译 | `stats` | sync |
+| `failed` | 编译失败 | `error` | sync |
+| `invalid` | 在观察编译失效后 | `fileName`, `changeTime` | sync |
+| `watch-close` | 在停止观察编译之后 | - | sync |
 
 ## Usage
 
