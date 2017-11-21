@@ -4,9 +4,8 @@ webpack本身内置了很多插件。
 
 | 名称 | 描述 |
 | --- | --- |
-| [`AggressiveSplittingPlugin`](/plugins/aggressive-splitting-plugin) | 将原始chunk分割成更小的chunk |
-| [`BabelMinifyWebpackPlugin`](/plugins/babel-minify-webpack-plugin) | Minification with [babel-minify](https://github.com/babel/minify) |
-| [`BannerPlugin`](/plugins/banner-plugin) | Add a banner to the top of each generated chunk |
+| [`AggressiveSplittingPlugin`](//Plugins/internal/AggressiveSplittingPlugin.md) | 将原始chunk分割成更小的chunk |
+| [`BannerPlugin`](/Plugins/internal/BannerPlugin.md) | Add a banner to the top of each generated chunk |
 | [`CommonsChunkPlugin`](/plugins/commons-chunk-plugin) | Extract common modules shared between chunks |
 | [`ComponentWebpackPlugin`](/plugins/component-webpack-plugin) | Use components with webpack |
 | [`CompressionWebpackPlugin`](/plugins/compression-webpack-plugin) | Prepare compressed versions of assets to serve them with Content-Encoding |

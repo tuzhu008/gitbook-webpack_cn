@@ -65,13 +65,17 @@
   * [Templates（模板）](/API/API-Templates.md)
 
 * [插件](/Plugins/README.md)
-  * [内置插件](/Plugins/internal/README.md)
-    * AggressiveSplittingPlugin
 
-    * ZopfliWebpackPlugin
-    * BannerPlugin
+  * [内置插件](/Plugins/internal/README.md)
+
+    * [AggressiveSplittingPlugin](/Plugins/internal/AggressiveSplittingPlugin.md)
+
+    * [BannerPlugin](Plugins/internal/BannerPlugin.md)
+
     * CommonsChunkPlugin
+
     * ComponentWebpackPlugin
+
     * CompressionWebpackPlugin
     * ContextReplacementPlugin
     * CopyWebpackPlugin
@@ -82,9 +86,11 @@
     * HashedModuleIdsPlugin
     * 模块热替换插件\(HotModuleReplacementPlugin\)
     * HtmlWebpackPlugin
-    * BabelMinifyWebpackPlugin
+
     * IgnorePlugin
+
     * LimitChunkCountPlugin
+
     * LoaderOptionsPlugin
     * MinChunkSizePlugin
     * ModuleConcatenationPlugin
@@ -98,8 +104,11 @@
     * UglifyjsWebpackPlugin
     * WatchIgnorePlugin
     * I18nWebpackPlugin
+    * ZopfliWebpackPlugin
 
   * [三方插件](/Plugins/third-party/README.md)
+
+    * [BabelMinifyWebpackPlugin](Plugins/third-party/BabelMinifyWebpackPlugin.md)
 
 * [注意](Note.md)
 
