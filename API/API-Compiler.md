@@ -1,10 +1,18 @@
+# Compiler（编译器）
+
 The `Compiler` module of webpack is the main engine that creates a compilation instance with all the options passed through webpack CLI or `webpack` api or webpack configuration file.
 
 It is exported by `webpack` api under `webpack.Compiler`.
 
 The compiler is used by webpack by instantiating it and then calling the `run` method. Below is a trivial example of how one might use the `Compiler`. In fact, this is really close to how webpack itself uses it.
 
-[__compiler-example__](https://github.com/pksjce/webpack-internal-examples/tree/master/compiler-example)
+webpack的`Compiler`模块**是**通过webpack CLI或`webpack` api或webpack配置文件传递的所有选项创建一个**编译实例**的**主引擎**（engine）。
+
+它是由`webpack.Compiler`下的**webpack** api导出的。
+
+webpack通过实例化它，然后调用`run`方法来使用编译器。下面是一个关于如何使用`Compiler`的简单示例。事实上，这与webpack本身的使用方式非常接近。
+
+[**compiler-example**](https://github.com/pksjce/webpack-internal-examples/tree/master/compiler-example)
 
 ```javascript
 // Can be imported from webpack package
@@ -43,13 +51,12 @@ compiler.run(callback);
 
 The `Compiler` is what we call a `Tapable` instance. By this, we mean that it mixes in `Tapable` class to imbibe functionality to register and call plugins on itself. Most user facing plugins are first registered on the `Compiler`. The working of a Compiler can be condensed into the following highlights
 
-- Usually there is one master instance of Compiler. Child compilers can be created for delegating specific tasks.
-- A lot of the complexity in creating a compiler goes into populating all the relevant options for it.
-- `webpack` has [`WebpackOptionsDefaulter`](https://github.com/webpack/webpack/blob/master/lib/WebpackOptionsDefaulter.js) and [`WebpackOptionsApply`](https://github.com/webpack/webpack/blob/master/lib/WebpackOptionsApply.js) specifically designed to provide the `Compiler` with all the initial data it requires.
-- The `Compiler` is ultimately just a function which performs bare minimum functionality to keep a lifecycle running. It delegates all the loading/bundling/writing work to various plugins.
-- `new LogPlugin(args).apply(compiler)` registers the plugin to any particular hook event in the `Compiler`'s lifecycle.
-- The `Compiler` exposes a `run` method which kickstarts all compilation work for `webpack`. When that is done, it should call the passed in `callback` function. All the tail end work of logging stats and errors are done in this callback function.
-
+* Usually there is one master instance of Compiler. Child compilers can be created for delegating specific tasks.
+* A lot of the complexity in creating a compiler goes into populating all the relevant options for it.
+* `webpack` has [`WebpackOptionsDefaulter`](https://github.com/webpack/webpack/blob/master/lib/WebpackOptionsDefaulter.js) and [`WebpackOptionsApply`](https://github.com/webpack/webpack/blob/master/lib/WebpackOptionsApply.js) specifically designed to provide the `Compiler` with all the initial data it requires.
+* The `Compiler` is ultimately just a function which performs bare minimum functionality to keep a lifecycle running. It delegates all the loading/bundling/writing work to various plugins.
+* `new LogPlugin(args).apply(compiler)` registers the plugin to any particular hook event in the `Compiler`'s lifecycle.
+* The `Compiler` exposes a `run` method which kickstarts all compilation work for `webpack`. When that is done, it should call the passed in `callback` function. All the tail end work of logging stats and errors are done in this callback function.
 
 ## Watching
 
@@ -57,10 +64,9 @@ The `Compiler` supports "watch mode" which monitors the file system and recompil
 
 For more details about watch mode, see the [Node.js API documentation](/api/node/#watching) or the [CLI watch options](/api/cli/#watch-options).
 
-
 ## MultiCompiler
 
-This module, MultiCompiler, allows webpack to run multiple configurations in separate compiler.
+This module, MultiCompiler, allows webpack to run multiple configurations in separate compiler.  
 If the `options` parameter in the webpack's NodeJS api is an array of options, webpack applies separate compilers and calls the `callback` method at the end of each compiler execution.
 
 ```javascript
@@ -80,38 +86,36 @@ webpack([config1, config2], (err, stats) => {
 })
 ```
 
-
 ## Event Hooks
 
 This a reference guide to all the event hooks exposed by the `Compiler`.
 
-Event name                    | Reason                                  | Params                    | Type
------------------------------ | --------------------------------------- | ------------------------- | ----------
-__`entry-option`__            | -                                       | -                         | bailResult
-__`after-plugins`__           | After setting up initial set of plugins | `compiler`                | sync
-__`after-resolvers`__         | After setting up the resolvers          | `compiler`                | sync
-__`environment`__             | -                                       | -                         | sync
-__`after-environment`__       | Environment setup complete              | -                         | sync
-__`before-run`__              | `compiler.run()` starts                 | `compiler`                | async
-__`run`__                     | Before reading records                  | `compiler`                | async
-__`watch-run`__               | Before starting compilation after watch | `compiler`                | async
-__`normal-module-factory`__   | After creating a `NormalModuleFactory`  | `normalModuleFactory`     | sync
-__`context-module-factory`__  | After creating a `ContextModuleFactory` | `contextModuleFactory`    | sync
-__`before-compile`__          | Compilation parameters created          | `compilationParams`       | async
-__`compile`__                 | Before creating new compilation         | `compilationParams`       | sync
-__`this-compilation`__        | Before emitting `compilation` event     | `compilation`             | sync
-__`compilation`__             | Compilation creation completed          | `compilation`             | sync
-__`make`__                    | -                                       | `compilation`             | parallel
-__`after-compile`__           | -                                       | `compilation`             | async
-__`should-emit`__             | Can return true/false at this point     | `compilation`             | bailResult
-__`need-additional-pass`__    | -                                       | -                         | bailResult
-__`emit`__                    | Before emitting assets to output dir    | `compilation`             | async
-__`after-emit`__              | After emitting assets to output dir     | `compilation`             | async
-__`done`__                    | Completion of compile                   | `stats`                   | sync
-__`failed`__                  | Failure of compile                      | `error`                   | sync
-__`invalid`__                 | After invalidating a watch compile      | `fileName`, `changeTime`  | sync
-__`watch-close`__             | After stopping a watch compile          | -                         | sync
-
+| Event name | Reason | Params | Type |
+| --- | --- | --- | --- |
+| `entry-option` | - | - | bailResult |
+| `after-plugins` | After setting up initial set of plugins | `compiler` | sync |
+| `after-resolvers` | After setting up the resolvers | `compiler` | sync |
+| `environment` | - | - | sync |
+| `after-environment` | Environment setup complete | - | sync |
+| `before-run` | `compiler.run()` starts | `compiler` | async |
+| `run` | Before reading records | `compiler` | async |
+| `watch-run` | Before starting compilation after watch | `compiler` | async |
+| `normal-module-factory` | After creating a `NormalModuleFactory` | `normalModuleFactory` | sync |
+| `context-module-factory` | After creating a `ContextModuleFactory` | `contextModuleFactory` | sync |
+| `before-compile` | Compilation parameters created | `compilationParams` | async |
+| `compile` | Before creating new compilation | `compilationParams` | sync |
+| `this-compilation` | Before emitting `compilation` event | `compilation` | sync |
+| `compilation` | Compilation creation completed | `compilation` | sync |
+| `make` | - | `compilation` | parallel |
+| `after-compile` | - | `compilation` | async |
+| `should-emit` | Can return true/false at this point | `compilation` | bailResult |
+| `need-additional-pass` | - | - | bailResult |
+| `emit` | Before emitting assets to output dir | `compilation` | async |
+| `after-emit` | After emitting assets to output dir | `compilation` | async |
+| `done` | Completion of compile | `stats` | sync |
+| `failed` | Failure of compile | `error` | sync |
+| `invalid` | After invalidating a watch compile | `fileName`, `changeTime` | sync |
+| `watch-close` | After stopping a watch compile | - | sync |
 
 ## Usage
 
@@ -126,3 +130,6 @@ compiler.plugin("emit", function(compilation, callback) {
   }, 1000);
 });
 ```
+
+
+
