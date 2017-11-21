@@ -117,9 +117,9 @@ webpack([config1, config2], (err, stats) => {
 | `invalid` | 在观察编译失效后 | `fileName`, `changeTime` | sync |
 | `watch-close` | 在停止观察编译之后 | - | sync |
 
-## Usage
+## 用法
 
-Here's an example of an asynchronous `emit` event handler:
+下面是一个异步`emit`事件处理程序的例子:
 
 ```javascript
 compiler.plugin("emit", function(compilation, callback) {
