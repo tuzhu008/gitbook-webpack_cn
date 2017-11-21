@@ -34,11 +34,11 @@ html-webpack-plugin 提供了[钩子](#事件)来扩展它以满足您的需要�
 | [html-webpack-exclude-assets-plugin](https://github.com/jamesjieye/html-webpack-exclude-assets-plugin) | 使用正则表达式排除资源 |
 | [html-webpack-include-assets-plugin](https://github.com/jharris4/html-webpack-include-assets-plugin) | 包含js或css文件路径的列表\(如copy-webpack-plugin复制的文件\)。 |
 | [script-ext-html-webpack-plugin](https://github.com/numical/script-ext-html-webpack-plugin) | 添加 `async`, `defer` 或者 `module` 属性到`<script>` 元素，或者甚至是内联他们 |
-| [style-ext-html-webpack-plugin](https://github.com/numical/style-ext-html-webpack-plugin) |  将`<link>的外部样式表转换到<style>元素包含的内部`CSS |
-| [resource-hints-webpack-plugin](https://github.com/jantimon/resource-hints-webpack-plugin) | to add resource hints for faster initial page loads using `<link rel='preload'>` and `<link rel='prefetch'>` |
-| [preload-webpack-plugin](https://github.com/GoogleChrome/preload-webpack-plugin) | for automatically wiring up asynchronous \(and other types\) of JavaScript chunks using `<link rel='preload'>` helping with lazy-loading |
-| [link-media-html-webpack-plugin](https://github.com/yaycmyk/link-media-html-webpack-plugin) | allows for injected stylesheet `<link />` tags to have their media attribute set automatically; useful for providing specific desktop/mobile/print etc. stylesheets that the browser will conditionally download |
-| [inline-chunk-manifest-html-webpack-plugin](https://github.com/jouni-kantola/inline-chunk-manifest-html-webpack-plugin) | for inlining webpack's chunk manifest. Default extracts manifest and inlines in `<head>` |
+| [style-ext-html-webpack-plugin](https://github.com/numical/style-ext-html-webpack-plugin) | 将`<link>的外部样式表转换到<style>元素包含的内部`CSS |
+| [resource-hints-webpack-plugin](https://github.com/jantimon/resource-hints-webpack-plugin) | `使用<link rel='preload'>` 和 `<link rel='prefetch'>添加资源提示以获得更快的初始页面加载` |
+| [preload-webpack-plugin](https://github.com/GoogleChrome/preload-webpack-plugin) | 使用`<link rel='preload'>`协助懒加载来自动连接异步\(和其他类型\)的JavaScript块，。 |
+| [link-media-html-webpack-plugin](https://github.com/yaycmyk/link-media-html-webpack-plugin) | 允许注入样式表`<link />`标签来自动地设置它们的媒体属性;可以提供特定的桌面/移动/打印等样式表，浏览器将有条件地下载这些样式表 |
+| [inline-chunk-manifest-html-webpack-plugin](https://github.com/jouni-kantola/inline-chunk-manifest-html-webpack-plugin) | 用于内联webpack的chunk清单。默认提取清单并内联进`<head>` |
 
 ## 基础用法
 
