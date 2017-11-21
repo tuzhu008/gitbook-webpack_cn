@@ -61,11 +61,45 @@
   * [Resolver （解析器）](/API/API-Resolver.md)
 
   * [Parser（解析器）](/API/API-Parser.md)
+
   * [Templates（模板）](/API/API-Templates.md)
 
 * [插件](/Plugins/README.md)
+  * [内置插件](/Plugins/internal/README.md)
+  * AggressiveSplittingPlugin
 
-  * [WebpackManifestPlugin](/Plugins/WebpackManifestPlugin.md)
+  * ZopfliWebpackPlugin
+  * BannerPlugin
+  * CommonsChunkPlugin
+  * ComponentWebpackPlugin
+  * CompressionWebpackPlugin
+  * ContextReplacementPlugin
+  * CopyWebpackPlugin
+  * DefinePlugin
+  * DllPlugin
+  * EnvironmentPlugin
+  * ExtractTextWebpackPlugin
+  * HashedModuleIdsPlugin
+  * 模块热替换插件\(HotModuleReplacementPlugin\)
+  * HtmlWebpackPlugin
+  * BabelMinifyWebpackPlugin
+  * IgnorePlugin
+  * LimitChunkCountPlugin
+  * LoaderOptionsPlugin
+  * MinChunkSizePlugin
+  * ModuleConcatenationPlugin
+  * NamedModulesPlugin
+  * NoEmitOnErrorsPlugin
+  * NormalModuleReplacementPlugin
+  * NpmInstallWebpackPlugin
+  * PrefetchPlugin
+  * ProvidePlugin
+  * SourceMapDevToolPlugin
+  * UglifyjsWebpackPlugin
+  * WatchIgnorePlugin
+  * I18nWebpackPlugin
+
+  * [三方插件](/Plugins/third-party/README.md)
 
 * [注意](Note.md)
 
