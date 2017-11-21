@@ -1,15 +1,13 @@
 # Tapable
 
-[Tapable](https://github.com/webpack/tapable) is a small library that allows you to add and apply plugins to a javascript module. It can be inherited or mixed in to other modules. It is similar to NodeJS's `EventEmitter` class, focusing on custom event emission and manipulation. However, in addition to this, `Tapable` allows you to have access to the "emittee" or "producer" of the event through callbacks arguments.
-
 [Tapable](#) 是一个小型的库，允许您在javascript模块中添加和应用插件。它可以被继承或混合到其他模块中。它类似于NodeJS的`EventEmitter`类，主要关注自定义事件发射和操作。然而，除了这一点，`Tapable`允许你通过回调参数来访问事件的"emitter\(发射器）" 或 "producer（生产者）"。
 
-`Tapable` has four groups of member functions:
+`Tapable` 有四组成员函数:
 
-* `plugin(name:string, handler:function)`: This allows a custom plugin to register into a **Tapable instance**'s event. This acts similar to the `on()` method of the `EventEmitter`, which is used for registering a handler/listener to do something when the signal/event happens.
-* `apply(…pluginInstances: (AnyPlugin|function)[])`: `AnyPlugin` should be a class \(or, rarely, an object\) that has an `apply` method, or just a function with some registration code inside. This method is just to **apply** plugins' definition, so that the real event listeners can be registered into the _Tapable_ instance's registry.
-* `applyPlugins*(name:string, …)`: The _Tapable_ instance can apply all the plugins under a particular hash using these functions. This group of methods act like the `emit()` method of the `EventEmitter`, controlling event emission meticulously using various strategies.
-* `mixin(pt: Object)`: a simple method to extend `Tapable`'s prototype as a mixin rather than inheritance.
+* `plugin(name:string, handler:function)`：这允许一个自定义的插件注册到一个`Tapable实例`的事件中。这类似于`EventEmitter`的`on()`方法，它用于注册一个handler/listener，以便在信号/事件（signal/event ）发生时做一些事情。
+* `apply(…pluginInstances: (AnyPlugin|function)[])` ：`AnyPlugin`应该是一个具有`apply`方法的类\(或者很少是一个对象\)，或者只是一个带有一些注册代码的函数。这个方法只是**应用**插件的定义，这样真正的事件监听器就可以注册到Tapable实例的注册表中。
+* `applyPlugins*(name:string, …)`：Tapable实例可以使用这些函数将所有插件应用到特定的hash中。这组方法就像`EventEmitter`的`emit()`方法一样，通过各种策略精心地控制事件发射。
+* `mixin(pt: Object)`：一种简单的方法来扩展（extend）`Tapable`的原型（prototype），它将作为一个混合而不是继承被扩展。
 
 The different `applyPlugins*` methods cover the following use cases:
 
