@@ -6,7 +6,7 @@
 | :--- | :--- |
 | [WebpackManifestPlugin](Plugins/WebpackManifestPlugin.md) | 生成资产清单 |
 | CommonsChunkPlugin | 提取多入口文件中的公共模块 |
-|  |  |
+| BabelMinifyWebpackPlugin |  |
 
 
 

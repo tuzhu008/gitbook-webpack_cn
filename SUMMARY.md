@@ -70,9 +70,12 @@
 
     * [AggressiveSplittingPlugin](/Plugins/internal/AggressiveSplittingPlugin.md)
 
+    * [BabelMinifyWebpackPlugin](Plugins/internal/BabelMinifyWebpackPlugin.md)
+
     * ZopfliWebpackPlugin
 
     * BannerPlugin
+
     * CommonsChunkPlugin
     * ComponentWebpackPlugin
     * CompressionWebpackPlugin
@@ -85,7 +88,7 @@
     * HashedModuleIdsPlugin
     * 模块热替换插件\(HotModuleReplacementPlugin\)
     * HtmlWebpackPlugin
-    * BabelMinifyWebpackPlugin
+
     * IgnorePlugin
     * LimitChunkCountPlugin
     * LoaderOptionsPlugin
