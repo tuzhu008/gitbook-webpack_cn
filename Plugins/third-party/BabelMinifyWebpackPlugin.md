@@ -1,5 +1,7 @@
 # BabelMinifyWebpackPlugin
 
+[![](https://img.shields.io/badge/Github-%E6%9F%A5%E7%9C%8B%E6%9B%B4%E5%A4%9A-brightgreen.svg)](https://github.com/webpack-contrib/babel-minify-webpack-plugin)
+
 一个用于[babel-minify](https://github.com/babel/minify)的 webpack 插件 - 基于 babel 的 minifier
 
 ## 安装
@@ -43,6 +45,7 @@ module.exports = {
 * `comments`: 保留注释。 默认:`/^\**!|@preserve|@license|@cc_on/`,`falsy`值将移除所有注释。可以接受函数，带有测试属性的（正则）的对象和值。
 
 * `sourceMap`: 默认: 使用[webpackConfig.devtool](//configuration/devtools.md)。 这里的设置会覆写`devtool`的设置。
+
 * `parserOpts`: 配置具有特殊解析器选项的babel。
 * `babel`: 传入一个自定义的 babel-core，代替原来的。`require("babel-core")`
 * `minifyPreset`: 传入一个自定义的 minify preset，代替原来的。 -`require("babel-preset-minify")`
