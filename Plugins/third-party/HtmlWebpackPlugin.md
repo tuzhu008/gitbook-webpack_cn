@@ -25,39 +25,21 @@ html-webpack-plugin 提供了[钩子](#事件)来扩展它以满足您的需要�
 
 | 名称 | 描述 |
 | :--- | :--- |
-| webpack-subresource-integrity |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
+| [webpack-subresource-integrity](https://www.npmjs.com/package/webpack-subresource-integrity) | 用于加强资源安全 |
+| [appcache-webpack-plugin](https://github.com/lettertwo/appcache-webpack-plugin)  |  用于iOS和Android离线使用|
+| [favicons-webpack-plugin](https://github.com/jantimon/favicons-webpack-plugin)  |它为iOS、Android和桌面浏览器生成了favicons和icons。  |
+| [html-webpack-harddisk-plugin](https://github.com/jantimon/html-webpack-harddisk-plugin)  | 可以用于将html文件写入磁盘，当使用webpack-dev-server / HMR 时 |
+| [html-webpack-inline-source-plugin](https://github.com/DustinJackson/html-webpack-inline-source-plugin)  | 用于在生成的HTML文件中内联您的资源 |
+| [html-webpack-inline-svg-plugin](https://github.com/thegc/html-webpack-inline-svg-plugin) |  to inline SVGs in the resulting HTML file |
+| [html-webpack-exclude-assets-plugin](https://github.com/jamesjieye/html-webpack-exclude-assets-plugin)  | for excluding assets using regular expressions |
+| [html-webpack-include-assets-plugin](https://github.com/jharris4/html-webpack-include-assets-plugin)  | for including lists of js or css file paths \(such as those copied by the copy-webpack-plugin\). |
+| [script-ext-html-webpack-plugin](https://github.com/numical/script-ext-html-webpack-plugin)  | to add `async`, `defer` or `module` attributes to your`<script>` elements, or even in-line them |
+| [style-ext-html-webpack-plugin](https://github.com/numical/style-ext-html-webpack-plugin) | to convert your `<link>`s to external stylesheets into `<style>` elements containing internal CSS  |
+| [resource-hints-webpack-plugin](https://github.com/jantimon/resource-hints-webpack-plugin)  |to add resource hints for faster initial page loads using `<link rel='preload'>` and `<link rel='prefetch'>`  |
+| [preload-webpack-plugin](https://github.com/GoogleChrome/preload-webpack-plugin)  | for automatically wiring up asynchronous \(and other types\) of JavaScript chunks using `<link rel='preload'>` helping with lazy-loading |
+| [link-media-html-webpack-plugin](https://github.com/yaycmyk/link-media-html-webpack-plugin)  |  allows for injected stylesheet `<link />` tags to have their media attribute set automatically; useful for providing specific desktop/mobile/print etc. stylesheets that the browser will conditionally download|
+| [inline-chunk-manifest-html-webpack-plugin](https://github.com/jouni-kantola/inline-chunk-manifest-html-webpack-plugin)  | for inlining webpack's chunk manifest. Default extracts manifest and inlines in `<head>` |
 
-* [webpack-subresource-integrity](https://www.npmjs.com/package/webpack-subresource-integrity) 用于加强资源安全
-* [appcache-webpack-plugin](https://github.com/lettertwo/appcache-webpack-plugin) 用于iOS和Android离线使用
-* [favicons-webpack-plugin](https://github.com/jantimon/favicons-webpack-plugin) 它为iOS、Android和桌面浏览器生成了favicons和icons。
-* [html-webpack-harddisk-plugin](https://github.com/jantimon/html-webpack-harddisk-plugin) 可以用于将html文件写入磁盘，当使用webpack-dev-server / HMR 时
-* [html-webpack-inline-source-plugin](https://github.com/DustinJackson/html-webpack-inline-source-plugin) 用于在生成的HTML文件中内联您的资源
-* [html-webpack-inline-svg-plugin](https://github.com/thegc/html-webpack-inline-svg-plugin) to inline SVGs in the resulting HTML file.
-* [html-webpack-exclude-assets-plugin](https://github.com/jamesjieye/html-webpack-exclude-assets-plugin) for excluding assets using regular expressions
-* [html-webpack-include-assets-plugin](https://github.com/jharris4/html-webpack-include-assets-plugin) for including lists of js or css file paths \(such as those copied by the copy-webpack-plugin\).
-* [script-ext-html-webpack-plugin](https://github.com/numical/script-ext-html-webpack-plugin) to add `async`, `defer` or `module` attributes to your`<script>` elements, or even in-line them
-* [style-ext-html-webpack-plugin](https://github.com/numical/style-ext-html-webpack-plugin) to convert your `<link>`s to external stylesheets into `<style>` elements containing internal CSS
-* [resource-hints-webpack-plugin](https://github.com/jantimon/resource-hints-webpack-plugin) to add resource hints for faster initial page loads using `<link rel='preload'>` and `<link rel='prefetch'>`
-* [preload-webpack-plugin](https://github.com/GoogleChrome/preload-webpack-plugin) for automatically wiring up asynchronous \(and other types\) of JavaScript chunks using `<link rel='preload'>` helping with lazy-loading
-* [link-media-html-webpack-plugin](https://github.com/yaycmyk/link-media-html-webpack-plugin) allows for injected stylesheet `<link />` tags to have their media attribute set automatically; useful for providing specific desktop/mobile/print etc. stylesheets that the browser will conditionally download
-* [inline-chunk-manifest-html-webpack-plugin](https://github.com/jouni-kantola/inline-chunk-manifest-html-webpack-plugin) for inlining webpack's chunk manifest. Default extracts manifest and inlines in `<head>`.
 
 ## 基础用法
 
