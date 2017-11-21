@@ -1,54 +1,52 @@
-Compilation 实例继承于 compiler。例如，compiler.compilation 是对所有 require 图(graph)中对象的字面上的编译。这个对象可以访问所有的模块和它们的依赖（大部分是循环依赖）。在编译阶段，模块被加载，封闭，优化，分块，哈希和重建等等。这将是编译中任何操作主要的生命周期。
+# Compilation（编译）
 
-``` js
+Compilation 实例继承于 compiler。例如，`compiler.compilation` 是对所有 require 图\(graph\)中对象的字面上的编译。这个对象可以访问所有的模块和它们的依赖（大部分是间接依赖）。在编译阶段，模块被加载，密封，优化，分块（chunked），哈希化（hashed）和重建等等。这将是编译中任何操作主要的生命周期。
+
+```js
 compiler.plugin("compilation", function(compilation) {
-    // 主要的编译实例
-    // 随后所有的方法都从 compilation.plugin 上得来
+    // 主编译实例
+    // 后续的方法都派生自 compilation.plugin 
 });
 ```
 
-
 ## `normal-module-loader`
 
-普通模块 loader，真实地一个一个加载模块图(graph)中所有的模块的函数。
+`normal-module-loader`是一个函数，它是实际上加载模块图\(graph\)中所有的模块的函数（一个接一个）。
 
-``` js
+```js
 compilation.plugin('normal-module-loader', function(loaderContext, module) {
-  // 这里是所以模块被加载的地方
+  // 这里是所有模块被加载的地方
   // 一个接一个，此时还没有依赖被创建
 });
 ```
 
-
 ## `seal`
 
-编译的封闭已经开始。
+编译的密封已经开始。
 
-``` js
+```js
 compilation.plugin('seal', function() {
   // 你已经不能再接收到任何模块
   // 没有参数
 });
 ```
 
-
 ## `optimize`
 
 优化编译。
 
-``` js
+```js
 compilation.plugin('optimize', function() {
   // webpack 已经进入优化阶段
   // 没有参数
 });
 ```
 
-
 ## `optimize-tree(chunks, modules)` 异步
 
 树的异步优化。
 
-``` js
+```js
 compilation.plugin('optimize-tree', function(chunks, modules) {
 
 });
@@ -58,32 +56,30 @@ compilation.plugin('optimize-tree', function(chunks, modules) {
 
 模块的优化。
 
-``` js
+```js
 compilation.plugin('optimize-modules', function(modules) {
   // 树优化期间处理模块数组
 });
 ```
 
-
 ## `after-optimize-modules(modules: Module[])`
 
 模块优化已经结束。
-
 
 ## `optimize-chunks(chunks: Chunk[])`
 
 块的优化。
 
 ```javascript
-//这里一般只有一个块，除非你在配置中指定了多个入口
+// 块优化可以在编译过程中运行多次
 
 compilation.plugin('optimize-chunks', function(chunks) {
     // 这里一般只有一个块，
     // 除非你在配置中指定了多个入口
     chunks.forEach(function (chunk) {
-        // Chunks have circular references to their modules
+        // 块有对其模块的间接引用
         chunk.modules.forEach(function (module){
-            // module.loaders, module.rawRequest, module.dependencies, etc.
+            // module.loaders, module.rawRequest, module.dependencies, 等等.
         });
     });
 });
@@ -91,91 +87,75 @@ compilation.plugin('optimize-chunks', function(chunks) {
 
 ## `after-optimize-chunks(chunks: Chunk[])`
 
-Optimizing the chunks has finished.
-
+块优化完成。
 
 ## `revive-modules(modules: Module[], records)`
 
-Restore module info from records.
-
+从记录中重建模块信息。
 
 ## `optimize-module-order(modules: Module[])`
 
-Sort the modules in order of importance. The first is the most important module. It will get the smallest id.
-
+按重要性对模块进行排序。第一个是最重要的模块。它会得到最小的id值。
 
 ## `optimize-module-ids(modules: Module[])`
 
-Optimize the module ids.
-
+优化模块id。
 
 ## `after-optimize-module-ids(modules: Module[])`
 
-Optimizing the module ids has finished.
-
+模块id优化完成。
 
 ## `record-modules(modules: Module[], records)`
 
-Store module info to the records.
-
+将模块信息存储到记录中。
 
 ## `revive-chunks(chunks: Chunk[], records)`
 
-Restore chunk info from records.
-
+从记录中重建块信息。
 
 ## `optimize-chunk-order(chunks: Chunk[])`
 
-Sort the chunks in order of importance. The first is the most important chunk. It will get the smallest id.
-
+把这些块按重要性排序。第一个是最重要的块。它会得到最小的id。
 
 ## `optimize-chunk-ids(chunks: Chunk[])`
 
-Optimize the chunk ids.
-
+优化块的id。
 
 ## `after-optimize-chunk-ids(chunks: Chunk[])`
 
-Optimizing the chunk ids has finished.
-
+块的id优化完成。
 
 ## `record-chunks(chunks: Chunk[], records)`
 
-Store chunk info to the records.
-
+将块信息存储到记录中。
 
 ## `before-hash`
 
-Before the compilation is hashed.
-
+在编译被哈希化之前。
 
 ## `after-hash`
 
-After the compilation is hashed.
-
+在编译被哈希化之后。
 
 ## `before-chunk-assets`
 
-Before creating the chunk assets.
-
+在创建块资源之前。
 
 ## `additional-chunk-assets(chunks: Chunk[])`
 
-Create additional assets for the chunks.
-
+为块创建额外的资源。
 
 ## `record(compilation, records)`
 
-Store info about the compilation to the records
-
+将编译的信息存储到记录中
 
 ## `additional-assets` async
 
-Create additional assets for the compilation
+为编译创建额外的资源。
 
-Here's an example that downloads an image.
+下面是一个下载图像的示例。
 
-``` js
+```js
 compiler.plugin('compilation', function(compilation) {
   compilation.plugin('additional-assets', function(callback) {
     download('https://img.shields.io/npm/v/webpack.svg', function(resp) {
@@ -190,16 +170,15 @@ compiler.plugin('compilation', function(compilation) {
 });
 ```
 
-
 ## `optimize-chunk-assets(chunks: Chunk[])` async
 
-优化 chunk 的生成资源。
+优化 chunk 的资源。
 
-生成资源被存储在 `this.assets`，但是它们并不都是块的生成资源。一个 `Chunk` 有一个 `files` 属性指出这个块创建的所有文件。附加的生成资源被存储在 `this.additionalChunkAssets` 中。
+资源被存储在 `this.assets`，但是它们并不都是块的资源。一个 `Chunk` 有一个 `files` 属性指向由这个块创建的所有文件。额外的资源被存储在 `this.additionalChunkAssets` 中。
 
 这是一个为每个 chunk 添加 banner 的例子。
 
-``` js
+```js
 compilation.plugin("optimize-chunk-assets", function(chunks, callback) {
   chunks.forEach(function(chunk) {
     chunk.files.forEach(function(file) {
@@ -212,9 +191,9 @@ compilation.plugin("optimize-chunk-assets", function(chunks, callback) {
 
 ## `after-optimize-chunk-assets(chunks: Chunk[])`
 
-块生成资源已经被优化。这里是一个来自 [@boopathi](https://github.com/boopathi) 的示例插件，详细的输出每个块里有什么。
+块资源已经被优化。这里是一个来自 [@boopathi](https://github.com/boopathi) 的示例插件，详细的输出每个块里有什么。
 
-``` js
+```js
 var PrintChunksPlugin = function() {};
 
 PrintChunksPlugin.prototype.apply = function(compiler) {
@@ -234,61 +213,53 @@ PrintChunksPlugin.prototype.apply = function(compiler) {
 };
 ```
 
-
 ## `optimize-assets(assets: Object{name: Source})` async
 
-优化所有生成资源。
+优化所有资源。
 
-生成资源被存放在 `this.assets`。
-
+资源被存放在 `this.assets`。
 
 ## `after-optimize-assets(assets: Object{name: Source})`
 
-生成资源优化已经结束。
-
+资源优化已经结束。
 
 ## `build-module(module)`
 
 一个模块构建开始前。
 
-``` js
+```js
 compilation.plugin('build-module', function(module){
   console.log('About to build: ', module);
 });
 ```
 
-
 ## `succeed-module(module)`
 
 一个模块已经被成功构建。
 
-``` js
+```js
 compilation.plugin('succeed-module', function(module){
   console.log('Successfully built: ', module);
 });
 ```
 
-
 ## `failed-module(module)`
 
 一个模块构建失败。
 
-``` js
+```js
 compilation.plugin('failed-module', function(module){
   console.log('Failed to build: ', module);
 });
 ```
 
-
 ## `module-asset(module, filename)`
 
-一个模块中的一个生成资源被加到编译中。
-
+一个模块中的一个资源被加到编译中。
 
 ## `chunk-asset(chunk, filename)`
 
-一个 chunk 中的一个生成资源被加到编译中。
+一个 chunk 中的一个资源被加到编译中。
 
-***
 
-> 原文：https://webpack.js.org/api/plugins/compilation/
+
