@@ -62,25 +62,21 @@ interface Request {
 
 找到一个文件请求，并且应该得到解决。
 
-## The plugins may offer more extensions points
+## 插件可以提供更多的扩展点
 
 下面列出了webpack提供的默认插件。They are all `(request: Request)` async waterfall.它们都是`(request: Request)`异步瀑布。
 
-The process for normal modules and contexts is `module -> module-module -> directory -> file`.
+普通模块和上下文的过程是 ： `module -> module-module -> directory -> file`.
 
-The process for loaders is `module -> module-loader-module -> module-module -> directory -> file`.
+loader的过程是：`module -> module-loader-module -> module-module -> directory -> file`.
 
 ## `module-module`
 
-A module should be looked up in a specified directory. `path` contains the directory.
+应该在指定的目录中查找模块。`path`包含目录。
 
 ## `module-loader-module` \(only for loaders\)
 
-Used before module templates are applied to the module name. The process continues with `module-module`.
-
----
-
-> 原文：[https://webpack.js.org/api/plugins/resolver/](https://webpack.js.org/api/plugins/resolver/)
+在模块模板应用于模块名称之前。这个过程将使用`module-module`继续执行。
 
 
 
