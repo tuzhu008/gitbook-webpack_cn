@@ -41,6 +41,7 @@ module.exports = {
 * `test`: JS文件扩展名正则表达式。 默认:`/\.js($|\?)/i`
 
 * `comments`: 保留注释。 默认:`/^\**!|@preserve|@license|@cc_on/`,`falsy`值将移除所有注释。可以接受函数，带有测试属性的（正则）的对象和值。
+
 * `sourceMap`: 默认: 使用[webpackConfig.devtool](//configuration/devtools.md)。 这里的设置会覆写`devtool`的设置。
 * `parserOpts`: 配置具有特殊解析器选项的babel。
 * `babel`: 传入一个自定义的 babel-core，代替原来的。`require("babel-core")`
