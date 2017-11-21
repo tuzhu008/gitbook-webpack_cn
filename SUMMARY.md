@@ -66,38 +66,38 @@
 
 * [插件](/Plugins/README.md)
   * [内置插件](/Plugins/internal/README.md)
-  * AggressiveSplittingPlugin
+    * AggressiveSplittingPlugin
 
-  * ZopfliWebpackPlugin
-  * BannerPlugin
-  * CommonsChunkPlugin
-  * ComponentWebpackPlugin
-  * CompressionWebpackPlugin
-  * ContextReplacementPlugin
-  * CopyWebpackPlugin
-  * DefinePlugin
-  * DllPlugin
-  * EnvironmentPlugin
-  * ExtractTextWebpackPlugin
-  * HashedModuleIdsPlugin
-  * 模块热替换插件\(HotModuleReplacementPlugin\)
-  * HtmlWebpackPlugin
-  * BabelMinifyWebpackPlugin
-  * IgnorePlugin
-  * LimitChunkCountPlugin
-  * LoaderOptionsPlugin
-  * MinChunkSizePlugin
-  * ModuleConcatenationPlugin
-  * NamedModulesPlugin
-  * NoEmitOnErrorsPlugin
-  * NormalModuleReplacementPlugin
-  * NpmInstallWebpackPlugin
-  * PrefetchPlugin
-  * ProvidePlugin
-  * SourceMapDevToolPlugin
-  * UglifyjsWebpackPlugin
-  * WatchIgnorePlugin
-  * I18nWebpackPlugin
+    * ZopfliWebpackPlugin
+    * BannerPlugin
+    * CommonsChunkPlugin
+    * ComponentWebpackPlugin
+    * CompressionWebpackPlugin
+    * ContextReplacementPlugin
+    * CopyWebpackPlugin
+    * DefinePlugin
+    * DllPlugin
+    * EnvironmentPlugin
+    * ExtractTextWebpackPlugin
+    * HashedModuleIdsPlugin
+    * 模块热替换插件\(HotModuleReplacementPlugin\)
+    * HtmlWebpackPlugin
+    * BabelMinifyWebpackPlugin
+    * IgnorePlugin
+    * LimitChunkCountPlugin
+    * LoaderOptionsPlugin
+    * MinChunkSizePlugin
+    * ModuleConcatenationPlugin
+    * NamedModulesPlugin
+    * NoEmitOnErrorsPlugin
+    * NormalModuleReplacementPlugin
+    * NpmInstallWebpackPlugin
+    * PrefetchPlugin
+    * ProvidePlugin
+    * SourceMapDevToolPlugin
+    * UglifyjsWebpackPlugin
+    * WatchIgnorePlugin
+    * I18nWebpackPlugin
 
   * [三方插件](/Plugins/third-party/README.md)
 
