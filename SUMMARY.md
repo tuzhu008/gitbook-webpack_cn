@@ -65,10 +65,13 @@
   * [Templates（模板）](/API/API-Templates.md)
 
 * [插件](/Plugins/README.md)
+
   * [内置插件](/Plugins/internal/README.md)
-    * AggressiveSplittingPlugin
+
+    * [AggressiveSplittingPlugin](/Plugins/internal/AggressiveSplittingPlugin.md)
 
     * ZopfliWebpackPlugin
+
     * BannerPlugin
     * CommonsChunkPlugin
     * ComponentWebpackPlugin
