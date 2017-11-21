@@ -1,6 +1,6 @@
 # chunk-manifest-webpack-plugin
 
-![](https://img.shields.io/badge/Github-%E6%9F%A5%E7%9C%8B%E6%9B%B4%E5%A4%9A-brightgreen.svg)
+[![](https://img.shields.io/badge/Github-查看更多-brightgreen.svg)](https://github.com/soundcloud/chunk-manifest-webpack-plugin)
 
 允许导出一个JSON文件，该文件将chunk id映射到其生成的资源文件。Webpack可以读取这个映射，假设它是在客户机上提供的，而不是在引导脚本中存储一个映射\(带有哈希化的chunk资产\)，这样就可以真正地利用长期缓存。
 
