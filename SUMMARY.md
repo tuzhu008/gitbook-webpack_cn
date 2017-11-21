@@ -48,19 +48,20 @@
 
     * [Medule Variables（模块变量）](/API/ModuleVariables.md)
 
-  * Plugins API
+  * [Plugins API](/API/API-Plugins.md)
 
-  * Tapable
+  * [Tapable](/API/API-Tapable.md)
 
-  * Compiler
+  * [Compiler（编译器）](/API/API-Compiler.md)
 
-  * Compilation
+  * [Compilation（编译）](/API/API-Compilation.md)
 
-  * Module Factories
+  * [Module Factories （模块工厂）](/API/ModuleFactories.md)
 
-  * Resolve
-  * Parser
-  * Templates
+  * [Resolver （解析器）](/API/API-Resolver.md)
+
+  * [Parser（解析器）](/API/API-Parser.md)
+  * [Templates（模板）](/API/API-Templates.md)
 
 * [插件](/Plugins/README.md)
 
