@@ -70,13 +70,12 @@
 
     * [AggressiveSplittingPlugin](/Plugins/internal/AggressiveSplittingPlugin.md)
 
-    * [BabelMinifyWebpackPlugin](Plugins/internal/BabelMinifyWebpackPlugin.md)
-
     * ZopfliWebpackPlugin
 
     * BannerPlugin
 
     * CommonsChunkPlugin
+
     * ComponentWebpackPlugin
     * CompressionWebpackPlugin
     * ContextReplacementPlugin
@@ -90,6 +89,7 @@
     * HtmlWebpackPlugin
 
     * IgnorePlugin
+
     * LimitChunkCountPlugin
     * LoaderOptionsPlugin
     * MinChunkSizePlugin
@@ -106,6 +106,8 @@
     * I18nWebpackPlugin
 
   * [三方插件](/Plugins/third-party/README.md)
+
+    * [BabelMinifyWebpackPlugin](Plugins/third-party/BabelMinifyWebpackPlugin.md)
 
 * [注意](Note.md)
 
