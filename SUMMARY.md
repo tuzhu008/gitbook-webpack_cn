@@ -98,7 +98,7 @@
 
     * [NamedModulesPlugin](Plugins/internal/NamedModulesPlugin.md)
 
-    * NoEmitOnErrorsPlugin
+    * [NoEmitOnErrorsPlugin](Plugins/internal/NoEmitOnErrorsPlugin.md)
 
     * NormalModuleReplacementPlugin
 

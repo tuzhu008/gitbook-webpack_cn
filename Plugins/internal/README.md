@@ -16,8 +16,8 @@ webpack本身内置了很多插件。
 | [`HotModuleReplacementPlugin`](/Plugins/internal/HotModuleReplacementPlugin.md) | 开启模块热替换 |  |
 | [`IgnorePlugin`](/Plugins/internal/IgnorePlugin.md) | Exclude certain modules from bundles |  |
 | [`LimitChunkCountPlugin`](/Plugins/internal/LimitChunkCountPlugin.md) | 限制chunk的数量和每个chunk的体积 |  |
-| `MinChunkSizePlugin` | 设置chunk的最小体积（字节） |  |
-| `NoEmitOnErrorsPlugin` | Skip the emitting phase when there are compilation errors |  |
+| [`MinChunkSizePlugin`](/Plugins/internal/MinChunkSizePlugin.md) | 设置chunk的最小体积（字节） |  |
+| [`NoEmitOnErrorsPlugin`](/Plugins/internal/NoEmitOnErrorsPlugin.md) | 在输出阶段时，遇到编译错误跳过 |  |
 | `NormalModuleReplacementPlugin` | Replace resource\(s\) that matches a regexp |  |
 | `NpmInstallWebpackPlugin` | Auto-install missing dependencies during development |  |
 | `ProvidePlugin` | Use modules without having to use import/require |  |
