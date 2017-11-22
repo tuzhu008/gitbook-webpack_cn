@@ -188,7 +188,7 @@ plugins: [
 
 * `htmlWebpackPlugin`: 特定于此插件的数据
 
-  * `htmlWebpackPlugin.files` ：一个对webpack的[stats](//API/API-Node.md##stats-对象stats-object)对象的`assetsByChunkName`属性的一个按摩（massaged）的表示。它包含一个从入口点名到包文件名的映射，例如:
+  * `htmlWebpackPlugin.files` ：一个对webpack的[stats](//API/API-Node.md#stats-对象stats-object)对象的`assetsByChunkName`属性的一个按摩（massaged）的表示。它包含一个从入口点名到包文件名的映射，例如:
 
     ```json
     "htmlWebpackPlugin": {
