@@ -12,7 +12,7 @@ webpack本身内置了很多插件。
 | [`ContextReplacementPlugin`](/Plugins/internal/ContextReplacementPlugin.md) | 重写 `require` 表达式的推断上下文 |  |
 | [`DefinePlugin`](/Plugins/internal/DefinePlugin.md) | 允许在编译时配置全局常量 |  |
 | [`DllPlugin`](/Plugins/internal/DllPlugin.md) | 分割bundle来大幅改善构建时间，分割bundle |  |
-| `EnvironmentPlugin` | Shorthand for using the `DefinePlugin` on `process.env` keys |  |
+| [`EnvironmentPlugin`](/Plugins/internal/EnvironmentPlugin.md) | 内部使用`DefinePlugin` 来设置 `process.env` 键的快捷方式 |  |
 | `ExtractTextWebpackPlugin` | Extract text \(CSS\) from your bundles into a separate file |  |
 | `HotModuleReplacementPlugin` | Enable Hot Module Replacement \(HMR\) |  |
 | `I18nWebpackPlugin` | Add i18n support to your bundles |  |
