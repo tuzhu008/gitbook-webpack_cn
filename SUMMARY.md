@@ -116,7 +116,7 @@
 
     * WatchIgnorePlugin
 
-    * I18nWebpackPlugin
+    * [I18nWebpackPlugin](Plugins/third-party/I18nWebpackPlugin.md)
 
     * ZopfliWebpackPlugin
 
