@@ -86,7 +86,7 @@
 
     * [HashedModuleIdsPlugin](Plugins/internal/HashedModuleIdsPlugin.md)
 
-    * 模块热替换插件\(HotModuleReplacementPlugin\)
+    * [HotModuleReplacementPlugin](Plugins/internal/HotModuleReplacementPlugin.md)
 
     * IgnorePlugin
 
@@ -128,6 +128,7 @@
     * [HtmlWebpackPlugin](Plugins/third-party/HtmlWebpackPlugin.md)
     * [WebpackManifestPlugin](Plugins/third-party/WebpackManifestPlugin.md)
     * [CompressionWebpackPlugin](Plugins/third-party/CompressionWebpackPlugin.md)
+    * [DotenvWebpack](Plugins/third-party/DotenvWebpack.md)
 
 * [注意](Note.md)
 

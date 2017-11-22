@@ -10,6 +10,7 @@
 | [ExtractTextWebpackPlugin](/Plugins/third-party/ExtractTextWebpackPlugin.md) |  |  |
 | [HtmlWebpackPlugin](/Plugins/third-party/HtmlWebpackPlugin.md) |  |  |
 | [CompressionWebpackPlugin](/Plugins/third-party/CompressionWebpackPlugin.md) | 准备压缩版本的资源，并使用 [Content-Encoding](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Encoding) 提供访问服务 |  |
+| [DotenvWebpack](/Plugins/third-party/DotenvWebpack.md) | 安全快速设置环境变量 |  |
 
 
 
