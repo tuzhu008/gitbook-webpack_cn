@@ -112,7 +112,7 @@ plugins: [
 
 > **\[info\]** 注：
 >
-> 结合长期缓存，你可能需要使用这个[插件](/Plugins/third-party/ChunkManifestWebpackPlugin.md)去避免 公共chunk 改变。 你也需要使用`records`去保持稳定的模块 id，例如，使用[`NamedModulesPlugin`](https://doc.webpack-china.org/plugins/named-modules-plugin)或[`HashedModuleIdsPlugin`](https://doc.webpack-china.org/plugins/hashed-module-ids-plugin)。
+> 结合长期缓存，你可能需要使用这个[插件](/Plugins/third-party/ChunkManifestWebpackPlugin.md)去避免 公共chunk 改变。 你也需要使用`records`去保持稳定的模块 id，例如，使用[`NamedModulesPlugin`](https://doc.webpack-china.org/plugins/named-modules-plugin)或[`HashedModuleIdsPlugin`](/Plugins/internal/HashedModuleIdsPlugin.md)。
 
 ### 将公共模块打包进父 chunk
 
@@ -194,7 +194,7 @@ new webpack.optimize.CommonsChunkPlugin({
 })
 ```
 
-为了获得一个包含您的应用程序和vender CSS的CSS文件，请同时使用以下的`minChunks`函数和[`ExtractTextPlugin`](https://doc.webpack-china.org/plugins/extract-text-webpack-plugin/):
+为了获得一个包含您的应用程序和vender CSS的CSS文件，请同时使用以下的`minChunks`函数和[`ExtractTextPlugin`](/Plugins/third-party/ExtractTextWebpackPlugin.md):
 
 ```js
 new webpack.optimize.CommonsChunkPlugin({

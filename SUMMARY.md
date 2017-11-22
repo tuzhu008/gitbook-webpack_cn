@@ -88,7 +88,7 @@
 
     * EnvironmentPlugin
 
-    * HashedModuleIdsPlugin
+    * [HashedModuleIdsPlugin](Plugins/internal/HashedModuleIdsPlugin.md)
 
     * 模块热替换插件\(HotModuleReplacementPlugin\)
 
@@ -109,6 +109,7 @@
     * NormalModuleReplacementPlugin
 
     * NpmInstallWebpackPlugin
+
     * PrefetchPlugin
     * ProvidePlugin
     * SourceMapDevToolPlugin

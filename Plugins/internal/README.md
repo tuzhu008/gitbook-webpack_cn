@@ -7,8 +7,8 @@ webpack本身内置了很多插件。
 | [`AggressiveSplittingPlugin`](//Plugins/internal/AggressiveSplittingPlugin.md) | 将原始chunk分割成更小的chunk |  |
 | [`BannerPlugin`](/Plugins/internal/BannerPlugin.md) | 在每个生成的 chunk 顶部添加 banner |  |
 | [`CommonsChunkPlugin`](/Plugins/internal/CommonsChunkPlugin.md) | 提取 chunks 之间共享的通用模块 |  |
-| [`ComponentWebpackPlugin`](/plugins/component-webpack-plugin) | Use components with webpack |  |
 | [`NamedModulesPlugin`](/Plugins/internal/NamedModulesPlugin.md) | HMR时显示模块的相对路径 | 生产 |
+| [`HashedModuleIdsPlugin`](/Plugins/internal/HashedModuleIdsPlugin.md) | 根据模块的相对路径生成一个四位数的hash作为模块id | 生产 |
 | `CompressionWebpackPlugin` | Prepare compressed versions of assets to serve them with Content-Encoding |  |
 | `ContextReplacementPlugin` | Override the inferred context of a `require` expression |  |
 | `DefinePlugin` | Allow global constants configured at compile time |  |
