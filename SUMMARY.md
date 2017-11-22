@@ -102,10 +102,9 @@
 
     * [NormalModuleReplacementPlugin](Plugins/internal/NormalModuleReplacementPlugin.md)
 
-    * 
     * [PrefetchPlugin](Plugins/internal/PrefetchPlugin.md)
 
-    * ProvidePlugin
+    * [ProvidePlugin](Plugins/internal/ProvidePlugin.md)
 
     * SourceMapDevToolPlugin
 
