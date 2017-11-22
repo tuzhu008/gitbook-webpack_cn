@@ -42,7 +42,7 @@ html-webpack-plugin 提供了[钩子](#事件)来扩展它以满足您的需要�
 
 ## 基础用法
 
-T该插件将为您生成一个HTML5文件，其中包括使用`script`标签的body中的所有webpack包。 只需添加插件到您的webpack配置如下：
+该插件将为您生成一个HTML5文件，其中包括使用`script`标签的body中的所有webpack包。 只需添加插件到您的webpack配置如下：
 
 ```js
 var HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -73,7 +73,7 @@ var webpackConfig = {
 
 如果您有多多个webpack入口点，他们都会在生成的HTML文件中的`script`标签内。
 
-如果你有任何CSS assets 在webpack的输出中（例如，利用[ExtractTextPlugin](https://doc.webpack-china.org/plugins/extract-text-webpack-plugin)提取CSS），那么这些将被包含在HTML head中的`<link>`标签内。
+如果你有任何CSS assets 在webpack的输出中（例如，利用[ExtractTextPlugin](/Plugins/third-party/ExtractTextWebpackPlugin.md)提取CSS），那么这些将被包含在HTML head中的`<link>`标签内。
 
 ## 配置
 
@@ -291,4 +291,14 @@ plugins: [
 ```
 
 请注意，必须传递htmlPluginData给回调，以便将其传递到其他任何使用相同`html-webpack-plugin-before-html-processing`事件的插件中。
+
+&lt;!--sec data-title="Introduction" data-id="section0" data-show=true ces--&gt;
+
+aaa
+
+&lt;!--endsec--&gt;
+
+
+
+
 
