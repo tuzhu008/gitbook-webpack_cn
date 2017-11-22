@@ -85,47 +85,47 @@ module.exports = Object.keys(languages).map(function(language) {
 
 ### js/de.output.js
 
-<!--sec data-title="Introduction" data-id="section0" data-show=false ces-->
+<!--sec data-title="code" data-id="section0" data-show=false ces-->
 
 
 
 ```js
 /******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
+/******/ 	// 模块缓存
 /******/ 	var installedModules = {};
 /******/
-/******/ 	// The require function
+/******/ 	// require 函数
 /******/ 	function __webpack_require__(moduleId) {
 /******/
-/******/ 		// Check if module is in cache
+/******/ 		// 检查模块是否在缓存中
 /******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
 /******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
+/******/ 		// 创建一个模块(并放入缓存)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
 /******/ 			l: false,
 /******/ 			exports: {}
 /******/ 		};
 /******/
-/******/ 		// Execute the module function
+/******/ 		// 暴露模块函数
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
 /******/
-/******/ 		// Flag the module as loaded
+/******/ 		// 将模块标记为加载完成
 /******/ 		module.l = true;
 /******/
-/******/ 		// Return the exports of the module
+/******/ 		// 返回模块导出
 /******/ 		return module.exports;
 /******/ 	}
 /******/
 /******/
-/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	//  暴露模块对象(__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
 /******/
-/******/ 	// expose the module cache
+/******/ 	// 暴露模块缓存
 /******/ 	__webpack_require__.c = installedModules;
 /******/
-/******/ 	// define getter function for harmony exports
+/******/ 	// 为和谐（harmony）导出定义getter函数
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
 /******/ 			Object.defineProperty(exports, name, {
@@ -136,7 +136,7 @@ module.exports = Object.keys(languages).map(function(language) {
 /******/ 		}
 /******/ 	};
 /******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	// 与非和谐模块兼容的getDefaultExport函数
 /******/ 	__webpack_require__.n = function(module) {
 /******/ 		var getter = module && module.__esModule ?
 /******/ 			function getDefault() { return module['default']; } :
@@ -151,7 +151,7 @@ module.exports = Object.keys(languages).map(function(language) {
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "js/";
 /******/
-/******/ 	// Load entry module and return exports
+/******/ 	// 加载 entry 模块并返回导出
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
@@ -167,8 +167,8 @@ module.exports = Object.keys(languages).map(function(language) {
 /*!********************!*\
   !*** ./example.js ***!
   \********************/
-/*! no static exports found */
-/*! all exports used */
+/*! 没有发现静态导出 */
+/*! 所有被使用的导出*/
 /***/ (function(module, exports, __webpack_require__) {
 
 console.log("Hallo Welt");
@@ -178,7 +178,10 @@ console.log("Missing Text");
 /******/ ]);
 
 ```
+
 ### js/en.output.js
+
+<!--sec data-title="code" data-id="section0" data-show=false ces-->
 
 
 ```js
@@ -247,6 +250,11 @@ console.log("Missing Text");
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
+```
+<!--endsec-->
+
+
+```js
 /******/ ([
 /* 0 */
 /*!********************!*\
@@ -263,8 +271,8 @@ console.log("Missing Text");
 /******/ ]);
 
 ```
-### Info
-#### Uncompressed
+### 信息
+#### 未压缩的
 
 
 ```bash
@@ -291,7 +299,7 @@ Child de:
     Missing localization: Missing Text
 
 ```
-#### Minimized (uglify-js, no zip)
+#### 压缩的 (uglify-js, no zip)
 
 
 ```bash
