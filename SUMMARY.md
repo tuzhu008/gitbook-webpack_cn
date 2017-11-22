@@ -100,9 +100,9 @@
 
     * [NoEmitOnErrorsPlugin](Plugins/internal/NoEmitOnErrorsPlugin.md)
 
-    * NormalModuleReplacementPlugin
+    * [NormalModuleReplacementPlugin](Plugins/internal/NormalModuleReplacementPlugin.md)
 
-    * NpmInstallWebpackPlugin
+    * [NpmInstallWebpackPlugin](Plugins/third-party/NpmInstallWebpackPlugin.md)
 
     * PrefetchPlugin
 
