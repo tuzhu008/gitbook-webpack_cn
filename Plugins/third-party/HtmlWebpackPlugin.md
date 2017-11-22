@@ -263,7 +263,7 @@ plugins: [
 // MyPlugin.js
 
 function MyPlugin(options) {
-  // Configure your plugin with options...
+  // 使用options配置你的插件...
 }
 
 MyPlugin.prototype.apply = function(compiler) {
