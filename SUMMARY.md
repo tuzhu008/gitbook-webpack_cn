@@ -74,10 +74,6 @@
 
     * [CommonsChunkPlugin](Plugins/internal/CommonsChunkPlugin.md)
 
-    * ComponentWebpackPlugin
-
-    * CompressionWebpackPlugin
-
     * ContextReplacementPlugin
 
     * CopyWebpackPlugin
@@ -111,6 +107,7 @@
     * NpmInstallWebpackPlugin
 
     * PrefetchPlugin
+
     * ProvidePlugin
     * SourceMapDevToolPlugin
     * UglifyjsWebpackPlugin
@@ -125,6 +122,7 @@
     * [ExtractTextWebpackPlugin](Plugins/third-party/ExtractTextWebpackPlugin.md)
     * [HtmlWebpackPlugin](Plugins/third-party/HtmlWebpackPlugin.md)
     * [WebpackManifestPlugin](Plugins/third-party/WebpackManifestPlugin.md)
+    * [CompressionWebpackPlugin](Plugins/third-party/CompressionWebpackPlugin.md)
 
 * [注意](Note.md)
 

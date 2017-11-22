@@ -9,7 +9,6 @@ webpack本身内置了很多插件。
 | [`CommonsChunkPlugin`](/Plugins/internal/CommonsChunkPlugin.md) | 提取 chunks 之间共享的通用模块 |  |
 | [`NamedModulesPlugin`](/Plugins/internal/NamedModulesPlugin.md) | HMR时显示模块的相对路径 | 生产 |
 | [`HashedModuleIdsPlugin`](/Plugins/internal/HashedModuleIdsPlugin.md) | 根据模块的相对路径生成一个四位数的hash作为模块id | 生产 |
-| `CompressionWebpackPlugin` | Prepare compressed versions of assets to serve them with Content-Encoding |  |
 | `ContextReplacementPlugin` | Override the inferred context of a `require` expression |  |
 | `DefinePlugin` | Allow global constants configured at compile time |  |
 | `DllPlugin` | Split bundles in order to drastically improve build time |  |
