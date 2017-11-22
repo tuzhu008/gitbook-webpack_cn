@@ -35,13 +35,28 @@ module.exports = {
 |**`exclude`**|`{RegExp\|Array<RegExp>}`|`undefined`|`排除`的文件|
 |**`cache`**|`{Boolean\|String}`|`false`|开启文件缓存来提高构建速度|
 |**`parallel`**|`{Boolean\|Number}`|`false`|使用多进程并行运行来提高构建速度|
-|**`sourceMap`**|`{Boolean}`|`false`|使用源映射将错误信息位置映射到模块 (This slows down the compilation) ⚠️ **`cheap-source-map` 选项不能和这个插件一同工作**|
-|**`uglifyOptions`**|`{Object}`|[`{...defaults}`](https://github.com/webpack-contrib/uglifyjs-webpack-plugin/tree/master#uglifyoptions)|`uglify` [Options](https://github.com/mishoo/UglifyJS2/tree/harmony#minify-options)|
+|**`sourceMap`**|`{Boolean}`|`false`|使用源映射将错误信息位置映射到模块 (这减慢了编译的速度) ⚠️ **`cheap-source-map` 选项不能和这个插件一同工作**|
+|**`uglifyOptions`**|`{Object}`|[`{...defaults}`](https://github.com/webpack-contrib/uglifyjs-webpack-plugin/tree/master#uglifyoptions)|`uglify` [选项](https://github.com/mishoo/UglifyJS2/tree/harmony#minify-options)|
 |**`extractComments`**|`{Boolean\|RegExp\|Function<(node, comment) -> {Boolean\|Object}>}`|`false`|是否将注释提取到单独的文件， (参见 [细节](https://github.com/webpack/webpack/commit/71933e979e51c533b432658d5e37917f9e71595a) (`webpack >= 2.3.0`)|
 |**`warningsFilter`**|`{Function(source) -> {Boolean}}`|`() => true`|允许过滤uglify警告|
 
-dsadadasda
 
+
+```js
+new UglifyJSPlugin({
+  test: /\.js($|\?)/i,
+   include: /\/includes/,
+   exclude: /\/excludes/,
+   cache: true,// 启用文件缓存。默认缓存目录路径：node_modules/.cache/uglifyjs-webpack-plugin.
+})
+```
+### `cache`
+类型：boolean | string
+#### `boolean`
+当`cache`为布尔值时表示是否启用文件缓存。
+默认的缓存目录路径:``node_modules/.cache/uglifyjs-webpack-plugin``。
+#### `string`
+`cache`还可以指定为表示缓存一个字符串，表示缓存路径。
 
 |名称|类型|默认值|描述|
 |:--:|:--:|:-----:|:----------|
