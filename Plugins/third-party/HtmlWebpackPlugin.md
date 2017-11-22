@@ -81,7 +81,7 @@ var webpackConfig = {
 
 * `title`：用于生成的HTML文档的标题。
 * `filename`：将HTML写入的文件。默认为`index.html`。您也可以在这里指定一个子目录\(例如:`assets/admin.html`\)。
-* `template`： webpack加载模板的路径。请查看 [这个文档](https://github.com/jantimon/html-webpack-plugin/blob/master/docs/template-option.md) 获取更多信息。
+* `template`： webpack加载模板的路径。请查看 [模板选项](#模板选项) 获取更多信息。
 * `inject`：`true | 'head' | 'body' | false` 将所有的资源注入到给定的`template`或`templateContent`中——当传递`true`或`'body'`时，所有的javascript资源将被放置在body元素的底部。`'head'`表示将把脚本放在head元素中。
 * `favicon`：将给定的favicon路径添加到输出html。
 * `minify`：`{...} | false` 传递将[html-minifier](https://github.com/kangax/html-minifier#options-quick-reference)的选项作为对象，以缩小输出。
@@ -293,6 +293,8 @@ plugins: [
 请注意，必须传递htmlPluginData给回调，以便将其传递到其他任何使用相同`html-webpack-plugin-before-html-processing`事件的插件中。
 
 ## 模板选项
+
+[![](https://img.shields.io/badge/Github-%E5%8E%9F%E6%96%87%E5%9C%B0%E5%9D%80-brightgreen.svg)](https://github.com/jantimon/html-webpack-plugin/blob/master/docs/template-option.md)
 
 ### History
 
