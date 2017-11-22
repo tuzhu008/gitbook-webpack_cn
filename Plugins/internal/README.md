@@ -14,9 +14,8 @@ webpack本身内置了很多插件。
 | [`DllPlugin`](/Plugins/internal/DllPlugin.md) | 分割bundle来大幅改善构建时间，分割bundle |  |
 | [`EnvironmentPlugin`](/Plugins/internal/EnvironmentPlugin.md) | 内部使用`DefinePlugin` 来设置 `process.env` 键的快捷方式 |  |
 | [`HotModuleReplacementPlugin`](/Plugins/internal/HotModuleReplacementPlugin.md) | 开启模块热替换 |  |
-| `I18nWebpackPlugin` | Add i18n support to your bundles |  |
-| `IgnorePlugin` | Exclude certain modules from bundles |  |
-| `LimitChunkCountPlugin` | Set min/max limits for chunking to better control chunking |  |
+| [`IgnorePlugin`](/Plugins/internal/IgnorePlugin.md) | Exclude certain modules from bundles |  |
+| [`LimitChunkCountPlugin`](/Plugins/internal/LimitChunkCountPlugin.md) | Set min/max limits for chunking to better control chunking |  |
 | `LoaderOptionsPlugin` | Used for migrating from webpack 1 to 2 |  |
 | `MinChunkSizePlugin` | Keep chunk size above the specified limit |  |
 | `NoEmitOnErrorsPlugin` | Skip the emitting phase when there are compilation errors |  |

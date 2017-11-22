@@ -88,9 +88,9 @@
 
     * [HotModuleReplacementPlugin](Plugins/internal/HotModuleReplacementPlugin.md)
 
-    * IgnorePlugin
+    * [IgnorePlugin](Plugins/internal/IgnorePlugin.md)
 
-    * LimitChunkCountPlugin
+    * [LimitChunkCountPlugin](Plugins/internal/LimitChunkCountPlugin.md)
 
     * LoaderOptionsPlugin
 
