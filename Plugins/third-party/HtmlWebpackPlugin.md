@@ -311,7 +311,7 @@ plugins: [
 
 ### 不设置任何loader
 
-By default \(if you don't specify any loader in any way\) a [fallback lodash loader](https://github.com/ampedandwired/html-webpack-plugin/blob/master/lib/loader.js) kicks in.默认情况下\(如果您不以任何方式指定任何loader\)，一个备用的[ lodash loader](https://github.com/ampedandwired/html-webpack-plugin/blob/master/lib/loader.js)就会启动。
+默认情况下\(如果您不以任何方式指定任何loader\)，一个备用的[ lodash loader](https://github.com/ampedandwired/html-webpack-plugin/blob/master/lib/loader.js)就会启动。
 
 ```js
 {
