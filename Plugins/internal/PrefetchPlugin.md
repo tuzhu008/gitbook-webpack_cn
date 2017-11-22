@@ -11,8 +11,5 @@ new webpack.PrefetchPlugin([context], request)
 * `context`：文件夹的绝对路径
 * `request`：普通模块的 request 字符串
 
-  
-
-
 
 
