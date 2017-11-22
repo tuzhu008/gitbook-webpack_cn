@@ -28,22 +28,22 @@ module.exports = {
 
 ## 选项
 
-|Name|Type|Default|Description|
+|名称|类型|默认值|描述|
 |:--:|:--:|:-----:|:----------|
-|**`test`**|`{RegExp\|Array<RegExp>}`| <code>/\\.js$/i</code>|Test to match files against|
-|**`include`**|`{RegExp\|Array<RegExp>}`|`undefined`|Files to `include`|
-|**`exclude`**|`{RegExp\|Array<RegExp>}`|`undefined`|Files to `exclude`|
-|**`cache`**|`{Boolean\|String}`|`false`|Enable file caching|
-|**`parallel`**|`{Boolean\|Number}`|`false`|Use multi-process parallel running to improve the build speed|
-|**`sourceMap`**|`{Boolean}`|`false`|Use source maps to map error message locations to modules (This slows down the compilation) ⚠️ **`cheap-source-map` options don't work with this plugin**|
+|**`test`**|`{RegExp\|Array<RegExp>}`| <code>/\\.js$/i</code>|测试匹配的文件|
+|**`include`**|`{RegExp\|Array<RegExp>}`|`undefined`| `包含`的文件|
+|**`exclude`**|`{RegExp\|Array<RegExp>}`|`undefined`|`排除`的文件|
+|**`cache`**|`{Boolean\|String}`|`false`|开启文件缓存来提高构建速度|
+|**`parallel`**|`{Boolean\|Number}`|`false`|使用多进程并行运行来提高构建速度|
+|**`sourceMap`**|`{Boolean}`|`false`|使用源映射将错误信息位置映射到模块 (This slows down the compilation) ⚠️ **`cheap-source-map` 选项不能和这个插件一同工作**|
 |**`uglifyOptions`**|`{Object}`|[`{...defaults}`](https://github.com/webpack-contrib/uglifyjs-webpack-plugin/tree/master#uglifyoptions)|`uglify` [Options](https://github.com/mishoo/UglifyJS2/tree/harmony#minify-options)|
-|**`extractComments`**|`{Boolean\|RegExp\|Function<(node, comment) -> {Boolean\|Object}>}`|`false`|Whether comments shall be extracted to a separate file, (see [details](https://github.com/webpack/webpack/commit/71933e979e51c533b432658d5e37917f9e71595a) (`webpack >= 2.3.0`)|
-|**`warningsFilter`**|`{Function(source) -> {Boolean}}`|`() => true`|Allow to filter uglify warnings|
+|**`extractComments`**|`{Boolean\|RegExp\|Function<(node, comment) -> {Boolean\|Object}>}`|`false`|是否将注释提取到单独的文件， (参见 [细节](https://github.com/webpack/webpack/commit/71933e979e51c533b432658d5e37917f9e71595a) (`webpack >= 2.3.0`)|
+|**`warningsFilter`**|`{Function(source) -> {Boolean}}`|`() => true`|允许过滤uglify警告|
 
 dsadadasda
 
 
-|Name|Type|Default|Description|
+|名称|类型|默认值|描述|
 |:--:|:--:|:-----:|:----------|
 |**`ie8`**|`{Boolean}`|`false`|Enable IE8 Support|
 |**`ecma`**|`{Number}`|`undefined`|Supported ECMAScript Version (`5`, `6`, `7` or `8`). Affects `parse`, `compress` && `output` options|
@@ -56,7 +56,7 @@ dsadadasda
 
 sa
 
-|Name|Type|Default|Description|
+|名称|类型|默认值|描述|
 |:--:|:--:|:-----:|:----------|
 |**`condition`**|`{Regex\|Function}`|``|Regular Expression or function (see previous point)|
 |**`filename`**|`{String\|Function}`|`${file}.LICENSE`|The file where the extracted comments will be stored. Can be either a `{String}` or a `{Function<(string) -> {String}>}`, which will be given the original filename. Default is to append the suffix `.LICENSE` to the original filename|
