@@ -15,9 +15,8 @@ webpack本身内置了很多插件。
 | [`EnvironmentPlugin`](/Plugins/internal/EnvironmentPlugin.md) | 内部使用`DefinePlugin` 来设置 `process.env` 键的快捷方式 |  |
 | [`HotModuleReplacementPlugin`](/Plugins/internal/HotModuleReplacementPlugin.md) | 开启模块热替换 |  |
 | [`IgnorePlugin`](/Plugins/internal/IgnorePlugin.md) | Exclude certain modules from bundles |  |
-| [`LimitChunkCountPlugin`](/Plugins/internal/LimitChunkCountPlugin.md) | Set min/max limits for chunking to better control chunking |  |
-| `LoaderOptionsPlugin` | Used for migrating from webpack 1 to 2 |  |
-| `MinChunkSizePlugin` | Keep chunk size above the specified limit |  |
+| [`LimitChunkCountPlugin`](/Plugins/internal/LimitChunkCountPlugin.md) | 限制chunk的数量和每个chunk的体积 |  |
+| `MinChunkSizePlugin` | 设置chunk的最小体积（字节） |  |
 | `NoEmitOnErrorsPlugin` | Skip the emitting phase when there are compilation errors |  |
 | `NormalModuleReplacementPlugin` | Replace resource\(s\) that matches a regexp |  |
 | `NpmInstallWebpackPlugin` | Auto-install missing dependencies during development |  |

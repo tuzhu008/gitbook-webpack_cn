@@ -92,9 +92,7 @@
 
     * [LimitChunkCountPlugin](Plugins/internal/LimitChunkCountPlugin.md)
 
-    * LoaderOptionsPlugin
-
-    * MinChunkSizePlugin
+    * [MinChunkSizePlugin](Plugins/internal/MinChunkSizePlugin.md)
 
     * ModuleConcatenationPlugin
 
