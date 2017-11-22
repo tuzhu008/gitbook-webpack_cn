@@ -9,9 +9,9 @@ webpack本身内置了很多插件。
 | [`CommonsChunkPlugin`](/Plugins/internal/CommonsChunkPlugin.md) | 提取 chunks 之间共享的通用模块 |  |
 | [`NamedModulesPlugin`](/Plugins/internal/NamedModulesPlugin.md) | HMR时显示模块的相对路径 | 生产 |
 | [`HashedModuleIdsPlugin`](/Plugins/internal/HashedModuleIdsPlugin.md) | 根据模块的相对路径生成一个四位数的hash作为模块id | 生产 |
-| `ContextReplacementPlugin` | Override the inferred context of a `require` expression |  |
-| `DefinePlugin` | Allow global constants configured at compile time |  |
-| `DllPlugin` | Split bundles in order to drastically improve build time |  |
+| [`ContextReplacementPlugin`](/Plugins/internal/ContextReplacementPlugin.md) | 重写 `require` 表达式的推断上下文 |  |
+| [`DefinePlugin`](/Plugins/internal/DefinePlugin.md) | 允许在编译时配置全局常量 |  |
+| [`DllPlugin`](/Plugins/internal/DllPlugin.md) | 分割bundle来大幅改善构建时间，分割bundle |  |
 | `EnvironmentPlugin` | Shorthand for using the `DefinePlugin` on `process.env` keys |  |
 | `ExtractTextWebpackPlugin` | Extract text \(CSS\) from your bundles into a separate file |  |
 | `HotModuleReplacementPlugin` | Enable Hot Module Replacement \(HMR\) |  |

@@ -74,13 +74,13 @@
 
     * [CommonsChunkPlugin](Plugins/internal/CommonsChunkPlugin.md)
 
-    * ContextReplacementPlugin
+    * [ContextReplacementPlugin](Plugins/internal/ContextReplacementPlugin.md)
 
     * CopyWebpackPlugin
 
-    * DefinePlugin
+    * [DefinePlugin](Plugins/internal/DefinePlugin.md)
 
-    * DllPlugin
+    * [DllPlugin](Plugins/internal/DllPlugin.md)
 
     * EnvironmentPlugin
 
@@ -109,9 +109,13 @@
     * PrefetchPlugin
 
     * ProvidePlugin
+
     * SourceMapDevToolPlugin
+
     * UglifyjsWebpackPlugin
+
     * WatchIgnorePlugin
+
     * I18nWebpackPlugin
     * ZopfliWebpackPlugin
 
