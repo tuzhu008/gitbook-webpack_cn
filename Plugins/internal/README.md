@@ -19,11 +19,11 @@ webpack本身内置了很多插件。
 | [`MinChunkSizePlugin`](/Plugins/internal/MinChunkSizePlugin.md) | 设置chunk的最小体积（字节） |  |
 | [`NoEmitOnErrorsPlugin`](/Plugins/internal/NoEmitOnErrorsPlugin.md) | 在输出阶段时，遇到编译错误跳过 |  |
 | [`NormalModuleReplacementPlugin`](/Plugins/internal/NormalModuleReplacementPlugin.md) | 替换与正则表达式匹配的资源 |  |
-| `NpmInstallWebpackPlugin` | Auto-install missing dependencies during development |  |
 | `ProvidePlugin` | Use modules without having to use import/require |  |
 | `SourceMapDevToolPlugin` | Enables a more fine grained control of source maps |  |
 | `UglifyjsWebpackPlugin` | Enables control of the version of UglifyJS in your project |  |
 | `ZopfliWebpackPlugin` | Prepare compressed versions of assets with node-zopfli |  |
+| [PrefetchPlugin](/Plugins/internal/PrefetchPlugin.md) |  |  |
 
 
 

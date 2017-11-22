@@ -104,7 +104,7 @@
 
     * [NpmInstallWebpackPlugin](Plugins/third-party/NpmInstallWebpackPlugin.md)
 
-    * PrefetchPlugin
+    * [PrefetchPlugin](Plugins/internal/PrefetchPlugin.md)
 
     * ProvidePlugin
 
