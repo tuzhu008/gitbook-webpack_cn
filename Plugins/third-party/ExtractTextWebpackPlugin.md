@@ -58,6 +58,16 @@ module.exports = {
 new ExtractTextPlugin(options: filename | object)
 ```
 
+类型：string \| object
+
+
+
+### `string`:
+
+当传入一个字符串时，这个字符串代表的是输出的文件名（filename）
+
+### `object`:
+
 | 名称 | 类型 | 描述 |
 | :--- | :--- | :--- |
 | id | string | 此插件实例的唯一 ident。（仅限高级用途，默认情况下自动生成） |
@@ -75,7 +85,7 @@ new ExtractTextPlugin(options: filename | object)
   * 其他`digestType`：比如.`hex`,`base26`,`base32`,`base36`,`base49`,`base52`,`base58`,`base62`,`base64`
   * `length`：中哈希的长度
 
-> **\[warning\]** 注：
+> **\[warning\]** 注：  
 >  `ExtractTextPlugin`对**每个入口 chunk**都生成一个对应的文件，所以当你配置多个入口 chunk 的时候，你必须使用`[name]`,`[id]`或`[contenthash]`
 
 #### `extract`
@@ -86,8 +96,93 @@ ExtractTextPlugin.extract(options: loader | object)
 
 从一个已存在的 loader 中，创建一个提取\(extract\) loader。支持的 loader 类型`{ loader: [name]-loader ->{String}, options: {}> {Object} }`。
 
-|Name|Type|Description|
-|:--:|:--:|:----------|
-|**`options.use`**|`{String}`/`{Array}`/`{Object}`|Loader(s) that should be used for converting the resource to a CSS exporting module _(required)_|
-|**`options.fallback`**|`{String}`/`{Array}`/`{Object}`|loader(e.g `'style-loader'`) that should be used when the CSS is not extracted (i.e. in an additional chunk when `allChunks: false`)|
-|**`options.publicPath`**|`{String}`|Override the `publicPath` setting for this loader|
+| Name | Type | Description |
+| :---: | :---: | :--- |
+| `options.use` | `{String}`/`{Array}`/`{Object}` | loader 被用于将资源转换成一个 CSS 导出模块 \(**必填**\) |
+| `options.fallback` | `{String}`/`{Array}`/`{Object}` | loader（例如 'style-loader'）应用于当 CSS 没有被提取\(也就是一个额外的 chunk，当 allChunks: false\) |
+| `options.publicPath` | `{String}` | 重写此 loader 的 publicPath 配置 |
+
+
+
+### 多个实例（instance）
+
+每个`ExtractTextPlugin`实例上都有一个`extract`函数。如果有多于一个`ExtractTextPlugin`实例的情形，你应该使用这个函数。
+
+```js
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+// 创建多个实例
+const extractCSS = new ExtractTextPlugin('stylesheets/[name]-one.css');
+const extractLESS = new ExtractTextPlugin('stylesheets/[name]-two.css');
+
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: extractCSS.extract([ 'css-loader', 'postcss-loader' ])
+      },
+      {
+        test: /\.less$/i,
+        use: extractLESS.extract([ 'css-loader', 'less-loader' ])
+      },
+    ]
+  },
+  plugins: [
+    extractCSS,
+    extractLESS
+  ]
+};
+```
+
+### 提取 Sass 或 LESS
+
+配置和上面是相同的，需要时可以将`sass-loader`切换为`less-loader`。
+
+```js
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          //如果需要，可以在 sass-loader 之前将 resolve-url-loader 链接进来
+          use: ['css-loader', 'sass-loader']
+        })
+      }
+    ]
+  },
+  plugins: [
+    new ExtractTextPlugin('style.css')
+    //如果想要传入选项，你可以这样做：
+    //new ExtractTextPlugin({
+    //  filename: 'style.css'
+    //})
+  ]
+}
+
+```
+
+### 修改文件名
+
+`filename`参数可以是`Function`。它通过`getPath`来处理格式，如`css/[name].css`，并返回真实的文件名，你可以用`css`替换`css/js`，你会得到新的路径`css/a.css`。
+
+```js
+entry: {
+  'js/a': "./a"
+},
+plugins: [
+  new ExtractTextPlugin({
+    filename:  (getPath) => {
+      return getPath('css/[name].css').replace('css/js', 'css');
+    },
+    allChunks: true
+  })
+]
+```
+
+
+
