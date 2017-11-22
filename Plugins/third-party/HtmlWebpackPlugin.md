@@ -309,7 +309,7 @@ plugins: [
 
 有三种方法来设置loader:
 
-### 1\) 不设置任何loader
+### 不设置任何loader
 
 By default \(if you don't specify any loader in any way\) a [fallback lodash loader](https://github.com/ampedandwired/html-webpack-plugin/blob/master/lib/loader.js) kicks in.默认情况下\(如果您不以任何方式指定任何loader\)，一个备用的[ lodash loader](https://github.com/ampedandwired/html-webpack-plugin/blob/master/lib/loader.js)就会启动。
 
@@ -329,7 +329,7 @@ By default \(if you don't specify any loader in any way\) a [fallback lodash loa
 >
 > 使用`.html`作为模板扩展可能会意外地触发另一个loader。
 
-### 2\) 为模板直接设置loader
+### 为模板直接设置loader
 
 ```js
 new HtmlWebpackPlugin({
@@ -338,7 +338,7 @@ new HtmlWebpackPlugin({
 })
 ```
 
-### 3\) 使用`module.loaders` 语法设置loader
+### 使用`module.loaders` 语法设置loader
 
 ```js
 {
