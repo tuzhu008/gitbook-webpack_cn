@@ -57,7 +57,7 @@ plugins: [
 
 ## demo
 
-![](/assets/plugins-npm.gif)
+![](https://cloud.githubusercontent.com/assets/15182/12540538/6a4e8f1a-c2d0-11e5-97ee-4ddaf6892645.gif)
 
 ## 特性
 
@@ -67,10 +67,10 @@ plugins: [
 * \[x\] Supports Namespaced packages. \(e.g. `@cycle/dom`\)
 * \[x\] Supports Dot-delimited packages. \(e.g. `lodash.capitalize`\)
 * \[x\] Supports CSS imports. \(e.g. `@import "~bootstrap"`\)
-* \[x\] Supports Webpack loaders. \(e.g. `babel-loader`,` file-loader,` etc.\)
+* \[x\] Supports Webpack loaders. \(e.g. `babel-loader`,`file-loader,` etc.\)
 * \[x\] Supports inline Webpack loaders. \(e.g. `require("bundle?lazy!./App"`\)
 * \[x\] Auto-installs missing peerDependencies. \(e.g. `@cycle/core` will automatically install `rx@*`\)
-* \[x\] Supports Webpack's` resolve.alias` & `resolve.root` configuration. \(e.g. `require("react")` can alias to `react-lite`\) 
+* \[x\] Supports Webpack's`resolve.alias` & `resolve.root` configuration. \(e.g. `require("react")` can alias to `react-lite`\) 
 
 
 
