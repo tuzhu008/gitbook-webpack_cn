@@ -213,7 +213,7 @@ plugins: [
 
   * `htmlWebpackPlugin.options`：将传递给插件的选项哈希。除了这个插件实际使用的选项之外，您还可以使用这个哈希将任意数据传递给模板。
 
-* `webpack`：webpack [stats](https://github.com/webpack/docs/wiki/node.js-api#stats)对象。请注意，这是stats对象，就像它在HTML模板被发射时所做的那样，因为在webpack运行完成之后，它可能没有完整的统计数据集。
+* `webpack`：webpack [stats](//API/API-Node.md#stats-对象stats-object)对象。请注意，这是stats对象，就像它在HTML模板被发射时所做的那样，因为在webpack运行完成之后，它可能没有完整的统计数据集。
 
 * `webpackConfig`: 用于此编译的webpack配置。这可以被使用,例如,获取`publicPath`\(`webpackConfig.output.publicPath`\)。
 
