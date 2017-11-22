@@ -85,7 +85,7 @@ module.exports = Object.keys(languages).map(function(language) {
 
 ### js/de.output.js
 
-<!--sec data-title="Introduction" data-id="section0" data-show=true ces-->
+<!--sec data-title="Introduction" data-id="section0" data-show=false ces-->
 
 
 
