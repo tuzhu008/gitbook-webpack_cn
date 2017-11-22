@@ -50,7 +50,7 @@ module.exports = {
 
 #### `inlineManifest`
 
-是否将清单输出写入[html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin)。默认= `false`
+是否将清单输出写入[html-webpack-plugin](/Plugins/third-party/HtmlWebpackPlugin.md)。默认= `false`
 
 ```html
 // index.ejs

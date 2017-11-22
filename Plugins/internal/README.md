@@ -2,32 +2,32 @@
 
 webpack本身内置了很多插件。
 
-| 名称 | 描述 |
-| --- | --- |
-| [`AggressiveSplittingPlugin`](//Plugins/internal/AggressiveSplittingPlugin.md) | 将原始chunk分割成更小的chunk |
-| [`BannerPlugin`](/Plugins/internal/BannerPlugin.md) | 在每个生成的 chunk 顶部添加 banner |
-| [`CommonsChunkPlugin`](/Plugins/internal/CommonsChunkPlugin.md) | 提取 chunks 之间共享的通用模块 |
-| [`ComponentWebpackPlugin`](/plugins/component-webpack-plugin) | Use components with webpack |
-| [`CompressionWebpackPlugin`](/plugins/compression-webpack-plugin) | Prepare compressed versions of assets to serve them with Content-Encoding |
-| [`ContextReplacementPlugin`](/plugins/context-replacement-plugin) | Override the inferred context of a `require` expression |
-| [`DefinePlugin`](/plugins/define-plugin) | Allow global constants configured at compile time |
-| [`DllPlugin`](/plugins/dll-plugin) | Split bundles in order to drastically improve build time |
-| [`EnvironmentPlugin`](/plugins/environment-plugin) | Shorthand for using the [`DefinePlugin`](./define-plugin) on `process.env` keys |
-| [`ExtractTextWebpackPlugin`](/plugins/extract-text-webpack-plugin) | Extract text \(CSS\) from your bundles into a separate file |
-| [`HotModuleReplacementPlugin`](/plugins/hot-module-replacement-plugin) | Enable Hot Module Replacement \(HMR\) |
-| [`HtmlWebpackPlugin`](/plugins/html-webpack-plugin) | Easily create HTML files to serve your bundles |
-| [`I18nWebpackPlugin`](/plugins/i18n-webpack-plugin) | Add i18n support to your bundles |
-| [`IgnorePlugin`](/plugins/ignore-plugin) | Exclude certain modules from bundles |
-| [`LimitChunkCountPlugin`](/plugins/limit-chunk-count-plugin) | Set min/max limits for chunking to better control chunking |
-| [`LoaderOptionsPlugin`](/plugins/loader-options-plugin) | Used for migrating from webpack 1 to 2 |
-| [`MinChunkSizePlugin`](/plugins/min-chunk-size-plugin) | Keep chunk size above the specified limit |
-| [`NoEmitOnErrorsPlugin`](/plugins/no-emit-on-errors-plugin) | Skip the emitting phase when there are compilation errors |
-| [`NormalModuleReplacementPlugin`](/plugins/normal-module-replacement-plugin) | Replace resource\(s\) that matches a regexp |
-| [`NpmInstallWebpackPlugin`](/plugins/npm-install-webpack-plugin) | Auto-install missing dependencies during development |
-| [`ProvidePlugin`](/plugins/provide-plugin) | Use modules without having to use import/require |
-| [`SourceMapDevToolPlugin`](/plugins/source-map-dev-tool-plugin) | Enables a more fine grained control of source maps |
-| [`UglifyjsWebpackPlugin`](/plugins/uglifyjs-webpack-plugin) | Enables control of the version of UglifyJS in your project |
-| [`ZopfliWebpackPlugin`](/plugins/zopfli-webpack-plugin) | Prepare compressed versions of assets with node-zopfli |
+| 名称 | 描述 | 适用环境 |
+| :--- | :--- | :---: |
+| [`AggressiveSplittingPlugin`](//Plugins/internal/AggressiveSplittingPlugin.md) | 将原始chunk分割成更小的chunk |  |
+| [`BannerPlugin`](/Plugins/internal/BannerPlugin.md) | 在每个生成的 chunk 顶部添加 banner |  |
+| [`CommonsChunkPlugin`](/Plugins/internal/CommonsChunkPlugin.md) | 提取 chunks 之间共享的通用模块 |  |
+| [`ComponentWebpackPlugin`](/plugins/component-webpack-plugin) | Use components with webpack |  |
+| [`NamedModulesPlugin`](/Plugins/internal/NamedModulesPlugin.md) | HMR时显示模块的相对路径 | 生产 |
+| `CompressionWebpackPlugin` | Prepare compressed versions of assets to serve them with Content-Encoding |  |
+| `ContextReplacementPlugin` | Override the inferred context of a `require` expression |  |
+| `DefinePlugin` | Allow global constants configured at compile time |  |
+| `DllPlugin` | Split bundles in order to drastically improve build time |  |
+| `EnvironmentPlugin` | Shorthand for using the `DefinePlugin` on `process.env` keys |  |
+| `ExtractTextWebpackPlugin` | Extract text \(CSS\) from your bundles into a separate file |  |
+| `HotModuleReplacementPlugin` | Enable Hot Module Replacement \(HMR\) |  |
+| `I18nWebpackPlugin` | Add i18n support to your bundles |  |
+| `IgnorePlugin` | Exclude certain modules from bundles |  |
+| `LimitChunkCountPlugin` | Set min/max limits for chunking to better control chunking |  |
+| `LoaderOptionsPlugin` | Used for migrating from webpack 1 to 2 |  |
+| `MinChunkSizePlugin` | Keep chunk size above the specified limit |  |
+| `NoEmitOnErrorsPlugin` | Skip the emitting phase when there are compilation errors |  |
+| `NormalModuleReplacementPlugin` | Replace resource\(s\) that matches a regexp |  |
+| `NpmInstallWebpackPlugin` | Auto-install missing dependencies during development |  |
+| `ProvidePlugin` | Use modules without having to use import/require |  |
+| `SourceMapDevToolPlugin` | Enables a more fine grained control of source maps |  |
+| `UglifyjsWebpackPlugin` | Enables control of the version of UglifyJS in your project |  |
+| `ZopfliWebpackPlugin` | Prepare compressed versions of assets with node-zopfli |  |
 
 
 

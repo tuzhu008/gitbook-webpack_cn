@@ -112,7 +112,7 @@ plugins: [
 
 > **\[info\]** 注：
 >
-> 结合长期缓存，你可能需要使用这个[插件](https://github.com/diurnalist/chunk-manifest-webpack-plugin)去避免 公共chunk 改变。 你也需要使用`records`去保持稳定的模块 id，例如，使用[`NamedModulesPlugin`](https://doc.webpack-china.org/plugins/named-modules-plugin)或[`HashedModuleIdsPlugin`](https://doc.webpack-china.org/plugins/hashed-module-ids-plugin)。
+> 结合长期缓存，你可能需要使用这个[插件](/Plugins/third-party/ChunkManifestWebpackPlugin.md)去避免 公共chunk 改变。 你也需要使用`records`去保持稳定的模块 id，例如，使用[`NamedModulesPlugin`](https://doc.webpack-china.org/plugins/named-modules-plugin)或[`HashedModuleIdsPlugin`](https://doc.webpack-china.org/plugins/hashed-module-ids-plugin)。
 
 ### 将公共模块打包进父 chunk
 

@@ -89,6 +89,7 @@
     * EnvironmentPlugin
 
     * HashedModuleIdsPlugin
+
     * 模块热替换插件\(HotModuleReplacementPlugin\)
 
     * IgnorePlugin
@@ -101,11 +102,12 @@
 
     * ModuleConcatenationPlugin
 
-    * NamedModulesPlugin
+    * [NamedModulesPlugin](Plugins/internal/NamedModulesPlugin.md)
 
     * NoEmitOnErrorsPlugin
 
     * NormalModuleReplacementPlugin
+
     * NpmInstallWebpackPlugin
     * PrefetchPlugin
     * ProvidePlugin
