@@ -70,11 +70,11 @@ new ExtractTextPlugin(options: filename | object)
 
 | 名称 | 类型 | 描述 |
 | :--- | :--- | :--- |
-| id | string | 此插件实例的唯一 ident。（仅限高级用途，默认情况下自动生成） |
-| filename | string \| function | 生成文件的文件名。可能包含 \[name\], \[id\] 和 \[contenthash\] |
-| allChunks | boolean | 从所有额外的 chunk\(additional chunk\) 提取（默认情况下，它仅从初始chunk\(initial chunk\) 中提取）当使用 CommonsChunkPlugin 并且在公共 chunk 中有提取的 chunk（来自ExtractTextPlugin.extract）时，allChunks** 必须 **设置为 true |
-| disable | boolean | 禁用插件 |
-| ignoreOrder | boolean | 禁用顺序检查（这对CSS模块很有用），默认false |
+| `id` | string | 此插件实例的唯一 ident。（仅限高级用途，默认情况下自动生成） |
+| `filename` | string \| function | 生成文件的文件名。可能包含 `[name]`, `[id]` 和 `[contenthash]` |
+| `allChunks` | boolean | 从所有额外的 chunk\(additional chunk\) 提取（默认情况下，它仅从初始chunk\(initial chunk\) 中提取）当使用 CommonsChunkPlugin 并且在公共 chunk 中有提取的 chunk（来自ExtractTextPlugin.extract）时，`allChunks`** 必须 **设置为 true |
+| `disable` | boolean | 禁用插件 |
+| `ignoreOrder` | boolean | 禁用顺序检查（这对CSS模块很有用），默认false |
 
 `[name]`chunk 的名称
 
