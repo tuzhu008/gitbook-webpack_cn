@@ -106,7 +106,7 @@
 
     * [ProvidePlugin](Plugins/internal/ProvidePlugin.md)
 
-    * SourceMapDevToolPlugin
+    * [SourceMapDevToolPlugin](Plugins/internal/SourceMapDevToolPlugin.md)
 
     * UglifyjsWebpackPlugin
 

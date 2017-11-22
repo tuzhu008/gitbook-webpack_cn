@@ -20,7 +20,7 @@ webpack本身内置了很多插件。
 | [`NoEmitOnErrorsPlugin`](/Plugins/internal/NoEmitOnErrorsPlugin.md) | 在输出阶段时，遇到编译错误跳过 |  |
 | [`NormalModuleReplacementPlugin`](/Plugins/internal/NormalModuleReplacementPlugin.md) | 替换与正则表达式匹配的资源 |  |
 | [`ProvidePlugin`](/Plugins/internal/ProvidePlugin.md) | 不必通过 import/require 使用模块 |  |
-| `SourceMapDevToolPlugin` | Enables a more fine grained control of source maps |  |
+| [`SourceMapDevToolPlugin`](/Plugins/internal/SourceMapDevToolPlugin.md) | 对 source map 进行更细粒度的控制 |  |
 | `UglifyjsWebpackPlugin` | Enables control of the version of UglifyJS in your project |  |
 | `ZopfliWebpackPlugin` | Prepare compressed versions of assets with node-zopfli |  |
 | [PrefetchPlugin](/Plugins/internal/PrefetchPlugin.md) |  |  |
