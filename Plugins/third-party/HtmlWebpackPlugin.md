@@ -296,8 +296,7 @@ plugins: [
 
 ### History
 
-The version 2.x which was introduced last year (Sep, 2015) changed the way the template is processed.
-Instead of forcing all users to use the [blueimp](https://github.com/blueimp/JavaScript-Templates) template engine it allowed to use any webpack loader:
+2015年9月版本2.x改变了模板的处理方式。它没有强制所有用户使用 [blueimp](https://github.com/blueimp/JavaScript-Templates) 模板引擎，而是允许使用任何webpack loader:
 
 * [jade/pug](https://github.com/pugjs/pug-loader)
 * [ejs](https://github.com/okonet/ejs-loader)
@@ -306,14 +305,13 @@ Instead of forcing all users to use the [blueimp](https://github.com/blueimp/Jav
 * [html-loader](https://github.com/webpack/html-loader)
 * ...
 
-Under the hood it is using a webpack child compilation which inherits all loaders from
-your main configuration.
+在外壳之下，它使用了一个webpack子编译，它继承了主配置中的所有loader。
 
-There are three ways to set the loader:
+有三种方法来设置loader:
 
-### 1) Don't set any loader
+### 1\) 不设置任何loader
 
-By default (if you don't specify any loader in any way) a [fallback lodash loader](https://github.com/ampedandwired/html-webpack-plugin/blob/master/lib/loader.js) kicks in.
+By default \(if you don't specify any loader in any way\) a [fallback lodash loader](https://github.com/ampedandwired/html-webpack-plugin/blob/master/lib/loader.js) kicks in.默认情况下\(如果您不以任何方式指定任何loader\)，一个备用的[ lodash loader](https://github.com/ampedandwired/html-webpack-plugin/blob/master/lib/loader.js)就会启动。
 
 ```js
 {
@@ -324,9 +322,14 @@ By default (if you don't specify any loader in any way) a [fallback lodash loade
   ]
 }
 ```
-Be aware, using `.html` as your template extention may unexpectedly trigger another loader.
 
-### 2) Setting a loader directly for the template
+请注意,使用。html作为模板扩展可能会意外地触发另一个加载器。
+
+> **\[info\]** 注：
+>
+> 使用`.html`作为模板扩展可能会意外地触发另一个loader。
+
+### 2\) 为模板直接设置loader
 
 ```js
 new HtmlWebpackPlugin({
@@ -335,7 +338,7 @@ new HtmlWebpackPlugin({
 })
 ```
 
-### 3) Setting a loader using the `module.loaders` syntax
+### 3\) 使用`module.loaders` 语法设置loader
 
 ```js
 {
@@ -355,8 +358,7 @@ new HtmlWebpackPlugin({
 }
 ```
 
-However this also means that in the following example webpack will use the [html loader for your template](https://webpack.js.org/loaders/html-loader/).
-This will **cause html minification** and it will also **disable the ejs fallback** loader.
+但是，这也意味着在下面的示例中，webpack将为您的模板使用[html loader](https://webpack.js.org/loaders/html-loader/)。这将**导致html缩小**，它也会**禁用ejs备用的loader**。
 
 ```js
 {
@@ -374,4 +376,6 @@ This will **cause html minification** and it will also **disable the ejs fallbac
   ]
 }
 ```
- 
+
+
+
