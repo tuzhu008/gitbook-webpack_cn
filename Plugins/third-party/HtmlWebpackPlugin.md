@@ -188,7 +188,7 @@ plugins: [
 
 * `htmlWebpackPlugin`: 特定于此插件的数据
 
-  * `htmlWebpackPlugin.files` ：一个对webpack的[stats](https://github.com/webpack/docs/wiki/node.js-api#stats)对象的`assetsByChunkName`属性的一个按摩（massaged）的表示。它包含一个从入口点名到包文件名的映射，例如:
+  * `htmlWebpackPlugin.files` ：一个对webpack的[stats](//API/API-Node.md##stats-对象stats-object)对象的`assetsByChunkName`属性的一个按摩（massaged）的表示。它包含一个从入口点名到包文件名的映射，例如:
 
     ```json
     "htmlWebpackPlugin": {
@@ -294,7 +294,7 @@ plugins: [
 
 ## 模板选项
 
-[![](https://img.shields.io/badge/Github-%E5%8E%9F%E6%96%87%E5%9C%B0%E5%9D%80-brightgreen.svg)](https://github.com/jantimon/html-webpack-plugin/blob/master/docs/template-option.md)
+[![](https://img.shields.io/badge/Github-原文地址-brightgreen.svg)](https://github.com/jantimon/html-webpack-plugin/blob/master/docs/template-option.md)
 
 ### History
 
