@@ -102,8 +102,7 @@
 
     * [NormalModuleReplacementPlugin](Plugins/internal/NormalModuleReplacementPlugin.md)
 
-    * [NpmInstallWebpackPlugin](Plugins/third-party/NpmInstallWebpackPlugin.md)
-
+    * 
     * [PrefetchPlugin](Plugins/internal/PrefetchPlugin.md)
 
     * ProvidePlugin
@@ -127,6 +126,7 @@
     * [WebpackManifestPlugin](Plugins/third-party/WebpackManifestPlugin.md)
     * [CompressionWebpackPlugin](Plugins/third-party/CompressionWebpackPlugin.md)
     * [DotenvWebpack](Plugins/third-party/DotenvWebpack.md)
+    * [NpmInstallWebpackPlugin](Plugins/third-party/NpmInstallWebpackPlugin.md)
 
 * [注意](Note.md)
 
