@@ -1,34 +1,33 @@
-[![npm][npm]][npm-url]
-[![node][node]][node-url]
-[![deps][deps]][deps-url]
-[![test][test]][test-url]
-[![coverage][cover]][cover-url]
-[![chat][chat]][chat-url]
-
 <div align="center">
   <a href="https://github.com/webpack/webpack">
     <img width="200" height="200"
       src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
   <h1>Copy Webpack Plugin</h1>
-  <p>Copies individual files or entire directories to the build directory.</p>
+  <p>将单个文件或整个目录复制到构建目录</p>
 </div>
+[![](https://img.shields.io/badge/Github-%E6%9F%A5%E7%9C%8B%E6%9B%B4%E5%A4%9A-brightgreen.svg)](https://github.com/webpack-contrib/copy-webpack-plugin)
 
-<h2 align="center">Install</h2>
+<h2 align="center">安装</h2>
 
 ```
 npm install --save-dev copy-webpack-plugin
 ```
 
-<h2 align="center">Usage</h2>
+<h2 align="center">用法</h2>
+```js
+new CopyWebpackPlugin(patterns, options)
+```
+### patterns
+类型：array
 
-`new CopyWebpackPlugin([patterns], options)`
+一个模式数组
 
-A pattern looks like:
+每个模式的样子:
 `{ from: 'source', to: 'dest' }`
 
 Or, in the simple case of just a `from` with the default destination, you can use a string primitive instead of an object:
-`'source'`
+`'source'`或者，在简单的情况下，仅从默认目的地，您可以使用字符串原语而不是对象:
 
 #### Pattern properties:
 
