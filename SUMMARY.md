@@ -2,7 +2,49 @@
 
 * [教程](/Guide/README.md)
 
-* [loader](loaders/README.md)
+* [Loader](loaders/README.md)
+
+* babel-loader
+
+* yaml-frontmatter-loader
+* cache-loader
+* coffee-loader
+* coffee-redux-loader
+* coverjs-loader
+* css-loader
+* exports-loader
+* expose-loader
+* extract-loader
+* file-loader
+* gzip-loader
+* html-loader
+* i18n-loader
+* imports-loader
+* istanbul-instrumenter-loader
+* jshint-loader
+* json-loader
+* json5-loader
+* less-loader
+* bundle-loader
+* multi-loader
+* node-loader
+* null-loader
+* polymer-webpack-loader
+* postcss-loader
+* raw-loader
+* react-proxy-loader
+* restyle-loader
+* sass-loader
+* script-loader
+* source-map-loader
+* style-loader
+* svg-inline-loader
+* thread-loader
+* transform-loader
+* url-loader
+* val-loader
+* worker-loader
+* mocha-loader
 
 * [配置](/configuration/README.md)
 
