@@ -50,7 +50,7 @@ module.exports = {
 }
 ```
 
-### Inline
+### 内联
 
 ```js
 import exec from 'script-loader!./script.js';
