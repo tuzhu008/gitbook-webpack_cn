@@ -108,8 +108,6 @@
 
     * [SourceMapDevToolPlugin](Plugins/internal/SourceMapDevToolPlugin.md)
 
-    * UglifyjsWebpackPlugin
-
     * WatchIgnorePlugin
 
     * [I18nWebpackPlugin](Plugins/third-party/I18nWebpackPlugin.md)
@@ -126,6 +124,7 @@
     * [CompressionWebpackPlugin](Plugins/third-party/CompressionWebpackPlugin.md)
     * [DotenvWebpack](Plugins/third-party/DotenvWebpack.md)
     * [NpmInstallWebpackPlugin](Plugins/third-party/NpmInstallWebpackPlugin.md)
+    * [UglifyjsWebpackPlugin](Plugins/third-party/UglifyjsWebpackPlugin.md)
 
 * [注意](Note.md)
 
