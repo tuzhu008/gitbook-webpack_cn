@@ -94,13 +94,13 @@
 
   * [Output（输出）](configuration/output.md)
 
-  * [Module（模块](/configuration/module.md)
+  * [Module（模块）](/configuration/module.md)
 
-  * [Resolve（解析](/configuration/resolve.md)
+  * [Resolve（解析）](/configuration/resolve.md)
 
-  * [Plugins（插件](configuration/plugins.md)
+  * [Plugins（插件）](configuration/plugins.md)
 
-  * [DevServer（开发服务](configuration/devServer.md)
+  * [DevServer（开发服务）](configuration/devServer.md)
 
   * [Devtools（开发工具）](/configuration/devtools.md)
 
