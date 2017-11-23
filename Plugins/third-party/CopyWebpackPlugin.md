@@ -40,7 +40,7 @@ new CopyWebpackPlugin(patterns, options)
 | `from` | Y        |             | _例如:_<br>'relative/file.txt'<br>'/absolute/file.txt'<br>'relative/dir'<br>'/absolute/dir'<br>'\*\*/\*'<br>{glob:'\*\*/\*', dot: true}<br><br>Globs 接收 [minimatch options](https://github.com/isaacs/minimatch) |
 | `to`   | N        | 如果 `from` 是一个文件或者目录，输出root<br><br> 如果 `from` 是 glob，已解决的glob路径| _例如:_<br>'relative/file.txt'<br>'/absolute/file.txt'<br>'relative/dir'<br>'/absolute/dir'<br>'relative/[name].[ext]'<br>'/absolute/[name].[ext]'<br><br>模板是 [file-loader patterns](https://github.com/webpack/file-loader) |
 | `toType` | N | 为**'文件'** ，如果`to` 有扩展或者`from`是文件 <br><br>为**'目录'**， 如果 `from` 是目录, `to` 不包含扩展或者末尾是 '/'<br><br>**为'template'** ，如果 `to`包含  [一个模板模式](https://github.com/webpack/file-loader) | |
-| `context` | N | options.context \|\| compiler.options.context | 一个决定如何解释`from`路径的路径 |
+| `context` | N | options.context 或 compiler.options.context | 一个决定如何解释`from`路径的路径 |
 | `flatten` | N | false | 删除所有的目录引用，并且只复制文件名。<br><br>如果文件具有相同的名称，则结果是不确定的 |
 | `ignore` | N | [] |  对于这种模式，忽略的额外globs |
 | `transform` | N | function(content, path) {<br>&nbsp;&nbsp;return content;<br>} | 在写入webpack之前修改文件内容的函数|
