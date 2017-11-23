@@ -14,6 +14,7 @@
 | [I18nWebpackPlugin](/Plugins/third-party/I18nWebpackPlugin.md) | 为 bundle 增加国际化支持 |  |
 | [NpmInstallWebpackPlugin](/Plugins/third-party/NpmInstallWebpackPlugin.md) | 在开发时自动安装缺少的依赖 | 开发 |
 | [UglifyjsWebpackPlugin](/Plugins/third-party/UglifyjsWebpackPlugin.md) | 可以控制项目中 UglifyJS 的版本 |  |
+| [ZopfliWebpackPlugin](/Plugins/third-party/ZopfliWebpackPlugin.md) | 通过 node-zopfli 将资源预先压缩的版本 |  |
 
 
 

@@ -108,11 +108,9 @@
 
     * [SourceMapDevToolPlugin](Plugins/internal/SourceMapDevToolPlugin.md)
 
-    * WatchIgnorePlugin
+    * [WatchIgnorePlugin](Plugins/internal/WatchIgnorePlugin.md)
 
     * [I18nWebpackPlugin](Plugins/third-party/I18nWebpackPlugin.md)
-
-    * ZopfliWebpackPlugin
 
   * [三方插件](/Plugins/third-party/README.md)
 
@@ -125,6 +123,7 @@
     * [DotenvWebpack](Plugins/third-party/DotenvWebpack.md)
     * [NpmInstallWebpackPlugin](Plugins/third-party/NpmInstallWebpackPlugin.md)
     * [UglifyjsWebpackPlugin](Plugins/third-party/UglifyjsWebpackPlugin.md)
+    * [ZopfliWebpackPlugin](Plugins/third-party/ZopfliWebpackPlugin.md)
 
 * [注意](Note.md)
 
