@@ -3,18 +3,19 @@
     <img width="200" height="200"
       src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
-  <h1>Copy Webpack Plugin</h1>
-  <p>将单个文件或整个目录复制到构建目录</p>
 </div>
+<h1>Copy Webpack Plugin</h1>
+将单个文件或整个目录复制到构建目录
+
 [![](https://img.shields.io/badge/Github-%E6%9F%A5%E7%9C%8B%E6%9B%B4%E5%A4%9A-brightgreen.svg)](https://github.com/webpack-contrib/copy-webpack-plugin)
 
-<h2 align="center">安装</h2>
+<h2>安装</h2>
 
 ```
 npm install --save-dev copy-webpack-plugin
 ```
 
-<h2 align="center">用法</h2>
+<h2>用法</h2>
 ```js
 new CopyWebpackPlugin(patterns, options)
 ```
@@ -31,7 +32,7 @@ new CopyWebpackPlugin(patterns, options)
 
 #### 模式属性:
 
-| 名称 | 是否必须 | 默认值     | 细节                                                 |
+| 名称 | 是否必须 | 默认值     | 细节                                             |
 |------|----------|------------ |---------------------------------------------------------|
 | `from` | Y        |             | _例如:_<br>'relative/file.txt'<br>'/absolute/file.txt'<br>'relative/dir'<br>'/absolute/dir'<br>'\*\*/\*'<br>{glob:'\*\*/\*', dot: true}<br><br>Globs 接收 [minimatch options](https://github.com/isaacs/minimatch) |
 | `to`   | N        | 如果 `from` 是一个文件或者目录，输出root<br><br> 如果 `from` 是 glob，已解决的glob路径| _例如:_<br>'relative/file.txt'<br>'/absolute/file.txt'<br>'relative/dir'<br>'/absolute/dir'<br>'relative/[name].[ext]'<br>'/absolute/[name].[ext]'<br><br>模板是 [file-loader patterns](https://github.com/webpack/file-loader) |
