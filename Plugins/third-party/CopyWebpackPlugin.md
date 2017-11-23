@@ -21,37 +21,37 @@ new CopyWebpackPlugin(patterns, options)
 ### patterns
 类型：array
 
-一个模式数组
+模式数组
 
-每个模式的样子:
+一个模式的样子:
 `{ from: 'source', to: 'dest' }`
 
-Or, in the simple case of just a `from` with the default destination, you can use a string primitive instead of an object:
-`'source'`或者，在简单的情况下，仅从默认目的地，您可以使用字符串原语而不是对象:
+或者，在简单的情况下，仅指定一个`from`，使用默认目的地。您可以使用简单字符串而不是对象:
+`'source'`
 
-#### Pattern properties:
+#### 模式属性:
 
-| Name | Required | Default     | Details                                                 |
+| 名称 | 是否必须 | 默认值     | 细节                                                 |
 |------|----------|------------ |---------------------------------------------------------|
-| `from` | Y        |             | _examples:_<br>'relative/file.txt'<br>'/absolute/file.txt'<br>'relative/dir'<br>'/absolute/dir'<br>'\*\*/\*'<br>{glob:'\*\*/\*', dot: true}<br><br>Globs accept [minimatch options](https://github.com/isaacs/minimatch) |
-| `to`   | N        | output root if `from` is file or dir<br><br>resolved glob path if `from` is glob | _examples:_<br>'relative/file.txt'<br>'/absolute/file.txt'<br>'relative/dir'<br>'/absolute/dir'<br>'relative/[name].[ext]'<br>'/absolute/[name].[ext]'<br><br>Templates are [file-loader patterns](https://github.com/webpack/file-loader) |
-| `toType` | N | **'file'** if `to` has extension or `from` is file<br><br>**'dir'** if `from` is directory, `to` has no extension or ends in '/'<br><br>**'template'** if `to` contains [a template pattern](https://github.com/webpack/file-loader) | |
-| `context` | N | options.context \|\| compiler.options.context | A path that determines how to interpret the `from` path |
-| `flatten` | N | false | Removes all directory references and only copies file names<br><br>If files have the same name, the result is non-deterministic |
-| `ignore` | N | [] | Additional globs to ignore for this pattern |
-| `transform` | N | function(content, path) {<br>&nbsp;&nbsp;return content;<br>} | Function that modifies file contents before writing to webpack |
-| `force` | N | false | Overwrites files already in compilation.assets (usually added by other plugins) |
+| `from` | Y        |             | _例如:_<br>'relative/file.txt'<br>'/absolute/file.txt'<br>'relative/dir'<br>'/absolute/dir'<br>'\*\*/\*'<br>{glob:'\*\*/\*', dot: true}<br><br>Globs 接收 [minimatch options](https://github.com/isaacs/minimatch) |
+| `to`   | N        | 如果 `from` 是一个文件或者目录，输出root<br><br> 如果 `from` 是 glob，已解决的glob路径| _例如:_<br>'relative/file.txt'<br>'/absolute/file.txt'<br>'relative/dir'<br>'/absolute/dir'<br>'relative/[name].[ext]'<br>'/absolute/[name].[ext]'<br><br>模板是 [file-loader patterns](https://github.com/webpack/file-loader) |
+| `toType` | N | 为**'文件'** ，如果`to` 有扩展或者`from`是文件 <br><br>为**'目录'**， 如果 `from` 是目录, `to` 不包含扩展或者末尾是 '/'<br><br>**为'template'** ，如果 `to`包含  [一个模板模式](https://github.com/webpack/file-loader) | |
+| `context` | N | options.context \|\| compiler.options.context | 一个决定如何解释`from`路径的路径 |
+| `flatten` | N | false | 删除所有的目录引用，并且只复制文件名。<br><br>如果文件具有相同的名称，则结果是不确定的 |
+| `ignore` | N | [] |  对于这种模式，忽略的额外globs |
+| `transform` | N | function(content, path) {<br>&nbsp;&nbsp;return content;<br>} | 在写入webpack之前修改文件内容的函数|
+| `force` | N | false | 重写已经在compilation.assets中的文件(通常由其他插件添加)|
 
-#### Available options:
+#### 可用的选项:
 
-| Name | Default | Details |
+| 名称 | 默认值 | 细节 |
 | ---- | ------- | ------- |
-| `context` | compiler.options.context | A path that determines how to interpret the `from` path, shared for all patterns |
-| `ignore` | [] | Array of globs to ignore (applied to `from`) |
-| `copyUnmodified` | false | Copies files, regardless of modification when using watch or webpack-dev-server. All files are copied on first build, regardless of this option. |
-| `debug` | **'warning'** | _options:_<br>**'warning'** - only warnings<br>**'info'** or true - file location and read info<br>**'debug'** - very detailed debugging info
+| `context` | compiler.options.context | 一个决定如何说明`from`路径的路径，为所有模式所共享|
+| `ignore` | [] | 忽略的glob数组 (应用于 `from`) |
+| `copyUnmodified` | false | 复制文件，不考虑什么时候使用watch或webpack-devserver。所有文件都是在第一个构建中复制的，不管这个选项是什么。|
+| `debug` | **'warning'** | _选项:_<br>**'warning'** - 仅警告<br>**'info'** 或者 true - 文件地址和读取信息<br>**'debug'** - 非常详细的调试信息
 
-### Examples
+### 示例
 
 ```javascript
 var CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -60,9 +60,8 @@ var path = require('path');
 module.exports = {
     context: path.join(__dirname, 'app'),
     devServer: {
-        // This is required for older versions of webpack-dev-server
-        // if you use absolute 'to' paths. The path should be an
-        // absolute path to your build destination.
+        // 这是webpack-dev-server的旧版本所需要的
+        // 如果你使用绝对的'to' 路径。路径应该是通往您的构建目的地的绝对路径。
         outputPath: path.join(__dirname, 'build')
     },
     plugins: [
@@ -70,7 +69,7 @@ module.exports = {
             // {output}/file.txt
             { from: 'from/file.txt' },
             
-            // equivalent
+            // 等效
             'from/file.txt',
 
             // {output}/to/file.txt
@@ -79,16 +78,16 @@ module.exports = {
             // {output}/to/directory/file.txt
             { from: 'from/file.txt', to: 'to/directory' },
 
-            // Copy directory contents to {output}/
+            // 拷贝目录内容到 {output}/
             { from: 'from/directory' },
             
-            // Copy directory contents to {output}/to/directory/
+            // 拷贝目录内容到 {output}/to/directory/
             { from: 'from/directory', to: 'to/directory' },
             
-            // Copy glob results to /absolute/path/
+            // 拷贝 glob 结果到 /absolute/path/
             { from: 'from/directory/**/*', to: '/absolute/path' },
 
-            // Copy glob results (with dot files) to /absolute/path/
+            // 拷贝 glo (with dot files) to /absolute/path/
             {
                 from: {
                     glob:'from/directory/**/*',
