@@ -45,9 +45,10 @@ module.exports = {
 ```js
 new UglifyJSPlugin({
   test: /\.js($|\?)/i,
-   include: /\/includes/,
-   exclude: /\/excludes/,
-   cache: true,// 启用文件缓存。默认缓存目录路径：node_modules/.cache/uglifyjs-webpack-plugin.
+  include: /\/includes/,
+  exclude: /\/excludes/,
+  sourceMap: true,
+  warningsFilter: (src) => true
 })
 ```
 ### `cache`
@@ -55,26 +56,105 @@ new UglifyJSPlugin({
 #### `boolean`
 当`cache`为布尔值时表示是否启用文件缓存。
 默认的缓存目录路径:``node_modules/.cache/uglifyjs-webpack-plugin``。
+```js
+new UglifyJSPlugin({
+  cache: true // 启用缓存
+})
+```
+
 #### `string`
-`cache`还可以指定为表示缓存一个字符串，表示缓存路径。
+`cache`还可以指定为一个字符串，表示缓存路径。
+```js
+new UglifyJSPlugin({
+  cache: 'path/to/cache' // 启用缓存，并指定缓存路径
+})
+```
+
+### `parallel`
+类型：boolean | number
+#### `Boolean`
+实现并行化。默认并发运行的数量: `os.cpus().length - 1`.
+
+
+```js
+ new UglifyJSPlugin({
+    parallel: true
+  })
+
+```
+
+#### `number`
+也可直接指定并发运行数量。
+
+```
+new UglifyJSPlugin({
+    parallel: 4
+  })
+```
+
+> **[info]** 注：
+>
+>并行化可以显著提高您的构建速度，因此高度推荐
+
+### `uglifyOptions`
 
 |名称|类型|默认值|描述|
 |:--:|:--:|:-----:|:----------|
-|**`ie8`**|`{Boolean}`|`false`|Enable IE8 Support|
-|**`ecma`**|`{Number}`|`undefined`|Supported ECMAScript Version (`5`, `6`, `7` or `8`). Affects `parse`, `compress` && `output` options|
-|**[`parse`](https://github.com/mishoo/UglifyJS2/tree/harmony#parse-options)**|`{Object}`|`{}`|Additional Parse Options|
-|**[`mangle`](https://github.com/mishoo/UglifyJS2/tree/harmony#mangle-options)**|`{Boolean\|Object}`|`true`|Enable Name Mangling (See [Mangle Properties](https://github.com/mishoo/UglifyJS2/tree/harmony#mangle-properties-options) for advanced setups, use with ⚠️)|
-|**[`output`](https://github.com/mishoo/UglifyJS2/tree/harmony#output-options)**|`{Object}`|`{}`|Additional Output Options (The defaults are optimized for best compression)|
-|**[`compress`](https://github.com/mishoo/UglifyJS2/tree/harmony#compress-options)**|`{Boolean\|Object}`|`true`|Additional Compress Options|
-|**`warnings`**|`{Boolean}`|`false`|Display Warnings|
+|**`ie8`**|`{Boolean}`|`false`|启用 IE8 支持|
+|**`ecma`**|`{Number}`|`undefined`|支持 ECMAScript 版本 (`5`, `6`, `7` or `8`). 影响 `parse`, `compress` && `output` 选项|
+|**[`parse`](https://github.com/mishoo/UglifyJS2/tree/harmony#parse-options)**|`{Object}`|`{}`|额外的解析选项|
+|**[`mangle`](https://github.com/mishoo/UglifyJS2/tree/harmony#mangle-options)**|`{Boolean\|Object}`|`true`|启用名称改编Enable Name Mangling (参见 [Mangle Properties](https://github.com/mishoo/UglifyJS2/tree/harmony#mangle-properties-options) 获取高级设置，请谨慎使用 ⚠️)|
+|**[`output`](https://github.com/mishoo/UglifyJS2/tree/harmony#output-options)**|`{Object}`|`{}`|额外的输出选项 (默认值是为了最佳压缩而优化的)|
+|**[`compress`](https://github.com/mishoo/UglifyJS2/tree/harmony#compress-options)**|`{Boolean\|Object}`|`true`|额外的压缩选项|
+|**`warnings`**|`{Boolean}`|`false`|显示警告|
 
 
-sa
+
+```js
+  new UglifyJSPlugin({
+    uglifyOptions: {
+      ie8: false,
+      ecma: 8,
+      parse: {...options},
+      mangle: {
+        ...options,
+        properties: {
+          // mangle property options
+        }
+      },
+      output: {
+        comments: false,
+        beautify: false,
+        ...options
+      },
+      compress: {...options},
+      warnings: false
+    }
+  })
+
+```
+
+### `extractComments`
+类型：`Boolean` | `RegExp|String` or `Function<(node, comment) -> {Boolean}>` | `object`
+
+#### `boolean`
+
+`comments`选项将保存的所有注释将被移动到一个单独的文件中。如果原始文件被命名为foo.js，然后这些注释将被存储到`foo.js.LICENSE`。
+
+#### `RegExp|String` or `Function<(node, comment) -> {Boolean}>`
+所有与给定表达式匹配的注释(分别被函数计算为`true`)将被提取到单独的文件中。`comments`选项指定是否保留注释，也就是说，在提取其他注释时保存一些注释(例如释文)，或者保存
+已经提取的注释。 
 
 |名称|类型|默认值|描述|
 |:--:|:--:|:-----:|:----------|
-|**`condition`**|`{Regex\|Function}`|``|Regular Expression or function (see previous point)|
-|**`filename`**|`{String\|Function}`|`${file}.LICENSE`|The file where the extracted comments will be stored. Can be either a `{String}` or a `{Function<(string) -> {String}>}`, which will be given the original filename. Default is to append the suffix `.LICENSE` to the original filename|
-|**`banner`**|`{Boolean\|String\|Function}`|`/*! For license information please see ${filename}.js.LICENSE */`|The banner text that points to the extracted file and will be added on top of the original file. Can be `false` (no banner), a `{String}`, or a `{Function<(string) -> {String}` that will be called with the filename where extracted comments have been stored. Will be wrapped into comment|
+|**`condition`**|`{Regex\|Function}`|``|正则表达式或函数 (参见之前的要点)|
+|**`filename`**|`{String\|Function}`|`${file}.LICENSE`|被提取的注释文件将要被存储到的地方。可以是一个`{String}` 或者一个`{Function<(string) -> {String}>}`，得到的将是一个原始文件名。默认是将`.LICENSE`后缀添加到原始文件名|
+|**`banner`**|`{Boolean\|String\|Function}`|`/*! For license information please see ${filename}.js.LICENSE */`| banner 文本是指向提取出的文件并将会被添加到原始文件的顶部。可以是 `false`（表示没有 banner），一个 `{String}`，或者一个 `{Function<(string) -> {String}` 返回字符串的函数，会在提取出的文件被存储时候调用。将被包装成注释。|
 
+#### `object`
 
+|名称|类型|默认值|描述|
+|:--:|:--:|:-----:|:----------|
+| `condition` |`{Regex or Function}`| `` | 通常表达式或者相应函数（见上文）|
+| `filename` | `{String or Function}` | `compilation.assets[file]` | 提取注释的文件会被存储。可以使一个 `{String} `字符串或者是一个 `{Function<(string) -> {String}>}` 返回字符串的函数，作为原文件名。默认加上文件后缀名 `.LICENSE` |
+| banner | {Boolean|String|Function} | `/*! For license information please see ${filename}.js.LICENSE */` | banner 文本会在原文件的头部指出被提取的文件，会在源文件加入该信息。可以是 `false`（表示没有 banner），一个 `{String}`，或者一个 `{Function<(string) -> {String}` 返回字符串的函数，会在提取已经被存储注释的时候被调用。注释会被覆盖。 |
