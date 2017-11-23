@@ -68,7 +68,7 @@
 
   * [内置插件](/Plugins/internal/README.md)
 
-    * [AggressiveSplittingPlugin](/Plugins/internal/AggressiveSplittingPlugin.md)
+    * [AggressiveSplittingPlugin](Plugins/internal/AggressiveSplittingPlugin.md)
 
     * [BannerPlugin](Plugins/internal/BannerPlugin.md)
 
@@ -108,8 +108,6 @@
 
     * [WatchIgnorePlugin](Plugins/internal/WatchIgnorePlugin.md)
 
-    * [I18nWebpackPlugin](Plugins/third-party/I18nWebpackPlugin.md)
-
   * [三方插件](/Plugins/third-party/README.md)
 
     * [I18nWebpackPlugin](Plugins/third-party/I18nWebpackPlugin.md)
@@ -136,7 +134,7 @@
 
     * [CopyWebpackPlugin](Plugins/third-party/CopyWebpackPlugin.md)
 
-    * [CleanWebpackPlugin](#)
+    * [CleanWebpackPlugin](Plugins/third-party/CleanWebpackPlugin.md)
 
     * [offline-plugin](Plugins/third-party/offline-plugin/README.md)
 
@@ -170,7 +168,7 @@
 
   * [anymatch](/Others/anymatch.md)
 
-* [致谢](/thanks.md)
+* [致谢](thanks.md)
 
 
 
