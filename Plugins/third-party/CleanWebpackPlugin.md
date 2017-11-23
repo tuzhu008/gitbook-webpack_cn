@@ -27,7 +27,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 ## 示例
 
-这是 [WebPack 的插件文档](https://webpack.js.org/concepts/plugins/) 的修改版本，它包含了Clean插件。 
+这是 [WebPack 的插件文档](https://webpack.js.org/concepts/plugins/) 的修改版本，它包含了Clean插件。
 
 ```js
 const CleanWebpackPlugin = require('clean-webpack-plugin'); //通过npm安装的
@@ -88,28 +88,28 @@ const webpackConfig = {
 
 ```js
 {
-  // Absolute path to your webpack root folder (paths appended to this)webpack根目录的绝对路径（）
-  // Default: root of your package
+  // webpack根目录的绝对路径（删除路径附加到这里）
+  // 默认值: 包的根目录
   root: __dirname,
 
-  // Write logs to console.
+  // 将日志写到控制台
   verbose: true,
 
-  // Use boolean "true" to test/emulate delete. (will not remove files).
-  // Default: false - remove files
+  // 设置为 "true" 来 测试/模拟 删除. (不会删除文件).
+  // 默认: false - 删除文件
   dry: false,           
 
-  // If true, remove files on recompile. 
-  // Default: false
+  // 如果为 true, 在编译时删除文件。
+  // 默认: false
   watch: false,
 
-  // Instead of removing whole path recursively,
-  // remove all path's content with exclusion of provided immediate children.
-  // Good for not removing shared files from build directories.
+  // 不再是递归地删除整个路径，
+  // 删除所有路径的内容，除了提供的需要排除的。
+  // 不删除构建目录中的共享文件是很的实践。
   exclude: [ 'files', 'to', 'ignore' ],
 
-  // allow the plugin to clean folders outside of the webpack root.
-  // Default: false - don't allow clean folder outside of the webpack root
+  // 允许插件在webpack根之外清除文件夹。  
+  // 默认值: false - 不允许
   allowExternal: false
 }
 ```
