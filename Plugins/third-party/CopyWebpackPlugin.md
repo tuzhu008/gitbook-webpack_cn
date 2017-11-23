@@ -16,10 +16,13 @@ npm install --save-dev copy-webpack-plugin
 ```
 
 <h2>用法</h2>
+
 ```js
 new CopyWebpackPlugin(patterns, options)
 ```
+
 ### patterns
+
 类型：array
 
 模式数组
