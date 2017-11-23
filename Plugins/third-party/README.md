@@ -16,6 +16,8 @@
 | [UglifyjsWebpackPlugin](/Plugins/third-party/UglifyjsWebpackPlugin.md) | 可以控制项目中 UglifyJS 的版本 |  |
 | [ZopfliWebpackPlugin](/Plugins/third-party/ZopfliWebpackPlugin.md) | 通过 node-zopfli 将资源预先压缩的版本 |  |
 | [CopyWebpackPlugin](/Plugins/third-party/CopyWebpackPlugin.md) | 将单个文件或整个目录复制到构建目录 |  |
+| [CleanWebpackPlugin](#) | 在构建之前，可以删除/清理构建文件夹\(s\) |  |
+| [offline-plugin](//Plugins/third-party/offline-plugin/README.md) |  |  |
 
 
 

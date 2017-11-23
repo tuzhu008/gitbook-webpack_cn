@@ -1,71 +1,30 @@
 <div align="center">
   <a href="https://offline-plugin.now.sh/"><img src="https://rawgit.com/NekR/offline-plugin/master/logo/logo.svg" width="120" alt="offline-plugin logo"></a>
-
-  <h1><code>offline-plugin</code> for webpack</h1>
-
-  <a href="#backers"><img src="https://opencollective.com/offline-plugin/backers/badge.svg" alt="backers" /></a>
-  <a href="#sponsors"><img src="https://opencollective.com/offline-plugin/sponsors/badge.svg" alt="sponsors" /></a>
-  <a href="https://www.npmjs.com/package/offline-plugin"><img src="https://img.shields.io/npm/v/offline-plugin.svg?maxAge=3600&v4" alt="npm"></a>
-  <a href="https://www.npmjs.com/package/offline-plugin"><img src="https://img.shields.io/npm/dm/offline-plugin.svg?maxAge=3600" alt="npm"></a>
-  <a href="https://gitter.im/NekR/offline-plugin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img src="https://badges.gitter.im/NekR/offline-plugin.svg" alt="Join the chat at https://gitter.im/NekR/offline-plugin"></a>
-</div>
-<br>
-
-This plugin is intended to provide an offline experience for **webpack** projects. It uses **ServiceWorker**, and **AppCache** as a fallback under the hood. Simply include this plugin in your ``webpack.config``, and the accompanying runtime in your client script, and your project will become offline ready by caching all (or some) of the webpack output assets.
-
-<div align="center">
-  <strong>Demo:<br><a href="https://offline-plugin.now.sh/"> Progressive Web App built with <code>offline-plugin</code></a></strong><br> 
-  <div>(<a href="https://github.com/NekR/offline-plugin-pwa"><i>source code</i></a>)</div>
 </div>
 
-<div align="center">
-  <h1>Sponsors</h1>
-  
-  <a href="https://opencollective.com/offline-plugin/sponsor/0/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/0/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/1/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/1/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/2/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/2/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/3/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/3/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/4/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/4/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/5/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/5/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/6/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/6/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/7/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/7/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/8/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/8/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/9/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/9/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/10/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/10/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/11/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/11/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/12/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/12/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/13/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/13/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/14/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/14/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/15/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/15/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/16/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/16/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/17/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/17/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/18/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/18/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/19/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/19/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/20/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/20/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/21/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/21/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/22/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/22/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/23/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/23/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/24/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/24/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/25/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/25/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/26/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/26/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/27/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/27/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/28/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/28/avatar.svg"></a>
-  <a href="https://opencollective.com/offline-plugin/sponsor/29/website" target="_blank"><img src="https://opencollective.com/offline-plugin/sponsor/29/avatar.svg"></a>
-  
-  Become a sponsor and get your logo on our README on Github with a link to your site.<br>
-  <strong><a href="https://opencollective.com/offline-plugin#sponsor">Become a sponsor</a></strong>
+<h1><code>offline-plugin</code> for webpack</h1>
+
+[![](https://img.shields.io/badge/Github-%E6%9F%A5%E7%9C%8B%E6%9B%B4%E5%A4%9A-brightgreen.svg)
+](https://github.com/NekR/offline-plugin)
+
+
+这个插件旨在为**webpack**项目提供离线体验。它使用**ServiceWorker**，而**AppCache**作为底层的备用。简单地把这个插件包含在你的``webpack.config``，以及在客户端脚本中附带运行时（runtime），您的项目将通过缓存所有(或部分)webpack输出资源来离线。
+
+<div>
+  <strong>示例:<br><a href="https://offline-plugin.now.sh/"> 用<code>offline-plugin</code>构建的渐进式Web应用</a></strong><br> 
+  <div>(<a href="https://github.com/NekR/offline-plugin-pwa"><i>源码</i></a>)</div>
 </div>
 
-## Install
+## 安装
 
 `npm install offline-plugin [--save-dev]`
 
-## Setup
+## 设置
 
-First, instantiate the plugin with [options](docs/options.md) in your `webpack.config`:
+首先，在`webpack.config`中使用[options](docs/options.md)实例化插件：
 
 ```js
-// webpack.config.js example
+// webpack.config.js 
 
 var OfflinePlugin = require('offline-plugin');
 
@@ -73,8 +32,8 @@ module.exports = {
   // ...
 
   plugins: [
-    // ... other plugins
-    // it's always better if OfflinePlugin is the last plugin added
+    // ... 其他插件
+    // 如果OfflinePlugin是最后一个被添加的插件，那就更好了
     new OfflinePlugin()
   ]
   // ...
@@ -82,7 +41,7 @@ module.exports = {
 
 ```
 
-Then, add the [runtime](docs/runtime.md) into your entry file (typically main entry):
+然后添加 [运行时](docs/runtime.md)到你的入口文件(主入口):
 
 ```js
 require('offline-plugin/runtime').install();
@@ -94,7 +53,9 @@ import * as OfflinePluginRuntime from 'offline-plugin/runtime';
 OfflinePluginRuntime.install();
 ```
 
-> For more details of usage with `TypeScript` see [here](docs/typescript.md)
+> **[info]** 注：
+> 
+> 关于 `TypeScript`的更多使用细节，[请参见](docs/typescript.md)
 
 ## Docs
 
@@ -106,30 +67,30 @@ OfflinePluginRuntime.install();
 * [FAQ](docs/FAQ.md)
 * [Troubleshooting](docs/troubleshooting.md)
 
-## Examples
+## 示例
 
-* [Single Page Application](docs/examples/SPA.md)
+* [单页应用](docs/examples/SPA.md)
 
-## Articles
+## 文章
 
-* [Easy Offline First Apps With Webpack's Offline Plugin](https://dev.to/kayis/easy-offline-first-apps-with-webpacks-offline-plugin)
-* [Handling Client Side App Updates (with Service Workers)](https://zach.codes/handling-client-side-app-updates-with-service-workers/)
+* [使用Webpack的Offline Plugin轻松离线的第一款应用](https://dev.to/kayis/easy-offline-first-apps-with-webpacks-offline-plugin)
+* [处理客户端应用程序更新(使用Service Workers)](https://zach.codes/handling-client-side-app-updates-with-service-workers/)
 
-## Options
+## 选项
 
-All options are optional and `offline-plugin` can be used without specifying them.
+所有选项都是可选的，而`offline-plugin`可以在不指定任何选项的情况下使用。
 
-#### [See all available options here.](docs/options.md)
+[查看所有可用选项。](docs/options.md)
 
-## Who is using `offline-plugin`
+## 谁在使用 `offline-plugin`
 
-### Projects
+### 项目
 
 * [React Boilerplate](https://github.com/mxstbr/react-boilerplate)
 * [Phenomic](https://phenomic.io)
 * [React, Universally](https://github.com/ctrlplusb/react-universally)
 
-### PWAs
+### 渐进式应用（PWA）
 
 * [`offline-plugin` PWA](https://offline-plugin.now.sh/)
 * [Offline Kanban](https://offline-kanban.herokuapp.com) ([source](https://github.com/sarmadsangi/offline-kanban))
@@ -139,57 +100,4 @@ All options are optional and `offline-plugin` can be used without specifying the
 * [CodePan](https://codepan.net) ([source](https://github.com/egoist/codepan))
 
 
-_If you are using `offline-plugin`, feel free to submit a PR to add your project to this list._
-
-## Like `offline-plugin`?
-
-Support it by giving [feedback](https://github.com/NekR/offline-plugin/issues), [contributing](CONTIBUTING.md), becoming a [backer/sponsor](https://opencollective.com/offline-plugin) or just by 🌟 starring the project!
-
-
-## Backers
-
-Support us with a monthly donation and help us continue our activities. [[Become a backer](https://opencollective.com/offline-plugin#backer)]
-
-<a href="https://opencollective.com/offline-plugin/backer/0/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/0/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/1/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/1/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/2/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/2/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/3/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/3/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/4/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/4/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/5/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/5/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/6/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/6/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/7/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/7/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/8/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/8/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/9/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/9/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/10/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/10/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/11/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/11/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/12/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/12/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/13/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/13/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/14/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/14/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/15/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/15/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/16/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/16/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/17/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/17/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/18/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/18/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/19/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/19/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/20/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/20/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/21/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/21/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/22/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/22/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/23/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/23/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/24/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/24/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/25/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/25/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/26/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/26/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/27/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/27/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/28/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/28/avatar.svg"></a>
-<a href="https://opencollective.com/offline-plugin/backer/29/website" target="_blank"><img src="https://opencollective.com/offline-plugin/backer/29/avatar.svg"></a>
-
-## Contribution
-
-See [CONTRIBUTING](CONTIBUTING.md)
-
-## License
-
-[MIT](LICENSE.md)  
-[Logo](logo/LICENSE.md)
-
-## CHANGELOG
-
-[CHANGELOG](CHANGELOG.md)
+_如果你正在使用 `offline-plugin`, 请随意提交一份PR，将你的项目添加到这个列表中。._
