@@ -138,7 +138,7 @@
 
     * [CleanWebpackPlugin](#)
 
-    * [offline-plugin](/Plugins/third-party/offline-plugin/README.md)
+    * [offline-plugin](Plugins/third-party/offline-plugin/README.md)
 
       * [Options](Plugins/third-party/offline-plugin/docs/options.md)
 
