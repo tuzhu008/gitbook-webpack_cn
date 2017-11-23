@@ -76,8 +76,6 @@
 
     * [ContextReplacementPlugin](Plugins/internal/ContextReplacementPlugin.md)
 
-    * CopyWebpackPlugin
-
     * [DefinePlugin](Plugins/internal/DefinePlugin.md)
 
     * [DllPlugin](Plugins/internal/DllPlugin.md)
@@ -124,6 +122,7 @@
     * [NpmInstallWebpackPlugin](Plugins/third-party/NpmInstallWebpackPlugin.md)
     * [UglifyjsWebpackPlugin](Plugins/third-party/UglifyjsWebpackPlugin.md)
     * [ZopfliWebpackPlugin](Plugins/third-party/ZopfliWebpackPlugin.md)
+    * [CopyWebpackPlugin](Plugins/third-party/CopyWebpackPlugin.md)
 
 * [注意](Note.md)
 

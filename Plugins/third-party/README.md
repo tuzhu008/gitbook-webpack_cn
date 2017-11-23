@@ -15,6 +15,7 @@
 | [NpmInstallWebpackPlugin](/Plugins/third-party/NpmInstallWebpackPlugin.md) | 在开发时自动安装缺少的依赖 | 开发 |
 | [UglifyjsWebpackPlugin](/Plugins/third-party/UglifyjsWebpackPlugin.md) | 可以控制项目中 UglifyJS 的版本 |  |
 | [ZopfliWebpackPlugin](/Plugins/third-party/ZopfliWebpackPlugin.md) | 通过 node-zopfli 将资源预先压缩的版本 |  |
+| [CopyWebpackPlugin](/Plugins/third-party/CopyWebpackPlugin.md) | 将单个文件或整个目录复制到构建目录 |  |
 
 
 
