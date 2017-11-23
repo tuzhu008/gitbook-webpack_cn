@@ -7,7 +7,9 @@
 * babel-loader
 
 * yaml-frontmatter-loader
+
 * cache-loader
+
 * coffee-loader
 * coffee-redux-loader
 * coverjs-loader
