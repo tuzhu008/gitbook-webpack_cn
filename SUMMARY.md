@@ -18,6 +18,8 @@
 
   * css-loade
 
+  * cson-loader
+
   * exports-loader
 
   * expose-loader
