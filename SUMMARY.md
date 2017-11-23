@@ -94,7 +94,7 @@
 
     * [MinChunkSizePlugin](Plugins/internal/MinChunkSizePlugin.md)
 
-    * ModuleConcatenationPlugin
+    * [ModuleConcatenationPlugin](Plugins/internal/ModuleConcatenationPlugin.md)
 
     * [NamedModulesPlugin](Plugins/internal/NamedModulesPlugin.md)
 

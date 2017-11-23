@@ -23,6 +23,7 @@ webpack本身内置了很多插件。
 | [SourceMapDevToolPlugin](/Plugins/internal/SourceMapDevToolPlugin.md) | 对 source map 进行更细粒度的控制 |  |
 | [PrefetchPlugin](/Plugins/internal/PrefetchPlugin.md) | 预取出普通的模块请求 |  |
 | [WatchIgnorePlugin](/Plugins/internal/WatchIgnorePlugin.md) | 观察模式下忽略某些文件 |  |
+| [ModuleConcatenationPlugin](/Plugins/internal/ModuleConcatenationPlugin.md) | 实现一些的预编译功能 |  |
 
 
 
