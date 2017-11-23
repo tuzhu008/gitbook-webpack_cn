@@ -59,10 +59,12 @@ console.log(appConfig.env) // 'production'
 
 ```js
 var appConfig = require("json5-loader!./appData.json5")
-// returns the content as json parsed object
+// 返回的是 json 解析过的对象
 
 console.log(appConfig.env) // 'production'
 ```
+
+如果需要在 Node.js 中使用，不要忘记兼容\(polyfill\) require。更多参考 webpack 文档。
 
 
 
