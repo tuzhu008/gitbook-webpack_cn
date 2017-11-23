@@ -87,7 +87,7 @@ module.exports = {
             // 拷贝 glob 结果到 /absolute/path/
             { from: 'from/directory/**/*', to: '/absolute/path' },
 
-            // 拷贝 glo (with dot files) to /absolute/path/
+            // 拷贝 glob (和 dot 文件) 到 /absolute/path/
             {
                 from: {
                     glob:'from/directory/**/*',
@@ -96,7 +96,7 @@ module.exports = {
                 to: '/absolute/path'
             },
 
-            // Copy glob results, relative to context
+            // 拷贝 glob 结果, 相对于 context
             {
                 context: 'from/directory',
                 from: '**/*',
@@ -118,48 +118,46 @@ module.exports = {
             }
         ], {
             ignore: [
-                // Doesn't copy any files with a txt extension    
+                // 不拷贝任何带txt扩展的文件
                 '*.txt',
                 
-                // Doesn't copy any file, even if they start with a dot
+                // 不要复制任何文件，即使它们从一个点开始
                 '**/*',
 
-                // Doesn't copy any file, except if they start with a dot
+                // 不复制任何文件，除非他们以一个点开始
                 { glob: '**/*', dot: false }
             ],
 
-            // By default, we only copy modified files during
-            // a watch or webpack-dev-server build. Setting this
-            // to `true` copies all files.
+            // 默认情况下，我们只在观察或webpack-dev-server构建期间复制修改过的文件。将此设置为`true`复制所有文件。
             copyUnmodified: true
         })
     ]
 };
 ```
 
-### FAQ
+### 常见问题
 
 #### "EMFILE: too many open files" or "ENFILE: file table overflow"
 
-Globally patch fs with [graceful-fs](https://www.npmjs.com/package/graceful-fs)
+使用 [graceful-fs](https://www.npmjs.com/package/graceful-fs)全局补丁
 
 `npm install graceful-fs --save-dev`
 
-At the top of your webpack config, insert this
+在您的webpack配置文件的顶部，插入这个
 
     var fs = require('fs');
     var gracefulFs = require('graceful-fs');
     gracefulFs.gracefulify(fs);
 
-See [this issue](https://github.com/kevlened/copy-webpack-plugin/issues/59#issuecomment-228563990) for more details
+参见 [this issue](https://github.com/kevlened/copy-webpack-plugin/issues/59#issuecomment-228563990) 获取更多细节
 
-#### This doesn't copy my files with webpack-dev-server
+#### This doesn't copy my files with webpack-dev-server（使用webpack-devserver时不会复制我的文件）
 
-Starting in version [3.0.0](https://github.com/kevlened/copy-webpack-plugin/blob/master/CHANGELOG.md#300-may-14-2016), we stopped using fs to copy files to the filesystem and started depending on webpack's [in-memory filesystem](https://webpack.github.io/docs/webpack-dev-server.html#content-base):
+从版本 [3.0.0](https://github.com/kevlened/copy-webpack-plugin/blob/master/CHANGELOG.md#300-may-14-2016)开始, 我们停止使用fs来拷贝文件到文件系统，并且开始依赖于webpack的[in-memory filesystem](https://webpack.github.io/docs/webpack-dev-server.html#content-base):
 
-> ... webpack-dev-server will serve the static files in your build folder. It’ll watch your source files for changes and when changes are made the bundle will be recompiled. **This modified bundle is served from memory at the relative path specified in publicPath (see API)**. It will not be written to your configured output directory.
+> ... webpack-dev-server 服务于你的构建文件夹的静态文件。它将监视您的源文件的更改，将重新编译包。**这个修改后的包是在公共路径中指定的相对路径(参见API)中提供的**。它不会被写入您配置的输出目录.
 
-If you must have webpack-dev-server write to your output directory, you can force it with the [write-file-webpack-plugin](https://github.com/gajus/write-file-webpack-plugin).
+如果必须将webpack-dev-server写入输出目录，你可以使用[write-file-webpack-plugin](https://github.com/gajus/write-file-webpack-plugin)强制它这样做。
 
 <h2 align="center">Maintainers</h2>
 
