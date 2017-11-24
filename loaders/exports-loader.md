@@ -9,30 +9,30 @@
       src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
   <h1>Exports Loader</h1>
-  <p>Exports variables from inside the file by appending `exports[...] = ...` statements..<p>
+  <p>通过附加`exports[...] = ...`语句来导出文件中的变量。<p>
   <a href="https://github.com/webpack-contrib/exports-loader"><img src="https://img.shields.io/badge/Github-%E6%9F%A5%E7%9C%8B%E6%9B%B4%E5%A4%9A-brightgreen.svg"></a>
 </div>
 
-<h2 align="center">Install</h2>
+<h2 align="center">安装</h2>
 
 ```bash
 npm i exports-loader --save
 ```
 
-<h2 align="center"><a href="https://webpack.js.org/concepts/loaders">Usage</a></h2>
+<h2 align="center"><a href="https://webpack.js.org/concepts/loaders">用法</a></h2>
 
 ``` javascript
 require("exports-loader?file,parse=helpers.parse!./file.js");
-// adds below code to the file's source:
+// 将下面的代码添加到该文件的源:
 //  exports["file"] = file;
 //  exports["parse"] = helpers.parse;
 
 require("exports-loader?file!./file.js");
-// adds below code to the file's source:
+// 将下面的代码添加到该文件的源:
 //  module.exports = file;
 ```
 
-<h2 align="center">Maintainers</h2>
+<h2 align="center">贡献者</h2>
 
 <table>
   <tbody>
