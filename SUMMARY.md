@@ -86,6 +86,8 @@
 
   * [mocha-loader](loaders/mocha-loader.md)
 
+  * [resolve-url-loader](loaders/resolve-url-loader.md)
+
 * [配置](/configuration/README.md)
 
   * [Context（上下文）](configuration/context.md)

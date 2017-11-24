@@ -136,7 +136,7 @@ webpack 提供一种[解析文件的高级机制](https://webpack.js.org/concept
 
 第二种情况可能会带来一些问题。正常情况下我们期望相对路径的引用是相对于 `.scss` 去解析（如同在 `.css` 文件一样）。幸运的是，有2个方法可以解决这个问题：
 
-- 将 resolve-url-loader 设置于 loader 链中的 sass-loader 之后，就可以重写 url。
+- 将 [resolve-url-loader ](/loaders/resolve-url-loader.md)设置于 loader 链中的 sass-loader 之后，就可以重写 url。
 - Library 作者一般都会提供变量，用来设置资源路径，如 `bootstrap-sass` 可以通过 `$icon-font-path` 来设置。参见[this working bootstrap example](https://github.com/webpack-contrib/sass-loader/tree/master/test/bootstrapSass).
 
 
@@ -146,13 +146,12 @@ webpack 提供一种[解析文件的高级机制](https://webpack.js.org/concept
 
 从 bundle 中提取样式表，有2种可用的方法：
 
-- extract-loader （简单，专门针对 css-loader 的输出）
-- extract-text-webpack-plugin (复杂，但能够处理足够多的场景)
+- [extract-loader](//loaders/extract-loader.md) （简单，专门针对 css-loader 的输出）
+- [extract-text-webpack-plugin](/Plugins/third-party/ExtractTextWebpackPlugin.md) (复杂，但能够处理足够多的场景)
 
 
 ### Source maps
 
-To enable CSS source maps, you'll need to pass the `sourceMap` option to the sass-loader *and* the css-loader. Your `webpack.config.js` should look like this:
 要启用 CSS source map，需要将 `sourceMap` 选项传递给 sass-loader **和** css-loader。此时webpack.config.js 如下：
 
 ```javascript
