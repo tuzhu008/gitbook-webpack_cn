@@ -20,6 +20,8 @@
 
   * [cson-loader](/loaders/cson-loader.md)
 
+  * [eslint-loader](loaders/eslint-loader.md)
+
   * [exports-loader](/loaders/exports-loader.md)
 
   * [expose-loader](/loaders/expose-loader.md)
