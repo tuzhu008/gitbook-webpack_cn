@@ -212,7 +212,7 @@ require("html-loader?interpolate=require!./file.ftl");
 <div>${require('./components/gallery.html')}</div>
 ```
 
-### Export 格式
+### 导出格式
 
 有几个不同的export格式可用：
 
@@ -265,18 +265,15 @@ module.exports = {
 
 ### 导出到Html文件
 
-A very common scenario is exporting the HTML into their own _.html_ file, to
-serve them directly instead of injecting with javascript. This can be achieved
-with a combination of 3 loaders:
+
+一个很常见的场景，将 HTML 导出到 `.html` 文件中，来直接访问它们，而不是使用 javascript 注入。这可以通过3个 loader 的组合来实现：
 
 - [file-loader](https://github.com/webpack/file-loader)
 - [extract-loader](https://github.com/peerigon/extract-loader)
 - html-loader
 
-The html-loader will parse the URLs, require the images and everything you
-expect. The extract loader will parse the javascript back into a proper html
-file, ensuring images are required and point to proper path, and the file loader
-will write the _.html_ file for you. Example:
+
+html-loader 将解析 URL，请求图片和你所期望的一切资源。extract-loader 会将 javascript 解析为合适的 html 文件，确保引用的图片指向正确的路径，file-loader 将结果写入 _.html_ 文件。示例：
 
 ```js
 {
