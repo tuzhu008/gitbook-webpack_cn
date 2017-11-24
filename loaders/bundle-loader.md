@@ -15,13 +15,13 @@
   <a href="https://github.com/webpack-contrib/bundle-loader"><img src="https://img.shields.io/badge/Github-%E6%9F%A5%E7%9C%8B%E6%9B%B4%E5%A4%9A-brightgreen.svg"></a>
 </div>
 
-<h2 align="center">Install</h2>
+<h2 align="center">安装</h2>
 
 ```bash
 npm i bundle-loader --save
 ```
 
-<h2 align="center"><a href="https://webpack.js.org/concepts/loaders">Usage</a></h2>
+<h2 align="center"><a href="https://webpack.js.org/concepts/loaders">用法</a></h2>
 
 **webpack.config.js**
 ```js
@@ -37,44 +37,43 @@ module.exports = {
 }
 ```
 
-The chunk is requested, when you require the bundle.
+当需要这个bundle，请求这个chunk
 
 **file.js**
 ```js
 import bundle from './file.bundle.js';
 ```
 
-To wait until the chunk is available (and get the exports)
-you need to async wait for it.
+等待chunk可用(并获得导出)，您需要异步等待它。
 
 ```js
 bundle((file) => {
-  // use the file like it was required
+  // 就像文件被require一样使用它。
   const file = require('./file.js')
 });
 ```
 
-This wraps the `require('file.js')` in a `require.ensure` block
+包装`require('file.js')`在`require.ensure`块中。
 
-Multiple callbacks can be added. They will be executed in the order of addition.
+可以添加多个回调。他们将按照添加的顺序被执行。
 
 ```js
 bundle(callbackTwo)
 bundle(callbackThree)
 ```
 
-If a callback is added after dependencies were loaded, it will be called immediately.
+如果在加载了依赖项之后添加了一个回调，那么将立即调用它。
 
-<h2 align="center">Options</h2>
+<h2 align="center">选项</h2>
 
-|Name|Type|Default|Description|
+|名称|类型|默认值|描述|
 |:--:|:--:|:-----:|:----------|
-|**`lazy`**|`{Boolean}`|`false`|Loads the imported bundle asynchronously|
-|**`name`**|`{String}`|`[id].[name]`|Configure a custom filename for your imported bundle|
+|**`lazy`**|`{Boolean}`|`false`|异步加载导入的包|
+|**`name`**|`{String}`|`[id].[name]`| 为导入的包配置一个自定义的文件名 |
 
 ### `lazy`
 
-The file is requested when you require the `bundle-loader`. If you want it to request it lazy, use:
+当require `bundle-loader`时，这个文件将被请求。如果想要懒加载它，使用：
 
 **webpack.config.js**
 ```js
@@ -92,12 +91,13 @@ import bundle from './file.bundle.js'
 bundle((file) => {...})
 ```
 
-> ℹ️  The chunk is not requested until you call the load function
+> **[info]** 
+> 在调用函数之前，chunk不会被请求。
 
 ### `name`
 
-You may set name for a bundle using the `name` options parameter.
-See [documentation](https://github.com/webpack/loader-utils#interpolatename).
+使用`name`选项参数为bundle设置名字。
+参见 [文档](https://github.com/webpack/loader-utils#interpolatename).
 
 **webpack.config.js**
 ```js
@@ -109,10 +109,11 @@ See [documentation](https://github.com/webpack/loader-utils#interpolatename).
 }
 ```
 
-> :warning: chunks created by the loader will be named according to the
-[`output.chunkFilename`](https://webpack.js.org/configuration/output/#output-chunkfilename) rule, which defaults to `[id].[name]`. Here `[name]` corresponds to the chunk name set in the `name` options parameter.
+> **[warning]** 警告:
+> 
+> loader创建chunk，会根据[`output.chunkFilename`](//configuration/output/#output-chunkfilename) 规则对它命名, 默认为 `[id].[name]`。 这里的`[name]`对应于`name`选项参数中设置的chunk名。
 
-<h2 align="center">Examples</h2>
+<h2 align="center">示例</h2>
 
 ```js
 import bundle from './file.bundle.js'
@@ -127,7 +128,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dest'),
     filename: '[name].js',
-    // or whatever other format you want
+    // 或者其他格式
     chunkFilename: '[name].[id].js',
   },
   module: {
@@ -145,14 +146,13 @@ module.exports = {
   }
 }
 ```
+普通的chunk将使用上面的`filename`规则显示，并根据它们的`[chunkname]`来命名。
 
-Normal chunks will show up using the `filename` rule above, and be named according to their `[chunkname]`.
+但是，来自`bundle-loader`的chunk，将会使用`chunkFilename`规则加载，所以示例文件将分别生成`my-chunk.1.js`和`file-2.js`。
 
-Chunks from `bundle-loader`, however will load using the `chunkFilename` rule, so the example files will produce `my-chunk.1.js` and `file-2.js` respectively.
+由于在bundle选项参数中添加`[hash]`不能正确工作，您还可以使用`chunkFilename`来为文件名添加哈希值。
 
-You can also use `chunkFilename` to add hash values to the filename, since putting `[hash]` in the bundle options parameter does not work correctly.
-
-<h2 align="center">Maintainers</h2>
+<h2 align="center">维护者</h2>
 
 <table>
   <tbody>
