@@ -10,19 +10,19 @@
     <img width="200" height="200" src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
   <h1>Cache Loader</h1>
-  <p>Caches the result of following loaders on disk (default) or in the database</p>
+  <p>在磁盘(默认)或数据库中缓存以下loader的结果</p>
   <a href="https://github.com/webpack-contrib/cache-loader"><img src="https://img.shields.io/badge/Github-%E5%8E%9F%E6%96%87%E5%9C%B0%E5%9D%80-brightgreen.svg"></a>
 </div>
 
-<h2 align="center">Install</h2>
+<h2 align="center">安装</h2>
 
 ```bash
 npm install --save-dev cache-loader
 ```
 
-<h2 align="center">Usage</h2>
+<h2 align="center">用法</h2>
 
-Add this loader in front of other (expensive) loaders to cache the result on disk.
+将此loader添加到其他(昂贵的)loader前，以将结果缓存到磁盘上。[译者注：添加到开销大的loader前是因为cache-loader可以缓存结果，之后的loader直接调用缓存，节省开销]
 
 **webpack.config.js**
 ```js
@@ -42,7 +42,7 @@ module.exports = {
 }
 ```
 
-> ⚠️ Note that there is an overhead for saving the reading and saving the cache file, so only use this loader to cache expensive loaders.
+> **[info]** zhu  ⚠️ Note that there is an overhead for saving the reading and saving the cache file, so only use this loader to cache expensive loaders.
 
 <h2 align="center">Options</h2>
 
