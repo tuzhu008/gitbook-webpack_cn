@@ -25,17 +25,12 @@ npm install --save-dev css-loader
 
 <h2 >用法</h2>
 
-The `css-loader` interprets `@import` and `url()` like `import/require()`
-and will resolve them.
-
-Good loaders for requiring your assets are the [file-loader](https://github.com/webpack/file-loader)
-and the [url-loader](https://github.com/webpack/url-loader) which you should specify in your config (see [below](https://github.com/webpack-contrib/css-loader#assets)).
 `css-loader` 解释(interpret) `@import` 和 `url()`就像 `import/require()`， 并解析(resolve)它们。
 
 引用资源的好的 loader 是
-file-loader
+[file-loader](//loaders/file-loader.md)
 和
-url-loader
+[url-loader](/loaders/url-loader.md)
 您应该在配置中指定（查看如下设置）。
 
 **file.js**
@@ -82,7 +77,7 @@ console.log(css); // {String}
 
 如果有 SourceMap，它们也将包含在字符串结果中。
 
-如果由于某种原因，您需要将 CSS 提取为纯粹的字符串资源（即不包含在 JS 模块中），则可能需要查看 extract-loader。 例如，当您需要将 CSS 作为字符串进行后处理时，这很有用。
+如果由于某种原因，您需要将 CSS 提取为纯粹的字符串资源（即不包含在 JS 模块中），则可能需要查看 [extract-loader](//loaders/extract-loader.md)。 例如，当您需要将 CSS 作为字符串进行后处理时，这很有用。
 
 
 **webpack.config.js**
@@ -287,7 +282,7 @@ file.png => ./file.png
 
 > **[info]** 重要信息: 
 > 
-> 对于使用 extract-text-webpack-plugin 预渲染，你应该在预渲染 bundle 中 使用 `css-loader/locals` 而不是 `style-loader!css-loader` 。它不会嵌入 CSS，但只导出标识符映射(identifier map)。
+> 对于使用 [extract-text-webpack-plugin](/Plugins/third-party/ExtractTextWebpackPlugin.md) 预渲染，你应该在预渲染 bundle 中 使用 `css-loader/locals` 而不是 `style-loader!css-loader` 。它不会嵌入 CSS，但只导出标识符映射(identifier map)。
 
 
 #### `Composing`
@@ -376,14 +371,9 @@ exports.locals = {
 
 ### `sourceMap`
 
-To include source maps set the `sourceMap` option.
-
-I. e. the extract-text-webpack-plugin can handle them.
-
-They are not enabled by default because they expose a runtime overhead and increase in bundle size (JS source maps do not). In addition to that relative paths are buggy and you need to use an absolute public path which include the server URL.
 设置 `sourceMap` 选项来引入 source map。
 
-例如 extract-text-webpack-plugin 能够处理它们。
+例如 [extract-text-webpack-plugin ](/Plugins/third-party/ExtractTextWebpackPlugin.md)能够处理它们。
 
 默认情况下不启用它们，因为它们会导致运行时的额外开销，并增加了 bundle 大小 (JS source map 不会)。此外，相对路径是错误的，您需要使用包含服务器 URL 的绝对公用路径。
 
@@ -482,7 +472,7 @@ module.exports = {
 
 ### 提取
 
-对于生产环境构建，建议从 bundle 中提取 CSS，以便之后可以并行加载 CSS/JS 资源。可以通过使用 extract-text-webpack-plugin 来实现在生产环境模式运行中提取 CSS。
+对于生产环境构建，建议从 bundle 中提取 CSS，以便之后可以并行加载 CSS/JS 资源。可以通过使用 [extract-text-webpack-plugin](/Plugins/third-party/ExtractTextWebpackPlugin.md) 来实现在生产环境模式运行中提取 CSS。
 
 **webpack.config.js**
 ```js
