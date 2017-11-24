@@ -8,7 +8,7 @@
   <!-- replace with accurate logo e.g from https://worldvectorlogo.com/ -->
   <img width="200" height="200" src="https://cdn.worldvectorlogo.com/logos/javascript.svg">
   <a href="https://webpack.js.org/">
-    <img width="200" height="200" vspace="" hspace="25" src="https://cdn.rawgit.com/webpack/media/e7485eb2/logo/icon-square-big.svg">
+    <img width="200" height="200" vspace="" hspace="25" src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
   <h1>restyle-loader</h1>
   <a href="https://github.com/webpack-contrib/restyle-loader"><img src="https://img.shields.io/badge/Github-查看更多-brightgreen.svg"></a>

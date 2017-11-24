@@ -8,7 +8,7 @@
   <!-- replace with accurate logo e.g from https://worldvectorlogo.com/ -->
   <a href="https://github.com/webpack/webpack">
     <img width="200" height="200" vspace="" hspace="25"
-      src="https://cdn.rawgit.com/webpack/media/e7485eb2/logo/icon.svg">
+      src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
   <h1>SVG Inline Loader for Webpack</h1>
   <p>This Webpack loader inlines SVG as module. If you use Adobe suite or Sketch to export SVGs, you will get auto-generated, unneeded crusts. This loader removes it for you, too.<p>

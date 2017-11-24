@@ -6,7 +6,7 @@
   <!-- replace with accurate logo e.g from https://worldvectorlogo.com/ -->
   <a href="https://github.com/webpack/webpack">
     <img width="200" height="200" vspace="" hspace="25"
-      src="https://cdn.rawgit.com/webpack/media/e7485eb2/logo/icon.svg">
+      src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
   <h1>React Proxy Loader</h1>
   <p>Wraps a react component in a proxy component to enable Code Splitting (loads a react component and its dependencies on demand).<p>

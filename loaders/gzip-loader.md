@@ -6,7 +6,7 @@
 
 <div align="center">
   <a href="https://webpack.js.org/">
-    <img width="200" height="200" vspace="" hspace="25" src="https://cdn.rawgit.com/webpack/media/e7485eb2/logo/icon-square-big.svg">
+    <img width="200" height="200" vspace="" hspace="25" src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
   <h1>gzip-loader</h1>
   <p>gzip loader module for webpack</p>
