@@ -4,6 +4,9 @@
   "description" : "webpack学习资料和过程记录",
   "language" : "zh-hans",
   "root": ".",
+  "styles": {
+    "website": "styles/website.css"
+},
   "plugins": [
     "expandable-chapters-small",
     "anchors",
