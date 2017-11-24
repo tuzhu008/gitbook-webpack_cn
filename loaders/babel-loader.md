@@ -9,7 +9,7 @@
 
 <div align="center">
   <a href="https://github.com/babel/babel/">
-    <img width="200" height="200" src="https://rawgit.com/babel/logo/master/babel.svg">
+    <img width="200" height="200" src="https://raw.githubusercontent.com/babel/logo/master/babel.png">
   </a>
   <a href="https://github.com/webpack/webpack">
     <img width="200" height="200" src="https://webpack.js.org/assets/icon-square-big.svg">
