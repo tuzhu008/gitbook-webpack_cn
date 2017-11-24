@@ -22,7 +22,7 @@ npm install --save-dev cache-loader
 
 <h2 align="center">用法</h2>
 
-将此loader添加到其他(昂贵的)loader前，以将结果缓存到磁盘上。[译者注：添加到开销大的loader前是因为cache-loader可以缓存结果，之后的loader直接调用缓存，节省开销]
+将此loader添加到其他(昂贵的)loader前，以将结果缓存到磁盘上。[译者注：添加到开销大的loader前是因为cache-loader可以缓存这些昂贵loader的结果，之后的loader直接调用缓存，节省开销]
 
 **webpack.config.js**
 ```js
@@ -32,7 +32,7 @@ module.exports = {
       {
         test: /\.ext$/,
         use: [
-          'cache-loader',
+          'cache-loader', //放前面
           ...loaders
         ],
         include: path.resolve('src')
@@ -42,19 +42,20 @@ module.exports = {
 }
 ```
 
-> **[info]** zhu  ⚠️ Note that there is an overhead for saving the reading and saving the cache file, so only use this loader to cache expensive loaders.
+> **[info]** 注
+> 节省读取和保存缓存文件的开销，所以只需要使用这个loader来缓存昂贵的loader。
 
-<h2 align="center">Options</h2>
+<h2 align="center">选项</h2>
 
-|Name|Type|Default|Description|
+|名称|类型|默认值|描述|
 |:--:|:--:|:-----:|:----------|
-|**`cacheKey`**|`{Function(options, request) -> {String}}`|`undefined`|Allows you to override default cache key generator|
-|**`cacheDirectory`**|`{String}`|`path.resolve('.cache-loader')`|Provide a cache directory where cache items should be stored (used for default read/write implementation)|
-|**`cacheIdentifier`**|`{String}`|`cache-loader:{version} {process.env.NODE_ENV}`|Provide an invalidation identifier which is used to generate the hashes. You can use it for extra dependencies of loaders (used for default read/write implementation)|
-|**`write`**|`{Function(cacheKey, data, callback) -> {void}}`|`undefined`|Allows you to override default write cache data to file (e.g. Redis, memcached)|
-|**`read`**|`{Function(cacheKey, callback) -> {void}}`|`undefined`|Allows you to override default read cache data from file|
+|**`cacheKey`**|`{Function(options, request) -> {String}}`|`undefined`| 允许覆盖默认的高速缓存key生成器 |
+|**`cacheDirectory`**|`{String}`|`path.resolve('.cache-loader')`|提供一个缓存目录，也就是缓存项应该被存储的地方 (被用于默认的 read/write 实现)|
+|**`cacheIdentifier`**|`{String}`|`cache-loader:{version} {process.env.NODE_ENV}`|提供一个无效标识符，用于生成哈希。您可以使用它作为loader的额外依赖项(被用于默认的 read/write 实现) |
+|**`write`**|`{Function(cacheKey, data, callback) -> {void}}`|`undefined`|允许覆盖默认的写入缓存数据到文件(例如. Redis, memcached)|
+|**`read`**|`{Function(cacheKey, callback) -> {void}}`|`undefined`|  允许覆盖默认的从文件中读取缓存数据 |
 
-<h2 align="center">Examples</h2>
+<h2 align="center">示例</h2>
 
 **webpack.config.js**
 ```js
@@ -74,16 +75,16 @@ module.exports = {
 }
 ```
 
-### `Database Integration`
+### `数据库集成`
 
 **webpack.config.js**
 ```js
-// Or different database client - memcached, mongodb, ...
+// 或者不同的数据库客户端 - memcached, mongodb, ...
 const redis = require('redis');
 const crypto = require('crypto');
 
 // ...
-// connect to client
+// 连接到数据库...
 // ...
 
 const BUILD_CACHE_TIMEOUT = 24 * 3600; // 1 day
@@ -92,13 +93,13 @@ function digest(str) {
   return crypto.createHash('md5').update(str).digest('hex');
 }
 
-// Generate own cache key
+// 生成缓存key
 function cacheKey(options, request) {
   return `build:cache:${digest(request)}`;
 }
 
 
-// Read data from database and parse them
+// 从数据库读取数据并解析它们
 function read(key, callback) {
   client.get(key, (err, result) => {
     if (err) {
@@ -119,7 +120,7 @@ function read(key, callback) {
 }
 
 
-// Write data to database under cacheKey
+// 写入数据到数据库对应的cacheKey
 function write(key, data, callback) {
   client.set(key, JSON.stringify(data), 'EX', BUILD_CACHE_TIMEOUT, callback);
 }
@@ -147,7 +148,7 @@ module.exports = {
 }
 ```
 
-<h2 align="center">Maintainers</h2>
+<h2 align="center">维护者</h2>
 
 <table>
   <tbody>
