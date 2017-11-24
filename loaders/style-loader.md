@@ -156,9 +156,8 @@ style.unuse(); // = style.unref();
 
 ### `hmr`
 
-Enable/disable Hot Module Replacement (HMR), if disabled no HMR Code will be added.
-This could be used for non local development and production.
-启用/禁用 模块热替换，如果
+启用/禁用 模块热替换，如果禁用，HRM不会被添加。
+这可以用于非本地开发和生产。
 
 **webpack.config.js**
 ```js
@@ -172,7 +171,7 @@ This could be used for non local development and production.
 
 ### `base`
 
-This setting is primarily used as a workaround for [css clashes](https://github.com/webpack-contrib/style-loader/issues/163) when using one or more [DllPlugin](https://robertknight.github.io/posts/webpack-dll-plugins/)'s.  `base` allows you to prevent either the *app*'s css (or *DllPlugin2*'s css) from overwriting *DllPlugin1*'s css by specifying a css module id base which is greater than the range used by *DllPlugin1* e.g.:
+当使用一个或多个 [DllPlugin](https://robertknight.github.io/posts/webpack-dll-plugins/) 时，此设置主要用作 [css 冲突](https://github.com/webpack-contrib/style-loader/issues/163) 的修补方案。`base` 可以防止 *app* 的 css（或 *DllPlugin2* 的 css）覆盖 *DllPlugin1* 的 css，方法是指定一个大于*DllPlugin1*使用的范围的 css 模块id ，例如：
 
 **webpack.dll1.config.js**
 ```js
@@ -197,7 +196,7 @@ This setting is primarily used as a workaround for [css clashes](https://github.
 ```
 
 **webpack.app.config.js**
-```
+```js
 {
   test: /\.css$/,
   use: [
@@ -209,7 +208,7 @@ This setting is primarily used as a workaround for [css clashes](https://github.
 
 ### `attrs`
 
-If defined, style-loader will attach given attributes with their values on `<style>` / `<link>` element.
+如果被定义，style-loader在`<style>` / `<link>`元素上附加给定的属性以及他们的值。
 
 **component.js**
 ```js
@@ -251,9 +250,7 @@ import link from './file.css'
 
 ### `transform`
 
-A `transform` is a function that can modify the css just before it is loaded into the page by the style-loader.
-This function will be called on the css that is about to be loaded and the return value of the function will be loaded into the page instead of the original css.
-If the return value of the `transform` function is falsy, the css will not be loaded into the page at all.
+`transform` 是一个函数，可以在通过 style-loader 来在css被加载到页面之前修改它。 该函数将在即将加载的 css 上调用，函数的返回值将被加载到页面，而不是原始的 css 。 如果 `transform` 函数的返回值是 falsy 值，那么 css 根本就不会加载到页面中。
 
 **webpack.config.js**
 ```js
@@ -268,7 +265,7 @@ If the return value of the `transform` function is falsy, the css will not be lo
 **transform.js**
 ```js
 module.exports = function (css) {
-  // Here we can change the original css
+  // 你可以在这里修改原始css
   const transformed = css.replace('.classNameA', '.classNameB')
 
   return transformed
@@ -290,18 +287,18 @@ module.exports = function (css) {
 **conditional.js**
 ```js
 module.exports = function (css) {
-  // If the condition is matched load [and transform] the CSS
+  // 如果条件被匹配，加载CSS并转换它
   if (css.includes('something I want to check')) {
     return css;
   }
-  // If a falsy value is returned, the CSS won't be loaded
+  // 如果返回一个falsy值，CSS不会被加载
   return false
 }
 ```
 
 ### `insertAt`
 
-By default, the style-loader appends `<style>` elements to the end of the style target, which is the `<head>` tag of the page unless specified by `insertInto`. This will cause CSS created by the loader to take priority over CSS already present in the target. To insert style elements at the beginning of the target, set this query parameter to 'top', e.g
+默认情况下，style-loader 将`<style>`元素附加到样式目标的末尾，这是页面的`<head>`标签，除非`insertInto`被指定。这将导致loader创建的CSS优先于目标中已经存在的CSS。要在目标的开头插入样式元素，将这个查询参数设置为'top'。
 
 **webpack.config.js**
 ```js
@@ -313,7 +310,7 @@ By default, the style-loader appends `<style>` elements to the end of the style 
 }
 ```
 
-A new `<style>` element can be inserted before a specific element by passing an object, e.g.
+可以传递一个object来指定一个元素，一个新的`<style>`元素可以被添加到这个元素前面。
 
 **webpack.config.js**
 ```js
@@ -328,8 +325,8 @@ A new `<style>` element can be inserted before a specific element by passing an 
 ```
 
 ### `insertInto`
-By default, the style-loader inserts the `<style>` elements into the `<head>` tag of the page. If you want the tags to be inserted somewhere else you can specify a CSS selector for that element here. If you target an [IFrame](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement) make sure you have sufficient access rights, the styles will be injected into the content document head.
-You can also insert the styles into a [ShadowRoot](https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot), e.g
+
+默认情况下，style-loader将`<style>`元素插入到页面的`<head>`标签中。如果您希望将标签插入到其他地方，那么您可以为该元素指定一个CSS选择器。如果您的目标是一个[IFrame](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement)，请确保您有足够的访问权限，那么样式将被注入到内容文档头部。您也可以将样式插入到[ShadowRoot](https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot)中。例如：
 
 **webpack.config.js**
 ```js
@@ -344,8 +341,11 @@ You can also insert the styles into a [ShadowRoot](https://developer.mozilla.org
 ### `singleton`
 
 If defined, the style-loader will reuse a single `<style>` element, instead of adding/removing individual elements for each required module.
+如果定义了，style-loader将重用一个单一的`<style>`元素，而不是为每个需要的模块 添加/删除 单个元素。
 
-> ℹ️  This option is on by default in IE9, which has strict limitations on the number of style tags allowed on a page. You can enable or disable it with the singleton option.
+> **[info]**  
+>
+>这个选项在IE9中是默认的，它对页面上允许的样式标签数量有严格的限制。您可以使用singleton选项启用或禁用它。
 
 **webpack.config.js**
 ```js
@@ -359,7 +359,7 @@ If defined, the style-loader will reuse a single `<style>` element, instead of a
 
 ### `sourceMap`
 
-Enable/Disable source map loading
+启用/禁用 source map 加载
 
 **webpack.config.js**
 ```js
@@ -373,7 +373,7 @@ Enable/Disable source map loading
 
 ### `convertToAbsoluteUrls`
 
-If convertToAbsoluteUrls and sourceMaps are both enabled, relative urls will be converted to absolute urls right before the css is injected into the page. This resolves [an issue](https://github.com/webpack/style-loader/pull/96) where relative resources fail to load when source maps are enabled. You can enable it with the convertToAbsoluteUrls option.
+如果 convertToAbsoluteUrls 和 sourceMaps 都启用，那么相对 url 将在 css 注入页面之前，被转换为绝对 url。这解决了在启用 source map 时，相对资源无法加载的[问题](https://github.com/webpack/style-loader/pull/96)。您可以使用 convertToAbsoluteUrls 选项启用它。
 
 **webpack.config.js**
 ```js
@@ -386,7 +386,7 @@ If convertToAbsoluteUrls and sourceMaps are both enabled, relative urls will be 
 }
 ```
 
-<h2 align="center">Maintainers</h2>
+<h2>维护者</h2>
 
 <table>
   <tbody>
