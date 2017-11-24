@@ -268,8 +268,8 @@ module.exports = {
 
 一个很常见的场景，将 HTML 导出到 `.html` 文件中，来直接访问它们，而不是使用 javascript 注入。这可以通过3个 loader 的组合来实现：
 
-- [file-loader](https://github.com/webpack/file-loader)
-- [extract-loader](https://github.com/peerigon/extract-loader)
+- [file-loader](//loaders/file-loader.md)
+- [extract-loader](//loaders/extract-loader.md)
 - html-loader
 
 
@@ -282,7 +282,7 @@ html-loader 将解析 URL，请求图片和你所期望的一切资源。extract
 }
 ```
 
-<h2 align="center">Maintainers</h2>
+<h2>Maintainers</h2>
 
 <table>
   <tbody>
