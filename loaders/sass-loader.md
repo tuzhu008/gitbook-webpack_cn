@@ -21,7 +21,7 @@
 
 加载 SASS/SCSS 文件，并将其编译为CSS。
 
-使用 css-loader or the raw-loader 将其转换为 JS模块，使用 ExtractTextPlugin 将其提取到一个单独的文件。 
+使用 [css-loader](//loaders/css-loader.md) 或者  [raw-loader](/loaders/raw-loader.md) 将其转换为 JS模块，使用 [ExtractTextPlugin](/Plugins/third-party/ExtractTextWebpackPlugin.md) 将其提取到一个单独的文件。 
 寻找 webpack 1 loader? 查看 [archive/webpack-1 branch](https://github.com/webpack-contrib/sass-loader/tree/archive/webpack-1).
 
 <h2>安装</h2>
@@ -35,7 +35,7 @@ sass-loader 需要 [node-sass](https://github.com/sass/node-sass) 和 [webpack](
 
 <h2>示例</h2>
 
-将 sass-loader 与[css-loader](https://github.com/webpack-contrib/css-loader) 和 [style-loader](https://github.com/webpack-contrib/style-loader) 链接起来，让所有样式立即被应用到DOM 。
+将 sass-loader 与 [css-loader](//loaders/css-loader.md) 和 [style-loader](/loaders/style-loader.md) 链接起来，让所有样式立即被应用到DOM 。
 
 ```js
 // webpack.config.js
@@ -83,7 +83,7 @@ module.exports = {
 
 ### 在生产中
 
-通常，生产环境下比较推荐的做法是，使用 ExtractTextPlugin 将样式表抽离成专门的单独文件。这样，样式表将不再依赖于 JavaScript：
+通常，生产环境下比较推荐的做法是，使用 [ExtractTextPlugin](/Plugins/third-party/ExtractTextWebpackPlugin.md) 将样式表抽离成专门的单独文件。这样，样式表将不再依赖于 JavaScript：
 
 ```js
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -119,7 +119,7 @@ module.exports = {
 
 ### 导入
 
-webpack 提供一种[解析文件的高级机制](https://webpack.js.org/concepts/module-resolution/)。sass-loader 使用 node-sass 的 自定义 importer 特性，将所有的查询（query）传递给 webpack 的解析引擎。只要它们前面加上 `~`，告诉 webpack 它不是一个相对路径，这样就可以导入 `node_modules` 目录里面的 Sass 模块：
+webpack 提供一种[解析文件的高级机制](https://webpack.js.org/concepts/module-resolution/)。[sass-loader](/loaders/sass-loader.md) 使用 [node-sass](https://github.com/andrew/node-sass) 的 自定义 importer 特性，将所有的查询（query）传递给 webpack 的解析引擎。只要它们前面加上 `~`，告诉 webpack 它不是一个相对路径，这样就可以导入 `node_modules` 目录里面的 Sass 模块：
 
 ```css
 @import "~bootstrap/dist/css/bootstrap";
@@ -131,8 +131,8 @@ webpack 提供一种[解析文件的高级机制](https://webpack.js.org/concept
 
 由于 Sass/[libsass](https://github.com/sass/libsass) 并没有提供[url rewriting](https://github.com/sass/libsass/issues/532) 的功能，所以所有的链接资源都是相对输出文件(output)而言。
 
-- 如果生成的 CSS 没有传递给 css-loader，它是相对于网站的根目录。
-- 如果生成的 CSS 传递给了 css-loader，则所有的 url 都相对于入口文件（例如：`main.scss`）。
+- 如果生成的 CSS 没有传递给 [css-loader](//loaders/css-loader.md)，它是相对于网站的根目录。
+- 如果生成的 CSS 传递给了 [css-loader](//loaders/css-loader.md)，则所有的 url 都相对于入口文件（例如：`main.scss`）。
 
 第二种情况可能会带来一些问题。正常情况下我们期望相对路径的引用是相对于 `.scss` 去解析（如同在 `.css` 文件一样）。幸运的是，有2个方法可以解决这个问题：
 
