@@ -2,7 +2,7 @@
 
 [![](https://img.shields.io/badge/Github-%E6%9F%A5%E7%9C%8B%E6%9B%B4%E5%A4%9A-brightgreen.svg)](https://github.com/webpack-contrib/coverjs-loader)
 
-## Usage
+## 用法
 
 ``` javascript
 webpack-dev-server "mocha!./cover-my-client-tests.js" --options webpackOptions.js
@@ -11,7 +11,7 @@ webpack-dev-server "mocha!./cover-my-client-tests.js" --options webpackOptions.j
 ``` javascript
 // webpackOptions.js
 module.exports = {
-	// your webpack options
+	// webpack选项
 	output: "bundle.js",
 	publicPrefix: "/",
 	debug: true,
@@ -20,7 +20,7 @@ module.exports = {
 
 	// the coverjs loader binding
 	postLoaders: [{
-		test: "", // every file
+		test: "", // 每个文件
 		exclude: [
 			"node_modules.chai",
 			"node_modules.coverjs-loader",
@@ -40,9 +40,9 @@ after(function() {
 });
 ```
 
-See [the-big-test](https://github.com/webpack/the-big-test) for an example.
+参见 [the-big-test](https://github.com/webpack/the-big-test) 获取示例。
 
-You don't have to combine it with the mocha loader, it's independent. So if you want to cover a normal app usage, you can do so. The `reportHtml` function just appends the output to the body.
+你不需要将它与mocha loader相结合，它是独立的。因此，如果你想要覆盖一个正常的app用法，你可以这样做。`reportHtml`函数只是将输出附加到body上。
 
 
 ## License
