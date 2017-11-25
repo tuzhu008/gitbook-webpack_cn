@@ -21,7 +21,7 @@ npm i -D source-map-loader
 
 <h2 align="center">用法</h2>
 
-[Documentation: Using loaders](https://webpack.js.org/concepts/#loaders)
+[文档: 使用 loader](https://webpack.js.org/concepts/#loaders)
 
 
 ### 示例 webpack 配置
