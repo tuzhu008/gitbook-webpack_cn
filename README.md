@@ -24,44 +24,17 @@ webpack 可以将许多模块打包成几个捆绑在一起的资源（assets）
 
 官方图：
 
-![](/assets/what-is-webpack.png)
+
+<div style="background-color: #fff">
+    <img src='/assets/what-is-webpack.png' />
+</div>
+
 
 ## webpack是如何工作的？
 
-# 结构
 
-先看看整体结构：
 
-```js
-module.exports = {
-    entry: '',
-    output: '',
-    module: '',
-    resolve: '',
-    performance: '',
-    devtool: '',
-    context: '',
-    target: '',
-    externals: '',
-    stats: '',
-    devServer: '',
-    plugins: '',
-
-    //更多高级配置
-    resolveLoader: '',
-    parallelism: '',
-    profile: '',
-    bail: '',
-    cache: '',
-    watch: '',
-    watchOptions: '',
-    node: '',
-    recordsPath: '',
-    recordsInputPath: '',
-    recordsOutputPath: ''
-
-}
-```
+更多基本概念请参见 [webpack中文。](https://doc.webpack-china.org/concepts/)
 
 
 
