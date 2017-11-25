@@ -83,23 +83,23 @@
 
 1. 任何在 `<dom-module>` 中但不在 `<template>` 中的 `<link>` 将按照它们在文件中标签的顺序被添加到 `<template>`。
 
-```html
-  <dom-module>
-    <link rel="stylesheet" href="file1.css">
-    <template>
-      <link rel="stylesheet" href="file2.css">
-    </template>
-  </dom-module>
-
-  将生成：
-
-  <dom-module>
-    <template>
-      <style>require('file1.css')</style>
-      <style>require('file2.css')</style>
-    </template>
-  </dom-module>
-```
+  ```html
+    <dom-module>
+      <link rel="stylesheet" href="file1.css">
+      <template>
+        <link rel="stylesheet" href="file2.css">
+      </template>
+    </dom-module>
+  
+    将生成：
+  
+    <dom-module>
+      <template>
+        <style>require('file1.css')</style>
+        <style>require('file2.css')</style>
+      </template>
+    </dom-module>
+  ```
 
 2. 如果href是一个相对路径，此loader只会替换一个`<link>`。任何试图访问外部连接的`<link>`。例如 `http`, `https` 或者 `//` 将不会被替换。
 
