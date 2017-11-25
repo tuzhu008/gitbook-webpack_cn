@@ -71,20 +71,17 @@
 
 #### ignoreLinks: 条件
 
-`<link>`s pointing to paths matching these conditions (参见webpack中的[Condition]) will not be transformed into `import`s.
+`<link>`指向匹配这些条件的路径将不会被转换为`import` (参见webpack中的[Condition]) 。
 
 #### ignorePathReWrite: 条件
 
-`<link>` paths matching these conditions (see [Condition] in the webpack
-documentation) will not be changed when transformed into `import`s. This can
-be useful for respecting aliases, loader syntax (e.g.
-`markup-inline-loader!./my-element.html`), or module paths.
+当转换为`import`时，匹配这些条件(参见webpack中的[Condition])的`<link>`路径将不会被更改。这对于别名、loader语法(例如:`markup-inline-loader!./my-element.html`)或模块路径而言非常有用。
 
 #### processStyleLinks Boolean
 
-If set to true the loader will rewrite `<link import="css" href="...">` or `<link rel="stylesheet" href="...">` that are inside the dom-module with `<style>require('...')</style>`. This will allow for the file to be processed by loaders that are set up in the webpack config to handle their file type. 
+如果设置为`true`，loader将使用`<style>require('...')</style>`在 dom-module 内部重写`<link import="css" href="...">`或者`<link rel="stylesheet" href="...">`。这将允许在webpack config中设置的被loader处理的文件，以处理它们的文件类型。
 
-1. Any `<link>` that is inside the `<dom-module>` but not in the `<template>` will be added to the `<template>` in the order the tags appear in the file.
+1. 任何在 `<dom-module>` 中但不在 `<template>` 中的 `<link>` 将按照它们在文件中标签的顺序被添加到 `<template>`。
 
 ```html
   <dom-module>
@@ -94,7 +91,7 @@ If set to true the loader will rewrite `<link import="css" href="...">` or `<lin
     </template>
   </dom-module>
 
-  would produce
+  将生成：
 
   <dom-module>
     <template>
@@ -104,7 +101,7 @@ If set to true the loader will rewrite `<link import="css" href="...">` or `<lin
   </dom-module>
 ```
 
-2. The loader will only replace a `<link>` if the href is a relative path. Any link attempting to access an external link i.e. `http`, `https` or `//` will not be replaced.
+2. 如果href是一个相对路径，此loader只会替换一个`<link>`。任何试图访问外部连接的`<link>`。例如 `http`, `https` 或者 `//` 将不会被替换。
 
 #### htmlLoader: Object
 
