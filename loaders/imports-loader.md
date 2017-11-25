@@ -10,27 +10,27 @@
       src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
   <h1>Imports Loader</h1>
-  <p>The imports loader allows you to use modules that depend on specific global variables.<p>
+  <p>imports loader允许您使用依赖于特定全局变量的模块。<p>
   <a href="https://github.com/webpack-contrib/imports-loader"> <img src="https://img.shields.io/badge/Github-%E6%9F%A5%E7%9C%8B%E6%9B%B4%E5%A4%9A-brightgreen.svg"></a>
 </div>
 
-This is useful for third-party modules that rely on global variables like `$` or `this` being the `window` object. The imports loader can add the necessary `require('whatever')` calls, so those modules work with webpack.
+这对于依赖全局变量的第三方模块非常有用，比如`$`或者`this`是`window`对象。imports loader可以添加必要的`require('whatever')`调用，所以这些模块和webpack一起工作。
 
-<h2 align="center">Install</h2>
+<h2 align="center">安装</h2>
 
 ```bash
-npm install imports-loader
+npm install imports-loader -save-dev
 ```
 
-<h2 align="center"><a href="https://webpack.js.org/concepts/loaders">Usage</a></h2>
+<h2 align="center"><a href="https://webpack.js.org/concepts/loaders">用法</a></h2>
 
-Given you have this file `example.js`
+有了这个文件 `example.js`
 
 ```javascript
 $("img").doSomeAwesomeJqueryPluginStuff();
 ```
 
-then you can inject the `$` variable into the module by configuring the imports-loader like this:
+然后，您可以通过配置 imports-loader 来将`$`变量注入到模块中:
 
 ``` javascript
 require("imports-loader?$=jquery!./example.js");
@@ -38,9 +38,9 @@ require("imports-loader?$=jquery!./example.js");
 
 This simply prepends `var $ = require("jquery");` to `example.js`.
 
-### Syntax
+### 语法
 
-Query value | Equals
+查询值 | 等于
 ------------|-------
 `angular` | `var angular = require("angular");`
 `$=jquery` | `var $ = require("jquery");`
