@@ -14,9 +14,9 @@
   <a href="https://github.com/webpack-contrib/yaml-frontmatter-loader"><img src="https://img.shields.io/badge/Github-%E6%9F%A5%E7%9C%8B%E6%9B%B4%E5%A4%9A-brightgreen.svg"></a>
 </div>
 
-YAML Frontmatter loader for [webpack](https://webpack.js.org/). Converts YAML in files to JSON. You should chain it with [json-loader](https://github.com/webpack/json-loader).
+YAML Frontmatter loader for [webpack](https://webpack.js.org/). 将YAML转换为JSON。 你应该将它与 [json-loader](//loaders/json-loader.md) 串联。
 
-<h2 align="center">Install</h2>
+<h2 align="center">安装</h2>
 
 `npm install yaml-frontmatter-loader`
 
@@ -24,10 +24,10 @@ YAML Frontmatter loader for [webpack](https://webpack.js.org/). Converts YAML in
 
 ```js
 var json = require("json-loader!yaml-frontmatter-loader!./file.md");
-// => returns file.md as javascript object
+// => 将 file.md 作为 javascript 对象返回
 ```
 
-### Configuration
+### 配置
 
 **webpack.config.js**
 ```js
