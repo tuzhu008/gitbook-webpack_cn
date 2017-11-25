@@ -130,7 +130,7 @@ worker.addEventListener("message", function (event) {});
 
 <h2 align="center">示例</h2>
 
-The worker file can import dependencies just like any other file worker
+文件可以像其他文件那样导入依赖。
 
 **Worker.js**
 ```js
@@ -140,16 +140,18 @@ const obj = { foo: 'foo' }
 
 _.has(obj, 'foo')
 
-// Post data to parent thread
+// 将数据发送到父线程
 self.postMessage({ foo: 'foo' })
 
-// Respond to message from parent thread
+// 对来自父线程的消息进行响应
 self.addEventListener('message', (event) => console.log(event))  
 ```
 
-### `Integrating with ES2015 Modules`
+### `与 ES2015 模块集成`
 
-> ℹ️  You can even use ES2015 Modules if you have the [`babel-loader`](https://github.com/babel/babel-loader) configured.
+> **[info]**
+>
+> 如果配置了 [`babel-loader`](//loaders/babel-loader.md)，甚至可以使用 ES2015 模块。
 
 **Worker.js**
 ```js
@@ -159,16 +161,16 @@ const obj = { foo: 'foo' }
 
 _.has(obj, 'foo')
 
-// Post data to parent thread
+// 将数据发送到父线程
 self.postMessage({ foo: 'foo' })
 
-// Respond to message from parent thread
+// 对来自父线程的消息进行响应
 self.addEventListener('message', (event) => console.log(event))
 ```
 
-### `Integrating with TypeScript`
+### `与 TypeScript 集成`
 
-To integrate with TypeScript, you will need to define a custom module for the exports of your worker
+为了与 TypeScript 集成，需要为 worker 的导出定义一个自定义的模块
 
 **typings/custom.d.ts**
 ```ts
@@ -204,11 +206,11 @@ worker.onmessage = (event) => {};
 worker.addEventListener("message", (event) => {});
 ```
 
-### `Cross-Origin Policy`
+### `跨域规则（Cross-Origin Policy）`
 
-[`WebWorkers`](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API) are restricted by a [same-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy), so if your `webpack` assets are not being served from the same origin as your application, their download may be blocked by your browser. This scenario can commonly occur if you are hosting your assets under a CDN domain. Even downloads from the `webpack-dev-server` could be blocked. There are two workarounds
+[`WebWorkers`](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API) 受到[同源规则（same-origin policy）](https://en.wikipedia.org/wiki/Same-origin_policy)的限制，因此，如果您的 webpack 资源与您的应用程序来自不同的域，那么它们的下载可能会被浏览器阻塞。如果您在一个CDN域下托管您的资源，这种情况通常会发生。甚至从 `webpack-dev-server` 上下载都会被阻塞。有两个解决方法：
 
-Firstly, you can inline the worker as a blob instead of downloading it as an external script via the [`inline`](#inline) parameter
+首先，您可以将 worker 内联为 blob，而不是通过[inline](#inline) 参数将其作为外部脚本下载
 
 **App.js**
 ```js
@@ -223,11 +225,12 @@ import Worker from './file.worker.js';
 }
 ```
 
-Secondly, you may override the base download URL for your worker script via the [`publicPath`](#publicpath) option
+其次，您可以通过[`publicPath`](#publicpath)选项覆盖您的 worker 脚本的基本下载URL
 
 **App.js**
 ```js
-// This will cause the worker to be downloaded from `/workers/file.worker.js`
+// 这将导致 worker 从 `/workers/file.worker.js`
+ 中下载
 import Worker from './file.worker.js';
 ```
 
