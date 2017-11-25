@@ -36,7 +36,7 @@ $("img").doSomeAwesomeJqueryPluginStuff();
 require("imports-loader?$=jquery!./example.js");
 ```
 
-This simply prepends `var $ = require("jquery");` to `example.js`.
+这就简单地把 `var $ = require("jquery");` 前置插入到`example.js`.
 
 ### 语法
 
@@ -48,9 +48,9 @@ This simply prepends `var $ = require("jquery");` to `example.js`.
 `config=>{size:50}` | `var config = {size:50};`
 `this=>window` | `(function () { ... }).call(window);`
 
-### Multiple values
+### 多个值
 
-Multiple values are separated by comma `,`:
+多个值用逗号分隔`,`:
 
 ```javascript
 require("imports-loader?$=jquery,angular,config=>{size:50}!./file.js");
@@ -58,7 +58,7 @@ require("imports-loader?$=jquery,angular,config=>{size:50}!./file.js");
 
 ### webpack.config.js
 
-As always, you should rather configure this in your `webpack.config.js`:
+和往常一样，在`webpack.config.js`中配置更好。
 
 ```javascript
 // ./webpack.config.js
@@ -76,29 +76,29 @@ module.exports = {
 };
 ```
 
-<h2 align="center">Typical Use Cases</h2>
+<h2 align="center">典型用例</h2>
 
-### jQuery plugins
+### jQuery插件
 
 `imports-loader?$=jquery`
 
-### Custom Angular modules
+### 自定的 Angular 模块
 
 `imports-loader?angular`
 
-### Disable AMD
+### 禁用 AMD
 
-There are many modules that check for a `define` function before using CommonJS. Since webpack is capable of both, they default to AMD in this case, which can be a problem if the implementation is quirky.
+有很多模块在使用 CommonJS 前会进行 `define` 函数的检查。自从 webpack 两种格式都可以使用后，在这种场景下默认使用了 AMD 可能会造成某些问题（如果接口的实现比较古怪）。
 
-Then you can easily disable the AMD path by writing
+你可以像下面这样轻松的禁用 AMD
 
 ```javascript
 imports-loader?define=>false
 ```
 
-For further hints on compatibility issues, check out [Shimming Modules](http://webpack.github.io/docs/shimming-modules.html) of the official docs.
+关于兼容性问题的更多提示，可以参考官方的文档 [Shimming Modules](http://webpack.github.io/docs/shimming-modules.html)。
 
-<h2 align="center">Maintainers</h2>
+<h2 align="center">维护者</h2>
 
 <table>
   <tbody>
