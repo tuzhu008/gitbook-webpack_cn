@@ -16,21 +16,21 @@
 
 <div align="center">
 
-Updates style `<link>` href value with a hash to trigger a style reload
+使用哈希值来更新 `<link>` 的 href 属性的值，以此触发样式重载。
 
 </div>
 
-<h2 align="center">Install</h2>
+<h2 align="center">安装</h2>
 
 ```bash
 npm install --save-dev restyle-loader
 ```
 
-<h2 align="center">Usage</h2>
+<h2 align="center">用法</h2>
 
 [Documentation: Using loaders](https://webpack.js.org/loaders/)
 
-<h2 align="center">Examples</h2>
+<h2 align="center">示例</h2>
 
 **webpack.config.js**
 
@@ -50,7 +50,7 @@ npm install --save-dev restyle-loader
   ]
 }
 ```
-Hash is required to enable HMR
+哈希对启用HMR是必须的。
 
 **bundle.js**
 
@@ -70,7 +70,7 @@ require("./index.css");
 </head>
 <!-- ... -->
 ```
-after the loader runs it becomes
+loader 变成之后将变为：
 ```html
 <!-- ... -->
 <head>
@@ -80,7 +80,7 @@ after the loader runs it becomes
 ```
 
 
-<h2 align="center">Maintainers</h2>
+<h2 align="center">维护者</h2>
 
 <table>
   <tbody>
