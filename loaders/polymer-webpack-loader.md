@@ -60,21 +60,20 @@
 
 ### exclude: Condition(s)
 
-See [Rule.exclude] and [Condition] in the webpack documentation. Paths
-matching this option will be excluded from processing by
-polymer-webpack-loader. NOTE: Files imported through a `<link>` will not be
-excluded by this property. See `Options.ignoreLinks`.
+参见 webpack 文档中的 [Rule.exclude] 和 [Condition] 。匹配此选项的路径将不会被polymer-webpack-loader处理。  
+> **[info]** 注：
+> 
+> 通过`<link>`导入的文件将不会被该属性排除。参见`Options.ignoreLinks`。
 
-[Rule.exclude]: //configuration/module.md#rule-exclude
+[Rule.exclude]: //configuration/module.md#ruleexclude
 
-### Options
+### 选项
 
-#### ignoreLinks: Condition(s)
+#### ignoreLinks: 条件
 
-`<link>`s pointing to paths matching these conditions (see [Condition] in the
-webpack documentation) will not be transformed into `import`s.
+`<link>`s pointing to paths matching these conditions (参见webpack中的[Condition]) will not be transformed into `import`s.
 
-#### ignorePathReWrite: Condition(s)
+#### ignorePathReWrite: 条件
 
 `<link>` paths matching these conditions (see [Condition] in the webpack
 documentation) will not be changed when transformed into `import`s. This can
