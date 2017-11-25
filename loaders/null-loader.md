@@ -9,19 +9,19 @@
       src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
   <h1>Null Loader</h1>
-  <p>A loader that returns an empty module.<p>
+  <p>返回空模块的loader。<p>
   <a href="https://github.com/webpack-contrib/null-loader"><img src="https://img.shields.io/badge/Github-查看更多-brightgreen.svg"></a>
 </div>
 
-<h2 align="center">Install</h2>
+<h2 align="center">安装</h2>
 
 ```bash
 npm i null-loader --save
 ```
 
-<h2 align="center">Examples</h2>
+<h2 align="center">示例</h2>
 
-One use for this loader is to silence modules imported by a dependency. Say, for example, your project relies on an ES6 library that imports a polyfill you don't need, so removing it will cause no loss in functionality. Test for the path to the polyfill and it won't be included in your bundle:
+这个loader的一个用途是让依赖项导入的模块静默(silence)。例如，您的项目依赖于一个ES6库，它导入一个您不需要的polyfill，因此删除它将不会导致功能的损失。测试（在`test`中设置）polyfill的路径，它不会包含在你的包中:
 
 ```js
 const path = require('path');
@@ -38,7 +38,7 @@ module.exports = {
 }
 ```
 
-<h2 align="center">Maintainers</h2>
+<h2 align="center">维护者</h2>
 
 <table>
   <tbody>
