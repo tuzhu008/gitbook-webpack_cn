@@ -9,17 +9,17 @@
     <img width="200" height="200" vspace="" hspace="25" src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
   <h1>thread-loader</h1>
-  <p>Runs the following loaders in a worker pool.</p>
+  <p>在一个 worker 池中运行下面的loader。</p>
   <a href="https://github.com/webpack-contrib/thread-loader"><img src="https://img.shields.io/badge/Github-%E6%9F%A5%E7%9C%8B%E6%9B%B4%E5%A4%9A-brightgreen.svg"></a>
 </div>
 
-<h2 align="center">Install</h2>
+<h2 align="center">安装</h2>
 
 ```bash
 npm install --save-dev thread-loader
 ```
 
-<h2 align="center">Usage</h2>
+<h2 align="center">用法</h2>
 
 Put this loader in front of other loaders. The following loaders run in a worker pool.
 
@@ -33,7 +33,7 @@ Each worker is a separate node.js process, which has an overhead of ~600ms. Ther
 
 Use this loader only for expensive operations!
 
-<h2 align="center">Examples</h2>
+<h2 align="center">示例</h2>
 
 **webpack.config.js**
 
