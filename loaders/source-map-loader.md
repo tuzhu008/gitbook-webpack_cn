@@ -9,22 +9,22 @@
       src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
   <h1>Sourcemap Loader</h1>
-  <p>Extracts source maps from existing source files (from their <code>sourceMappingURL</code>).<p>
+  <p>从现有源文件中提取源映射 (从它们的 <code>sourceMappingURL</code>).<p>
   <a href="https://github.com/webpack-contrib/source-map-loader"><img src="https://img.shields.io/badge/Github-%E6%9F%A5%E7%9C%8B%E6%9B%B4%E5%A4%9A-brightgreen.svg"></a>
 </div>
 
-<h2 align="center">Install</h2>
+<h2 align="center">安装</h2>
 
 ```bash
 npm i -D source-map-loader
 ```
 
-<h2 align="center">Usage</h2>
+<h2 align="center">用法</h2>
 
 [Documentation: Using loaders](https://webpack.js.org/concepts/#loaders)
 
 
-### Example webpack config
+### 示例 webpack 配置
 
 ``` javascript
 module.exports = {
@@ -40,13 +40,14 @@ module.exports = {
 };
 ```
 
-`source-map-loader` extracts existing source maps from all JavaScript entries. This includes both inline source maps as well as those linked via URL. All source map data is passed to webpack for processing as per a chosen [source map style](https://webpack.js.org/configuration/devtool/) specified by the `devtool` option in [webpack.config.js](https://webpack.js.org/configuration/).
+`source-map-loader`从所有的 JavaScript 入口中提取现有的源映射。这包括内联源映射和通过URL链接的内容。所有的源映射数据都被传递给webpack，以作为在[webpack.config.js](//configuration/README.md)中由 `devtool` 选项指定的每一个选择的[源映射样式](//configuration/devtools.md)进行处理。
 
-This loader is especially useful when using 3rd-party libraries having their own source maps. If not extracted and processed into the souce map of the webpack bundle, browsers may misinterpret source map data. `source-map-loader` allows webpack to maintain source map data continuity across libraries so ease of debugging is preserved.
+当使用的第三方库拥有自己的源映射时，这个 loader 特别有用。如果不提取和处理 webpack bundle 的源映射，浏览器可能会曲解源映射数据。`source-map-loader` 允许 webpack 在整个库中维护源映射数据的连续性，因此依然易于进行调试。
 
-`source-map-loader` will extract from any JavaScript file, including those in the `node_modules` directory. Be mindful in setting [include](https://webpack.js.org/configuration/module/#rule-include) and [exclude](https://webpack.js.org/configuration/module/#rule-exclude) rule conditions to maximize bundling performance.
+`source-map-loader`从任何 JavaScript 文件中进行提取，包括 `node_modules` 目录中的那些文件。注意设置[include](//configuration/module.md#ruleinclude) 和 [exclude](//configuration/module.md#ruleexclude)规则条件，以最大化打包性能。
+  
 
-<h2 align="center">Maintainers</h2>
+<h2 align="center">维护者</h2>
 
 <table>
   <tbody>
