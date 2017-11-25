@@ -65,7 +65,7 @@ matching this option will be excluded from processing by
 polymer-webpack-loader. NOTE: Files imported through a `<link>` will not be
 excluded by this property. See `Options.ignoreLinks`.
 
-[Rule.exclude]: https://webpack.js.org/configuration/module/#rule-exclude
+[Rule.exclude]: //configuration/module.md#rule-exclude
 
 ### Options
 
