@@ -10,14 +10,14 @@ extract-loader
 [![Build Status](https://travis-ci.org/peerigon/extract-loader.svg?branch=master)](https://travis-ci.org/peerigon/extract-loader)
 [![Coverage Status](https://img.shields.io/coveralls/peerigon/extract-loader.svg)](https://coveralls.io/r/peerigon/extract-loader?branch=master)
 
-extract-loader 动态地对给定的源代码进行计算，并将结果作为字符串返回。它的主要用例是在HTML和CSS中从各自的loader中解析url。使用[file-loader](https://github.com/webpack/file-loader)发射extract-loader的结果作为单独的文件。
+extract-loader 动态地对给定的源代码进行计算，并将结果作为字符串返回。它的主要用例是在HTML和CSS中从各自的loader中解析url。使用 [file-loader](//loaders/file-loader.md) 发射extract-loader的结果作为单独的文件。
 
 ```javascript
 import stylesheetUrl from "file-loader!extract-loader!css-loader!main.css";
 // stylesheetUrl 将是最终样式表的哈希url。
 ```
 
-extract-loader的工作原理类似于[extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin)，它作为此插件的替代方案。在计算源代码时，它提供了一个假上下文，该上下文专门用于处理[html-](https://github.com/webpack/html-loader) 或 [css-loader](https://github.com/webpack/css-loader)生成的代码。因此，它可能在其他情况下不起作用。
+extract-loader的工作原理类似于 [extract-text-webpack-plugin](/Plugins/third-party/ExtractTextWebpackPlugin.md) ，它作为此插件的替代方案。在计算源代码时，它提供了一个假上下文，该上下文专门用于处理 [html-loader](//loaders/html-loader.md)  或 [css-loader ](//loaders/css-loader.md)生成的代码。因此，它可能在其他情况下不起作用。
 
 <br>
 
@@ -35,7 +35,7 @@ extract-loader的工作原理类似于[extract-text-webpack-plugin](https://gith
 
 将CSS与webpack打包在一起有一些好处，比如在开发中引用带有散列url的图像和字体或[模块热替换](http://webpack.github.io/docs/hot-module-replacement-with-webpack.html) 。另一方面，在生产环境中，根据JS的执行来应用样式表不是一个好主意。渲染可能会被延迟，甚至可能出现一个[FOUC(无样式内容闪烁)](https://en.wikipedia.org/wiki/Flash\_of\_unstyled_content)。因此，在最终的生产构建中，将它们作为单独的文件保存还是更好的。
 
-使用extract-loader，您可以引用您的`main.css`作为正则`entry`。以下`webpack.config.js`展示了如何在开发中使用[style-loader](https://github.com/webpack/style-loader)加载样式，在生产中将其作为单独的文件。
+使用extract-loader，您可以引用您的`main.css`作为正则`entry`。以下`webpack.config.js`展示了如何在开发中使用 [style-loader](/loaders/style-loader.md) 加载样式，在生产中将其作为单独的文件。
 
 ```javascript
 const live = process.env.NODE_ENV === "production";
@@ -152,7 +152,7 @@ module.exports = {
 
 
 目前有一种选项:`publicPath`。
-如果您正在webpack的[output 选项](//configuration/output.md#outputpublicpath)中使用相对`publicPath`，并将其提取到`file-loader`中，那么您可能需要它来设置提取出来的文件的位置。
+如果您正在webpack的[output 选项](//configuration/output.md#outputpublicpath)中使用相对`publicPath`，并将其提取到 [file-loader](//loaders/file-loader.md) 中，那么您可能需要它来设置提取出来的文件的位置。
 
 Example:
 
