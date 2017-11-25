@@ -10,7 +10,7 @@
       src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
   <h1>Mocha Loader</h1>
-  <p>Allows <a href="http://mochajs.org/">Mocha</a> tests to be loaded and run via webpack</p>
+  <p>允许 <a href="http://mochajs.org/">Mocha</a> 通过webpack加载和运行测试</p>
   <a href="https://github.com/webpack-contrib/mocha-loader"><img src="https://img.shields.io/badge/Github-%E6%9F%A5%E7%9C%8B%E6%9B%B4%E5%A4%9A-brightgreen.svg"></a>
 </div>
 
@@ -20,9 +20,9 @@
 npm install --save-dev mocha-loader
 ```
 
-<h2 align="center">Usage</h2>
+<h2 align="center">用法</h2>
 
-### Configuration (recommended)
+### 配置 (推荐)
 
 **webpack.config.js**
 ```js
@@ -63,9 +63,9 @@ import test from './test'
 import test from 'mocha-loader!./test'
 ```
 
-<h2 align="center">Options</h2>
+<h2 align="center">选项</h2>
 
-<h2 align="center">Maintainer</h2>
+<h2 align="center">维护者</h2>
 
 <table>
   <tbody>
