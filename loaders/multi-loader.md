@@ -9,18 +9,18 @@
       src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
   <h1>Multi-Loader</h1>
-  <p>This loader requires a module multiple times, each time loaded with a different loader. Like in a multi entry point the exports of the last item are exported.<p>
+  <p>这个require一个模块多次，每次加载一个不同的loader。就像在多入口点一样，最后一项的erports被导出。<p>
   <a href="https://github.com/webpack-contrib/multi-loader"><img src="https://img.shields.io/badge/Github-查看更多-brightgreen.svg"></a>
 </div>
 
 
-<h2 align="center">Install</h2>
+<h2 align="center">安装</h2>
 
 ```bash
 npm i multi-loader --save
 ```
 
-<h2 align="center">Usage</h2>
+<h2 align="center">用法</h2>
 
 ``` javascript
 var multi = require("multi-loader");
@@ -29,9 +29,9 @@ var multi = require("multi-loader");
 		loaders: [
 			{
 				test: /\.css$/,
-				// Add CSS to the DOM
-				// and
-				// Return the raw content
+				// 添加 CSS 到 DOM
+				// 并且
+				// 返回未被加工的内容
 				loader: multi(
 					"style-loader!css-loader!autoprefixer-loader",
 					"raw-loader"
@@ -42,7 +42,7 @@ var multi = require("multi-loader");
 }
 ```
 
-<h2 align="center">Maintainers</h2>
+<h2 align="center">维护者</h2>
 
 <table>
   <tbody>
