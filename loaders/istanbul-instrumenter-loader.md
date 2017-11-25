@@ -14,22 +14,22 @@
   <a href="https://github.com/webpack-contrib/istanbul-instrumenter-loader"><img src="https://img.shields.io/badge/Github-查看更多-brightgreen.svg"></a>
 </div>
 
-Instrument JS files with [istanbul-lib-instrument](https://github.com/istanbuljs/istanbuljs/tree/master/packages/istanbul-lib-instrument) for subsequent code coverage reporting
+ 为随后的代码覆盖率报告的工具JS文件，它使用[istanbul-lib-instrument](https://github.com/istanbuljs/istanbuljs/tree/master/packages/istanbul-lib-instrument)
 
-<h2 align="center">Install</h2>
+<h2 align="center">安装</h2>
 
 ```bash
 npm i -D istanbul-instrumenter-loader
 ```
 
-<h2 align="center"><a href="https://webpack.js.org/concepts/loaders">Usage</a></h2>
+<h2 align="center"><a href="https://webpack.js.org/concepts/loaders">用法</a></h2>
 
-### `References`
+### `参考文献`
 
 * [karma-webpack](https://github.com/webpack/karma-webpack)
 * [karma-coverage-istanbul-reporter](https://github.com/mattlewis92/karma-coverage-istanbul-reporter)
 
-### `Structure`
+### `结构`
 
 ```
 ├─ src
@@ -45,22 +45,23 @@ npm i -D istanbul-instrumenter-loader
 | | | | |– index.js
 ```
 
-To create a code coverage report for all components (even for those for which you have no tests yet) you have to require all the 1) sources and 2) tests. Something like it's described in ["alternative usage" of karma-webpack](https://github.com/webpack/karma-webpack#alternative-usage)
+为生成所有组件（包括你没写测试的那些）的代码覆盖率报告，你需要 require 所有业务和测试的代码。相关内容在 [karma-webpack 其他用法](https://github.com/webpack/karma-webpack#alternative-usage)中有涉及
 
 **test/index.js**
 ```js
-// requires all tests in `project/test/src/components/**/index.js`
+// requires 所有在 `project/test/src/components/**/index.js` 中的测试
 const tests = require.context('./src/components/', true, /index\.js$/);
 
 tests.keys().forEach(tests);
 
-// requires all components in `project/src/components/**/index.js`
+// requires 所有在 `project/src/components/**/index.js` 中的组件
 const components = require.context('../src/components/', true, /index\.js$/);
 
 components.keys().forEach(components);
 ```
 
-> ℹ️  This file will be the only `entry` point for `karma`
+> ℹ️  以下为 `karma`的唯一`entry`起点文件
+
 
 **karma.conf.js**
 ```js
@@ -76,7 +77,7 @@ config.set({
     ...
     module: {
       rules: [
-        // instrument only testing sources with Istanbul
+        // 用 Istanbul 只监测业务代码
         {
           test: /\.js$/,
           use: { loader: 'istanbul-instrumenter-loader' },
@@ -95,9 +96,9 @@ config.set({
 });
 ```
 
-### with `Babel`
+### 使用 `Babel`
 
-You must run the instrumentation as a post step
+你必须将instrumentation作为后置步骤（post step）运行
 
 **webpack.config.js**
 ```js
@@ -112,20 +113,20 @@ You must run the instrumentation as a post step
 }
 ```
 
-<h2 align="center"><a href="https://github.com/istanbuljs/istanbuljs/blob/master/packages/istanbul-lib-instrument/api.md#instrumenter">Options</a></h2>
+<h2 align="center"><a href="https://github.com/istanbuljs/istanbuljs/blob/master/packages/istanbul-lib-instrument/api.md#instrumenter">选项</a></h2>
 
-The loader supports all options supported by `istanbul-lib-instrument`
+这个loader支持所有`istanbul-lib-instrument`支持的选项。
 
 |Name|Type|Default|Description|
 |:--:|:--:|:-----:|:----------|
-|**`debug`**|`{Boolean}`|`false`|Turn on debugging mode|
-|**`compact`**|`{Boolean}`|`true`|Generate compact code|
-|**`autoWrap`**|`{Boolean}`|`false`|Set to `true` to allow return statements outside of functions|
-|**`esModules`**|`{Boolean}`|`false`|Set to `true` to instrument ES2015 Modules|
-|**`coverageVariable`**|`{String}`|`__coverage__`|Name of global coverage variable|
-|**`preserveComments`**|`{Boolean}`|`false`|Preserve comments in `output`|
-|**`produceSourceMap`**|`{Boolean}`|`false`|Set to `true` to produce a source map for the instrumented code|
-|**`sourceMapUrlCallback`**|`{Function}`|`null`|A callback function that is called when a source map URL is found in the original code. This function is called with the source filename and the source map URL|
+|**`debug`**|`{Boolean}`|`false`| 打开调试模式 |
+|**`compact`**|`{Boolean}`|`true`| 生成紧凑的代码 |
+|**`autoWrap`**|`{Boolean}`|`false`| 设置为`true` ，允许返回函数之外的语句 |
+|**`esModules`**|`{Boolean}`|`false`|设置为`true` ，监测 ES2015 模块|
+|**`coverageVariable`**|`{String}`|`__coverage__`| 全局覆盖变量的名称|
+|**`preserveComments`**|`{Boolean}`|`false`| 在`output`中保留注释 |
+|**`produceSourceMap`**|`{Boolean}`|`false`| 将其设置为`true`，以生成用于测试的代码的源映射 |
+|**`sourceMapUrlCallback`**|`{Function}`|`null`| 在原始代码中找到一个源映射URL时调用的回调函数。这个函数使用源文件名和源映射URL来调用 |
 
 **webpack.config.js**
 ```js
@@ -138,7 +139,7 @@ The loader supports all options supported by `istanbul-lib-instrument`
 }
 ```
 
-<h2 align="center">Maintainers</h2>
+<h2 align="center">维护者</h2>
 
 <table>
   <tbody>
