@@ -26,6 +26,11 @@
     "sectionx"
   ],
   "pluginsConfig": {
+    "fontsettings": {
+        "theme": "night",
+        "family": "serif",
+        "size":  2
+    }
     "anchor-navigation-ex": {
       "showLevel": true,
       "associatedWithSummary": true,
