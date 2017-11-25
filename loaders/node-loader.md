@@ -11,21 +11,21 @@
       src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
   <h1>Node Loader</h1>
-  <p>Node Add-ons for webpack</p>
+  <p>用于 webpack 的 node 附件</p>
    <a href="https://github.com/webpack-contrib/node-loader"><img src="https://img.shields.io/badge/Github-查看更多-brightgreen.svg"></a>
 </div>
 
-<h2 align="center">Install</h2>
+<h2 align="center">安装</h2>
 
 ```bash
 npm install --save-dev node-loader
 ```
 
-<h2 align="center">Usage</h2>
+<h2 align="center">用法</h2>
 
-Executes [node add-ons](https://nodejs.org/dist/latest/docs/api/addons.html) in [enhanced-require](https://github.com/webpack/enhanced-require).
+执行 [node 附件](https://nodejs.org/dist/latest/docs/api/addons.html) in [enhanced-require](https://github.com/webpack/enhanced-require).
 
-Use the loader either via your webpack config, CLI or inline.
+通过您的webpack配置、CLI或内联方式使用loader。
 
 ### Via webpack config (recommended)
 
@@ -43,7 +43,7 @@ module.exports = {
 }
 ```
 
-**In your application**
+**在应用程序中**
 ```js
 import node from 'file.node';
 ```
@@ -54,19 +54,20 @@ import node from 'file.node';
 webpack --module-bind 'node=node-loader'
 ```
 
-**In your application**
+**在应用程序中**
 ```js
 import node from 'file.node';
 ```
 
-### Inline
+### 内联
 
-**In your application**
+
+**在应用程序中**
 ```js
 import node from 'node-loader!./file.node';
 ```
 
-<h2 align="center">Maintainer</h2>
+<h2 align="center">维护者</h2>
 
 <table>
   <tbody>
