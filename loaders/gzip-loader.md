@@ -13,15 +13,15 @@
   <a href="https://github.com/webpack-contrib/gzip-loader"><img src="https://img.shields.io/badge/Github-%E6%9F%A5%E7%9C%8B%E6%9B%B4%E5%A4%9A-brightgreen.svg"></a>
 </div>
 
-Enables loading gzipped resources.
+启用加载被[gzip](http://www.gzip.org/)压缩后的资源。
 
-<h2 align="center">Install</h2>
+<h2 align="center">安装</h2>
 
 ```bash
 npm install --save-dev gzip-loader
 ```
 
-<h2 align="center">Usage</h2>
+<h2 align="center">用法</h2>
 
 **webpack.config.js**
 
