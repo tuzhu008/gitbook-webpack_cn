@@ -74,7 +74,7 @@ module: {
   ]
 }
 ```
-webpack v2 usage
+webpack v2 用法
 ```js
 module: {
   rules: [{
