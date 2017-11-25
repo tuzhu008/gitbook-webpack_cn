@@ -9,26 +9,26 @@
       src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
   <h1>React Proxy Loader</h1>
-  <p>Wraps a react component in a proxy component to enable Code Splitting (loads a react component and its dependencies on demand).<p>
+  <p>将 React 组件封装到代理（proxy）组件中，以启用代码分割。(按需加载 react 组件及其依赖 ).<p>
   <a href="https://github.com/webpack-contrib/react-proxy-loader"><img src="https://img.shields.io/badge/Github-查看更多-brightgreen.svg"></a>
 </div>
 
-<h2 align="center">Install</h2>
+<h2 align="center">安装</h2>
 
 ```bash
 npm install react-proxy-loader
 ```
 
-<h2 align="center"><a href="https://webpack.js.org/concepts/loaders">Usage</a></h2>
+<h2 align="center"><a href="https://webpack.js.org/concepts/loaders">用法</a></h2>
 
 ``` js
 var Component = require("react-proxy-loader!./Component");
-// => returns the proxied component (It loads on demand.)
-// (webpack creates an additional chunk for this component and its dependencies)
+// => 返回代理组件（它按需加载。）
+// (webpack 为此组件及其依赖项创建一个额外的 chunk)
 
 var ComponentProxyMixin = require("react-proxy-loader!./Component").Mixin;
-// => returns a mixin for the proxied component
-// (This allows you to setup rendering for the loading state for the proxy)
+// => 返回代理组件的 mixin
+// (这允许您为 proxy 的加载状态设置渲染)
 var ComponentProxy = React.createClass({
 	mixins: [ComponentProxyMixin],
 	renderUnavailable: function() {
@@ -37,11 +37,11 @@ var ComponentProxy = React.createClass({
 });
 ```
 
-The proxy is a react component. All properties are transferred to the wrapped component.
+代理是一个react组件。所有属性都将传输到包装组件。
 
-<h2 align="center">Configuration</h2>
+<h2 align="center">配置</h2>
 
-Instead of (or in addition to) inlining the loader call you can also specify the proxied components in your configuration:
+代替（或除了）内联 loader 调用之外，还可以在配置中指定代理组件：
 
 ``` js
 module.exports = {
@@ -50,9 +50,10 @@ module.exports = {
 			/* ... */
 			{
 				test: [
-					/component\.jsx$/, // select component by RegExp
-					/\.async\.jsx$/, // select component by extension
-					"/abs/path/to/component.jsx" // absolute path to component
+					/component\.jsx$/, // 依靠 RegExp 选择组件
+					/\.async\.jsx$/, // 依靠扩展选择组件
+
+					"/abs/path/to/component.jsx" // 组件的绝对路径
 				],
 				loader: "react-proxy-loader"
 			}
@@ -63,13 +64,13 @@ module.exports = {
 
 ### Chunk name
 
-You can give the chunk a name with the `name` query parameter:
+你可以使用`name`查询参数为chunk命名
 
 ``` js
 var Component = require("react-proxy-loader?name=chunkName!./Component");
 ```
 
-<h2 align="center">Maintainers</h2>
+<h2 align="center">维护者</h2>
 
 <table>
   <tbody>
