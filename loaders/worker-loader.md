@@ -10,27 +10,27 @@
     <img width="200" height="200" src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
   <h1>Worker Loader</h1>
-  <p>This loader registers the script as <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API">Web Worker</a><p>
+  <p>这个 loader 将脚本注册为 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API">Web Worker</a><p>
   <a href="https://github.com/webpack-contrib/worker-loader"><img src="https://img.shields.io/badge/Github-%E6%9F%A5%E7%9C%8B%E6%9B%B4%E5%A4%9A-brightgreen.svg"></a>
 </div>
 
 
-<h2 align="center">Install</h2>
+<h2 align="center">安装</h2>
 
 ```bash
 npm i -D worker-loader
 ```
 
-<h2 align="center"><a href="https://webpack.js.org/concepts/loaders">Usage</a></h2>
+<h2 align="center"><a href="https://webpack.js.org/concepts/loaders">用法</a></h2>
 
-### `Inlined`
+### `内联`
 
 **App.js**
 ```js
 import Worker from 'worker-loader!./Worker.js';
 ```
 
-### `Config`
+### `配置`
 
 **webpack.config.js**
 ```js
@@ -58,18 +58,18 @@ worker.onmessage = function (event) {};
 worker.addEventListener("message", function (event) {});
 ```
 
-<h2 align="center">Options</h2>
+<h2 align="center">选项</h2>
 
-|Name|Type|Default|Description|
+|名称|类型|默认值|描述|
 |:--:|:--:|:-----:|:----------|
-|[**`name`**](#name)|`{String}`|`[hash].worker.js`|Set a custom name for the output script|
-|[**`inline`**](#inline)|`{Boolean}`|`false`|Inline the worker as a BLOB|
-|[**`fallback`**](#fallback)|`{Boolean}`|`false`|Require a fallback for non-worker supporting environments|
-|[**`publicPath`**](#publicPath)|`{String}`|`null`|Override the path from which worker scripts are downloaded|
+|[**`name`**](#name)|`{String}`|`[hash].worker.js`| 为输出脚本设置一个自定义的名字 |
+|[**`inline`**](#inline)|`{Boolean}`|`false`| 将 worker 内联为 BLOB |
+|[**`fallback`**](#fallback)|`{Boolean}`|`false`| 对非 worker 环境的支持环境require 一个备用 |
+|[**`publicPath`**](#publicPath)|`{String}`|`null`| 覆盖来自worker 脚本被下载的路径 |
 
 ### `name`
 
-To set a custom name for the output script, use the `name` parameter. The name may contain the string `[hash]`, which will be replaced with a content dependent hash for caching purposes
+使用 `name` 参数为输出脚本设置一个自定义的名字。这个参数可以包含`[hash]`字符串，它将被『用于缓存目的』的『内容相关哈希』取代
 
 *webpack.config.js**
 ```js
@@ -81,7 +81,7 @@ To set a custom name for the output script, use the `name` parameter. The name m
 
 ### `inline`
 
-You can also inline the worker as a BLOB with the `inline` parameter
+可以使用 `inline` 参数将 worker 内联为 BLOB
 
 **webpack.config.js**
 ```js
@@ -91,7 +91,9 @@ You can also inline the worker as a BLOB with the `inline` parameter
 }
 ```
 
-> ℹ️  Inline mode will also create chunks for browsers without support for inline workers, to disable this behavior just set `fallback` parameter as `false`
+> **[info]** 
+> 
+> 内联模式还将为不支持内联 worker 的浏览器创建 chunk ，为了禁止该行为，只需将 `fallback` 参数设置为 `false`
 
 **webpack.config.js**
 ```js
@@ -103,7 +105,7 @@ You can also inline the worker as a BLOB with the `inline` parameter
 
 ### `fallback`
 
-Require a fallback for non-worker supporting environments
+为非 worker 环境支持 rerquire 一个回退方案。
 
 **webpack.config.js**
 ```js
@@ -115,8 +117,8 @@ Require a fallback for non-worker supporting environments
 
 ### `publicPath`
 
-Overrides the path from which worker scripts are downloaded. If not specified, the same public path used for other
-webpack assets is used
+
+覆盖来自 worker 脚本被下载的路径。如果未指定，则使用其他 webpack 资产的相同公共路径使用其他webpack资产的相同公共路径
 
 **webpack.config.js**
 ```js
@@ -126,9 +128,9 @@ webpack assets is used
 }
 ```
 
-<h2 align="center">Examples</h2>
+<h2 align="center">示例</h2>
 
-The worker file can import dependencies just like any other file
+The worker file can import dependencies just like any other file worker
 
 **Worker.js**
 ```js
@@ -237,7 +239,7 @@ import Worker from './file.worker.js';
 }
 ```
 
-<h2 align="center">Maintainers</h2>
+<h2 align="center">维护者</h2>
 
 <table>
   <tbody>
