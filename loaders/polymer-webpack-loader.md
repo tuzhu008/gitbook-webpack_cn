@@ -58,7 +58,7 @@
 [Rule.include]: //configuration/module.md#ruleinclude
 [Condition]: //configuration/module.md#rule条件
 
-### exclude: Condition(s)
+### exclude: 条件(s)
 
 参见 webpack 文档中的 [Rule.exclude] 和 [Condition] 。匹配此选项的路径将不会被polymer-webpack-loader处理。  
 > **[info]** 注：
@@ -105,10 +105,11 @@
 
 #### htmlLoader: Object
 
-Options to pass to the html-loader. See [html-loader](https://github.com/webpack-contrib/html-loader).
+传递给html-loader的选项。 参见 [html-loader](/loaders/html-loader.md)
 
-### Use with Babel (or other JS transpilers)
-If you'd like to transpile the contents of your element's `<script>` block you can [chain an additional loader](https://webpack.js.org/configuration/module/#rule-use).
+### 与 Babel一起使用 (或者其他JS 编译器)
+
+如果你想要对元素的`<script>`块内容进行编译，你可以[串联一个额外的loader](//configuration/module.mdl#ruleuse)。
 
 ```js
 module: {
@@ -116,7 +117,7 @@ module: {
     {
       test: /\.html$/,
       use: [
-        // Chained loaders are applied last to first
+        // 链式loader 从下到上被应用 
         { loader: 'babel-loader' },
         { loader: 'polymer-webpack-loader' }
       ]
@@ -124,21 +125,22 @@ module: {
   ]
 }
 
-// alternative syntax
+// 替代语法
 
 module: {
   loaders: [
     {
       test: /\.html$/,
-      // Chained loaders are applied right to left
+      // 链式loader 从右到左被应用 
       loader: 'babel-loader!polymer-webpack-loader'
     }
   ]
 }
 ```
 
-### Use of HtmlWebpackPlugin
-Depending on how you configure the HtmlWebpackPlugin you may encounter conflicts with the polymer-webpack-loader. 
+###  HtmlWebpackPlugin的使用
+
+您可能会遇到与olymer-webpack-loader的冲突，这取决于您如何配置HtmlWebpackPlugin，。
 
 Example: 
 
@@ -155,44 +157,44 @@ Example:
   loader: 'polymer-webpack-loader'
 }
 ```
-This would expose your index.html file to the polymer-webpack-loader based on the process used by the html-loader. In this case you would need to exclude your html file from the polymer-webpack-loader or look for other ways to avoid this conflict. See: [html-webpack-plugin template options](https://github.com/jantimon/html-webpack-plugin/blob/master/docs/template-option.md)
+
+这将基于被 html-loader 使用的过程将 index.html 文件暴露给 polymer-webpack-loader 。在这种情况下，您需要将 html 文件从 polymer-webpack-loader 中排除，或者寻找其他方法来避免这种冲突。参见: [html-webpack-plugin template options](//Plugins/third-party/HtmlWebpackPlugin.md#模板选项)
+
 
 ## Shimming
-Not all Polymer Elements have been written to execute as a module and will
-require changes to work with webpack. The most common issue encountered is because modules do not execute
-in the global scope. Variables, functions and classes will no longer be global unless
-they are declared as properties on the global object (window).
+
+并不是所有的 Polymer 元素都被编写成一个模块，并且需要对webpack进行修改。遇到的最常见的问题是模块不在全局作用域内执行。变量、函数和类将不再是全局的，除非它们在全局对象(window)中被声明为属性。
 
 ```js
-class MyElement {} // I'm not global anymore
-window.myElement = MyElement; // Now I'm global again
+class MyElement {} // 我不是全局变凉了
+window.myElement = MyElement; // 现在我又是全局变量了
 ```
 
-For external library code, webpack provides [shimming options](https://webpack.js.org/guides/shimming/).
+对于外部代码库代码, webpack 提供 [shimming 选项](https://webpack.js.org/guides/shimming/).
 
- * Use the [exports-loader](https://webpack.js.org/guides/shimming/#exports-loader) to
-   add a module export to components which expect a symbol to be global.
- * Use the [imports-loader](https://webpack.js.org/guides/shimming/#imports-loader) when a script
-   expects the `this` keyword to reference `window`.
- * Use the [ProvidePlugin](https://webpack.js.org/guides/shimming/#provideplugin) to add a module
-   import statement when a script expects a variable to be globally defined (but is now a module export).
- * Use the [NormalModuleReplacementPlugin](https://webpack.js.org/plugins/normal-module-replacement-plugin/)
-   to have webpack swap a module-compliant version for a script.
+ * 使用 [exports-loader](//loaders/exports-loader.md) 来向组件添加模块的导出，这些组件期望符号（symbol）是全局的。
    
-You may need to apply multiple shimming techniques to the same component.
+ * 使用 i[mports-loader](//loaders/imports-loader.md)，当脚本期望`this`关键字引用`window`时。
+ 
+ * 使用 [ProvidePlugin](https://webpack.js.org/guides/shimming/#provideplugin) 来添加一个模块 import 语句，当脚本期望变量被全局定义时 (但现在为模块的导出)。
+ 
+ * 使用 [NormalModuleReplacementPlugin](/Plugins/internal/NormalModuleReplacementPlugin.md) 来让webpack调换一个用于脚本的模块兼容版本。
+   
+您可能需要将多个shimming技术应用于相同的组件。
 
-## Boostrapping Your Application
+## 引导应用程序
 
-The webcomponent polyfills must be added in a specific order. If you do not delay loading the main bundle with your components, you will see the following exceptions in the browser console:
+web组件 polyfills 必须以特定的顺序添加。如果不延迟加载主bundle和组件，可以在浏览器控制台中看到以下的异常:
 
-```
+```js
 Uncaught TypeError: Failed to construct 'HTMLElement': Please use the 'new' operator, this DOM object constructor cannot be called as a function.
+// 未捕获类型错误:未能构造“HTMLElement”:请使用“new”操作符，这个DOM对象构造函数不能被作为函数调用。
 ```
 
-Reference the [demo html file](https://github.com/webpack-contrib/polymer-webpack-loader/blob/master/demo/src/index.ejs)
-for the proper loading sequence.
+引用[demo html file](https://github.com/webpack-contrib/polymer-webpack-loader/blob/master/demo/src/index.ejs)
+来查看适当的加载顺序。
 
-<h2 align="center">Maintainers</h2>
+<h2 align="center">维护者</h2>
 
 <table>
   <tbody>
