@@ -13,24 +13,24 @@
   <a href="https://github.com/webpack-contrib/transform-loader"><img src="https://img.shields.io/badge/Github-%E6%9F%A5%E7%9C%8B%E6%9B%B4%E5%A4%9A-brightgreen.svg"></a>
 </div>
 
-<h2 align="center">Install</h2>
+<h2 align="center">安装</h2>
 
 ```bash
 npm i transform-loader --save
 ```
 
-<h2 align="center"><a href="https://webpack.js.org/concepts/loaders">Usage</a></h2>
+<h2 align="center"><a href="https://webpack.js.org/concepts/loaders">用法</a></h2>
 
-Pass the module name as query parameter.
+将模块名称作为查询参数传递。
 
 ``` javascript
 var x = require("!transform-loader?brfs!./file.js");
-var x = require("!transform-loader/cacheable?brfs!./file.js"); // cacheable version
+var x = require("!transform-loader/cacheable?brfs!./file.js"); // 缓存版本
 ```
 
-If you pass a number instead it will take the function from `this.options.transforms[number]`.
+如果你传递的是一个数字，它就会从`this.options.transforms[number]` 中得到这个函数。
 
-<h2 align="center">webpack 2 config example</h2>
+<h2 align="center">webpack 2 配置示例</h2>
 
 ``` javascript
 module.exports = {
@@ -91,7 +91,7 @@ module.exports = {
 };
 ```
 
-<h2 align="center">webpack 1 config example</h2>
+<h2 align="center">webpack 1 配置示例</h2>
 
 ``` javascript
 module.exports = {
@@ -124,15 +124,15 @@ module.exports = {
 };
 ```
 
-<h2 align="center">Typical brfs Example</h2>
+<h2 align="center">典型的 brfs 示例</h2>
 
-Say you have the following Node source:
+假设您有以下 Node 源:
 
 ```js
 var test = require('fs').readFileSync('./test.txt', 'utf8');
 ```
 
-After `npm install transform-loader brfs --save`, add the following loader to your config:
+After 在运行 `npm install transform-loader brfs --save` 安装完成之后，, 添加下面的loader到配置中:
 
 ```js
 module.exports = {
@@ -149,9 +149,9 @@ module.exports = {
 }
 ```
 
-The loader is applied to all JS files, which can incur a performance hit with watch tasks. So you may want to use `transform-loader/cacheable?brfs` instead. 
+这个 loader 被应用到所有的 JS 文件，这可能会导致观察任务的性能下降。所以可以使用 `transform-loader/cacheable?brfs` 代替。 
 
-<h2 align="center">Maintainers</h2>
+<h2 align="center">维护者</h2>
 
 <table>
   <tbody>
