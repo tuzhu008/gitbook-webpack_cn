@@ -1,0 +1,2179 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>react-proxy-loader · webpack中文</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="tuzhu008">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="restyle-loader.html" />
+    
+    
+    <link rel="prev" href="raw-loader.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Guide/">
+            
+                <a href="../Guide/">
+            
+                    
+                    教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Loader
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="babel-loader.html">
+            
+                <a href="babel-loader.html">
+            
+                    
+                    babel-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="yaml-frontmatter-loader.html">
+            
+                <a href="yaml-frontmatter-loader.html">
+            
+                    
+                    yaml-frontmatter-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="cache-loader.html">
+            
+                <a href="cache-loader.html">
+            
+                    
+                    cache-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="coffee-loader.html">
+            
+                <a href="coffee-loader.html">
+            
+                    
+                    coffee-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="coffee-redux-loader.html">
+            
+                <a href="coffee-redux-loader.html">
+            
+                    
+                    coffee-redux-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="coverjs-loader.html">
+            
+                <a href="coverjs-loader.html">
+            
+                    
+                    coverjs-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="css-loader.html">
+            
+                <a href="css-loader.html">
+            
+                    
+                    css-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="cson-loader.html">
+            
+                <a href="cson-loader.html">
+            
+                    
+                    cson-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="eslint-loader.html">
+            
+                <a href="eslint-loader.html">
+            
+                    
+                    eslint-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="exports-loader.html">
+            
+                <a href="exports-loader.html">
+            
+                    
+                    exports-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="expose-loader.html">
+            
+                <a href="expose-loader.html">
+            
+                    
+                    expose-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="extract-loader.html">
+            
+                <a href="extract-loader.html">
+            
+                    
+                    extract-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="file-loader.html">
+            
+                <a href="file-loader.html">
+            
+                    
+                    file-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="gzip-loader.html">
+            
+                <a href="gzip-loader.html">
+            
+                    
+                    gzip-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="html-loader.html">
+            
+                <a href="html-loader.html">
+            
+                    
+                    html-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="i18n-loader.html">
+            
+                <a href="i18n-loader.html">
+            
+                    
+                    i18n-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="imports-loader.html">
+            
+                <a href="imports-loader.html">
+            
+                    
+                    imports-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="istanbul-instrumenter-loader.html">
+            
+                <a href="istanbul-instrumenter-loader.html">
+            
+                    
+                    istanbul-instrumenter-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.19" data-path="jshint-loader.html">
+            
+                <a href="jshint-loader.html">
+            
+                    
+                    jshint-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.20" data-path="json-loader.html">
+            
+                <a href="json-loader.html">
+            
+                    
+                    json-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21" data-path="json5-loader.html">
+            
+                <a href="json5-loader.html">
+            
+                    
+                    json5-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.22" data-path="less-loader.html">
+            
+                <a href="less-loader.html">
+            
+                    
+                    less-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23" data-path="bundle-loader.html">
+            
+                <a href="bundle-loader.html">
+            
+                    
+                    bundle-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.24" data-path="multi-loader.html">
+            
+                <a href="multi-loader.html">
+            
+                    
+                    multi-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.25" data-path="node-loader.html">
+            
+                <a href="node-loader.html">
+            
+                    
+                    node-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.26" data-path="null-loader.html">
+            
+                <a href="null-loader.html">
+            
+                    
+                    null-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.27" data-path="polymer-webpack-loader.html">
+            
+                <a href="polymer-webpack-loader.html">
+            
+                    
+                    polymer-webpack-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.28" data-path="postcss-loader.html">
+            
+                <a href="postcss-loader.html">
+            
+                    
+                    postcss-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.29" data-path="raw-loader.html">
+            
+                <a href="raw-loader.html">
+            
+                    
+                    raw-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.30" data-path="react-proxy-loader.html">
+            
+                <a href="react-proxy-loader.html">
+            
+                    
+                    react-proxy-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.31" data-path="restyle-loader.html">
+            
+                <a href="restyle-loader.html">
+            
+                    
+                    restyle-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.32" data-path="sass-loader.html">
+            
+                <a href="sass-loader.html">
+            
+                    
+                    sass-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.33" data-path="script-loader.html">
+            
+                <a href="script-loader.html">
+            
+                    
+                    script-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.34" data-path="source-map-loader.html">
+            
+                <a href="source-map-loader.html">
+            
+                    
+                    source-map-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.35" data-path="style-loader.html">
+            
+                <a href="style-loader.html">
+            
+                    
+                    style-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.36" data-path="svg-inline-loader.html">
+            
+                <a href="svg-inline-loader.html">
+            
+                    
+                    svg-inline-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.37" data-path="thread-loader.html">
+            
+                <a href="thread-loader.html">
+            
+                    
+                    thread-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.38" data-path="transform-loader.html">
+            
+                <a href="transform-loader.html">
+            
+                    
+                    transform-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.39" data-path="url-loader.html">
+            
+                <a href="url-loader.html">
+            
+                    
+                    url-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.40" data-path="val-loader.html">
+            
+                <a href="val-loader.html">
+            
+                    
+                    val-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.41" data-path="worker-loader.html">
+            
+                <a href="worker-loader.html">
+            
+                    
+                    worker-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.42" data-path="mocha-loader.html">
+            
+                <a href="mocha-loader.html">
+            
+                    
+                    mocha-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.43" data-path="resolve-url-loader.html">
+            
+                <a href="resolve-url-loader.html">
+            
+                    
+                    resolve-url-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../configuration/">
+            
+                <a href="../configuration/">
+            
+                    
+                    配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../configuration/context.html">
+            
+                <a href="../configuration/context.html">
+            
+                    
+                    Context（上下文）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../configuration/entry.html">
+            
+                <a href="../configuration/entry.html">
+            
+                    
+                    Entry（入口）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../configuration/output.html">
+            
+                <a href="../configuration/output.html">
+            
+                    
+                    Output（输出）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../configuration/module.html">
+            
+                <a href="../configuration/module.html">
+            
+                    
+                    Module（模块）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../configuration/resolve.html">
+            
+                <a href="../configuration/resolve.html">
+            
+                    
+                    Resolve（解析）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../configuration/plugins.html">
+            
+                <a href="../configuration/plugins.html">
+            
+                    
+                    Plugins（插件）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../configuration/devServer.html">
+            
+                <a href="../configuration/devServer.html">
+            
+                    
+                    DevServer（开发服务）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../configuration/devtools.html">
+            
+                <a href="../configuration/devtools.html">
+            
+                    
+                    Devtools（开发工具）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../configuration/target.html">
+            
+                <a href="../configuration/target.html">
+            
+                    
+                    Target（构建目标）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../configuration/watch.html">
+            
+                <a href="../configuration/watch.html">
+            
+                    
+                    Watch（观察模式）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../configuration/watchOptions.html">
+            
+                <a href="../configuration/watchOptions.html">
+            
+                    
+                    WatchOptions（观察模式选项）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../configuration/externals.html">
+            
+                <a href="../configuration/externals.html">
+            
+                    
+                    Externals（外部扩展）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../configuration/performance.html">
+            
+                <a href="../configuration/performance.html">
+            
+                    
+                    Performance（性能）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../configuration/node.html">
+            
+                <a href="../configuration/node.html">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../configuration/stats.html">
+            
+                <a href="../configuration/stats.html">
+            
+                    
+                    Stats（统计）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="../configuration/otherOptions.html">
+            
+                <a href="../configuration/otherOptions.html">
+            
+                    
+                    OtherOptions（其他选项）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../API/">
+            
+                <a href="../API/">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../API/CLI.html">
+            
+                <a href="../API/CLI.html">
+            
+                    
+                    CLI（命令行接口）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../API/StatsData.html">
+            
+                <a href="../API/StatsData.html">
+            
+                    
+                    Stats Data（同级数据）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../API/HMR.html">
+            
+                <a href="../API/HMR.html">
+            
+                    
+                    HMR（模块热替换）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../API/API-Node.html">
+            
+                <a href="../API/API-Node.html">
+            
+                    
+                    Node.js API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../API/API-Loader.html">
+            
+                <a href="../API/API-Loader.html">
+            
+                    
+                    Loader API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../#">
+            
+                <span>
+            
+                    
+                    Module API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.6.1" data-path="../API/ModuleMethods.html">
+            
+                <a href="../API/ModuleMethods.html">
+            
+                    
+                    Module Methods（模块方法）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.2" data-path="../API/ModuleVariables.html">
+            
+                <a href="../API/ModuleVariables.html">
+            
+                    
+                    Medule Variables（模块变量）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../API/API-Plugins.html">
+            
+                <a href="../API/API-Plugins.html">
+            
+                    
+                    Plugins API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../API/API-Tapable.html">
+            
+                <a href="../API/API-Tapable.html">
+            
+                    
+                    Tapable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../API/API-Compiler.html">
+            
+                <a href="../API/API-Compiler.html">
+            
+                    
+                    Compiler（编译器）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../API/API-Compilation.html">
+            
+                <a href="../API/API-Compilation.html">
+            
+                    
+                    Compilation（编译）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../API/ModuleFactories.html">
+            
+                <a href="../API/ModuleFactories.html">
+            
+                    
+                    Module Factories （模块工厂）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../API/API-Resolver.html">
+            
+                <a href="../API/API-Resolver.html">
+            
+                    
+                    Resolver （解析器）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="../API/API-Parser.html">
+            
+                <a href="../API/API-Parser.html">
+            
+                    
+                    Parser（解析器）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" data-path="../API/API-Templates.html">
+            
+                <a href="../API/API-Templates.html">
+            
+                    
+                    Templates（模板）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Plugins/">
+            
+                <a href="../Plugins/">
+            
+                    
+                    插件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../Plugins/internal/">
+            
+                <a href="../Plugins/internal/">
+            
+                    
+                    内置插件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../Plugins/internal/AggressiveSplittingPlugin.html">
+            
+                <a href="../Plugins/internal/AggressiveSplittingPlugin.html">
+            
+                    
+                    AggressiveSplittingPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../Plugins/internal/BannerPlugin.html">
+            
+                <a href="../Plugins/internal/BannerPlugin.html">
+            
+                    
+                    BannerPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="../Plugins/internal/CommonsChunkPlugin.html">
+            
+                <a href="../Plugins/internal/CommonsChunkPlugin.html">
+            
+                    
+                    CommonsChunkPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.4" data-path="../Plugins/internal/ContextReplacementPlugin.html">
+            
+                <a href="../Plugins/internal/ContextReplacementPlugin.html">
+            
+                    
+                    ContextReplacementPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.5" data-path="../Plugins/internal/DefinePlugin.html">
+            
+                <a href="../Plugins/internal/DefinePlugin.html">
+            
+                    
+                    DefinePlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.6" data-path="../Plugins/internal/DllPlugin.html">
+            
+                <a href="../Plugins/internal/DllPlugin.html">
+            
+                    
+                    DllPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.7" data-path="../Plugins/internal/EnvironmentPlugin.html">
+            
+                <a href="../Plugins/internal/EnvironmentPlugin.html">
+            
+                    
+                    EnvironmentPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.8" data-path="../Plugins/internal/HashedModuleIdsPlugin.html">
+            
+                <a href="../Plugins/internal/HashedModuleIdsPlugin.html">
+            
+                    
+                    HashedModuleIdsPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.9" data-path="../Plugins/internal/HotModuleReplacementPlugin.html">
+            
+                <a href="../Plugins/internal/HotModuleReplacementPlugin.html">
+            
+                    
+                    HotModuleReplacementPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.10" data-path="../Plugins/internal/IgnorePlugin.html">
+            
+                <a href="../Plugins/internal/IgnorePlugin.html">
+            
+                    
+                    IgnorePlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.11" data-path="../Plugins/internal/LimitChunkCountPlugin.html">
+            
+                <a href="../Plugins/internal/LimitChunkCountPlugin.html">
+            
+                    
+                    LimitChunkCountPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.12" data-path="../Plugins/internal/MinChunkSizePlugin.html">
+            
+                <a href="../Plugins/internal/MinChunkSizePlugin.html">
+            
+                    
+                    MinChunkSizePlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.13" data-path="../Plugins/internal/ModuleConcatenationPlugin.html">
+            
+                <a href="../Plugins/internal/ModuleConcatenationPlugin.html">
+            
+                    
+                    ModuleConcatenationPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.14" data-path="../Plugins/internal/NamedModulesPlugin.html">
+            
+                <a href="../Plugins/internal/NamedModulesPlugin.html">
+            
+                    
+                    NamedModulesPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.15" data-path="../Plugins/internal/NoEmitOnErrorsPlugin.html">
+            
+                <a href="../Plugins/internal/NoEmitOnErrorsPlugin.html">
+            
+                    
+                    NoEmitOnErrorsPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.16" data-path="../Plugins/internal/NormalModuleReplacementPlugin.html">
+            
+                <a href="../Plugins/internal/NormalModuleReplacementPlugin.html">
+            
+                    
+                    NormalModuleReplacementPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.17" data-path="../Plugins/internal/PrefetchPlugin.html">
+            
+                <a href="../Plugins/internal/PrefetchPlugin.html">
+            
+                    
+                    PrefetchPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.18" data-path="../Plugins/internal/ProvidePlugin.html">
+            
+                <a href="../Plugins/internal/ProvidePlugin.html">
+            
+                    
+                    ProvidePlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.19" data-path="../Plugins/internal/SourceMapDevToolPlugin.html">
+            
+                <a href="../Plugins/internal/SourceMapDevToolPlugin.html">
+            
+                    
+                    SourceMapDevToolPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.20" data-path="../Plugins/internal/WatchIgnorePlugin.html">
+            
+                <a href="../Plugins/internal/WatchIgnorePlugin.html">
+            
+                    
+                    WatchIgnorePlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../Plugins/third-party/">
+            
+                <a href="../Plugins/third-party/">
+            
+                    
+                    三方插件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../Plugins/third-party/I18nWebpackPlugin.html">
+            
+                <a href="../Plugins/third-party/I18nWebpackPlugin.html">
+            
+                    
+                    I18nWebpackPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.2" data-path="../Plugins/third-party/BabelMinifyWebpackPlugin.html">
+            
+                <a href="../Plugins/third-party/BabelMinifyWebpackPlugin.html">
+            
+                    
+                    BabelMinifyWebpackPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3" data-path="../Plugins/third-party/ChunkManifestWebpackPlugin.html">
+            
+                <a href="../Plugins/third-party/ChunkManifestWebpackPlugin.html">
+            
+                    
+                    ChunkManifestWebpackPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.4" data-path="../Plugins/third-party/ExtractTextWebpackPlugin.html">
+            
+                <a href="../Plugins/third-party/ExtractTextWebpackPlugin.html">
+            
+                    
+                    ExtractTextWebpackPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.5" data-path="../Plugins/third-party/HtmlWebpackPlugin.html">
+            
+                <a href="../Plugins/third-party/HtmlWebpackPlugin.html">
+            
+                    
+                    HtmlWebpackPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.6" data-path="../Plugins/third-party/WebpackManifestPlugin.html">
+            
+                <a href="../Plugins/third-party/WebpackManifestPlugin.html">
+            
+                    
+                    WebpackManifestPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.7" data-path="../Plugins/third-party/CompressionWebpackPlugin.html">
+            
+                <a href="../Plugins/third-party/CompressionWebpackPlugin.html">
+            
+                    
+                    CompressionWebpackPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.8" data-path="../Plugins/third-party/DotenvWebpack.html">
+            
+                <a href="../Plugins/third-party/DotenvWebpack.html">
+            
+                    
+                    DotenvWebpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.9" data-path="../Plugins/third-party/NpmInstallWebpackPlugin.html">
+            
+                <a href="../Plugins/third-party/NpmInstallWebpackPlugin.html">
+            
+                    
+                    NpmInstallWebpackPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.10" data-path="../Plugins/third-party/UglifyjsWebpackPlugin.html">
+            
+                <a href="../Plugins/third-party/UglifyjsWebpackPlugin.html">
+            
+                    
+                    UglifyjsWebpackPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.11" data-path="../Plugins/third-party/ZopfliWebpackPlugin.html">
+            
+                <a href="../Plugins/third-party/ZopfliWebpackPlugin.html">
+            
+                    
+                    ZopfliWebpackPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.12" data-path="../Plugins/third-party/CopyWebpackPlugin.html">
+            
+                <a href="../Plugins/third-party/CopyWebpackPlugin.html">
+            
+                    
+                    CopyWebpackPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.13" data-path="../Plugins/third-party/CleanWebpackPlugin.html">
+            
+                <a href="../Plugins/third-party/CleanWebpackPlugin.html">
+            
+                    
+                    CleanWebpackPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.14" data-path="../Plugins/third-party/offline-plugin/">
+            
+                <a href="../Plugins/third-party/offline-plugin/">
+            
+                    
+                    offline-plugin
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.14.1" data-path="../Plugins/third-party/offline-plugin/docs/options.html">
+            
+                <a href="../Plugins/third-party/offline-plugin/docs/options.html">
+            
+                    
+                    Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.14.2" data-path="../Plugins/third-party/offline-plugin/docs/runtime.html">
+            
+                <a href="../Plugins/third-party/offline-plugin/docs/runtime.html">
+            
+                    
+                    runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.14.3" data-path="../Plugins/third-party/offline-plugin/docs/caches.html">
+            
+                <a href="../Plugins/third-party/offline-plugin/docs/caches.html">
+            
+                    
+                    caches
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.14.4" data-path="../Plugins/third-party/offline-plugin/docs/cache-maps.html">
+            
+                <a href="../Plugins/third-party/offline-plugin/docs/cache-maps.html">
+            
+                    
+                    cache-maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.14.5" data-path="../Plugins/third-party/offline-plugin/docs/rewrites.html">
+            
+                <a href="../Plugins/third-party/offline-plugin/docs/rewrites.html">
+            
+                    
+                    rewrites
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.14.6" data-path="../Plugins/third-party/offline-plugin/docs/troubleshooting.html">
+            
+                <a href="../Plugins/third-party/offline-plugin/docs/troubleshooting.html">
+            
+                    
+                    troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.14.7" data-path="../Plugins/third-party/offline-plugin/docs/updates.html">
+            
+                <a href="../Plugins/third-party/offline-plugin/docs/updates.html">
+            
+                    
+                    updates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.14.8" data-path="../Plugins/third-party/offline-plugin/docs/update-strategies.html">
+            
+                <a href="../Plugins/third-party/offline-plugin/docs/update-strategies.html">
+            
+                    
+                    update-strategies
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.14.9" data-path="../Plugins/third-party/offline-plugin/docs/typescript.html">
+            
+                <a href="../Plugins/third-party/offline-plugin/docs/typescript.html">
+            
+                    
+                    typescript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.14.10" data-path="../Plugins/third-party/offline-plugin/docs/FAQ.html">
+            
+                <a href="../Plugins/third-party/offline-plugin/docs/FAQ.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.14.11" data-path="../Plugins/third-party/offline-plugin/docs/examples/SPA.html">
+            
+                <a href="../Plugins/third-party/offline-plugin/docs/examples/SPA.html">
+            
+                    
+                    SPA示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Note.html">
+            
+                <a href="../Note.html">
+            
+                    
+                    注意
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../Others/">
+            
+                <a href="../Others/">
+            
+                    
+                    其他
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../Others/Modular-programming.html">
+            
+                <a href="../Others/Modular-programming.html">
+            
+                    
+                    模块化编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../Others/anymatch.html">
+            
+                <a href="../Others/anymatch.html">
+            
+                    
+                    anymatch
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../thanks.html">
+            
+                <a href="../thanks.html">
+            
+                    
+                    致谢
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >react-proxy-loader</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#react-proxy-loader"><b>1. </b>React Proxy Loader</a></li><ul><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;"><b>1.1. </b>&#x5B89;&#x88C5;</a></li><li><span class="title-icon "></span><a href="#&#x7528;&#x6CD5;"><b>1.2. </b>&#x7528;&#x6CD5;</a></li><li><span class="title-icon "></span><a href="#&#x914D;&#x7F6E;"><b>1.3. </b>&#x914D;&#x7F6E;</a></li><ul><li><span class="title-icon "></span><a href="#chunk-name"><b>1.3.1. </b>Chunk name</a></li></ul><li><span class="title-icon "></span><a href="#&#x7EF4;&#x62A4;&#x8005;"><b>1.4. </b>&#x7EF4;&#x62A4;&#x8005;</a></li></ul></ul></div><a href="#react-proxy-loader" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><a href="https://npmjs.com/package/react-proxy-loader" target="_blank"><img src="https://img.shields.io/npm/v/react-proxy-loader.svg" alt="npm"></a>
+<a href="https://david-dm.org/webpack-contrib/react-proxy-loader" target="_blank"><img src="https://david-dm.org/webpack-contrib/react-proxy-loader.svg" alt="deps"></a>
+<a href="https://gitter.im/webpack/webpack" target="_blank"><img src="https://img.shields.io/badge/gitter-webpack%2Fwebpack-brightgreen.svg" alt="chat"></a></p>
+<div align="center">
+  <!-- replace with accurate logo e.g from https://worldvectorlogo.com/ -->
+  <a href="https://github.com/webpack/webpack" target="_blank">
+    <img width="200" height="200" vspace="" hspace="25" src="https://webpack.js.org/assets/icon-square-big.svg">
+  </a>
+  <h1 id="react-proxy-loader"><a name="react-proxy-loader" class="anchor-navigation-ex-anchor" href="#react-proxy-loader"><i class="fa fa-link" aria-hidden="true"></i></a>1. React Proxy Loader</h1>
+  <p>&#x5C06; React &#x7EC4;&#x4EF6;&#x5C01;&#x88C5;&#x5230;&#x4EE3;&#x7406;&#xFF08;proxy&#xFF09;&#x7EC4;&#x4EF6;&#x4E2D;&#xFF0C;&#x4EE5;&#x542F;&#x7528;&#x4EE3;&#x7801;&#x5206;&#x5272;&#x3002;(&#x6309;&#x9700;&#x52A0;&#x8F7D; react &#x7EC4;&#x4EF6;&#x53CA;&#x5176;&#x4F9D;&#x8D56; ).</p><p>
+  <a href="https://github.com/webpack-contrib/react-proxy-loader" target="_blank"><img src="https://img.shields.io/badge/Github-&#x67E5;&#x770B;&#x66F4;&#x591A;-brightgreen.svg"></a>
+</p></div>
+
+<h2 align="center" id="&#x5B89;&#x88C5;"><a name="&#x5B89;&#x88C5;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x5B89;&#x88C5;</h2>
+
+<pre class="language-"><code class="lang-bash"><span class="token function">npm</span> <span class="token function">install</span> react-proxy-loader
+</code></pre>
+<h2 align="center" id="&#x7528;&#x6CD5;"><a name="&#x7528;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x7528;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x7528;&#x6CD5;</h2>
+
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> Component <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;react-proxy-loader!./Component&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// =&gt; &#x8FD4;&#x56DE;&#x4EE3;&#x7406;&#x7EC4;&#x4EF6;&#xFF08;&#x5B83;&#x6309;&#x9700;&#x52A0;&#x8F7D;&#x3002;&#xFF09;</span>
+<span class="token comment" spellcheck="true">// (webpack &#x4E3A;&#x6B64;&#x7EC4;&#x4EF6;&#x53CA;&#x5176;&#x4F9D;&#x8D56;&#x9879;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x989D;&#x5916;&#x7684; chunk)</span>
+
+<span class="token keyword">var</span> ComponentProxyMixin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;react-proxy-loader!./Component&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Mixin<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// =&gt; &#x8FD4;&#x56DE;&#x4EE3;&#x7406;&#x7EC4;&#x4EF6;&#x7684; mixin</span>
+<span class="token comment" spellcheck="true">// (&#x8FD9;&#x5141;&#x8BB8;&#x60A8;&#x4E3A; proxy &#x7684;&#x52A0;&#x8F7D;&#x72B6;&#x6001;&#x8BBE;&#x7F6E;&#x6E32;&#x67D3;)</span>
+<span class="token keyword">var</span> ComponentProxy <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">createClass</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    mixins<span class="token punctuation">:</span> <span class="token punctuation">[</span>ComponentProxyMixin<span class="token punctuation">]</span><span class="token punctuation">,</span>
+    renderUnavailable<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>Loading<span class="token operator">...</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x4EE3;&#x7406;&#x662F;&#x4E00;&#x4E2A;react&#x7EC4;&#x4EF6;&#x3002;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x90FD;&#x5C06;&#x4F20;&#x8F93;&#x5230;&#x5305;&#x88C5;&#x7EC4;&#x4EF6;&#x3002;</p>
+<h2 align="center" id="&#x914D;&#x7F6E;"><a name="&#x914D;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x914D;&#x7F6E;</h2>
+
+<p>&#x4EE3;&#x66FF;&#xFF08;&#x6216;&#x9664;&#x4E86;&#xFF09;&#x5185;&#x8054; loader &#x8C03;&#x7528;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x5728;&#x914D;&#x7F6E;&#x4E2D;&#x6307;&#x5B9A;&#x4EE3;&#x7406;&#x7EC4;&#x4EF6;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        loaders<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token comment" spellcheck="true">/* ... */</span>
+            <span class="token punctuation">{</span>
+                test<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+                    <span class="token regex">/component\.jsx$/</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x4F9D;&#x9760; RegExp &#x9009;&#x62E9;&#x7EC4;&#x4EF6;</span>
+                    <span class="token regex">/\.async\.jsx$/</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x4F9D;&#x9760;&#x6269;&#x5C55;&#x9009;&#x62E9;&#x7EC4;&#x4EF6;</span>
+
+                    <span class="token string">&quot;/abs/path/to/component.jsx&quot;</span> <span class="token comment" spellcheck="true">// &#x7EC4;&#x4EF6;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;</span>
+                <span class="token punctuation">]</span><span class="token punctuation">,</span>
+                loader<span class="token punctuation">:</span> <span class="token string">&quot;react-proxy-loader&quot;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="chunk-name"><a name="chunk-name" class="anchor-navigation-ex-anchor" href="#chunk-name"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.1. Chunk name</h3>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>name</code>&#x67E5;&#x8BE2;&#x53C2;&#x6570;&#x4E3A;chunk&#x547D;&#x540D;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> Component <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;react-proxy-loader?name=chunkName!./Component&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 align="center" id="&#x7EF4;&#x62A4;&#x8005;"><a name="&#x7EF4;&#x62A4;&#x8005;" class="anchor-navigation-ex-anchor" href="#&#x7EF4;&#x62A4;&#x8005;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x7EF4;&#x62A4;&#x8005;</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td align="center">
+        <img width="150" height="150" src="https://avatars3.githubusercontent.com/u/166921?v=3&amp;s=150">
+        <br>
+        <a href="https://github.com/bebraw" target="_blank">Juho Veps&#xE4;l&#xE4;inen</a>
+      </td>
+      <td align="center">
+        <img width="150" height="150" src="https://avatars2.githubusercontent.com/u/8420490?v=3&amp;s=150">
+        <br>
+        <a href="https://github.com/d3viant0ne" target="_blank">Joshua Wiens</a>
+      </td>
+      <td align="center">
+        <img width="150" height="150" src="https://avatars3.githubusercontent.com/u/533616?v=3&amp;s=150">
+        <br>
+        <a href="https://github.com/SpaceK33z" target="_blank">Kees Kluskens</a>
+      </td>
+      <td align="center">
+        <img width="150" height="150" src="https://avatars3.githubusercontent.com/u/3408176?v=3&amp;s=150">
+        <br>
+        <a href="https://github.com/TheLarkInn" target="_blank">Sean Larkin</a>
+      </td>
+    </tr>
+  <tbody>
+</tbody></tbody></table>
+
+
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; tuzhu008 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-11-25 16:17:12
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="raw-loader.html" class="navigation navigation-prev " aria-label="Previous page: raw-loader">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="restyle-loader.html" class="navigation navigation-next " aria-label="Next page: restyle-loader">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"react-proxy-loader","level":"1.3.30","depth":2,"next":{"title":"restyle-loader","level":"1.3.31","depth":2,"path":"loaders/restyle-loader.md","ref":"loaders/restyle-loader.md","articles":[]},"previous":{"title":"raw-loader","level":"1.3.29","depth":2,"path":"loaders/raw-loader.md","ref":"loaders/raw-loader.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","anchor-navigation-ex","favicon","copy-code-button","alerts","splitter","book-summary-scroll-position-saver","include-codeblock","ace","prism","prism-themes","-highlight","tbfed-pagefooter","github","sectionx","livereload"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tuzhu008 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"ace":{},"github":{"url":"https://github.com/tuzhu008"},"livereload":{},"book-summary-scroll-position-saver":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"favicon":{"shortcut":"assets/images/favicon.ico","bookmark":"assets/images/favicon.ico","appleTouch":"assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"assets/images/apple-touch-icon-120x120.png","180x180":"assets/images/apple-touch-icon-180x180.png"}},"prism-themes":{},"alerts":{},"expandable-chapters-small":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"ace","theme":"monokai","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"tuzhu008","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"webpack中文","language":"zh-hans","gitbook":"*","description":"webpack学习资料和过程记录"},"file":{"path":"loaders/react-proxy-loader.md","mtime":"2017-11-25T08:17:12.605Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-24T10:47:07.072Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
