@@ -5,34 +5,33 @@
 
 > [Polymer](https://www.polymer-project.org/) component loader for [webpack](https://webpack.js.org/).
 
-The loader allows you to write mixed HTML, CSS and JavaScript Polymer elements and
-still use the full webpack ecosystem including module bundling and code splitting.
+此loader允许你编写混合的HTML，CSS和JavaScript聚合物元素，并且仍然使用完整的webpack生态系统，包括模块打包和代码分割。
 
 
 <img width="1024" alt="" src="https://user-images.githubusercontent.com/1066253/28131928-3b257288-66f0-11e7-8295-cb968cefb040.png">
 
-The loader transforms your components:
+此加载器转换你的模块:
 
  * `<link rel="import" href="./my-other-element.html">` -> `import './my-other-element.html';`
- * `<dom-module>` becomes a string which is registered at runtime
+ * `<dom-module>` 变为在运行时注册的字符串
  * `<script src="./other-script.js"></script>` -> `import './other-script.js';`
  * `<script>/* contents */</script>` -> `/* contents */`
 
- What does that mean?
+这是什么意思?
  
- Any ```<link>``` "href" or ```<script>``` "src" that is **not an external link** and does not start with ```~```, ```/```, ```./``` or a series of ```../``` will have ```./``` appended to the beginning of the value. To prevent this change use options ignoreLinks below. 
+ 任何**不是一个外部连接** 并且不以```~```, ```/```, ```./``` 或者一连串的 ```../``` 开头的 ```<link>``` "href" 或者 ```<script>``` "src" ，```./``` 都会被附加到它们的值的开始。 为了防止这种变化，请使用下面的选项。 
 
-## Path Translations
+## 路径翻译
 
 | `tag`                            | `import`                        |
 | ----------------------------------- | ------------------------------------- |
-| `<link rel="import" href="path/to/some-element.html">`     | `import "./path/to/some-element.html"`  |
+| `<link rel="import" href="path/to/some-element.html">`     | `import "./path/to/some-element.html"` 【译者注：如上面描述的，`./`被添加到路径前面】 |
 | `<link rel="import" href="/path/to/some-element.html">`    | `import "/path/to/some-element.html"`   |
 | `<link rel="import" href="../path/to/some-element.html">`  | `import "../path/to/some-element.html"` |
 | `<link rel="import" href="./path/to/some-element.html">`   | `import "./path/to/some-element.html"`  |
 | `<link rel="import" href="~path/to/some-element.html">`    | `import "~path/to/some-element.html"`   |
 
-## Configuring the Loader
+## 配置loader
 
 ```javascript
 {
@@ -49,16 +48,15 @@ The loader transforms your components:
 },
 ```
 
-### include: Condition(s)
+### include: 条件(s)
 
-See [Rule.include] and [Condition] in the webpack documentation. Paths
-matching this option will be processed by polymer-webpack-loader.  WARNING: If
-this property exists the loader will only process files matching the given
-conditions. If your component has a `<link>` pointing to a component e.g. in
-another directory, the `include` condition(s) MUST also match that directory.
+参见 webpack文档中的 [Rule.include] and [Condition]。 匹配此选项的路径将由polymer-webpack-loader处理。  
+> **[warning]** 警告：
+>
+> 如果这个属性存在，loader只会处理匹配给定条件的文件。如果你的组件有一个指向一个组件的`<link>`，例如，另一个目录，`include`条件也**必须**匹配那个目录。
 
-[Rule.include]: https://webpack.js.org/configuration/module/#rule-include
-[Condition]: https://webpack.js.org/configuration/module/#condition
+[Rule.include]: //configuration/module.md#ruleinclude
+[Condition]: //configuration/module.md#rule条件
 
 ### exclude: Condition(s)
 
