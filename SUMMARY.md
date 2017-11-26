@@ -90,6 +90,8 @@
 
   * [resolve-url-loader](loaders/resolve-url-loader.md)
 
+  * [vue-loader](https://vue-loader.vuejs.org/zh-cn/)
+
 * [配置](/configuration/README.md)
 
   * [Context（上下文）](configuration/context.md)

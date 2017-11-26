@@ -4,6 +4,7 @@
 
 * [模块化编程](//Others/Modular-programming.md)
 * [anymatch](//Others/anymatch.md)
+* [data URL](http://www.webhek.com/post/data-url.html)
 
 
 
