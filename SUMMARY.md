@@ -68,6 +68,8 @@
 
   * [sass-loader](loaders/sass-loader.md)
 
+  * sass-resources-loader
+
   * [script-loader](loaders/script-loader.md)
 
   * [source-map-loader](loaders/source-map-loader.md)
