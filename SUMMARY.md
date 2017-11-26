@@ -68,7 +68,7 @@
 
   * [sass-loader](loaders/sass-loader.md)
 
-  * sass-resources-loader
+  * [sass-resources-loader](loaders/sass-resources-loader.md)
 
   * [script-loader](loaders/script-loader.md)
 
