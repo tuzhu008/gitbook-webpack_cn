@@ -266,6 +266,8 @@
 
   * [anymatch](/Others/anymatch.md)
 
+  * [webpack-merge](Others/webpack-merge.md)
+
 * [致谢](thanks.md)
 
 
